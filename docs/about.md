@@ -49,4 +49,4 @@ AzuraCast is licensed under the [Apache license, version 2.0](https://github.com
 
 ## Questions? Comments? Feedback?
 
-AzuraCast is a volunteer project, and we depend on your support and feedback to keep growing. Issues for this codebase are tracked in this repository's Issues section on GitHub. Anyone can create a new issue for the project, and you are encouraged to do so.
+AzuraCast is a volunteer project, and we depend on your support and feedback to keep growing. Issues for this codebase are tracked using [GitHub Issues](https://github.com/AzuraCast/AzuraCast/issues/new). Anyone can create a new issue for the project, and if you have any problems with your installation or ideas for new features to add, you are encouraged to do so.
