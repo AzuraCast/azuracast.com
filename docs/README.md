@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: img/azuracast-icon.png
+heroImage: img/logo.png
 actionText: Get Started →
 actionLink: /install
 features:
