@@ -1,0 +1,9 @@
+/node_modules
+/public
+
+# Junk/cache files.
+*Thumbs.db
+*.DS_Store
+*.apdisk
+.vagrant
+.idea
