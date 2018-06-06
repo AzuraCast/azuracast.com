@@ -131,45 +131,6 @@ sudo chmod a+x update.sh
 sudo ./update.sh
 ```
 
-### Traditional Installation (Ubuntu 16.04 LTS Only)
-
-**Note:** Some web hosts offer custom versions of Ubuntu that include different software repositories. These may cause compatibility issues with AzuraCast. Many VPS providers are known to work out of the box with AzuraCast (OVH, DigitalOcean, Vultr, etc), and are thus highly recommended if you plan to use the traditional installer.
-
-AzuraCast is optimized for speed and performance, and can run on very inexpensive hardware, from the Raspberry Pi 3 to the lowest-level VPSes offered by most providers.
-
-Since AzuraCast installs its own radio tools, databases and web servers, you should always install AzuraCast on a "clean" server instance with no other web or radio software installed previously.
-
-Execute these commands **as the root user** to set up your AzuraCast server:
-
-```bash
-apt-get update
-apt-get install -q -y git
-
-mkdir -p /var/azuracast/www
-cd /var/azuracast/www
-git clone https://github.com/AzuraCast/AzuraCast.git .
-
-chmod a+x install.sh
-./install.sh
-```
-
-If you cannot directly log in as the root account on your server, try running `sudo su` before running the commands above.
-
-The installation process will take between 5 and 15 minutes, depending on your Internet connection. If you encounter an error, let us know in the [Issues section](https://github.com/AzuraCast/AzuraCast/issues).
-
-Once the terminal-based installation is complete, you can visit your server's public IP address (`http://ip.of.your.server/`) to finish the web-based setup.
-
-### Updating
-
-AzuraCast also includes a handy updater script that pulls down the latest copy of the codebase from Git, flushes the site caches and makes any necessary database updates. Run these commands as any user with `sudo` permissions:
-
-```bash
-cd /var/azuracast/www
-
-sudo chmod a+x update.sh
-sudo ./update.sh
-```
-
 ## Post-Installation Setup
 
 Once installation is complete, you should immediately visit your server's public web address. This may be the IP of the server, a domain name (if you've registered one and pointed it at the server), or `localhost` if you're running AzuraCast on your personal computer.
