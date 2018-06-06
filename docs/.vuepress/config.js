@@ -23,9 +23,12 @@ module.exports = {
         docsBranch: 'master',
         sidebar: [
             '/about',
+            '/screenshots',
             '/demo',
             '/install',
-            '/api'
+            '/api',
+            '/cli',
+            '/mascot'
         ]
     }
 }
