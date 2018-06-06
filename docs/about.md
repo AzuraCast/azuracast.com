@@ -45,7 +45,7 @@ Whether you're using the traditional installer or Docker containers, AzuraCast w
 
 ## License
 
-AzuraCast is licensed under the [Apache license, version 2.0](https://github.com/AzuraCast/AzuraCast/blob/master/License.txt). This project is free and open-source software, and pull requests are always welcome.
+AzuraCast is licensed under the [Apache license, version 2.0](https://github.com/AzuraCast/AzuraCast/blob/master/LICENSE.txt). This project is free and open-source software, and pull requests are always welcome.
 
 ## Questions? Comments? Feedback?
 
