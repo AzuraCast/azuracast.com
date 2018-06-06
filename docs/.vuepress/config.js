@@ -1,6 +1,6 @@
 module.exports = {
     title: 'AzuraCast',
-    description: 'Web Radio Made Simple',
+    description: 'Simple, Self-Hosted Web Radio',
     dest: 'public',
     head: [
         ['link', { rel: 'icon', href: `/img/logo.png` }],
