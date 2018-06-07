@@ -20,6 +20,8 @@ chmod a+x docker.sh
 ./docker.sh install
 ```
 
+Once installation has completed, be sure to follow the [post-installation steps](#post-installation-setup). You can also [set up LetsEncrypt](/docker_sh.html#set-up-letsencrypt) or make other changes to your installation using the [Docker Utility Script](/docker_sh.html) that you've just downloaded.
+
 ### Updating
 
 Using the Docker utility script:
@@ -36,54 +38,6 @@ docker-compose pull
 docker-compose run --rm cli azuracast_update
 docker-compose up -d
 ```
-
-### Setting up HTTPS with LetsEncrypt:
-
-AzuraCast now supports full encryption with LetsEncrypt. LetsEncrypt offers free SSL certificates with easy validation and renewal.
-
-First, make sure your AzuraCast instance is set up and serving from the domain you want to use. 
-
-Using the Docker utility script, you can run:
-
-```bash
-./docker.sh letsencrypt-create
-```
-
-Otherwise, you can use the following manual commands:
-
-```bash
-docker-compose run --rm letsencrypt certonly --webroot -w /var/www/letsencrypt
-docker-compose run --rm nginx letsencrypt_connect YOURDOMAIN.example.com
-docker-compose kill -s SIGHUP nginx
-``` 
-
-Your LetsEncrypt certificate is valid for 3 months. To renew the certificates using the Docker utility script, run:
-
-```bash
-./docker.sh letsencrypt-renew
-```
-
-Or manually run this command:
-
-```bash
-docker-compose run --rm letsencrypt renew --webroot -w /var/www/letsencrypt
-```
-
-### Backup and Restore
-
-Using the Docker utility script, you can backup and restore your Docker volumes to a .tar.gz file. You can also restore from an existing .tar.gz backup file:
-
-```bash
-# Back up the current volumes
-./docker.sh backup /path/to/backup.tar.gz
-
-# Restore from an existing backup
-./docker.sh restore /path/to/backup.tar.gz
-```
-
-::: warning
-Restoring from a backup will remove any existing AzuraCast database or media that exists inside the Docker volumes.
-:::
 
 ## Traditional Installation
 
@@ -120,7 +74,7 @@ The installation process will take between 5 and 15 minutes, depending on your I
 
 Once the terminal-based installation is complete, you can visit your server's public IP address (`http://ip.of.your.server/`) to finish the web-based setup.
 
-#### Updating
+### Updating
 
 AzuraCast also includes a handy updater script that pulls down the latest copy of the codebase from Git, flushes the site caches and makes any necessary database updates. Run these commands as any user with `sudo` permissions:
 

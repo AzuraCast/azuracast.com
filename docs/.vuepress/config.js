@@ -29,6 +29,7 @@ module.exports = {
             '/install',
             '/api',
             '/cli',
+            '/docker_sh',
             '/mascot'
         ]
     }

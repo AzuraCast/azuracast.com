@@ -12,6 +12,8 @@ In order to use the AzuraCast CLI, you must have shell terminal access to the se
 
 **Using the Docker Utility Script:**
 
+If you're using the Docker installation method, it's recommended to download the [Docker Utility Script](/docker_sh.html), which will allow you to use this shorter syntax:
+
 ```bash
 ./docker.sh cli [command]
 ```
