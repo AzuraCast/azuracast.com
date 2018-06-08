@@ -38,7 +38,7 @@ To see all commands available, run the appropriate CLI command for your installa
 
 ### Reset Administrator Password
 
-```sh
+```bash
 (cli_command) azuracast:account:reset-password your@email.com
 ```
 
@@ -46,7 +46,7 @@ Generate a temporary password for the user account with the specified e-mail add
 
 ### Manually Reprocess All Media
 
-```sh
+```bash
 (cli_command) azuracast:media:reprocess
 ```
 
@@ -54,7 +54,7 @@ Iterates through all stations' media directories and manually reloads the metada
 
 ### Manually Run AzuraCast Setup
 
-```sh
+```bash
 (cli_command) azuracast:setup [--update]
 ```
 
@@ -66,7 +66,7 @@ Running this command will disconnect all current active listeners to your radio 
 
 ### Restart All Radio Stations
 
-```sh
+```bash
 (cli_command) azuracast:radio:restart
 ```
 
@@ -78,7 +78,7 @@ Running this command will disconnect all current active listeners to your radio 
 
 ### Clear All Caches
 
-```sh
+```bash
 (cli_command) cache:clear
 ```
 
@@ -86,7 +86,7 @@ Clears all caches used internally by AzuraCast. This can be used as a troublesho
 
 ### Run Synchronization Tasks
 
-```sh
+```bash
 (cli_command) sync:run [nowplaying|short|medium|long]
 ```
 

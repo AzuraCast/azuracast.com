@@ -12,7 +12,7 @@ If you've recently followed the [Docker installation instructions](/install.html
 
 If you have an older installation, you can use the Docker Utility Script by running these commands inside your AzuraCast directory on your host computer:
 
-```sh
+```bash
 curl -L https://raw.githubusercontent.com/AzuraCast/AzuraCast/master/docker.sh > docker.sh
 chmod a+x docker.sh
 ```
@@ -21,7 +21,7 @@ chmod a+x docker.sh
 
 ### Run Command Line Tools
 
-```sh
+```bash
 ./docker.sh cli [command_name]
 ```
 
@@ -29,7 +29,7 @@ Runs any command exposed by the [command line interface](/cli.html) tools.
 
 ### Install AzuraCast
 
-```sh
+```bash
 ./docker.sh install
 ```
 
@@ -37,7 +37,7 @@ Pulls the latest version of all Docker images and sets up the AzuraCast database
 
 ### Update AzuraCast
 
-```sh
+```bash
 ./docker.sh update
 ```
 
@@ -45,7 +45,7 @@ Automatically pulls down any updated Docker images and applies any database and 
 
 ### Uninstall AzuraCast
 
-```sh
+```bash
 ./docker.sh uninstall
 ```
 
