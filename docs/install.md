@@ -4,6 +4,10 @@ title: Install AzuraCast
 
 AzuraCast is flexible and works on a broad number of environments, from inexpensive VPSes and servers to your own home computer running Windows, MacOS or Linux. There are two ways to install AzuraCast that differ significantly.
 
+::: warning
+AzuraCast currently only supports running on x86/x64 platforms. ARM/ARMHF platforms (i.e. the Raspberry Pi) are not currently supported due to a software compatibility issue. Follow [this issue](https://github.com/AzuraCast/AzuraCast/issues/332) for updates.
+:::
+
 [[toc]]
 
 ## Using Docker (Recommended)
