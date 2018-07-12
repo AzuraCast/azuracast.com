@@ -17,7 +17,8 @@ module.exports = {
         nav: [
           { text: 'Home', link: '/' },
           { text: 'About', link: '/about' },
-          { text: 'Install', link: '/install' }
+          { text: 'Install', link: '/install' },
+          { text: 'Donate', link: '/donate' }
         ],
         docsRepo: 'https://gitlab.com/azuracast/azuracast.com',
         docsDir: 'docs',
@@ -30,7 +31,8 @@ module.exports = {
             '/api',
             '/cli',
             '/docker_sh',
-            '/mascot'
+            '/mascot',
+            '/donate'
         ]
     }
 }
