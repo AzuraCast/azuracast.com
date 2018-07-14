@@ -2,8 +2,6 @@
 title: Donate to AzuraCast
 ---
 
-AzuraCast's sole creator and maintainer, Buster "Silver Eagle" Neece, is a disabled web developer working on the project as a labor of love. Work on the AzuraCast project doesn't supply a living wage, but maintaining traditional employment is very difficult. If you find AzuraCast to be a useful contribution and would like to see development continue, please donate to support the project and its lead developer.
-
 AzuraCast will always be available free of charge, but if you find the software useful and would like to support the project's lead developer, visit either of the links below.
 
 Your support is greatly appreciated.
