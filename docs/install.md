@@ -89,6 +89,10 @@ sudo chmod a+x update.sh
 sudo ./update.sh
 ```
 
+## Installing on DigitalOcean
+
+Our friends at DigitalOcean offer fast, affordable, scalable hosting that is perfect for services like AzuraCast. Thanks to their support for custom intstallation metadata, you can spin up a new droplet and have a running AzuraCast instance without ever needing to leave your browser. Check out our [detailed DigitalOcean installation guide](/install_do.html) for instructions.
+
 ## Post-Installation Setup
 
 Once installation is complete, you should immediately visit your server's public web address. This may be the IP of the server, a domain name (if you've registered one and pointed it at the server), or `localhost` if you're running AzuraCast on your personal computer.
