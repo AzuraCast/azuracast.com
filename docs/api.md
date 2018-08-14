@@ -15,7 +15,7 @@ Each AzuraCast installation includes documentation for the API at the exact vers
 
 ## Latest Version
 
-Documentation for the latest version of the API can be found [on the main AzuraCast site](http://azuracast.com/api/).
+Documentation for the latest version of the API can be found [on the main AzuraCast site](http://azuracast.com/api/index.html).
 
 ## API Authentication
 
