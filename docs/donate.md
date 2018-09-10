@@ -10,7 +10,7 @@ A message from the project's lead developer, [Buster "Silver Eagle" Neece](https
 > 
 > As some of you know, I am a disabled developer struggling to make ends meet. Beyond suffering from chronic depression and anxiety, I also live with a significant circadian rhythm sleep disorder that prevents me from maintaining more traditional working schedules. Some of the only work I can do that offers full schedule flexibility is on my own projects, which is how AzuraCast has come to be so heavily developed.
 > 
-> Being free software, however, AzuraCast does not pay me a living wage. I have struggled financially in recent years as a result of my declining health, to the point that lately, even essential living expenses have been difficult to obtain. Nevertheless, I continue to strongly believe in the principles of free and open-source software and in serving the public good with my work, and I am committed to keeping AzuraCast free and open for everyone.
+> Being free software, however, AzuraCast does not pay me a living wage. I have struggled financially in recent years as a result of my declining health, to the point that lately, even essential living expenses have been difficult to cover. Nevertheless, I continue to strongly believe in the principles of free and open-source software and in serving the public good with my work, and I am committed to keeping AzuraCast free and open for everyone.
 > 
 > Donation is not required for any station of any size to use AzuraCast, but if you find the software useful and want to encourage its continued development, your support would make an immense difference in my daily life, and would be appreciated more than you know. Thank you again for visiting and for reading.
 
