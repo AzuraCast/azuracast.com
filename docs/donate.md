@@ -4,7 +4,7 @@ title: Donate to AzuraCast
 
 AzuraCast is a fully free and open-source project built as a labor of love by a single developer over the course of many years. The project is continually improving and offering a better experience for radio station managers and listeners alike.
 
-A message from the project's lead developer, Buster "Silver Eagle" Neece:
+A message from the project's lead developer, [Buster "Silver Eagle" Neece](https://github.com/SlvrEagle23):
 
 > Thank you for using AzuraCast, and thank you for visiting our donation page. I sincerely hope that you find AzuraCast to be a useful piece of software, whether you're running a small station or many large ones, or you're a fan of an AzuraCast-powered station. My goal when building AzuraCast was to provide a fresh new alternative to the world of web broadcasting that made the process easy and accessible to stations of any size.
 > 
