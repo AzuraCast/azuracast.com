@@ -36,7 +36,7 @@ git clone https://github.com/AzuraCast/docker-azuracast-redis.git
 git clone https://github.com/AzuraCast/docker-azuracast-radio.git
 ```
 
-::: info
+::: tip NOTE
 All commands from this point forward should be run in the `AzuraCast` repository's folder. From the parent folder, `cd AzuraCast` to enter the core repository's directory.
 :::
 

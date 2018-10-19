@@ -33,7 +33,6 @@ module.exports = {
             '/docker_sh',
             '/mascot',
             '/developing',
-            '/faq',
             '/donate'
         ]
     }
