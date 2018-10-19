@@ -32,6 +32,8 @@ module.exports = {
             '/cli',
             '/docker_sh',
             '/mascot',
+            '/developing',
+            '/faq',
             '/donate'
         ]
     }
