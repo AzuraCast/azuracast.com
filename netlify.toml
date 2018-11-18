@@ -1,0 +1,16 @@
+# AzuraCast Docs build process
+# Powered by Netlify
+
+[build]
+  publish = "public"
+  command = "yarn build"
+
+[[redirects]]
+  from = "/api"
+  to = "/api/index.html"
+  status = 302
+
+[[redirects]]
+  from = "/demo"
+  to = "/demo.html"
+  status = 302
