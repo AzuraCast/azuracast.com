@@ -32,19 +32,11 @@ Want to further customize your Docker installation? Check out our [support guide
 
 ### Updating
 
-Using the Docker utility script:
+Using the included Docker utility script, updating is as simple as running:
 
 ```bash
-./docker.sh update-self && ./docker.sh update
-```
-
-To manually update, from inside the base directory where AzuraCast is copied, run the following commands:
-
-```bash
-docker-compose down
-docker-compose pull
-docker-compose run --rm cli azuracast_update
-docker-compose up -d
+./docker.sh update-self
+./docker.sh update
 ```
 
 ## Traditional Installation
