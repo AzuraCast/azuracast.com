@@ -26,6 +26,10 @@ chmod a+x docker.sh
 
 Once installation has completed, be sure to follow the [post-installation steps](#post-installation-setup). You can also [set up LetsEncrypt](/docker_sh.html#set-up-letsencrypt) or make other changes to your installation using the [Docker Utility Script](/docker_sh.html) that you've just downloaded.
 
+::: tip
+Want to further customize your Docker installation? Check out our [support guide](https://github.com/AzuraCast/AzuraCast/blob/master/SUPPORT.md) for some common examples, including custom port mappings and setting up SFTP access.
+:::
+
 ### Updating
 
 Using the Docker utility script:
