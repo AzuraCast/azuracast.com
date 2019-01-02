@@ -87,7 +87,7 @@ sudo ./update.sh
 
 ## Installing on DigitalOcean
 
-Our friends at DigitalOcean offer fast, affordable, scalable hosting that is perfect for services like AzuraCast. Thanks to their support for custom intstallation metadata, you can spin up a new droplet and have a running AzuraCast instance without ever needing to leave your browser. Check out our [detailed DigitalOcean installation guide](/install_do.html) for instructions.
+Our friends at DigitalOcean offer fast, affordable, scalable hosting that is perfect for services like AzuraCast. Thanks to their support for custom installation metadata, you can spin up a new droplet and have a running AzuraCast instance without leaving your browser. Check out our [detailed DigitalOcean installation guide](/install_do.html) for instructions.
 
 ## Post-Installation Setup
 
