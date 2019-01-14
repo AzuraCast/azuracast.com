@@ -81,7 +81,7 @@ Restoring from a backup will remove any existing AzuraCast database or media tha
 ### Set Up LetsEncrypt
 
 ```bash
-./docker.sh letsencrypt-create
+./docker.sh letsencrypt-create mydomain.example.com
 ```
 
 If you want your AzuraCast installation to support HTTPS, one of the easiest ways of accomplishing this is with [Let's Encrypt](https://letsencrypt.org/), a free provider of SSL certificates.
@@ -89,7 +89,7 @@ If you want your AzuraCast installation to support HTTPS, one of the easiest way
 Once you have a domain name pointed to your AzuraCast installation, you can run the command above, specify your domain name, and AzuraCast will automatically verify your domain name and update the server with the SSL certificate.
 
 ::: tip
-Your LetsEncrypt certificate is valid for 3 months. You should manually run the [renewal command](#renew-a-letsencrypt-certificate) or schedule a cron job to do it for you.
+Your LetsEncrypt certificate is valid for 3 months. The web service will automatically attempt to renew certificates every night.
 :::
 
 ### Renew a LetsEncrypt Certificate
@@ -98,4 +98,4 @@ Your LetsEncrypt certificate is valid for 3 months. You should manually run the 
 ./docker.sh letsencrypt-renew
 ```
 
-This command will automatically renew a previously established LetsEncrypt certificate. This should be run at least every 3 months to prevent your certificates from expiring.
+This command will manually renew a previously established LetsEncrypt certificate.
