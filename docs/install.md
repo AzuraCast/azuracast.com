@@ -85,10 +85,6 @@ sudo chmod a+x update.sh
 sudo ./update.sh
 ```
 
-## Installing on DigitalOcean
-
-Our friends at DigitalOcean offer fast, affordable, scalable hosting that is perfect for services like AzuraCast. Thanks to their support for custom installation metadata, you can spin up a new droplet and have a running AzuraCast instance without leaving your browser. Check out our [detailed DigitalOcean installation guide](/install_do.html) for instructions.
-
 ## Post-Installation Setup
 
 Once installation is complete, you should immediately visit your server's public web address. This may be the IP of the server, a domain name (if you've registered one and pointed it at the server), or `localhost` if you're running AzuraCast on your personal computer.
@@ -99,3 +95,16 @@ The initial web setup consists of the following steps:
 3. Customizing important AzuraCast settings, like the site's base URL and HTTPS settings
 
 Don't worry if you aren't sure of these items yet; you can always make changes to any of the items after setup is complete.
+
+## Installation Instructions for Specific Hosts
+
+### DigitalOcean
+
+Our friends at DigitalOcean offer fast, affordable, scalable hosting that is perfect for services like AzuraCast. Thanks to their support for custom installation metadata, you can spin up a new droplet and have a running AzuraCast instance without leaving your browser. Check out our [detailed DigitalOcean installation guide](/install_do.html) for instructions.
+
+### Linode
+
+If you are hosting your installation with Linode, you can take advantage of these community-maintained scripts to automate the installation process. These scripts can also be found from the Linode manager's "Community StackScripts" section:
+
+- [Linode Docker Installer StackScript](https://www.linode.com/stackscripts/view/352549)
+- [Linode Traditional Installer StackScript](https://www.linode.com/stackscripts/view/352555)
