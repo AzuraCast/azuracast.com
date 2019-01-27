@@ -28,8 +28,7 @@ In the same folder, run your platform's equivalent of:
 
 ```bash
 git clone https://github.com/AzuraCast/AzuraCast.git
-git clone https://github.com/AzuraCast/docker-azuracast-web.git
-git clone https://github.com/AzuraCast/docker-azuracast-nginx.git
+git clone https://github.com/AzuraCast/docker-azuracast-web-v2.git
 git clone https://github.com/AzuraCast/docker-azuracast-db.git
 git clone https://github.com/AzuraCast/docker-azuracast-influxdb.git
 git clone https://github.com/AzuraCast/docker-azuracast-redis.git
@@ -76,7 +75,7 @@ docker-compose build
 Get into the main CLI container by running, from the host computer:
 
 ```bash
-docker-compose run --rm cli bash
+docker-compose run --rm web bash
 ```
 
 Inside the terminal session that spawns, you should already be at `/var/azuracast/www` and logged in as the `azuracast` user.
