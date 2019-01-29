@@ -119,18 +119,7 @@ AzuraCast uses a special Docker container containing the full static asset build
 To access the static container, run:
 
 ```bash
-docker-compose -f docker-compose.static.yml run --rm static
+./docker.sh static [optional_command]
 ```
 
-From inside the container, you can execute `gulp` (with no flags) to build all CSS and JS files.
-
-### Building Documentation
-
-AzuraCast also has a standalone Docker container (and Docker Compose file) for documentation.
-
-To spin up a live instance that will automatically rebuild after any documentation changes, run:
-
-```bash
-docker-compose -f docker-compose.docs.yml build
-docker-compose -f docker-compose.docs.yml up -d
-```
+By default, this will clean up the existing asset manifests and build new CSS and JS files. To access the terminal inside this container, run `./docker.sh static bash`.
