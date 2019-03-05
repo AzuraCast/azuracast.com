@@ -18,6 +18,7 @@ module.exports = {
           { text: 'Home', link: '/' },
           { text: 'About', link: '/about' },
           { text: 'Install', link: '/install' },
+          { text: 'Help', link: '/help' },
           { text: 'Donate', link: '/donate' }
         ],
         docsRepo: 'https://gitlab.com/azuracast/azuracast.com',
@@ -33,6 +34,7 @@ module.exports = {
             '/docker_sh',
             '/mascot',
             '/developing',
+            '/help',
             '/donate',
             '/privacy'
         ]
