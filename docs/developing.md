@@ -18,7 +18,7 @@ For the steps below, we're assuming you've created a folder where you will store
 
 You will need Git and Docker installed locally. If you're on Windows or Mac, the best way to use Docker is via the native [Docker Desktop](https://www.docker.com/products/docker-desktop) applications for those platforms.
 
-For Windows, an installer tool like [Scoop](https://scoop.sh/) is highly recommended for dependencies like Git and your terminal of choice. A third-party shell client like 
+For Windows, an installer tool like [Scoop](https://scoop.sh/) is highly recommended for dependencies like Git and your terminal of choice. A third-party shell client like Cmder is also often helpful.
 
 ### Clone the Repositories
 
@@ -75,7 +75,7 @@ docker-compose build
 Get into the main CLI container by running, from the host computer:
 
 ```bash
-docker-compose run --rm web bash
+docker-compose run --user="azuracast" --rm web bash
 ```
 
 Inside the terminal session that spawns, you should already be at `/var/azuracast/www` and logged in as the `azuracast` user.
