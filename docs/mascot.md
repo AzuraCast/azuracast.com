@@ -2,6 +2,8 @@
 title: AzuraCast's Mascot
 ---
 
+# AzuraCast's Mascot
+
 ![Azura Ruisselante Mascot Photo](/img/mascot/azura_normal_transparent.png)
 
 ## Meet Azura Ruisselante

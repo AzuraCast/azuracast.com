@@ -2,6 +2,10 @@
 title: Ubuntu Bare-metal Installation
 ---
 
+# Ubuntu Bare-metal Installation
+
+[[toc]]
+
 The Ubuntu bare-metal installation method (also known as the "traditional" installation method) is an advanced option available for those who want more complex customization options or are running on very limited hardware that can't handle the minor overhead of the Docker installation method.
 
 Currently, the following operating systems are supported:
@@ -16,8 +20,6 @@ Some web hosts offer custom versions of Ubuntu that include different software r
 AzuraCast is optimized for speed and performance, and can run on very inexpensive hardware, from the Raspberry Pi 3 to the lowest-level VPSes offered by most providers.
 
 Since AzuraCast installs its own radio tools, databases and web servers, you should always install AzuraCast on a "clean" server instance with no other web or radio software installed previously.
-
-[[toc]]
 
 ## Installing
 

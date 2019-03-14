@@ -2,6 +2,8 @@
 title: Donate to AzuraCast
 ---
 
+# Donate to AzuraCast
+
 AzuraCast is a fully free and open-source project built as a labor of love by a single developer over the course of many years. The project is continually improving and offering a better experience for radio station managers and listeners alike.
 
 ### Donate to our Patreon

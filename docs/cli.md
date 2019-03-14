@@ -2,11 +2,13 @@
 title: Command-Line Interface
 ---
 
+# Command-Line Interface
+
+[[toc]]
+
 AzuraCast features a powerful Command-Line Interface (CLI) tool that allows you to perform maintenance and troubleshooting tasks "under the hood".
 
 In order to use the AzuraCast CLI, you must have shell terminal access to the server running AzuraCast (to the host machine, if you're running Docker).
-
-[[toc]]
 
 ## Invoking the CLI
 

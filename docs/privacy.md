@@ -2,6 +2,8 @@
 title: Privacy Policy
 ---
 
+# Privacy Policy
+
 #### Effective date: November 13, 2018
 
 AzuraCast ("us", "we", or "our") operates the https://azuracast.com/ website (the "Service").

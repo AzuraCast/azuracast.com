@@ -2,6 +2,8 @@
 title: Help
 ---
 
+# Help
+
 [[toc]]
 
 ## Support for Commonly Asked Questions

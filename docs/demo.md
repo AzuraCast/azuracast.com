@@ -2,6 +2,8 @@
 title: Live Demo
 ---
 
+# Live Demo
+
 Want to see AzuraCast for yourself?
 
 We have a demo site with a small AzuraCast installation and a single radio station, where you can see the basics of the AzuraCast web interface in action.

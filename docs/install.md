@@ -2,9 +2,11 @@
 title: Install AzuraCast
 ---
 
-AzuraCast is flexible and works on a broad number of environments, from inexpensive VPSes and servers to your own home computer running Windows, MacOS or Linux. There are two ways to install AzuraCast that differ significantly.
+# Install AzuraCast
 
 [[toc]]
+
+AzuraCast is flexible and works on a broad number of environments, from inexpensive VPSes and servers to your own home computer running Windows, MacOS or Linux. There are two ways to install AzuraCast that differ significantly.
 
 ## Recommended Installation Method
 

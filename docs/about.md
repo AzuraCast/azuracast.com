@@ -2,6 +2,10 @@
 title: About AzuraCast
 ---
 
+# About AzuraCast
+
+[[toc]]
+
 **AzuraCast** is a self-hosted, all-in-one web radio management suite. Using its easy installer and powerful but intuitive web interface, you can start up a fully working web radio station in a few quick minutes. 
 
 AzuraCast works for web radio stations of all types and sizes, and is built to run on even the most affordable VPS web hosts. AzuraCast's mascot is [Azura Ruisselante](https://azuracast.com/mascot.html), created by [Tyson Tan](https://tysontan.deviantart.com/).

@@ -2,13 +2,15 @@
 title: Install with DigitalOcean
 ---
 
+# Install with DigitalOcean
+
+[[toc]]
+
 ![](/img/DO_Logo_Horizontal_Blue.png)
 
 Our friends over at [DigitalOcean](https://digitalocean.com) have generously sponsored AzuraCast's development, providing us with a powerful platform to launch servers quickly and easily.
 
 Thanks to DigitalOcean's droplet provisioning tools, you can set up a new AzuraCast instance as a DO droplet with almost zero effort, without ever needing to log in to the server itself.
-
-[[toc]]
 
 ## Installation Steps
 

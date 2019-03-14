@@ -2,9 +2,11 @@
 title: Docker Utility Script
 ---
 
-If you're using the Docker installation method to run AzuraCast, we have created a helpful utility script to perform common functions without having to type long command names.
+# Docker Utility Script
 
 [[toc]]
+
+If you're using the Docker installation method to run AzuraCast, we have created a helpful utility script to perform common functions without having to type long command names.
 
 ## Download the Utility Script
 

@@ -2,9 +2,11 @@
 title: Screenshots
 ---
 
-Note: AzuraCast is an actively-maintained product that is still in beta, and as such these screenshots may not represent the exact current appearance of the software.
+# Screenshots
 
 [[toc]]
+
+Note: AzuraCast is an actively-maintained product that is still in beta, and as such these screenshots may not represent the exact current appearance of the software.
 
 ### Login Screen
 

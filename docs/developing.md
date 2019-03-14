@@ -2,6 +2,8 @@
 title: Developing for AzuraCast
 ---
 
+# Developing for AzuraCast
+
 [[toc]]
 
 ## Best Practices
