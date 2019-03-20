@@ -77,4 +77,4 @@ Our friends at DigitalOcean offer fast, affordable, scalable hosting that is per
 If you are hosting your installation with Linode, you can take advantage of these community-maintained scripts to automate the installation process. These scripts can also be found from the Linode manager's "Community StackScripts" section:
 
 - [Linode Docker Installer StackScript](https://www.linode.com/stackscripts/view/352549)
-- [Linode Traditional Installer StackScript](https://www.linode.com/stackscripts/view/352555)
+- [Linode Bare-metal Installer StackScript](https://www.linode.com/stackscripts/view/352555)

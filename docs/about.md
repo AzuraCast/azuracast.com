@@ -38,7 +38,7 @@ To install AzuraCast, you should have a basic understanding of the Linux shell t
 
 ### What's Included
 
-Whether you're using the traditional installer or Docker containers, AzuraCast will automatically retrieve and install these components for you:
+Whether you're using the Bare-metal installer or Docker containers, AzuraCast will automatically retrieve and install these components for you:
 
 #### Radio Software
 

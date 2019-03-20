@@ -24,7 +24,7 @@ By default, all AzuraCast installations will send only the following limited sub
 
 - Randomized AzuraCast instance ID
 - SHA hash of the current version of AzuraCast that is running
-- The platform that the AzuraCast instance is running from (Docker or Traditional)
+- The platform that the AzuraCast instance is running from (Docker or Bare-metal)
 - The public IP address of the self-hosted AzuraCast instance
 
 This information is collected and stored on AzuraCast servers for the sole purposes of tracking the number of installations across the Web using a specific version and platform of the software, and informing station operators of any important updates or announcements.
