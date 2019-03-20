@@ -26,7 +26,7 @@ If you're using the Docker installation method, it's recommended to download the
 docker-compose run --rm cli azuracast_cli [command]
 ```
 
-**Traditional Installation:**
+**Bare-metal Installation:**
 
 ```bash
 php /var/azuracast/www/util/cli.php [command]
