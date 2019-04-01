@@ -10,20 +10,20 @@ Note: AzuraCast is an actively-maintained product that is still in beta, and as 
 
 ### Login Screen
 
-![](http://i.imgur.com/XExFCFP.png)
+![](https://i.imgur.com/916mcwT.png)
 
 ### Main Dashboard
 
-![](http://i.imgur.com/Z0S9Ybl.png)
+![](https://i.imgur.com/lFwPyrV.png)
+
+### Dark Theme
+
+![](https://i.imgur.com/vkKpd1G.png)
 
 ### Administration Panel
 
-![](http://i.imgur.com/O3jKFUj.png)
+![](https://i.imgur.com/kUOO29f.png)
 
-### Station Profile Page
+### Public Player Page
 
-![](http://i.imgur.com/zfUCt8b.png)
-
-### Station Profile Page on Mobile Devices
-
-![](http://i.imgur.com/wcTaqS8.png)
+![](https://i.imgur.com/81H6IRK.png)
