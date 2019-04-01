@@ -4,6 +4,8 @@ title: About AzuraCast
 
 # About AzuraCast
 
+![](/img/ScreenshotTour.gif)
+
 [[toc]]
 
 **AzuraCast** is a self-hosted, all-in-one web radio management suite. Using its easy installer and powerful but intuitive web interface, you can start up a fully working web radio station in a few quick minutes. 
