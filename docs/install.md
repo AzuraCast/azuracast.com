@@ -58,13 +58,13 @@ Don't worry if you aren't sure of these items yet; you can always make changes t
 
 ## Other Installation Methods
 
-### Ubuntu Bare-metal Installation
+### Ubuntu Installation with Ansible
 
-The Ubuntu bare-metal installation method (also known as the "traditional" installation method) is an advanced option available for those who want more complex customization options or are running on very limited hardware that can't handle the minor overhead of the Docker installation method.
+The Ubuntu Ansible installation method (formerly known as the "bare-metal" or the "traditional" installation method) is an advanced option available for those who want more complex customization options or are running on very limited hardware that can't handle the minor overhead of the Docker installation method.
 
-Note that the installation and update process for bare-metal installations often takes significantly longer than Docker installations because software components are compiled from source on your server. If you are installing AzuraCast alongside other software on the same server, this may cause errors that are not supported by our team. We highly recommend using the Docker installation above whenever possible.
+Note that the installation and update process for Ansible installations often takes significantly longer than Docker installations because software components are compiled from source on your server. If you are installing AzuraCast alongside other software on the same server, this may cause errors that are not supported by our team. We highly recommend using the Docker installation above whenever possible.
 
-- [Ubuntu Bare-metal ("Traditional") Installation](/install_traditional.html)
+- [Ubuntu Installation with Ansible](/install_traditional.html)
 
 ### DigitalOcean
 
