@@ -1,12 +1,12 @@
 ---
-title: Ubuntu Bare-metal Installation
+title: Ubuntu Installation with Ansible
 ---
 
-# Ubuntu Bare-metal Installation
+# Ubuntu Installation with Ansible
 
 [[toc]]
 
-The Ubuntu bare-metal installation method (also known as the "traditional" installation method) is an advanced option available for those who want more complex customization options or are running on very limited hardware that can't handle the minor overhead of the Docker installation method.
+The Ubuntu Ansible installation method (formerly known as the "bare-metal" or "traditional" installation) is an advanced option available for those who want more complex customization options or are running on very limited hardware that can't handle the minor overhead of the Docker installation method.
 
 Currently, the following operating systems are supported:
 
