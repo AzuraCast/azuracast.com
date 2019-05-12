@@ -36,6 +36,7 @@ module.exports = {
             '/developing',
             '/help',
             '/donate',
+            '/resellers',
             '/privacy'
         ]
     }
