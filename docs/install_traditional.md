@@ -4,6 +4,16 @@ title: Ubuntu Installation with Ansible
 
 # Ubuntu Installation with Ansible
 
+::: warning
+**We do not recommend using this installation method!**
+
+**Why?** This is an advanced installation option for seasoned Linux server administrators. The software we install can often conflict with other software installed on your server and cause problems which are difficult to diagnose and support. We do not provide support if you install AzuraCast on a server with other software installed and that software conflicts with ours.
+
+We get it, the word **Docker** scares some folks. Trust us on this, though: our Docker installation is _by far_ the easier way of installing and maintaining AzuraCast. We include helpful scripts that even install Docker and Docker Compose for you, so it's all just one command. Updates are much faster and things are much less likely to break, even for beginners.
+
+If you want an easier, faster installation process that is supported by our team directly, **please follow our [recommended installation instructions](/install.html).**
+:::
+
 [[toc]]
 
 The Ubuntu Ansible installation method (formerly known as the "bare-metal" or "traditional" installation) is an advanced option available for those who want more complex customization options or are running on very limited hardware that can't handle the minor overhead of the Docker installation method.
