@@ -8,9 +8,21 @@ title: Install AzuraCast
 
 AzuraCast is flexible and works on a broad number of environments, from inexpensive VPSes and servers to your own home computer running Windows, MacOS or Linux.
 
+## Managed Hosting with AzuraCast Reseller Partners
+
+We've partnered with a number of managed web radio hosting providers to offer you easy, cloud-hosted instances of AzuraCast without the hassle of server management. If you're looking for the easiest way to get started with AzuraCast, visit one of our reseller partners below:
+
+### [Comcities](https://www.comcities.com)
+
+> We provide low-cost, high quality web hosting and streaming solutions to small, medium and large businesses. Our plans have been created to provide any business. Our goal is to provide you with the best service possible.
+
+(Want to become a reseller partner? Visit our [reseller guide](/resellers.html)!)
+
+## Self-Hosted Installation
+
 AzuraCast is powered by Docker and uses pre-built images that contain every component of the software. Don't worry if you aren't very familiar with Docker; our easy installer tools will handle installing Docker and Docker Compose for you, and updates are very simple.
 
-## System Requirements
+### System Requirements
 
 - A CPU with x86/x64 architecture (ARM/ARMHF platforms, like the Raspberry Pi, are [not currently supported](https://github.com/AzuraCast/AzuraCast/issues/332).)
 - 512MB or greater of RAM
@@ -18,7 +30,7 @@ AzuraCast is powered by Docker and uses pre-built images that contain every comp
 
 For Linux hosts, the `sudo`, `curl` and `git` packages should be installed before installing AzuraCast. Most Linux distributions include these packages already.
 
-## Installing
+### Installing
 
 Connect to the server or computer you want to install AzuraCast on via an SSH terminal. You should be an administrator user with either root access or the ability to use the `sudo` command.
 
@@ -45,7 +57,7 @@ Once installation has completed, be sure to follow the [post-installation steps]
 Want to further customize your installation? Check out our [support guide](https://github.com/AzuraCast/AzuraCast/blob/master/SUPPORT.md) for some common examples, including custom port mappings and setting up SFTP access.
 :::
 
-## Post-Installation Setup
+### Post-Installation Setup
 
 Once installation is complete, you should immediately visit your server's public web address. This may be the IP of the server, a domain name (if you've registered one and pointed it at the server), or `localhost` if you're running AzuraCast on your personal computer.
 
@@ -56,7 +68,7 @@ The initial web setup consists of the following steps:
 
 Don't worry if you aren't sure of these items yet; you can always make changes to any of the items after setup is complete.
 
-## Updating
+### Updating
 
 Using the included Docker utility script, updating is as simple as running:
 
@@ -65,7 +77,7 @@ Using the included Docker utility script, updating is as simple as running:
 ./docker.sh update
 ```
 
-## Easy Installation with Hosting Partners
+## Host-Specific Installation Guides
 
 ### DigitalOcean
 
