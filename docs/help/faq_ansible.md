@@ -1,33 +1,8 @@
-# Support for Ansible ("Traditional" / "Bare Metal" Installations)
+---
+title: Common Support Solutions (Ansible)
+---
 
-Having trouble with your AzuraCast installation? These pointers may be able to help.
-
-If you still don't find what you're looking for, check the GitHub Issues section for an existing issue relating to the one you're experiencing. If one does not exist, create a new one.
-
-## Troubleshooting by Viewing Logs
-
-Before submitting any GitHub issues, you should take a look at the terminal logs that AzuraCast outputs. They can often provide additional information about the error, or include very useful information that should be included in any GitHub issue you create.
-
-Users with the appropriate permissions can also view many logs directly through AzuraCast itself. The Log Viewer feature is available under "Utilities" in each station's management page.
-
-Since the Ansible installation interacts directly with your host server, its logs are in various locations across the system.
-
-- AzuraCast: `/var/azuracast/www_tmp/azuracast.log`
-- Nginx Access: `/var/azuracast/www_tmp/access.log`
-- Nginx Errors: `/var/azuracast/www_tmp/error.log`
-- PHP: `/var/azuracast/www_tmp/php_errors.log`
-- Supervisord: `/var/azuracast/www_tmp/supervisord.log`
-- Redis: `/var/log/redis/redis-server.log`
-- MariaDB: `/var/log/mysql`
-- InfluxDB: `/var/log/influxdb`
-
-For each station, logs for radio software will be inside `/var/azuracast/stations/{station_short_name}/config`, with the following filenames:
-
-- Liquidsoap: `liquidsoap.log`
-- Icecast: `icecast.log`
-- SHOUTcast: `sc_serv.log`
-
-## Common Solutions
+# Common Support Solutions (Ansible Installations)
 
 ### Reset an Account Password
 

@@ -24,20 +24,36 @@ module.exports = {
         docsRepo: 'https://gitlab.com/azuracast/azuracast.com',
         docsDir: 'docs',
         docsBranch: 'master',
-        sidebar: [
-            '/about',
-            '/screenshots',
-            '/demo',
-            '/install',
-            '/api',
-            '/cli',
-            '/docker_sh',
-            '/mascot',
-            '/developing',
-            '/help',
-            '/donate',
-            '/resellers',
-            '/privacy'
-        ]
+        sidebar: {
+          '/about/': [
+            '',
+            'resellers'
+          ],
+          '/help/': [
+            '',
+            'logs',
+            'faq_docker',
+            'faq_ansible',
+          ],
+          '/install/': [
+            ''
+          ],
+          '/documentation/': [
+            '',
+            'streaming_software',
+            'api',
+            'cli',
+            'docker_sh',
+            'liquidsoap_annotations',
+            'advanced_playlists',
+          ],
+          '/': [
+            'about',
+            'install',
+            'documentation',
+            'donate',
+            'privacy'
+          ]
+        }
     }
 }

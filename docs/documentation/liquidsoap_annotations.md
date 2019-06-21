@@ -1,5 +1,7 @@
 # Liquidsoap Annotation Reference
 
+[[toc]]
+
 ## Appending Tracks
 
 > liquidsoap/src/operators/append.ml

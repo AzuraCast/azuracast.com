@@ -1,3 +1,11 @@
+---
+title: Advanced Playlists
+---
+
+# Advanced Playlists
+
+[[toc]]
+
 ## What are Advanced Playlists?
 
 If you create a new playlist in AzuraCast, you will notice one possible option for the playlist type called "Advanced Playlist". This article will explain what an advanced playlist is, and what benefits it can offer to power users.

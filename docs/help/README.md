@@ -6,9 +6,20 @@ title: Help
 
 [[toc]]
 
+## Step 1: Check the Logs!
+
+AzuraCast has a built-in log viewer to help you examine any potential problems with the application. System administrators can access logs for the entire system from the Administration panel, and station owners can access their station's logs from the "Utilities" menu on the station sidebar.
+
+If you need to pull more detailed logs, or logs that aren't available via our web viewer, you can [follow these instructions](./logs.html).
+
+If you do need our help via GitHub, supplying these logs is absolutely essential in helping us diagnose and resolve your issue.
+
 ## Support for Commonly Asked Questions
 
-If you need help with AzuraCast, the first place you should visit is our [Support readme document](https://github.com/AzuraCast/AzuraCast/blob/master/SUPPORT.md), which features solutions to a number of commonly encountered issues and questions, as well as instructions on how to check your server's log files for more details. If you do need our help via GitHub, supplying these logs is absolutely essential in helping us diagnose and resolve your issue.
+If you need help with AzuraCast, first check to see if your question is listed in our common support issues. Choose your installation type below:
+
+ - [Docker Installations](./faq_docker.html)
+ - [Ansible Installations](./faq_ansible.html)
 
 ## GitHub Issues
 
