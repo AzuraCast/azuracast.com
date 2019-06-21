@@ -1,5 +1,7 @@
 # Liquidsoap Annotation Reference
 
+This page is intended for plugin developers who are looking to supply additional annotation metadata to Liquidsoap. It is a compilation of information that wasn't available elsewhere online, and is intended only for advanced users.
+
 [[toc]]
 
 ## Appending Tracks

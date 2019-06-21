@@ -14,12 +14,15 @@ If you need to pull more detailed logs, or logs that aren't available via our we
 
 If you do need our help via GitHub, supplying these logs is absolutely essential in helping us diagnose and resolve your issue.
 
-## Support for Commonly Asked Questions
+## Common Support Solutions and Known Issues
 
-If you need help with AzuraCast, first check to see if your question is listed in our common support issues. Choose your installation type below:
+If you need help with AzuraCast, first check to see if your question is listed in our common support issues pages.
 
- - [Docker Installations](./faq_docker.html)
- - [Ansible Installations](./faq_ansible.html)
+The pages below contain information that can answer many questions you might have:
+
+ - [Known Issues](./known_issues.html)
+ - [Common Support Solutions for Docker Installations](./faq_docker.html)
+ - [Common Support Solutions for Ansible Installations](./faq_ansible.html)
 
 ## GitHub Issues
 

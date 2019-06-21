@@ -19,7 +19,7 @@ module.exports = {
       { text: 'About', link: '/about/' },
       { text: 'Install', link: '/install/' },
       { text: 'Help', link: '/help/' },
-      { text: 'Documentation', link: '/documentation/' },
+      { text: 'For Developers', link: '/developers/' },
       { text: 'Donate', link: '/donate' }
     ],
     docsRepo: 'azuracast/azuracast.com',
@@ -32,28 +32,29 @@ module.exports = {
         '',
         'resellers'
       ],
-      '/help/': [
-        '',
-        'logs',
-        'faq_docker',
-        'faq_ansible',
-      ],
       '/install/': [
         ''
       ],
-      '/documentation/': [
+      '/developers/': [
         '',
-        'streaming_software',
         'api',
         'cli',
         'docker_sh',
         'liquidsoap_annotations',
+      ],
+      '/help/': [
+        '',
+        'logs',
+        'known_issues',
+        'faq_docker',
+        'faq_ansible',
+        'streaming_software',
         'advanced_playlists',
       ],
       '/': [
         'about/',
         'install/',
-        'documentation/',
+        'developers/',
         'help/',
         'donate',
         'privacy'
