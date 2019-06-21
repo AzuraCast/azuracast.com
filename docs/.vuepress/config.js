@@ -22,9 +22,11 @@ module.exports = {
           { text: 'Documentation', link: '/documentation/' },
           { text: 'Donate', link: '/donate' }
         ],
-        docsRepo: 'https://gitlab.com/azuracast/azuracast.com',
+        docsRepo: 'azuracast/azuracast.com',
         docsDir: 'docs',
         docsBranch: 'master',
+        editLinks: true,
+        lastUpdated: true,
         sidebar: {
           '/about/': [
             '',

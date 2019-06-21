@@ -8,7 +8,7 @@ title: Streaming Software
 
 ## BUTT (Broadcast Using This Tool)
 
-Cross-platform and available for free at https://sourceforge.net/projects/butt/. Streaming via both IceCast mode and ShoutCast mode are available.
+Cross-platform and available for free at [https://sourceforge.net/projects/butt/](https://sourceforge.net/projects/butt/). Streaming via both IceCast mode and ShoutCast mode are available.
 
 ### IceCast Mode
 
