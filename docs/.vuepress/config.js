@@ -57,6 +57,7 @@ module.exports = {
         'developers/',
         'help/',
         'donate',
+        'code_of_conduct',
         'privacy'
       ]
     }
