@@ -16,9 +16,9 @@ module.exports = {
         repo: 'azuracast/azuracast',
         nav: [
           { text: 'Home', link: '/' },
-          { text: 'About', link: '/about' },
-          { text: 'Install', link: '/install' },
-          { text: 'Help', link: '/help' },
+          { text: 'About', link: '/about/' },
+          { text: 'Install', link: '/install/' },
+          { text: 'Help', link: '/help/' },
           { text: 'Donate', link: '/donate' }
         ],
         docsRepo: 'https://gitlab.com/azuracast/azuracast.com',
@@ -48,9 +48,10 @@ module.exports = {
             'advanced_playlists',
           ],
           '/': [
-            'about',
-            'install',
-            'documentation',
+            'about/',
+            'install/',
+            'documentation/',
+            'help/',
             'donate',
             'privacy'
           ]
