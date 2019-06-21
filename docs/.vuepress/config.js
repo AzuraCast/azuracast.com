@@ -19,6 +19,7 @@ module.exports = {
           { text: 'About', link: '/about/' },
           { text: 'Install', link: '/install/' },
           { text: 'Help', link: '/help/' },
+          { text: 'Documentation', link: '/documentation/' },
           { text: 'Donate', link: '/donate' }
         ],
         docsRepo: 'https://gitlab.com/azuracast/azuracast.com',
