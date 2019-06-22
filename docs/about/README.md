@@ -79,7 +79,7 @@ The AzuraCast demo instance automatically resets at the top of every hour to a f
 
 ## Installing
 
-Installing AzuraCast on your own server is very easy and only requires a basic understanding of the Linux terminal shell. Check out our [full installation instructions](/install.html).
+Installing AzuraCast on your own server is very easy and only requires a basic understanding of the Linux terminal shell. Check out our [full installation instructions](https://www.azuracast.com/install/).
 
 ## License
 
