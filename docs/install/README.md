@@ -17,11 +17,17 @@ We've partnered with a number of managed web radio hosting providers to offer yo
 
 > We provide low-cost, high quality web hosting and streaming solutions to small, medium and large businesses. Our plans have been created to provide any business. Our goal is to provide you with the best service possible.
 
-(Want to become a reseller partner? Visit our [reseller guide](/resellers.html)!)
+---
+
+Want to become a reseller partner? Visit our [reseller guide](/about/resellers.html)!
 
 ## Self-Hosted Installation
 
 AzuraCast is powered by Docker and uses pre-built images that contain every component of the software. Don't worry if you aren't very familiar with Docker; our easy installer tools will handle installing Docker and Docker Compose for you, and updates are very simple.
+
+::: warning
+Some hosting providers use OpenVZ or LXC, and sometimes these technologies are incompatible with Docker. If the Docker installation does not work on your host, you should consider using a different server for AzuraCast, or you can use the unsupported [Ansible installation method](./install_ansible.html).
+:::
 
 ### System Requirements
 
@@ -55,7 +61,7 @@ On-screen prompts will show you how the installation is progressing.
 Once installation has completed, be sure to follow the [post-installation steps](#post-installation-setup). You can also [set up LetsEncrypt](/docker_sh.html#set-up-letsencrypt) or make other changes to your installation using the [Docker Utility Script](/docker_sh.html) that you've just downloaded.
 
 ::: tip
-Want to further customize your installation? Check out our [support guide](https://github.com/AzuraCast/AzuraCast/blob/master/SUPPORT.md) for some common examples, including custom port mappings and setting up SFTP access.
+Want to further customize your installation? Check out our [support guide](/help/faq_docker.html) for some common examples, including custom port mappings and setting up SFTP access.
 :::
 
 ### Post-Installation Setup
