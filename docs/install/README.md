@@ -84,7 +84,7 @@ Using the included Docker utility script, updating is as simple as running:
 ./docker.sh update
 ```
 
-Using the following command to update will automatically answer yes to the question about overwriting the docker-compose.yml:
+By default, the updater will prompt you to update your `docker-compose.yml` file. If you aren't making any changes to this file and want to automate the update process, you can use the command below to automatically answer "yes" to this question:
 
 ```bash
 ./docker.sh update-self && echo "y" | ./docker.sh update
