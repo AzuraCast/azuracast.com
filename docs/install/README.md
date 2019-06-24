@@ -80,15 +80,14 @@ Don't worry if you aren't sure of these items yet; you can always make changes t
 Using the included Docker utility script, updating is as simple as running:
 
 ```bash
-./docker.sh update-self
-./docker.sh update
+./docker.sh update-self && echo "y" | ./docker.sh update
 ```
 
 ## Host-Specific Installation Guides
 
 ### DigitalOcean
 
-Our friends at DigitalOcean offer fast, affordable, scalable hosting that is perfect for services like AzuraCast. Thanks to their support for custom installation metadata, you can spin up a new droplet and have a running AzuraCast instance without leaving your browser. 
+Our friends at DigitalOcean offer fast, affordable, scalable hosting that is perfect for services like AzuraCast. Thanks to their support for custom installation metadata, you can spin up a new droplet and have a running AzuraCast instance without leaving your browser.
 
 - [Installing AzuraCast on DigitalOcean](./install_do.html)
 
