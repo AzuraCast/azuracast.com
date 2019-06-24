@@ -80,6 +80,13 @@ Don't worry if you aren't sure of these items yet; you can always make changes t
 Using the included Docker utility script, updating is as simple as running:
 
 ```bash
+./docker.sh update-self
+./docker.sh update
+```
+
+Using the following command to update will automatically answer yes to the question about overwriting the docker-compose.yml:
+
+```bash
 ./docker.sh update-self && echo "y" | ./docker.sh update
 ```
 
