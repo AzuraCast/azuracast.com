@@ -73,9 +73,9 @@ To override more complex functionality in your Docker installation, see the "Cus
 
 ## Expand the Docker Radio Station Port Range
 
-For performance reasons, by default Docker installations only open radio ports from port 8000 to 8099. This allows for 10 unique stations to operate.
+For performance reasons, by default Docker installations only open radio ports from port 8000 to 8500. This allows for 50 unique stations to operate.
 
-You can certainly run more than 10 stations on one AzuraCast instance, but if you want to directly access the additional radio ports, you can follow this simple process.
+Depending on your hardware, it may be possible to run more than 50 stations on one AzuraCast instance, but if you want to directly access the additional radio ports, you can follow this simple process.
 
 In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
 
