@@ -31,7 +31,7 @@ Some hosting providers use OpenVZ or LXC, and sometimes these technologies are i
 
 ### System Requirements
 
-- A CPU with x86/x64 architecture (ARM/ARMHF platforms, like the Raspberry Pi, are [not currently supported](https://github.com/AzuraCast/AzuraCast/issues/332).)
+- A 64-bit x86 (x86_64) CPU (For ARM64 devices, like the Raspberry Pi 3/4, visit our [ARM64/Raspberry Pi guide](./install_rpi.html).)
 - 512MB or greater of RAM
 - 20GB or greater of hard drive space
 
