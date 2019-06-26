@@ -10,7 +10,7 @@ If you're using the Docker installation method to run AzuraCast, we have created
 
 ## Download the Utility Script
 
-If you've recently followed the [Docker installation instructions](/install.html#using-docker-recommended), you already have the Docker Utility Script installed. The file name is `docker.sh`.
+If you've recently followed the [Docker installation instructions](/install/#installing), you already have the Docker Utility Script installed. The file name is `docker.sh`.
 
 If you have an older installation, you can use the Docker Utility Script by running these commands inside your AzuraCast directory on your host computer:
 
@@ -27,7 +27,7 @@ chmod a+x docker.sh
 ./docker.sh cli [command_name]
 ```
 
-Runs any command exposed by the [command line interface](/cli.html) tools.
+Runs any command exposed by the [command line interface](/developers/cli.html#invoking-the-cli) tools.
 
 ### Install AzuraCast
 
@@ -57,7 +57,7 @@ Automatically pulls down any updated Docker images and applies any database and 
 Turns off and permanently deletes both the AzuraCast Docker containers and permanent volumes that store the AzuraCast database and station media.
 
 ::: danger
-This command will fully remove any station media, statistics and metrics, and the entire database associated with your AzuraCast instance. 
+This command will fully remove any station media, statistics and metrics, and the entire database associated with your AzuraCast instance.
 :::
 
 ### Back Up Files and Settings
