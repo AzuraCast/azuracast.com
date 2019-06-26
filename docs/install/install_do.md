@@ -32,7 +32,7 @@ From the image selection screen, select your preferred distribution. It's highly
 
 When selecting a droplet, consider the expected number of stations and mount points you plan to operate. One single station can easily operate on a droplet with 1 VCPU and 1 or 2GB of RAM, but for multiple stations, you'll want to scale up accordingly. Keep in mind that every distinct mount point on each station increases the processing workload of the server by a small amount (usually about 10% of one VCPU).
 
-Choose the backup, storage and datacenter region settings that are appropriate for your needs. 
+Choose the backup, storage and datacenter region settings that are appropriate for your needs.
 
 Most importantly, when you reach the "Select additional options" step, make sure to check the box labeled "User data":
 
@@ -64,4 +64,4 @@ As soon as the AzuraCast installer is complete, you will be able to continue set
 
 This process is equivalent to following the Docker installation steps (except easier!), so updating your installation is the same as it would be with any Docker installation.
 
-The Docker Utility Script and other files can be found at `/var/azuracast/`. Check out the [Docker Utility Script](/docker_sh.html) documentation for more available commands.
+The Docker Utility Script and other files can be found at `/var/azuracast/`. Check out the [Docker Utility Script](/developers/docker_sh.html#download-the-utility-script) documentation for more available commands.
