@@ -15,7 +15,7 @@ Replace `YOUREMAILADDRESS` with the e-mail address whose password you intend to 
 
 ```bash
 ./docker.sh cli azuracast:account:reset-password YOUREMAILADDRESS
-``` 
+```
 
 ## Manually Flush the System Cache
 
@@ -24,11 +24,11 @@ date, and they may cause errors. You can always flush all site-wide caches using
 
 ```bash
 ./docker.sh cli cache:clear
-``` 
+```
 
 ## Access Files via SFTP
 
-By default, SFTP access isn't set up for Docker based installations. If you have a large volume of media files, you may 
+By default, SFTP access isn't set up for Docker based installations. If you have a large volume of media files, you may
 prefer to upload them via SFTP instead of using the web updater. You should *not* use the host operating system's SFTP,
 however, as Docker stores station media inside a Docker-specific volume.
 
@@ -47,13 +47,13 @@ As long as you leave this script running, it will create a connection that you c
 * **Host:** Your server's host name
 * **Port:** `2222` (Set in the third line)
 * **Username:** `azuracast` (The first part of the last line)
-* **Password:** `4zur4c457` (The second part of the last line) 
+* **Password:** `4zur4c457` (The second part of the last line)
 
 If you intend to leave this script running for long term periods, you must change the password to something more secure.
 
 ## Use Non-standard Ports
 
-You may want to serve the AzuraCast web application itself on a different port, or host your radio station on a port that 
+You may want to serve the AzuraCast web application itself on a different port, or host your radio station on a port that
 isn't within the default range AzuraCast serves (8000-8999).
 
 To change the ports on which AzuraCast serves HTTP and HTTPS traffic, you can edit the `.env` file on the host to modify the public-facing port numbers as needed. (Note: this file should already exist on your system, but if it doesn't, you can [use this version for reference](https://github.com/AzuraCast/AzuraCast/blob/master/.env).)
@@ -98,7 +98,7 @@ You will need to recycle your Docker containers using `docker-compose down`, the
 
 Docker installations come with four files by default:
 
-- `docker.sh`, the [Docker Utility Script](https://www.azuracast.com/docker_sh.html);
+- `docker.sh`, the [Docker Utility Script](https://www.azuracast.com/developers/docker_sh.html#download-the-utility-script);
 - `.env`, which contains environment variables used by Docker Compose itself;
 - `azuracast.env`, which contains customizable environment variables sent to AzuraCast and related services; and
 - `docker-compose.yml`, a large file that defines all of the services used by AzuraCast and how they interact.

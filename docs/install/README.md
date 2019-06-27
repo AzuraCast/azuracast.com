@@ -58,7 +58,7 @@ chmod a+x docker.sh
 
 On-screen prompts will show you how the installation is progressing.
 
-Once installation has completed, be sure to follow the [post-installation steps](#post-installation-setup). You can also [set up LetsEncrypt](/docker_sh.html#set-up-letsencrypt) or make other changes to your installation using the [Docker Utility Script](/docker_sh.html) that you've just downloaded.
+Once installation has completed, be sure to follow the [post-installation steps](#post-installation-setup). You can also [set up LetsEncrypt](/developers/docker_sh.html#available-commands) or make other changes to your installation using the [Docker Utility Script](/developers/docker_sh.html#download-the-utility-script) that you've just downloaded.
 
 ::: tip
 Want to further customize your installation? Check out our [support guide](/help/faq_docker.html) for some common examples, including custom port mappings and setting up SFTP access.
