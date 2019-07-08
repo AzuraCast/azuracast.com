@@ -2,7 +2,6 @@ module.exports = {
   title: 'AzuraCast',
   description: 'Simple, Self-Hosted Web Radio',
   dest: 'public',
-  ga: 'UA-120542341-1',
   head: [
     ['link', { rel: 'icon', href: `/img/logo.png` }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: `/icons/apple-touch-icon.png` }],
@@ -62,7 +61,12 @@ module.exports = {
       ]
     }
   },
-  markdown: {
+  extendMarkdown: {
     toc: { includeLevel: [2] }
-  }
+  },
+  plugins: [
+    ['@vuepress/google-analytics', {
+      ga: 'UA-120542341-1'
+    }]
+  ],
 }
