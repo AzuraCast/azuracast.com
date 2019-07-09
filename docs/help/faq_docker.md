@@ -6,6 +6,29 @@ title: Common Support Solutions (Docker)
 
 [[toc]]
 
+## Customizing Docker
+
+Docker installations come with four files by default:
+
+- `docker.sh`, the [Docker Utility Script](https://www.azuracast.com/developers/docker_sh.html#download-the-utility-script);
+- `.env`, which contains environment variables used by Docker Compose itself;
+- `azuracast.env`, which contains customizable environment variables sent to AzuraCast and related services; and
+- `docker-compose.yml`, a large file that defines all of the services used by AzuraCast and how they interact.
+
+For power users looking to customize or expand their Docker configuration, you should follow these best practices:
+
+- Do not modify or replace the `docker.sh` utility script.
+
+- When updating (using the `docker.sh` utility script), it is recommended to run `./docker-sh update-self` before running `./docker.sh update`, to ensure the Docker Utility Script itself is up to date before it updates your Docker installation.
+
+- Environment variables set in `.env` are only used by Docker Compose itself, and aren't passed directly into the AzuraCast containers. You should only modify this file to change the HTTP and HTTPS port mappings used by Nginx (see the "Use Non-Standard Ports" section above).
+
+- The `azuracast.env` file is specific to your environment and can be customized however you like. It will not be replaced during any updates. Once your database has been created, however, changing the password listed in this file will cause the system to fail. If you want to destructively wipe your existing database and other files and set up a new one with the updated password, add the `-v` flag to the end of `docker-compose down` to remove all existing volumes, including your database.
+
+- If possible, you should not directly modify `docker-compose.yml`, as some updates may modify how it is defined to resolve bugs or add new features. When updating, you will always be asked if you want to update this file; if you have not modified it, you should always do so.
+
+- Instead of modifying `docker-compose.yml`, you can create a file named `docker-compose.override.yml` with your customizations. The structure of this file is the same as the main `docker-compose.yml` file, and is automatically parsed by Docker Compose to override any definitions in the main file. Updates will not replace this file.
+
 ## Reset an Account Password
 
 If you have lost the password to log into an account, but still have access to the SSH terminal for the server, you can
@@ -92,27 +115,31 @@ services:
 
 You can modify the port range in this file to meet your needs, such as expanding it to port 8999 instead of 8500.
 
-You will need to recycle your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
-## Customizing Docker
+## Using a custom default track
 
-Docker installations come with four files by default:
+When nothing is playing on your station you'll hear the default error.mp3 file of AzuraCast playing. You can replace this file by mounting your own .mp3 file via a `docker-compose.override.yml`.
 
-- `docker.sh`, the [Docker Utility Script](https://www.azuracast.com/developers/docker_sh.html#download-the-utility-script);
-- `.env`, which contains environment variables used by Docker Compose itself;
-- `azuracast.env`, which contains customizable environment variables sent to AzuraCast and related services; and
-- `docker-compose.yml`, a large file that defines all of the services used by AzuraCast and how they interact.
+In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
 
-For power users looking to customize or expand their Docker configuration, you should follow these best practices:
+In this file, paste the following contents:
 
-- Do not modify or replace the `docker.sh` utility script.
+```yaml
+version: '2.2'
 
-- When updating (using the `docker.sh` utility script), it is recommended to run `./docker-sh update-self` before running `./docker.sh update`, to ensure the Docker Utility Script itself is up to date before it updates your Docker installation.
+services:
+    stations:
+        volumes:
+            - /path/to/your/file.mp3:/usr/local/share/icecast/web/error.mp3
+```
 
-- Environment variables set in `.env` are only used by Docker Compose itself, and aren't passed directly into the AzuraCast containers. You should only modify this file to change the HTTP and HTTPS port mappings used by Nginx (see the "Use Non-Standard Ports" section above).
+You can place your .mp3 file anywhere on your host machine. You just have to specify the path to it by replacing this part: `/path/to/your/file.mp3`
 
-- The `azuracast.env` file is specific to your environment and can be customized however you like. It will not be replaced during any updates. Once your database has been created, however, changing the password listed in this file will cause the system to fail. If you want to destructively wipe your existing database and other files and set up a new one with the updated password, add the `-v` flag to the end of `docker-compose down` to remove all existing volumes, including your database.
+We recommend to put that file inside the `/var/azuracast` directory though so that you have everything in the same place.
 
-- If possible, you should not directly modify `docker-compose.yml`, as some updates may modify how it is defined to resolve bugs or add new features. When updating, you will always be asked if you want to update this file; if you have not modified it, you should always do so.
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
-- Instead of modifying `docker-compose.yml`, you can create a file named `docker-compose.override.yml` with your customizations. The structure of this file is the same as the main `docker-compose.yml` file, and is automatically parsed by Docker Compose to override any definitions in the main file. Updates will not replace this file.
+::: warning
+Make sure that the format of the file specified matches the streaming format exactly.
+:::
