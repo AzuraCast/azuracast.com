@@ -18,7 +18,7 @@ Use the exact information specified on the Streamer/DJ page's right sidebar. "Ad
 
 ### ShoutCast Mode
 
-BUTT will automatically add 1 to the port number you specify if used in ShoutCast mode, so use the port specified in the "IceCast Clients" section. Since ShoutCast v1 does not let you specify a username, specify your password as `dj_username:dj_password` (the username and password for the DJ separated by a colon).
+Use the given port specified in the "ShoutCast v1 Clients" section. Since ShoutCast v1 does not let you specify a username, specify your password as `dj_username:dj_password` (the username and password for the DJ separated by a colon).
 
 ![BUTT Sample ShoutCast configuration](https://i.imgur.com/Iv9G4v6.png)
 
@@ -85,7 +85,7 @@ Note that for ease of use we use the `Configuration Wizard`, you can also enter 
 3. To add a new encoder, click the `+` button
 
   ![RadioBOSS Settings: Broadcast menu](https://i.imgur.com/vjt6vA4.jpg)
-  
+
 4. The Encoder-window will open, next click the button called `Configuration Wizard`.
 
   ![RadioBOSS Encoder window](https://i.imgur.com/fZfVKUp.jpg)
@@ -95,7 +95,7 @@ Follow the instructions for the server type you have set up your Azuracast stati
 ### Icecast
 
 - Select `Icecast 1 & 2` and click `Next >`
-  
+
 ![RadioBOSS Encoder Configuration Wizard IceCast](https://i.imgur.com/v87ZqfU.jpg)
 
 - Take over the corresponding credentials you can find in Azuracast:
@@ -108,10 +108,10 @@ Follow the instructions for the server type you have set up your Azuracast stati
 
 The following settings are recommended for both ShoutCast v1 as v2 (DNAS 2)
 
-Note 1: You should use the given port, and subtract 1. (`8006` -> `8005`)
+Note 1: Use the given port specified in the "ShoutCast v1 Clients" section.
 
 Note 2: Be sure to select `v1`, as v2 will append the Stream ID (SID), which won't work.
-  
+
 - Select `SHOUTcast v1` and click `Next >`
 
 ![RadioBOSS Encoder Configuration Wizard SHOUTcast](https://i.imgur.com/cF1MM7D.jpg)
@@ -129,9 +129,9 @@ Note 2: Be sure to select `v1`, as v2 will append the Stream ID (SID), which won
     - Encoder
     - Bitrate
     - Channels
-  
+
   - Station info
-  
+
     If needed, here you can override the info that can be found in the main `Settings` (From step 1), under `Broadcasting` -> `Metadata`
 
 7. Then finally click `OK` to save the Encoder.
