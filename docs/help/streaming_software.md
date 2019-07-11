@@ -149,3 +149,105 @@ The following articles in there are helpful:
 - `Operation` -> `Broadcasting Internet radio`
 - `Options` -> `Broadcast`
 - `Options` -> `Broadcast` -> `Metadata`
+
+## PlayIt Live
+
+[PlayIt Live](https://www.playitsoftware.com/Products/Live) is a free live-assist and automated radio playout system from PlayIt Software.
+
+It allows streaming via **IceCast**, **SHOUTcast v1** and **SHOUTcast v2** via a plugin, that you can download for free [here](https://www.playitsoftware.com/Plugins/View/InternetBroadcast), after creating an account on their website. This plugin also allows you to record the stream, in MP3.
+
+The installation steps for the plugin are relatively simple, so they're not covered in this guide.
+
+***Note:** This software is only capable of streaming via MP3, due to plugin limitations.*
+
+### Instructions
+
+These instructions are valid and required for both streaming modes (IceCast and SHOUTcast), so be sure to follow this part before proceeding any further.
+
+ **1.** After installing the Internet Broadcast plugin, select the menu **Plugins** menu, on the top menu bar and select the **Plugin Manager...** option.
+
+![Plugins menu](https://i.imgur.com/jwH1CwG.png)
+
+*Select the Plugins menu, then the Plugin Manager option*
+
+ **2.** A new window should appear, and within it the Internet Broadcast plugin.
+ 
+![Plugin Manager](https://i.imgur.com/17TpzI4.png)
+*The Plugin Manager window*
+
+ **3.** Open the plugin settings, by double clicking on it's name. This window should appear.
+
+![Plugin settings](https://i.imgur.com/f7ACyAG.png)
+*Plugin Settings*
+
+**There are a few settings that you can customize here:**
+
+ - In **Audio source to broadcast** you can define which input is going to be transmited to the server;
+ - **Auto start streams** let's you start streaming after opening the software.
+
+**4.** Under **Streams**, click **Add** to add a new streaming server.
+
+Now follow the specific instructions for your streaming server: **IceCast** or **SHOUTcast**.
+
+### IceCast
+
+**1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page, ...
+
+![Connection Details](https://i.imgur.com/TRwtPsb.png)
+*Connection Information for IceCast*
+
+... fill this form in the PlayIt Live software.
+
+![Stream Details](https://i.imgur.com/nGStozZ.png)
+*Using the details above to fill the form*
+
+**Don't forget to change these details with yours, this is just an example!**
+
+**Notes:** 
+
+ - The **Save audio to file** field can be left unchecked. Check it if
+   you want to record the stream into a MP3 file.
+   
+  - Under **Audio**, select the audio bitrate and the format (stereo or
+   mono) that matches your station.
+
+**2.** After filling the form fields, click **OK** to save the server details.
+
+**3.** To start broadcasting, click on Start Streams here on in the main interface of the software.
+
+![Starting the streams](https://i.imgur.com/273QcZy.png)
+
+If the server is configured correctly, the **OFF AIR** text will change to **ON AIR**. If not, re-check your configuration.
+
+### SHOUTcast
+
+**1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page, ...
+
+![SHOUTcast info](https://i.imgur.com/oXmAvFd.png)
+
+... fill this form in the PlayIt Live software.
+
+![SHOUTcast server info](https://i.imgur.com/zTGgAp7.png)
+*Using the details above to fill the form*
+
+**Don't forget to change these details with yours, this is just an example!**
+
+**Notes:** 
+
+ - In **Server Type**, select SHOUTcast v1.
+
+ - The **Password** field must be in this format: `dj_username:dj_password`
+ 
+ - The **Save audio to file** field can be left unchecked. Check it if
+   you want to record the stream into a MP3 file.
+  
+  - Under **Audio**, select the audio bitrate and the format (stereo or
+   mono) that matches your station.
+   
+**2.** After filling the form fields, click **OK** to save the server details.
+
+**3.** To start broadcasting, click on Start Streams here on in the main interface of the software.
+
+![Starting the streams](https://i.imgur.com/273QcZy.png)
+
+If the server is configured correctly, the **OFF AIR** text will change to **ON AIR**. If not, re-check your configuration.
