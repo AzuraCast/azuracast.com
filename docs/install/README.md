@@ -90,6 +90,15 @@ By default, the updater will prompt you to update your `docker-compose.yml` file
 ./docker.sh update-self && echo "y" | ./docker.sh update
 ```
 
+### Restoring a backup
+
+
+There might be times where you have to deploy a backup, such as moving to a new machine, etc. Using the Docker utility script, it's very straight forward to do. 
+
+```
+./docker.sh restore path-to-backup.zip
+```
+
 ## Host-Specific Installation Guides
 
 ### DigitalOcean
