@@ -90,6 +90,20 @@ By default, the updater will prompt you to update your `docker-compose.yml` file
 ./docker.sh update-self && echo "y" | ./docker.sh update
 ```
 
+### Backup and Restore
+
+You can back up your AzuraCast installation without interrupting your stations by visiting the "Backup" page in System Administration, or by running from the command line:
+
+```bash
+./docker.sh backup path-to-backup.zip
+```
+
+To restore the backup later, run the following command:
+
+```bash
+./docker.sh restore path-to-backup.zip
+```
+
 ## Host-Specific Installation Guides
 
 ### DigitalOcean
