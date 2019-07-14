@@ -117,6 +117,56 @@ You can modify the port range in this file to meet your needs, such as expanding
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
+## Mounting a directory into a station
+
+You may want to add music to a station from a directory on your host machine without copying the data into AzuraCast. You can mount the directory into your stations and web container to make them available to AzuraCast by creating a `docker-compose.override.yml`.
+
+In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
+
+In this file, paste the following contents:
+
+```yaml
+version: '2.2'
+
+services:
+  web:
+    volumes:
+      - /path/on/host/computer:/var/azuracast/stations/media/<DIRECTORY_NAME>
+
+  stations:
+    volumes:
+      - /path/on/host/computer:/var/azuracast/stations/media/<DIRECTORY_NAME>
+```
+
+Replace the `<DIRECTORY_NAME>` with the name of the directory you want to mount and modify the `/path/on/host/computer` with the path to the directory that you want to mount.
+
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
+
+## Storing your station data on the host machine
+
+You can store all of you station data in a directory on your host machine. This can be useful if you want to have AzuraCast running on a small SSD and store the station data on a large HDD.
+
+In the same folder where your Docker installation is (if using recommended instructions, this is `/var/azuracast`), create a new file named `docker-compose.override.yml`.
+
+In this file, paste the following contents:
+
+```yaml
+version: '2.2'
+
+services:
+  web:
+    volumes:
+      - /path/on/host/computer:/var/azuracast/stations
+
+  stations:
+    volumes:
+      - /path/on/host/computer:/var/azuracast/stations
+```
+
+Modify the `/path/on/host/computer` with the path to the directory that you want to mount.
+
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
+
 ## Using a custom default track
 
 When nothing is playing on your station you'll hear the default error.mp3 file of AzuraCast playing. You can replace this file by mounting your own .mp3 file via a `docker-compose.override.yml`.
