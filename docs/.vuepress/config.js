@@ -46,6 +46,7 @@ module.exports = {
         'known_issues',
         'faq_docker',
         'faq_ansible',
+        'cloudflare',
         'streaming_software',
         'advanced_playlists',
       ],
