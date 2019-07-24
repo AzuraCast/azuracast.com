@@ -29,7 +29,6 @@ module.exports = {
     sidebar: {
       '/about/': [
         '',
-        'resellers'
       ],
       '/install/': [
         ''

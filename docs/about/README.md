@@ -1,5 +1,6 @@
 ---
 title: About AzuraCast
+sidebar: auto
 ---
 
 # About AzuraCast

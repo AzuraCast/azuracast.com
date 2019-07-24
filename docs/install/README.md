@@ -9,18 +9,6 @@ sidebar: auto
 
 AzuraCast is flexible and works on a broad number of environments, from inexpensive VPSes and servers to your own home computer running Windows, MacOS or Linux.
 
-## Managed Hosting with AzuraCast Reseller Partners
-
-We've partnered with a number of managed web radio hosting providers to offer you easy, cloud-hosted instances of AzuraCast without the hassle of server management. If you're looking for the easiest way to get started with AzuraCast, visit one of our reseller partners below:
-
-### [Comcities](https://www.comcities.com)
-
-> We provide low-cost, high quality web hosting and streaming solutions to small, medium and large businesses. Our plans have been created to provide any business. Our goal is to provide you with the best service possible.
-
----
-
-Want to become a reseller partner? Visit our [reseller guide](/about/resellers.html)!
-
 ## Self-Hosted Installation
 
 AzuraCast is powered by Docker and uses pre-built images that contain every component of the software. Don't worry if you aren't very familiar with Docker; our easy installer tools will handle installing Docker and Docker Compose for you, and updates are very simple.
