@@ -36,10 +36,10 @@ module.exports = {
       '/developers/': [
         '',
         'api',
+        'nowplaying',
         'cli',
         'docker_sh',
-        'liquidsoap_annotations',
-        'nowplaying',
+        'liquidsoap_annotations'
       ],
       '/help/': [
         '',

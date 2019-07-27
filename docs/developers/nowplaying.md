@@ -1,8 +1,8 @@
 ---
-title: Now Playing Data
+title: Now Playing Data APIs
 ---
 
-# Now Playing Data
+# Now Playing Data APIs
 
 The most important and frequently accessed pieces of information that AzuraCast stores are all served as part of a single group of data, which we refer to as the "Now Playing" data.
 
