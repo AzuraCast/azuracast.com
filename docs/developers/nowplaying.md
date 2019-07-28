@@ -13,13 +13,15 @@ This data includes:
  - Whether a live DJ is currently connected, and if so, what their name is; and
  - A truncated history of the most recent ~5 songs (this number is customizable) played on the station.
 
+Here's a [real-world example of the Now Playing API's return data](https://demo.azuracast.com/api/nowplaying_static/azuratest_radio.json) from the AzuraCast demo page.
+
 AzuraCast always serves this data in the exact same format, regardless of whether you're broadcasting locally or remotely, or whether you're using Icecast or SHOUTcast.
 
 Because of how valuable this information is, we serve it in a number of ways depending on whether performance or flexibility is your main concern.
 
 [[toc]]
 
-## Standard Now Playing API (All Installation Types)
+## Standard Now Playing API
 
 This is the "Now Playing" API endpoint listed as part of the [API documentation](https://www.azuracast.com/api/). On any installation, an array of now-playing data for all public stations is available at:
 
@@ -97,7 +99,7 @@ loadNowPlaying();
 
 If your application is written in PHP, you can use the Composer package manager to install our [PHP API Client](https://github.com/AzuraCast/php-api-client), which has full support for the Now Playing API endpoints.
 
-## Static Now Playing JSON File (Docker Installations Only)
+## Static Now Playing JSON File
 
 AzuraCast also writes its "Now Playing" API endpoint data to a static JSON file, which contains the same exact data as the standard API endpoint, but for a single station.
 
@@ -123,17 +125,23 @@ http://your-azuracast-site.example.com/api/nowplaying_static/station_shortcode.j
 
 Implementations of this method look exactly the same as for the Standard Now Playing API (above), except with the URL updated to the static URL for the station.
 
-## Live Websocket/EventSource (Docker Installations Only)
+## Live Websocket/EventSource
 
 This method uses the [Nchan](https://nchan.io/) plugin for Nginx to handle connections to browsers and relays a single update from AzuraCast immediately to a large number of recipients. Because it's an Nginx plugin, it's optimized for high performance and can handle many hundreds of thousands of concurrent users.
+
+If this method is available, AzuraCast will automatically use it for all of its public players.
+
+::: warning
+This feature is available on all Docker installations and Ansible ("Traditional") installations using Ubuntu 18.04. Installations using the older Ubuntu 16.04 cannot use this feature and should upgrade to take advantage of it.
+:::
 
 The Websocket/EventSource API URL for a given station is available at:
 
 ```
-http://your-azuracast-site.example.com/api/live/nowplaying/station_id
+http://your-azuracast-site.example.com/api/live/nowplaying/station_shortcode
 ```
 
-...replacing `station_id` with the numeric ID of the station (visible in the URL when managing the station in AzuraCast).
+...replacing `station_shortcode` with the station's abbreviated name (i.e. `azuratest_radio` for "AzuraTest Radio").
 
 #### Advantages
 
