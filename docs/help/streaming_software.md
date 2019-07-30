@@ -7,7 +7,7 @@ title: Streaming Software
 [[toc]]
 
 ::: warning
-Make sure you use your server IP address instead of the FDQN in the `Server` field when using a proxy, like Cloudflare.
+If you are using a reverse proxy service (like CloudFlare) in front of your installation, be aware that these services often prevent direct connections to the ports that broadcasters connect to. You should instruct your streamers to use the direct IP address of your server instead.
 :::
 
 ## BUTT (Broadcast Using This Tool)
