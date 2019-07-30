@@ -6,6 +6,10 @@ title: Streaming Software
 
 [[toc]]
 
+::: warning
+Make sure you use your server IP address instead of the FDQN in the `Server` field when using a proxy, like Cloudflare.
+:::
+
 ## BUTT (Broadcast Using This Tool)
 
 Cross-platform and available for free at [https://sourceforge.net/projects/butt/](https://sourceforge.net/projects/butt/). Streaming via both IceCast mode and ShoutCast mode are available.
