@@ -6,6 +6,10 @@ title: Streaming Software
 
 [[toc]]
 
+::: warning
+If you are using a reverse proxy service (like CloudFlare) in front of your installation, be aware that these services often prevent direct connections to the ports that broadcasters connect to. You should instruct your streamers to use the direct IP address of your server instead.
+:::
+
 ## BUTT (Broadcast Using This Tool)
 
 Cross-platform and available for free at [https://sourceforge.net/projects/butt/](https://sourceforge.net/projects/butt/). Streaming via both IceCast mode and ShoutCast mode are available.
