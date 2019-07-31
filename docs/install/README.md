@@ -78,6 +78,21 @@ By default, the updater will prompt you to update your `docker-compose.yml` file
 ./docker.sh update-self && echo "y" | ./docker.sh update
 ```
 
+### Quick Update Script
+
+If you want to upgrade AzuraCast using only one bash script, copy the following script to a new file (e.g. `update-azuracast.sh`) in your server and then make it executable via `chmod +x update-azuracast.sh`.
+
+```bash
+#!/bin/bash
+echo "Changing directory to /var/azuracast..."
+cd /var/azuracast
+echo "Updating the docker.sh file..."
+./docker.sh update-self
+echo "Updating AzuraCast..."
+./docker.sh update
+```
+To run this script, simply use `./update-azuracast.sh`. This script assumes that you have placed all files in the `/var/azuracast` directory. If not, you can always change the directory in the 3rd line of the above script.
+
 ### Backup and Restore
 
 You can back up your AzuraCast installation without interrupting your stations by visiting the "Backup" page in System Administration, or by running from the command line:
