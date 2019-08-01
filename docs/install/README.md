@@ -86,7 +86,7 @@ If you want to upgrade AzuraCast using only one bash script, copy the following 
 #!/bin/bash
 echo "Changing directory to /var/azuracast..."
 cd /var/azuracast
-echo "Updating the docker.sh file..."
+echo "Updating the docker-compose.yml file..."
 ./docker.sh update-self
 echo "Updating AzuraCast..."
 ./docker.sh update
