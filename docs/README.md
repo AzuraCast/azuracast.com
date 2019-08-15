@@ -1,8 +1,8 @@
 ---
 home: true
 heroImage: img/logo.png
-actionText: Get Started →
-actionLink: /install/
+actionText: Learn More →
+actionLink: /about/
 features:
 - title: Everything's Included
   details: AzuraCast installs everything you need to get a web radio station up and running in minutes.
