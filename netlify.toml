@@ -6,6 +6,11 @@
   command = "yarn build"
 
 [[redirects]]
+  from = "/install.html"
+  to = "/install/"
+  status = 302
+
+[[redirects]]
   from = "/api"
   to = "/api/index.html"
   status = 302
