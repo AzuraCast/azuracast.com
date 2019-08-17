@@ -7,7 +7,7 @@
 
 [[redirects]]
   from = "/install.html"
-  to = "/install/"
+  to = "/install/index.html"
   status = 302
 
 [[redirects]]
@@ -18,4 +18,9 @@
 [[redirects]]
   from = "/demo"
   to = "/demo.html"
+  status = 302
+
+[[redirects]]
+  from = "/slack"
+  to = "https://join.slack.com/t/azuracast/shared_invite/enQtNDgyNzA4NzY2MzU3LTlkZjdhNjk3NWRkMWVmMzRhMjA3MDk1ZWMxOTQ0NjM4YWJhMWNiNDkwZTM3NjhkMTU1NzIwODgzNWY1NmNlMmU"
   status = 302
