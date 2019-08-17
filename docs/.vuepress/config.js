@@ -15,10 +15,10 @@ module.exports = {
     repo: 'azuracast/azuracast',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'About', link: '/about/' },
-      { text: 'Install', link: '/install/' },
-      { text: 'Help', link: '/help/' },
-      { text: 'For Developers', link: '/developers/' },
+      { text: 'About', link: '/about/index' },
+      { text: 'Install', link: '/install/index' },
+      { text: 'Help', link: '/help/index' },
+      { text: 'For Developers', link: '/developers/index' },
       { text: 'Donate', link: '/donate' }
     ],
     docsRepo: 'azuracast/azuracast.com',
@@ -28,13 +28,13 @@ module.exports = {
     lastUpdated: true,
     sidebar: {
       '/about/': [
-        '',
+        'index',
       ],
       '/install/': [
-        ''
+        'index'
       ],
       '/developers/': [
-        '',
+        'index',
         'api',
         'nowplaying',
         'cli',
@@ -42,7 +42,7 @@ module.exports = {
         'liquidsoap_annotations'
       ],
       '/help/': [
-        '',
+        'index',
         'logs',
         'known_issues',
         'faq_docker',
@@ -52,10 +52,10 @@ module.exports = {
         'advanced_playlists',
       ],
       '/': [
-        'about/',
-        'install/',
-        'developers/',
-        'help/',
+        'about/index',
+        'install/index',
+        'developers/index',
+        'help/index',
         'donate',
         'code_of_conduct',
         'privacy'
