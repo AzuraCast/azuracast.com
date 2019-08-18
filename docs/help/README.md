@@ -6,7 +6,7 @@ title: Help
 
 [[toc]]
 
-## Step 1: Check the Logs
+## Check the Logs
 
 AzuraCast has a built-in log viewer to help you examine any potential problems with the application. System administrators can access logs for the entire system from the Administration panel, and station owners can access their station's logs from the "Utilities" menu on the station sidebar.
 
