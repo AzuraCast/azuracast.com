@@ -38,8 +38,8 @@ Please keep in mind that AzuraCast is a free software project built and maintain
 
 We frequently post to social media any time there are significant updates to our software, security issues that users should be aware of, or upcoming changes to third-party software. You can get these updates in a more timely fashion by following our accounts:
 
-- On Twitter at [@AzuraCast](https://twitter.com/azuracast), or
-- On Mastodon at [@AzuraCast@fosstodon.org](https://fosstodon.org/@AzuraCast)
+- @AzuraCast on [Twitter](https://twitter.com/azuracast), or
+- @AzuraCast on [FOSStodon (Mastodon)](https://fosstodon.org/@AzuraCast)
 
 To chat with us and collaborate with us in real time, you can join us via [our Slack channel](https://www.azuracast/com/slack).
 
