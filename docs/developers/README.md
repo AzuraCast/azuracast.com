@@ -31,6 +31,7 @@ In the same folder, run your platform's equivalent of:
 ```bash
 git clone https://github.com/AzuraCast/AzuraCast.git
 git clone https://github.com/AzuraCast/docker-azuracast-web-v2.git
+git clone https://github.com/AzuraCast/docker-azuracast-nginx-proxy.git
 git clone https://github.com/AzuraCast/docker-azuracast-db.git
 git clone https://github.com/AzuraCast/docker-azuracast-influxdb.git
 git clone https://github.com/AzuraCast/docker-azuracast-redis.git

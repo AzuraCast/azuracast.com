@@ -39,6 +39,7 @@ module.exports = {
         'nowplaying',
         'cli',
         'docker_sh',
+        'multisite',
         'liquidsoap_annotations'
       ],
       '/help/': [
