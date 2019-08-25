@@ -41,6 +41,6 @@ We frequently post to social media any time there are significant updates to our
 - @AzuraCast on [Twitter](https://twitter.com/azuracast), or
 - @AzuraCast on [FOSStodon (Mastodon)](https://fosstodon.org/@AzuraCast)
 
-To chat with us and collaborate with us in real time, you can join us via [our Slack channel](https://www.azuracast/com/slack).
+To chat with us and collaborate with us in real time, you can join us via [our Slack channel](https://www.azuracast.com/slack).
 
 Note that our social media channels aren't the best way to report issues to us; instead, you should use the GitHub issues instructions above, as this allows our whole team to help resolve and track the progress of the issue in one location.
