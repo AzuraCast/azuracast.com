@@ -9,6 +9,18 @@ sidebar: auto
 
 AzuraCast is flexible and works on a broad number of environments, from inexpensive VPSes and servers to your own home computer running Windows, MacOS or Linux.
 
+## Recommended Hosting Providers
+
+### DigitalOcean 1-Click Install
+
+We've partnered with our friends at [DigitalOcean](https://m.do.co/c/21612b90440f) to create a 1-Click installer that sets up and configures a droplet with AzuraCast's recommended Docker installation configured and ready to go.
+
+Learn more about the 1-Click installer and create a droplet today [on the DigitalOcean Marketplace](https://marketplace.digitalocean.com/apps/azuracast).
+
+### Linode
+
+If you are hosting your installation with Linode, you can take advantage of a community-maintained [Docker installer StackScript](https://www.linode.com/stackscripts/view/352549).
+
 ## Self-Hosted Installation
 
 AzuraCast is powered by Docker and uses pre-built images that contain every component of the software. Don't worry if you aren't very familiar with Docker; our easy installer tools will handle installing Docker and Docker Compose for you, and updates are very simple.
@@ -91,17 +103,3 @@ To restore the backup later, run the following command:
 ```bash
 ./docker.sh restore path-to-backup.zip
 ```
-
-## Host-Specific Installation Guides
-
-### DigitalOcean
-
-Our friends at DigitalOcean offer fast, affordable, scalable hosting that is perfect for services like AzuraCast. Thanks to their support for custom installation metadata, you can spin up a new droplet and have a running AzuraCast instance without leaving your browser.
-
-- [Installing AzuraCast on DigitalOcean](./install_do.html)
-
-### Linode
-
-If you are hosting your installation with Linode, you can take advantage of these community-maintained scripts to automate the installation process. These scripts can also be found from the Linode manager's "Community StackScripts" section:
-
-- [Linode Docker Installer StackScript](https://www.linode.com/stackscripts/view/352549)
