@@ -51,6 +51,10 @@ date, and they may cause errors. You can always flush all site-wide caches using
 
 ## Access Files via SFTP
 
+::: tip
+AzuraCast now includes a built-in FTP server on Docker installations. Update your installation to take advantage of this feature!
+:::
+
 By default, SFTP access isn't set up for Docker based installations. If you have a large volume of media files, you may
 prefer to upload them via SFTP instead of using the web updater. You should *not* use the host operating system's SFTP,
 however, as Docker stores station media inside a Docker-specific volume.

@@ -4,43 +4,49 @@ title: Help
 
 # Help
 
+Having trouble with AzuraCast? We're here to help!
+
+Our core maintainers, along with our vast community of station operators, can answer many questions you may have about our software. We also have knowledge base articles set up for common issues encountered by our users.
+
 [[toc]]
 
-## Check the Logs
+## I have a problem!
 
-AzuraCast has a built-in log viewer to help you examine any potential problems with the application. System administrators can access logs for the entire system from the Administration panel, and station owners can access their station's logs from the "Utilities" menu on the station sidebar.
+### Try checking the logs
 
-If you need to pull more detailed logs, or logs that aren't available via our web viewer, you can [follow these instructions](./logs.html).
+Are you running into an error or possible bug with AzuraCast? If your installation is already up and running, the first place you should look is the application's built-in log viewer. The logs can often tell you what's causing the problem, or give you an error message that you can then relay to our team for further support.
 
-If you do need our help via GitHub, supplying these logs is absolutely essential in helping us diagnose and resolve your issue.
+System administrators can access logs for the entire system from the Administration panel, and station owners can access their station's logs from the "Utilities" menu on the station sidebar. If you need to pull more detailed logs, or logs that aren't available via our web viewer, you can [follow these instructions](./logs.html).
 
-## Common Support Solutions and Known Issues
+### Check common support solutions and known issues
 
-If you need help with AzuraCast, first check to see if your question is listed in our common support issues pages.
-
-The pages below contain information that can answer many questions you might have:
+We encounter some problems or errors frequently, so we created a set of documents listing these issues and their solutions. Check these first to see if they have a solution to your problem:
 
  - [Known Issues](./known_issues.html)
  - [Common Support Solutions for Docker Installations](./faq_docker.html)
  - [Common Support Solutions for Ansible Installations](./faq_ansible.html)
 
-## GitHub Issues
+### Create a GitHub issue
 
-We rely exclusively on our [GitHub Issues board](https://github.com/AzuraCast/AzuraCast/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) to track the status of errors, bug reports, questions and enhancement requests for new features.
+If your issue isn't in our known issues or common solutions, check out our [GitHub Issues board](https://github.com/AzuraCast/AzuraCast/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc). We use GitHub to track the status of errors, bug reports and general questions.
 
-First, check to make sure the issue you're experiencing isn't already reported on GitHub. If it is, you can subscribe to the existing ticket for updates on the issue's progress.
+If there's already an open GitHub issue for the specific issue you're having, you can follow that issue for updates. If not, you can create a new issue from the same page.
 
-If your issue or request isn't already reported, click the "New Issue" button to create it. Make sure to follow the template provided, as it asks important details that are very important to our team.
+When creating a new issue, you'll be presented with a template of questions to answer to help our team provide quick and accurate support. **Please make sure to answer these questions!**
 
-Please keep in mind that AzuraCast is a free software project built and maintained by volunteers, so there may be some delays in getting back to you. We will make the absolute best effort possible to resolve your issues and answer your questions.
+## I have an idea for a new feature.
 
-## Follow Us on Social Media
+Our community votes on what features we should prioritize via a special web site called FeatureUpvote. Visit the [AzuraCast FeatureUpvote Site](https://features.azuracast.com/) to submit new feature ideas or vote on existing ones.
+
+## I want to contact the developers.
+
+If you want to chat with other station operators, ask more detailed questions or directly contact the developer team, join us via [our Slack channel](https://www.azuracast.com/slack). This is the fastest and easiest way to get in touch with us.
+
+As a courtesy to our developers, we ask that you please don't e-mail them directly with any questions. Many questions can be answered by the community or by other developers, so by posting them to GitHub or on Slack, everyone can respond and your issue will likely be resolved faster.
+
+## Follow us on social media!
 
 We frequently post to social media any time there are significant updates to our software, security issues that users should be aware of, or upcoming changes to third-party software. You can get these updates in a more timely fashion by following our accounts:
 
 - @AzuraCast on [Twitter](https://twitter.com/azuracast), or
 - @AzuraCast on [FOSStodon (Mastodon)](https://fosstodon.org/@AzuraCast)
-
-To chat with us and collaborate with us in real time, you can join us via [our Slack channel](https://www.azuracast.com/slack).
-
-Note that our social media channels aren't the best way to report issues to us; instead, you should use the GitHub issues instructions above, as this allows our whole team to help resolve and track the progress of the issue in one location.
