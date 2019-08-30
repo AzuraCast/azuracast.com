@@ -4,7 +4,7 @@ title: Help
 
 # Help
 
-Having trouble with AzuraCast? We're here to help!
+Having trouble with AzuraCast? This page has several resources that can help you solve your problem and be back up and running.
 
 Our core maintainers, along with our vast community of station operators, can answer many questions you may have about our software. We also have knowledge base articles set up for common issues encountered by our users.
 
