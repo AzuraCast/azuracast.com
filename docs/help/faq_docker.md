@@ -19,7 +19,7 @@ For power users looking to customize or expand their Docker configuration, you s
 
 - Do not modify or replace the `docker.sh` utility script.
 
-- When updating (using the `docker.sh` utility script), it is recommended to run `./docker-sh update-self` before running `./docker.sh update`, to ensure the Docker Utility Script itself is up to date before it updates your Docker installation.
+- When updating (using the `docker.sh` utility script), it is recommended to run `./docker.sh update-self` before running `./docker.sh update`, to ensure the Docker Utility Script itself is up to date before it updates your Docker installation.
 
 - Environment variables set in `.env` are only used by Docker Compose itself, and aren't passed directly into the AzuraCast containers. You should only modify this file to change the HTTP and HTTPS port mappings used by Nginx (see the "Use Non-Standard Ports" section above).
 
