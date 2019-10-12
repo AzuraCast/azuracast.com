@@ -126,3 +126,37 @@ To access the static container, run:
 ```
 
 By default, this will clean up the existing asset manifests and build new CSS and JS files. To access the terminal inside this container, run `./docker.sh static bash`.
+
+### Translations (Locales)
+
+Locales are managed by the application in two places: the backend PHP code and the frontend (primarily Vue.js) JavaScript code. When new locales are added or translations are changed, they should be processed in both locations.
+
+There are two steps to the translation process:
+
+#### Generating New Translations
+
+When new strings have been added to the application, they should be added to the .POT (localization template) file, so that our CrowdIn translation service recognizes it as a translatable string.
+
+This can be done by running the respective "Generate Locales" commands:
+
+```bash
+# Backend
+./docker.sh cli locales:generate
+
+# Frontend
+./docker.sh static npm run generate-locales
+```
+
+#### Import New Translated Strings
+
+When strings have been translated, they should be converted back into optimized files that can easily be read by the PHP and Vue.js parts of the application, respectively.
+
+This can be done by running the respective "Import Locales" commands:
+
+```bash
+# Backend
+./docker.sh cli locales:import
+
+# Frontend
+./docker.sh static npm run import-locales
+```
