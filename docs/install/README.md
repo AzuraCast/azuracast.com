@@ -58,6 +58,12 @@ chmod a+x docker.sh
 
 On-screen prompts will show you how the installation is progressing.
 
+::: tip
+**You don't need to install Docker or Docker Compose yourself; the AzuraCast installer handles both for you.**
+
+It's recommended to use AzuraCast's installer, as it will automatically install the latest version of Docker and Docker Compose, which may be newer than the version that ships with your host operating system. You **should not** use the Ubuntu Snap installer to install Docker or Docker Compose, as this causes unexpected issues and is not supported.
+::: 
+
 Once installation has completed, be sure to follow the [post-installation steps](#post-installation-setup). You can also [set up LetsEncrypt](/developers/docker_sh.html#available-commands) or make other changes to your installation using the [Docker Utility Script](/developers/docker_sh.html#download-the-utility-script) that you've just downloaded.
 
 ::: tip
