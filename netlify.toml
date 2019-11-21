@@ -24,3 +24,8 @@
   from = "/slack"
   to = "https://join.slack.com/t/azuracast/shared_invite/enQtNDgyNzA4NzY2MzU3LTlkZjdhNjk3NWRkMWVmMzRhMjA3MDk1ZWMxOTQ0NjM4YWJhMWNiNDkwZTM3NjhkMTU1NzIwODgzNWY1NmNlMmU"
   status = 302
+
+[[redirects]]
+  from = "/discord"
+  to = "https://discord.gg/CcdCZx2"
+  status = 302
