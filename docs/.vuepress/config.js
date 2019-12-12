@@ -16,9 +16,15 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
-      { text: 'Install', link: '/install/' },
       { text: 'Help', link: '/help/' },
-      { text: 'For Developers', link: '/developers/' },
+      {
+        text: 'Guides', items: [
+          { text: 'Installation', link: '/installation/' },
+          { text: 'Administration', link: '/administration/' },
+          { text: 'Developers', link: '/developers/' },
+          { text: 'Troubleshooting', link: '/troubleshooting/' }
+        ]
+      },
       { text: 'Donate', link: '/donate' }
     ],
     docsRepo: 'azuracast/azuracast.com',
@@ -41,6 +47,49 @@ module.exports = {
         'docker_sh',
         'multisite',
         'liquidsoap_annotations'
+      ],
+      '/installation/': [
+        '',
+        'docker',
+        'digital-ocean',
+        'raspberry-pi',
+      ],
+      '/administration/': [
+        {
+          title: 'Administration',
+          children: [
+            ''
+          ]
+        },
+        {
+          title: 'System',
+          children: [
+            'system/'
+          ]
+        },
+        {
+          title: 'Station',
+          children: [
+            'station/'
+          ]
+        },
+        {
+          title: 'Files',
+          children: [
+            'files/',
+            'files/ftp',
+            'files/docker'
+          ]
+        },
+        {
+          title: 'Users',
+          children: [
+            'users/'
+          ]
+        },
+      ],
+      '/troubleshooting/': [
+        ''
       ],
       '/help/': [
         '',

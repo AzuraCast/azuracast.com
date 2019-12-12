@@ -1,5 +1,5 @@
 --- 
-title: Ubuntu Installation with Ansible 
+title: Ansible
 --- 
  
 # Ubuntu Installation with Ansible 

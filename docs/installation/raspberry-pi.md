@@ -1,5 +1,5 @@
 --- 
-title: ARM64/Raspberry Pi 3+ Installation 
+title: Raspberry Pi
 --- 
  
 # ARM64/Raspberry Pi 3+ Installation
@@ -18,4 +18,4 @@ If you are running a Raspberry Pi, visit the [Ubuntu Wiki page for the Raspberry
 
 ## Running the Ansible Installation
 
-Once the operating system is booted up and you have connected to the device either via SSH or by directly accessing the terminal, you can run the standard [Ansible installation instructions](./install_ansible.html) without any changes.
+Once the operating system is booted up and you have connected to the device either via SSH or by directly accessing the terminal, you can run the standard [Ansible installation instructions](ansible) without any changes.

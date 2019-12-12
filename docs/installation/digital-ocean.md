@@ -1,5 +1,5 @@
 ---
-title: Install with DigitalOcean
+title: Digital Ocean
 ---
 
 # Install with DigitalOcean
