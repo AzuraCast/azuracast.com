@@ -36,9 +36,6 @@ module.exports = {
       '/about/': [
         '',
       ],
-      '/install/': [
-        ''
-      ],
       '/developers/': [
         '',
         'api',
@@ -103,7 +100,6 @@ module.exports = {
       ],
       '/': [
         'about/',
-        'install/',
         'developers/',
         'help/',
         'donate',
