@@ -8,3 +8,7 @@ services:
       - '8080:8080'
     volumes:
       - ./:/data
+      - static_node_modules:/data/node_modules
+
+volumes:
+  static_node_modules: {}
