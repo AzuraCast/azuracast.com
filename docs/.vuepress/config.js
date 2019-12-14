@@ -16,6 +16,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
+      { text: 'Install', link: '/install/' },
       { text: 'Help', link: '/troubleshooting/' },
       {
         text: 'Guides', items: [
@@ -47,7 +48,7 @@ module.exports = {
         'docker_sh',
         'liquidsoap_annotations'
       ],
-      '/installation/': [
+      '/install/': [
         '',
         'digitalocean',
         'linode',
