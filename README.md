@@ -14,6 +14,8 @@ Local development takes advantage of Docker Compose.
 docker-compose up --build -d
 ```
 
+(Note: This will serve the page as it existed when launched, but won't update automatically on Windows.)
+
 #### Run One-time Build
 
 ```bash

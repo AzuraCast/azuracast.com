@@ -16,13 +16,16 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
-      { text: 'Help', link: '/help/' },
+      { text: 'Help', link: '/troubleshooting/' },
       {
         text: 'Guides', items: [
-          { text: 'Installation', link: '/installation/' },
+          { text: 'Installation', link: '/install/' },
           { text: 'Administration', link: '/administration/' },
+          { text: 'Station Management', link: '/station-management/' },
+          { text: 'Troubleshooting', link: '/troubleshooting/' },
           { text: 'Developers', link: '/developers/' },
-          { text: 'Troubleshooting', link: '/troubleshooting/' }
+          { text: 'Extending', link: '/extending/' },
+          { text: 'Contributing', link: '/contributing/' },
         ]
       },
       { text: 'Donate', link: '/donate' }
@@ -42,14 +45,15 @@ module.exports = {
         'nowplaying',
         'cli',
         'docker_sh',
-        'multisite',
         'liquidsoap_annotations'
       ],
       '/installation/': [
         '',
+        'digitalocean',
+        'linode',
         'docker',
-        'digital-ocean',
         'raspberry-pi',
+        'ansible'
       ],
       '/administration/': [
         {
@@ -61,7 +65,10 @@ module.exports = {
         {
           title: 'System',
           children: [
-            'system/'
+            'system/',
+            'system/initial-setup',
+            'system/updating',
+            'system/backup'
           ]
         },
         {
@@ -85,27 +92,74 @@ module.exports = {
           ]
         },
       ],
-      '/troubleshooting/': [
+      '/station-management/': [
+        {
+          title: 'Media',
+          children: [
+            'media/'
+          ]
+        },
+        {
+          title: 'Playlists',
+          children: [
+            'playlists/',
+            'playlists/advanced_playlists'
+          ]
+        },
+        {
+          title: 'Mount Points',
+          children: [
+            'mounts/'
+          ]
+        },
+        {
+          title: 'Remote Relays',
+          children: [
+            'relays/'
+          ]
+        },
+        {
+          title: 'Streamers/DJs',
+          children: [
+            'djs/',
+            'djs/streaming_software'
+          ]
+        }
+      ],
+      '/extending/': [
+        '',
+        'cloudflare',
+        'multisite'
+      ],
+      '/contributing/': [
         ''
       ],
-      '/help/': [
-        '',
-        'logs',
-        'known_issues',
-        'faq_docker',
-        'faq_ansible',
-        'cloudflare',
-        'streaming_software',
-        'advanced_playlists',
+      '/troubleshooting/': [
+        {
+          title: 'Troubleshooting',
+          children: [
+            ''
+          ]
+        },
+        {
+          title: 'Viewing Logs',
+          children: [
+            'logs/'
+          ]
+        },
+        {
+          title: 'Docker Installations',
+          children: [
+            'docker/'
+          ]
+        },
+        {
+          title: 'Ansible Installations',
+          children: [
+            'ansible/'
+          ]
+        }
       ],
-      '/': [
-        'about/',
-        'developers/',
-        'help/',
-        'donate',
-        'code_of_conduct',
-        'privacy'
-      ]
     }
   },
   extendMarkdown: {
