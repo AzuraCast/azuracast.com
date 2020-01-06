@@ -42,7 +42,7 @@ Our community votes on what features we should prioritize via a special web site
 
 If you want to chat with other station operators, ask more detailed questions or directly contact the developer team, join us via [our Slack channel](https://www.azuracast.com/slack) or our [Discord server](https://discordapp.com/invite/CcdCZx2). This is the fastest and easiest way to get in touch with us.
 
-As a courtesy to our developers, we ask that you please don't e-mail or call their cell phones them directly with any questions. Many questions can be answered by the community or by other developers, so by posting them to GitHub or on Slack, everyone can respond and your issue will likely be resolved faster.
+As a courtesy to our developers, we ask that you please don't e-mail or call their cell phones directly with any questions. Many questions can be answered by the community or by other developers, so by posting them to GitHub or on Slack, everyone can respond and your issue will likely be resolved faster.
 
 ## Follow us on social media!
 
