@@ -9,6 +9,17 @@ title: Streaming Software
 ::: warning
 If you are using a reverse proxy service (like CloudFlare) in front of your installation, be aware that these services often prevent direct connections to the ports that broadcasters connect to. You should instruct your streamers to use the direct IP address of your server instead.
 :::
+## Azuracast Web DJ (Web DJ)
+Azuracast has a built in Web DJ system which can be utilized by simply activating the Streamers/DJ panel and creating a user. It's simple to use with just one page operation with no downloads necessary. 
+
+### Setting Up
+After setting up the Streamer/DJ account, navigate to WebDJ and you'll be greeted by this page. 
+![Web DJ Sample configuration](https://puu.sh/F4Ldz/f829fc2bf1.png)
+
+### Broadcasting Steps
+Use the exact information specified in the Streamer/DJ page and connect to the Web DJ. After this, you can pick your own music to stream. (This can be picked from your own PC, not server) You can also change the metadata, sample rate and the encoder mp3 to raw.
+![Web DJ Broadcasting Config](https://puu.sh/F4Lqm/bc36a77c09.png) 
+
 
 ## BUTT (Broadcast Using This Tool)
 
