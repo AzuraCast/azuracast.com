@@ -37,7 +37,7 @@ Some hosting providers use OpenVZ or LXC, and sometimes these technologies are i
 ### System Requirements
 
 - A 64-bit x86 (x86_64) CPU (For ARM64 devices, like the Raspberry Pi 3/4, visit our [ARM64/Raspberry Pi guide](./install_rpi.html).)
-- 1GB or greater of RAM 
+- 2GB or greater of RAM (If you're running into RAM related issues, consider bumping to 4GB) 
 - 20GB or greater of hard drive space
 
 For Linux hosts, the `sudo`, `curl` and `git` packages should be installed before installing AzuraCast. Most Linux distributions include these packages already.
