@@ -73,6 +73,12 @@ module.exports = {
           ]
         },
         {
+          title: 'Roles & Permissions',
+          children: [
+            'roles/'
+          ]
+        },
+        {
           title: 'Station',
           children: [
             'station/'
@@ -82,7 +88,7 @@ module.exports = {
           title: 'Files',
           children: [
             'files/',
-            'files/ftp',
+            'files/sftp',
             'files/docker'
           ]
         },

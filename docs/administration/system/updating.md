@@ -25,6 +25,16 @@ cd /var/azuracast
 ./docker.sh update-self && echo "y" | ./docker.sh update
 ```
 
+### Switching Update Release Preference
+
+By default, all AzuraCast installations will update to the latest "Rolling Release" version; that is, the very latest changes that have been committed to the main AzuraCast repository. While this will give you access to the very latest features, it also may introduce errors or instability that you may not want in a production radio station.
+
+To switch to only installing stable releases during updates, edit `azuracast.env` in your host and add or modify this line:
+
+```
+PREFER_RELEASE_BUILDS=true
+```
+
 ## Ansible Installations
 
 AzuraCast also includes a handy updater script that pulls down the latest copy of the codebase from Git, flushes the site caches and makes any necessary database updates. Run these commands as any user with `sudo` permissions: 
