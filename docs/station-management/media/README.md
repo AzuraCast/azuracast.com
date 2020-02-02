@@ -8,9 +8,19 @@ title: Media Management
 
 Media management is at the core of AzuraCast's built-in AutoDJ. By uploading media and assigning it to a playlist, the AutoDJ will automatically compose a live stream broadcast 24 hours a day, 7 days a week.
 
+:::tip
+For your AutoDJ to detect any files in your Media Manager, they **must** be added to at least one playlist. You can have media files in your station's media directory that aren't associated with any playlist, but they won't be played automatically.
+:::
+
+## Uploading Media
+
+### Web Uploader
+
 You can upload media directly via your web browser, by either selecting files or clicking and dragging them into a section at the top of the Media Manager.
 
-Note that for your AutoDJ to detect any files in your Media Manager, they **must** be added to at least one playlist.
+### SFTP (Docker Only)
+
+For Docker installations, AzuraCast offers a built-in SFTP server which allows you to easily manage your media in bulk. Visit the [SFTP Server](./sftp) guide for more information.
 
 ## Auto-Assigning Folders to Playlists
 

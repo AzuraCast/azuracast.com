@@ -85,14 +85,6 @@ module.exports = {
           ]
         },
         {
-          title: 'Files',
-          children: [
-            'files/',
-            'files/sftp',
-            'files/docker'
-          ]
-        },
-        {
           title: 'Users',
           children: [
             'users/'
@@ -103,7 +95,8 @@ module.exports = {
         {
           title: 'Media',
           children: [
-            'media/'
+            'media/',
+            'media/sftp'
           ]
         },
         {
