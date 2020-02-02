@@ -17,13 +17,13 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
       { text: 'Install', link: '/install/' },
-      { text: 'Help', link: '/troubleshooting/' },
+      { text: 'Help', link: '/help/' },
       {
         text: 'Guides', items: [
           { text: 'Installation', link: '/install/' },
           { text: 'Administration', link: '/administration/' },
           { text: 'Station Management', link: '/station-management/' },
-          { text: 'Troubleshooting', link: '/troubleshooting/' },
+          { text: 'Troubleshooting', link: '/help/' },
           { text: 'Developers', link: '/developers/' },
           { text: 'Extending', link: '/extending/' },
           { text: 'Contributing', link: '/contributing/' },
@@ -134,7 +134,7 @@ module.exports = {
       '/contributing/': [
         ''
       ],
-      '/troubleshooting/': [
+      '/help/': [
         {
           title: 'Troubleshooting',
           children: [
