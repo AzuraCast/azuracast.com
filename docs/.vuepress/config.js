@@ -18,7 +18,17 @@ module.exports = {
       { text: 'About', link: '/about/' },
       { text: 'Install', link: '/install/' },
       { text: 'Help', link: '/help/' },
-      { text: 'For Developers', link: '/developers/' },
+      {
+        text: 'Guides', items: [
+          { text: 'Installation', link: '/install/' },
+          { text: 'Administration', link: '/administration/' },
+          { text: 'Station Management', link: '/station-management/' },
+          { text: 'Troubleshooting', link: '/help/' },
+          { text: 'Developers', link: '/developers/' },
+          { text: 'Extending', link: '/extending/' },
+          { text: 'Contributing', link: '/contributing/' },
+        ]
+      },
       { text: 'Donate', link: '/donate' }
     ],
     docsRepo: 'azuracast/azuracast.com',
@@ -30,37 +40,126 @@ module.exports = {
       '/about/': [
         '',
       ],
-      '/install/': [
-        ''
-      ],
       '/developers/': [
         '',
         'api',
         'nowplaying',
         'cli',
         'docker_sh',
-        'multisite',
         'liquidsoap_annotations'
       ],
-      '/help/': [
+      '/install/': [
         '',
-        'logs',
-        'known_issues',
-        'faq_docker',
-        'faq_ansible',
-        'cloudflare',
-        'streaming_software',
-        'advanced_playlists',
+        'digitalocean',
+        'linode',
+        'docker',
+        'raspberry-pi',
+        'ansible'
       ],
-      '/': [
-        'about/',
-        'install/',
-        'developers/',
-        'help/',
-        'donate',
-        'code_of_conduct',
-        'privacy'
-      ]
+      '/administration/': [
+        {
+          title: 'Administration',
+          children: [
+            ''
+          ]
+        },
+        {
+          title: 'System',
+          children: [
+            'system/',
+            'system/initial-setup',
+            'system/updating',
+            'system/backup'
+          ]
+        },
+        {
+          title: 'Roles & Permissions',
+          children: [
+            'roles/'
+          ]
+        },
+        {
+          title: 'Station',
+          children: [
+            'station/'
+          ]
+        },
+        {
+          title: 'Users',
+          children: [
+            'users/'
+          ]
+        },
+      ],
+      '/station-management/': [
+        {
+          title: 'Media',
+          children: [
+            'media/',
+            'media/sftp'
+          ]
+        },
+        {
+          title: 'Playlists',
+          children: [
+            'playlists/',
+            'playlists/advanced_playlists'
+          ]
+        },
+        {
+          title: 'Mount Points',
+          children: [
+            'mounts/'
+          ]
+        },
+        {
+          title: 'Remote Relays',
+          children: [
+            'relays/'
+          ]
+        },
+        {
+          title: 'Streamers/DJs',
+          children: [
+            'djs/',
+            'djs/streaming_software'
+          ]
+        }
+      ],
+      '/extending/': [
+        '',
+        'cloudflare',
+        'multisite'
+      ],
+      '/contributing/': [
+        ''
+      ],
+      '/help/': [
+        {
+          title: 'Troubleshooting',
+          children: [
+            ''
+          ]
+        },
+        {
+          title: 'Viewing Logs',
+          children: [
+            'logs/'
+          ]
+        },
+        {
+          title: 'Docker Installations',
+          children: [
+            'docker/'
+          ]
+        },
+        {
+          title: 'Ansible Installations',
+          children: [
+            'ansible/'
+          ]
+        }
+      ],
     }
   },
   extendMarkdown: {

@@ -4,8 +4,6 @@ title: API
 
 # API
 
-[[toc]]
-
 Once installed and running, AzuraCast exposes an API that allows you to monitor and interact with your stations. You can perform the following functions and more from the JSON REST API:
 
 - View now-playing data and recent song history for all stations

@@ -1,9 +1,22 @@
-FROM node:alpine
+FROM library/node:8-alpine
 
+RUN apk update \
+    && apk add bash
+
+RUN mkdir -p /data/node_modules \
+    && chown -R node:node /data
+
+COPY build_entrypoint.sh /
+RUN chmod a+x /build_entrypoint.sh
+
+# Define working directory.
 WORKDIR /data
 
-COPY . /data
+# Define working user.
+USER node
 
-RUN yarn install
+VOLUME /data/node_modules
 
-CMD ["yarn", "dev"]
+# Define default command.
+ENTRYPOINT ["/build_entrypoint.sh"]
+CMD ["npm", "run", "dev"]
