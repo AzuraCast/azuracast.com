@@ -160,6 +160,11 @@ module.exports = {
           ]
         }
       ],
+      '/': [
+        'donate',
+        'code_of_conduct',
+        'privacy'
+      ]
     }
   },
   extendMarkdown: {
