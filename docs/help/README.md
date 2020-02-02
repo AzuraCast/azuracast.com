@@ -8,17 +8,16 @@ Having trouble with AzuraCast? This page has several resources that can help you
 
 Our core maintainers, along with our vast community of station operators, can answer many questions you may have about our software. We also have knowledge base articles set up for common issues encountered by our users.
 
-
 ## First Steps
 
 Your first steps should be to check this guide for any tips or pointers. Many common issues can be solved by following the instructions in our guide pages.
 
-If you aren't sure of what is causing your issue, [checking the logs](logs) can help. Not only do the system logs often explain your error in more detail, but they're essential for our developers to be able to easily diagnose and resolve your issue.
+If you aren't sure of what is causing your issue, [checking the logs](./logs) can help. Not only do the system logs often explain your error in more detail, but they're essential for our developers to be able to easily diagnose and resolve your issue.
 
 ## Submitting an Issue
 
 ::: tip Note
-You _must_ follow troubleshooting steps _prior_ to filing an issue on Github, we will _expect_ details included in this troubleshooting guide. Without them your issue may be closed.
+You must follow troubleshooting steps _prior_ to filing an issue on GitHub. In our issue template, we ask for logs and other details that are part of the troubleshooting steps, and supplying these greatly helps us resolve issues.
 :::
 
 If your issue isn't in our known issues or common solutions, check out our [GitHub Issues board](https://github.com/AzuraCast/AzuraCast/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc). We use GitHub to track the status of errors, bug reports and general questions.
