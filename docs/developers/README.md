@@ -30,7 +30,6 @@ In the same folder, run your platform's equivalent of:
 
 ```bash
 git clone https://github.com/AzuraCast/AzuraCast.git
-git clone https://github.com/AzuraCast/docker-azuracast-web-v2.git
 git clone https://github.com/AzuraCast/docker-azuracast-nginx-proxy.git
 git clone https://github.com/AzuraCast/docker-azuracast-db.git
 git clone https://github.com/AzuraCast/docker-azuracast-influxdb.git
@@ -55,7 +54,7 @@ cp docker-compose.dev.yml docker-compose.yml
 
 AzuraCast can automatically load data "fixtures" which will preconfigure a sample station with sensible defaults, to avoid needing to complete the setup process every time.
 
-To customize how the fixtures load in your environment, open the newly customized `azuracast.env` file and customize the following values:
+To customize how the fixtures load in your environment, open the newly copied `azuracast.env` file and customize the following values:
 
 ```
 INIT_BASE_URL=docker.local
