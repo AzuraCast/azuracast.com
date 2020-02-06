@@ -129,6 +129,8 @@ module.exports = {
       '/extending/': [
         '',
         'cloudflare',
+        'letsencrypt',
+        'modifying_docker',
         'multisite'
       ],
       '/contributing/': [
