@@ -26,6 +26,12 @@ For Windows, an installer tool like [Scoop](https://scoop.sh/) is highly recomme
 
 Using Git, clone the AzuraCast core repository and the various Docker containers into a single folder. When developing locally, the Docker containers are built from scratch, so you will need those repositories to be alongside the main "AzuraCast" project in the same folder.
 
+**Note for Windows developers:** Before cloning the repositories, you should ensure your Git is locally configured to not automatically convert line endings from Linux style (LF) to Windows style (CRLF), which will break AzuraCast. You can set this globally by running:
+
+```sh
+git config --global core.autocrlf input
+```
+
 In the same folder, run your platform's equivalent of:
 
 ```bash
