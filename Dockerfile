@@ -1,4 +1,4 @@
-FROM library/node:8-alpine
+FROM library/node:lts-alpine
 
 RUN apk update \
     && apk add bash
