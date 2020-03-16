@@ -6,6 +6,15 @@ title: Donate to AzuraCast
 
 AzuraCast is a fully free and open-source project built as a labor of love by a single developer over the course of many years. The project is continually improving and offering a better experience for radio station managers and listeners alike.
 
+### Support us on GitHub Sponsors
+
+Donating through GitHub Sponsors is the best way to show your support for AzuraCast's development. You can change your pledge at any time through the Sponsors Page. GitHub will match every sponsor on our page so every donation counts. 
+
+[GitHub Sponsor Page][sponsor]
+
+
+[sponsor]: https://github.com/sponsors/SlvrEagle23
+
 ### Donate to our Patreon
 
 Donating to AzuraCast's Patreon is a great way to show your ongoing support for the project's continual development and updates. You can edit your pledge or cancel at any time.
