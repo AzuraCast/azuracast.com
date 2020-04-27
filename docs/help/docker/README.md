@@ -135,14 +135,14 @@ version: '2.2'
 services:
   web:
     volumes:
-      - /path/on/host/computer:/var/azuracast/stations/media/<DIRECTORY_NAME>
+      - /path/on/host/computer:/var/azuracast/stations/<STATION_NAME>/media/
 
   stations:
     volumes:
-      - /path/on/host/computer:/var/azuracast/stations/media/<DIRECTORY_NAME>
+      - /path/on/host/computer:/var/azuracast/stations/<STATION_NAME>/media/
 ```
 
-Replace the `<DIRECTORY_NAME>` with the name of the directory you want to mount and modify the `/path/on/host/computer` with the path to the directory that you want to mount.
+Replace  the `<STATION_NAME>` with the name of the station directory found under the "Administration" section of the station's profile settings and modify the `/path/on/host/computer` with the path to the directory that you want to mount.
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
