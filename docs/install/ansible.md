@@ -42,7 +42,9 @@ sudo apt-get install -q -y git
 sudo mkdir -p /var/azuracast/www 
 cd /var/azuracast/www 
 sudo git clone https://github.com/AzuraCast/AzuraCast.git . 
- 
+
+cd /var/azuracast/www/AzuraCast
+
 sudo chmod a+x install.sh 
 ./install.sh 
 ``` 
