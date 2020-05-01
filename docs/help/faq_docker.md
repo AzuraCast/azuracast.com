@@ -117,21 +117,26 @@ For power users looking to customize or expand their Docker configuration, you s
 
 - Instead of modifying `docker-compose.yml`, you can create a file named `docker-compose.override.yml` with your customizations. The structure of this file is the same as the main `docker-compose.yml` file, and is automatically parsed by Docker Compose to override any definitions in the main file. Updates will not replace this file.
 
-## Adding a intro file
+## Adding a Stream Intro File
 
-You can add an .mp3 file that is playing when someone connects to your station by mounting your .mp3 file via a `docker-compose.override.yml` into the stations container. What you have to do there is basically creating a file called `docker-compose.override.yml` in the same directory as your `docker.sh` and `docker-compose.yml` with the following content.
-This needs to be placed within the `/var/azuracast` directory.  
+You can add a music file to play when someone initially connects to your stream. Remember when creating intro files that they **must match the exact same format, bitrate and sample rate as your mount point to work properly.**
 
-```
+First, tell the Docker filesystem where to find your intro file. Inside the AzuraCast directory on your host (by default, `/var/azuracast`), create a file named `docker-compose.override.yml` with the following contents:
+
+```yaml
 version: '2.2'
 services:
     stations:
         volumes:
             - /path/to/your/file.mp3:/usr/local/share/icecast/web/intro.mp3
 ```
-You can place your .mp3 file anywhere on your host machine. You just have to specify the path to it by replacing this part: `/path/to/your/file.mp3`
-Now restart AzuraCast via `docker-compose down && docker-compose up -d`
 
-After you've done that you need to go to your mountpoint configuration in AzuraCast and add <intro>/intro.mp3</intro> to the Advanced Custom Frontend Configuration
+Now restart AzuraCast via `docker-compose down && docker-compose up -d`.
 
-You might run into format mismatch errors as the intro file has to match what the mountpoint is configured to broadcast. From the Icecast docs: Make sure the format of the file specified matches the streaming format. For more information, you can view the [IceCast documentation here.](https://www.icecast.org/docs/)
+Return to the AzuraCast web interface, visit the "Mount Points" page for your station, edit the mount point you want to add an intro for, and inside the "Advanced: Custom Frontend Configuration" field, enter this, based on the last portion of the mounted file from the above example:
+
+```
+<intro>/intro.mp3</intro>
+```
+
+For more information, see the [IceCast documentation.](https://www.icecast.org/docs/)
