@@ -197,3 +197,27 @@ You will need to restart your Docker containers using `docker-compose down`, the
 ::: warning
 Make sure that the format of the file specified matches the streaming format exactly.
 :::
+
+## Adding a Stream Intro File
+
+You can add a music file to play when someone initially connects to your stream. Remember when creating intro files that they **must match the exact same format, bitrate and sample rate as your mount point to work properly.**
+
+First, tell the Docker filesystem where to find your intro file. Inside the AzuraCast directory on your host (by default, `/var/azuracast`), create a file named `docker-compose.override.yml` with the following contents:
+
+```yaml
+version: '2.2'
+services:
+    stations:
+        volumes:
+            - /path/to/your/file.mp3:/usr/local/share/icecast/web/intro.mp3
+```
+
+Now restart AzuraCast via `docker-compose down && docker-compose up -d`.
+
+Return to the AzuraCast web interface, visit the "Mount Points" page for your station, edit the mount point you want to add an intro for, and inside the "Advanced: Custom Frontend Configuration" field, enter this, based on the last portion of the mounted file from the above example:
+
+```
+<intro>/intro.mp3</intro>
+```
+
+For more information, see the [IceCast documentation.](https://www.icecast.org/docs/)
