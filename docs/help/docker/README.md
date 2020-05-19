@@ -83,18 +83,13 @@ If you intend to leave this script running for long term periods, you must chang
 You may want to serve the AzuraCast web application itself on a different port, or host your radio station on a port that
 isn't within the default range AzuraCast serves (8000-8999).
 
-To change the ports on which AzuraCast serves HTTP and HTTPS traffic, you can edit the `.env` file on the host to modify the public-facing port numbers as needed. (Note: this file should already exist on your system, but if it doesn't, you can [use this version for reference](https://github.com/AzuraCast/AzuraCast/blob/master/.env).)
+You can use a helper tool in the Docker Utility Script to easily change the ports used by AzuraCast:
 
-Modify (or create) the lines below to modify your port mappings:
-
+```bash
+cd /var/azuracast
+./docker.sh update-self
+./docker.sh change-ports
 ```
-AZURACAST_HTTP_PORT=80
-AZURACAST_HTTPS_PORT=443
-```
-
-You can either specify a single number (i.e. 8080) for each value, or specify "127.0.0.1:8080" to only listen on the localhost. This can be useful when AzuraCast is hosted behind a proxy on your host.
-
-You will need to recycle your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
 To override more complex functionality in your Docker installation, see the "Customizing Docker" section below.
 
