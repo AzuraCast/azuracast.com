@@ -26,20 +26,12 @@ Connect to your host server via a terminal (SSH) connection and execute the foll
 
 ```bash
 cd /var/azuracast
-./docker.sh letsencrypt-create mydomain.example.com
+./docker.sh update-self
+./docker.sh letsencrypt-create
 ```
 
-Be sure to replace `mydomain.example.com` with the domain name that points to your AzuraCast installation.
+Answer the prompts as shown to complete the setup process.
 
 ### Renew a LetsEncrypt Certificate
 
-Your LetsEncrypt certificate is valid for 3 months. The web service will automatically attempt to renew certificates periodically.
-
-In the event you need to manually renew the certificate, you can connect to your host server via a terminal (SSH) connection and execute the following commands:
-
-```bash
-cd /var/azuracast
-./docker.sh letsencrypt-renew
-```
-
-This command will manually renew any previously established LetsEncrypt certificates.
+The web service will automatically renew your LetsEncrypt certificates. If you provide an e-mail in the initial setup process, that e-mail will be used to send you reminders of upcoming expiration in the event that automatic renewal fails.
