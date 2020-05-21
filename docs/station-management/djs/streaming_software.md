@@ -23,8 +23,23 @@ Use the exact information specified on the Streamer/DJ page's right sidebar. "Ad
 ### ShoutCast Mode
 
 Use the given port specified in the "ShoutCast v1 Clients" section. Since ShoutCast v1 does not let you specify a username, specify your password as `dj_username:dj_password` (the username and password for the DJ separated by a colon).
-
 ![BUTT Sample ShoutCast configuration](https://i.imgur.com/Iv9G4v6.png)
+
+
+## Azuracast Web DJ (Web DJ)
+
+::: tip
+You will need to supply the music via your device. (PC, Mac and Linux only)
+:::
+
+Azuracast has a built in Web DJ system which can be utilized by simply activating the Streamers/DJ panel and creating a user. It's simple to use with just one page operation with no downloads necessary. 
+
+### Creating a Streamer Account
+Creating a Streaming account can be easy and straightforward, simply go to the Streamers/DJ tab and create an account![Web DJ Sample configuration](https://i.imgur.com/BnMb15D.png)
+
+### Broadcasting
+Use the information provided in the Streamer/DJ page and connect to the Web DJ. After this, you can pick your own music to stream. There is a few customisation options for you to change to your liking, ranging from 
+![Web DJ Broadcasting Config](https://i.imgur.com/9LJENQR.png) 
 
 ## Mixxx
 
