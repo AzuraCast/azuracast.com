@@ -14,7 +14,7 @@ execute the following command to generate a new random password for an account i
 Replace `YOUREMAILADDRESS` with the e-mail address whose password you intend to reset.
 
 ```bash
-php /var/azuracast/www/bin/azuracast.php azuracast:account:reset-password YOUREMAILADDRESS
+php /var/azuracast/www/bin/console azuracast:account:reset-password YOUREMAILADDRESS
 ```
 
 ## Manually Flush the System Cache
@@ -23,7 +23,7 @@ Many parts of the AzuraCast system depend on caches to speed up site performance
 date, and they may cause errors. You can always flush all site-wide caches using one command-line script:
 
 ```bash
-php /var/azuracast/www/bin/azuracast.php cache:clear
+php /var/azuracast/www/bin/console cache:clear
 ```
 
 ## Force a Full Update
