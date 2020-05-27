@@ -22,7 +22,8 @@ By default, the updater will prompt you to update your `docker-compose.yml` file
 
 ```bash
 cd /var/azuracast
-./docker.sh update-self && echo "y" | ./docker.sh update
+./docker.sh update-self
+yes "" | ./docker.sh update
 ```
 
 ### Switching Update Release Preference
