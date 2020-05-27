@@ -54,3 +54,4 @@ Our administration guide has several pages dedicated to tasks you should complet
 - [Post-installation Setup](/administration/system/initial-setup)
 - [Updating](/administration/system/updating)
 - [Backup & Restore](/administration/system/backup)
+- [Enable Advanced Features](/extending/advanced-features)

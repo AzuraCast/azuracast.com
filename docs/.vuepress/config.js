@@ -128,6 +128,7 @@ module.exports = {
       ],
       '/extending/': [
         '',
+        'advanced-features',
         'cloudflare',
         'letsencrypt',
         'modifying_docker',
