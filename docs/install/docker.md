@@ -7,7 +7,7 @@ title: Docker
 AzuraCast is powered by Docker and uses pre-built images that contain every component of the software. Don't worry if you aren't very familiar with Docker; our easy installer tools will handle installing Docker and Docker Compose for you, and updates are very simple.
 
 ::: warning
-Some hosting providers use OpenVZ or LXC, and sometimes these technologies are incompatible with Docker. If the Docker installation does not work on your host, you should consider using a different server for AzuraCast, or you can use the unsupported [Ansible installation method](./ansible.html).
+Some hosting providers use OpenVZ or LXC, and sometimes these technologies are incompatible with Docker. If the Docker installation does not work on your host, you should consider using a different server for AzuraCast, or you can use the unsupported [Ansible installation method](./ansible).
 :::
 
 ### System Requirements
@@ -45,7 +45,7 @@ chmod a+x docker.sh
 
 On-screen prompts will show you how the installation is progressing.
 
-Once installation has completed, be sure to follow the [post-installation steps](#post-installation-setup). You can also [set up LetsEncrypt](/developers/docker_sh.html#available-commands) or make other changes to your installation using the [Docker Utility Script](/developers/docker_sh.html#download-the-utility-script) that you've just downloaded.
+Once installation has completed, be sure to follow the [post-installation steps](#post-installation-tasks). You can also [set up LetsEncrypt](/developers/docker-sh.html#available-commands) or make other changes to your installation using the [Docker Utility Script](/developers/docker-sh.html#download-the-utility-script) that you've just downloaded.
 
 ### Post-Installation Tasks
 

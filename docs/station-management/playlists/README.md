@@ -12,7 +12,7 @@ Any playlists types can also be scheduled to play in one or more specific time b
 
 There is one special type of playlist that allows you to fully customize your playlist's rules in the AutoDJ, the Advanced Playlist.
 
-[Read more about Advanced Playlists](./advanced_playlists)
+[Read more about Advanced Playlists](./advanced-playlists)
 
 ## Required Permissions
 
