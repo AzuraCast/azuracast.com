@@ -10,7 +10,7 @@ title: Common Support Solutions (Docker)
 
 Docker installations come with four files by default:
 
-- `docker.sh`, the [Docker Utility Script](https://www.azuracast.com/developers/docker_sh.html#download-the-utility-script);
+- `docker.sh`, the [Docker Utility Script](/developers/docker-sh.html#download-the-utility-script);
 - `.env`, which contains environment variables used by Docker Compose itself;
 - `azuracast.env`, which contains customizable environment variables sent to AzuraCast and related services; and
 - `docker-compose.yml`, a large file that defines all of the services used by AzuraCast and how they interact.
