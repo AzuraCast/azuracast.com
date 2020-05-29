@@ -5,10 +5,16 @@
   publish = "public"
   command = "npm run build"
 
+[[plugins]]
+package = "netlify-plugin-checklinks"
+  [plugins.inputs]
+  pretty = true
+  skipPatterns = ["/slack", "/discord"]
+
 [[redirects]]
   from = "/install.html"
   to = "/install/index.html"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/api"
@@ -17,8 +23,38 @@
 
 [[redirects]]
   from = "/demo"
-  to = "/demo.html"
+  to = "/demo-reloading.html"
   status = 302
+
+[[redirects]]
+  from = "/code_of_conduct.html"
+  to = "/code-of-conduct.html"
+  status = 301
+
+[[redirects]]
+  from = "/extending/modifying_docker.html"
+  to = "/extending/modifying-docker.html"
+  status = 301
+
+[[redirects]]
+  from = "/developers/docker_sh.html"
+  to = "/developers/docker-sh.html"
+  status = 301
+
+[[redirects]]
+  from = "/developers/liquidsoap_annotations.html"
+  to = "/developers/liquidsoap-annotations.html"
+  status = 301
+
+[[redirects]]
+  from = "/station-management/djs/streaming_software.html"
+  to = "/station-management/djs/streaming-software.html"
+  status = 301
+
+[[redirects]]
+  from = "/station-management/playlists/advanced_playlists.html"
+  to = "/station-management/playlists/advanced-playlists.html"
+  status = 301
 
 [[redirects]]
   from = "/slack"

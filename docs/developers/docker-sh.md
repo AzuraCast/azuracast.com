@@ -10,7 +10,7 @@ If you're using the Docker installation method to run AzuraCast, we have created
 
 ## Download the Utility Script
 
-If you've recently followed the [Docker installation instructions](/install/#installing), you already have the Docker Utility Script installed. The file name is `docker.sh`.
+If you've recently followed the [Docker installation instructions](/install/), you already have the Docker Utility Script installed. The file name is `docker.sh`.
 
 If you have an older installation, you can use the Docker Utility Script by running these commands inside your AzuraCast directory on your host computer:
 

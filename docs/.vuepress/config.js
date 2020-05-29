@@ -45,8 +45,8 @@ module.exports = {
         'api',
         'nowplaying',
         'cli',
-        'docker_sh',
-        'liquidsoap_annotations'
+        'docker-sh',
+        'liquidsoap-annotations'
       ],
       '/install/': [
         '',
@@ -103,7 +103,7 @@ module.exports = {
           title: 'Playlists',
           children: [
             'playlists/',
-            'playlists/advanced_playlists'
+            'playlists/advanced-playlists'
           ]
         },
         {
@@ -122,7 +122,7 @@ module.exports = {
           title: 'Streamers/DJs',
           children: [
             'djs/',
-            'djs/streaming_software'
+            'djs/streaming-software'
           ]
         }
       ],
@@ -131,7 +131,7 @@ module.exports = {
         'advanced-features',
         'cloudflare',
         'letsencrypt',
-        'modifying_docker',
+        'modifying-docker',
         'multisite'
       ],
       '/contributing/': [
@@ -165,7 +165,7 @@ module.exports = {
       ],
       '/': [
         'donate',
-        'code_of_conduct',
+        'code-of-conduct',
         'privacy'
       ]
     }
