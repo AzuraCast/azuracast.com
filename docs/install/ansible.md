@@ -8,8 +8,8 @@ title: Ansible
 **This method is no longer officially supported.** 
  
 **Why?** This is an advanced installation option for seasoned Linux server administrators. The software we install can often conflict with other software installed on your server and cause problems which are difficult to diagnose and support. We do not provide support if you install AzuraCast on a server with other software installed and that software conflicts with ours. 
- 
-We get it, the word **Docker** scares some folks. Trust us on this, though: our Docker installation is _by far_ the easier way of installing and maintaining AzuraCast. We include helpful scripts that even install Docker and Docker Compose for you, so it's all just one command. Updates are much faster and things are much less likely to break, even for beginners. 
+
+Even if you aren't familiar with Docker, our Docker installation is still by far the easier way of installing and maintaining AzuraCast. We include helpful scripts that will install Docker and Docker Compose for you, so it's all just one command. Updates are much faster and things are much less likely to break.
  
 If you want an easier, faster installation process that is supported by our team directly, **please follow our [recommended installation instructions](/install/).** 
 ::: 
@@ -22,7 +22,8 @@ Currently, the following operating systems are supported:
  
 - Ubuntu 16.04 "Xenial" LTS 
 - Ubuntu 18.04 "Bionic" LTS 
- 
+- Ubuntu 20.04 "Focal" LTS
+
 ::: tip 
 Some web hosts offer custom versions of Ubuntu that include different software repositories. These may cause compatibility issues with AzuraCast. Many VPS providers are known to work out of the box with AzuraCast (OVH, DigitalOcean, Vultr, etc), and are thus highly recommended if you plan to use the Bare-metal installer. 
 ::: 
@@ -42,6 +43,9 @@ sudo apt-get install -q -y git
 sudo mkdir -p /var/azuracast/www 
 cd /var/azuracast/www 
 sudo git clone https://github.com/AzuraCast/AzuraCast.git . 
+
+# Want only stable "release" builds? Run this code here:
+# git checkout -q -f stable
  
 sudo chmod a+x install.sh 
 ./install.sh 
