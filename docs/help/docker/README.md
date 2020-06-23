@@ -20,6 +20,16 @@ Since this error is caused by the interaction of some piece of software on your 
 
 Common services that listen on ports 80 and 443 include web servers like Apache and nginx. One common port to use if you still need these services to remain online alongside AzuraCast is port 8080, which we deliberately leave open due to its common usage with other software.
 
+### "WARNING: The LETSENCRYPT_X variable is not set. Defaulting to a blank string."
+
+This message doesn't indicate anything is wrong with your installation; it is simply Docker Compose letting you know that it defaults to an empty string if a certain environment variable isn't present. You will see these messages if you don't have LetsEncrypt configured on your server, and you can safely disregard them.
+
+### "Problem with dial: dial tcp 172.18.X.X:XXXX: connect: connection refused. Sleeping 1s"
+
+This message is usually not an error. It's the result of a safety check we add into our Docker images, so they won't start up fully until other services (in this case, MariaDB, InfluxDB and Redis) are fully started and ready to accept connections. The "web" container periodically pings those services until they're fully started up, and if the service is still starting up, it will produce this "connection refused" error message, then retry again a second later.
+
+If your "web" container _never_ starts up, this could mean there is an error with one of your other containers (`mariadb`, `influxdb`, or `redis`). You can see what may be causing the problem by running `docker-compose logs -f servicename`, where `servicename` is one of the services listed in the previous sentence.
+
 ## Customizing Docker
 
 Docker installations come with four files by default:
