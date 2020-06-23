@@ -6,6 +6,20 @@ title: Common Support Solutions (Docker)
 
 [[toc]]
 
+## Common Errors
+
+### "bind: address already in use"
+
+If you get this error when starting the Docker AzuraCast instance, it means that something else (some other process or server software) is already running on the same port(s) that AzuraCast is trying to reserve for itself.
+
+There are generally two ways to resolve this:
+- Find the process that's currently listening on the port (commands like `netstat -tulpn` can help you with this) and either disable the program that's currently listening, edit its configuration to change the port it listens on, or uninstall it from the server completely.
+- Switch the port AzuraCast uses for its own traffic to an unused one. [See instructions](#use-non-standard-ports)
+
+Since this error is caused by the interaction of some piece of software on your host computer and the Docker daemon, we can't automatically resolve it for you, and the best way to resolve it will depend on how your server is configured and what else is running on it.
+
+Common services that listen on ports 80 and 443 include web servers like Apache and nginx. One common port to use if you still need these services to remain online alongside AzuraCast is port 8080, which we deliberately leave open due to its common usage with other software.
+
 ## Customizing Docker
 
 Docker installations come with four files by default:
