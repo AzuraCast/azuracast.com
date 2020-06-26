@@ -89,3 +89,61 @@ services:
      - /path/to/your/ssl.crt:/etc/letsencrypt/ssl.crt:ro
      - /path/to/your/ssl.key:/etc/letsencrypt/ssl.key:ro
 ```
+
+### Preserve stream urls from your previous setup
+
+If you have migrated to Azuracast, you may have existing stream urls that you would like to preserve. The following example shows how you can proxy any port and path to an Azuracast station. This approach has a big advantage over using relays because your stats are all kept on the new Azuracast station and are not split between 2 stations. Another big advantage is that we are able to support both http and https on the same port. This example assumes that you have already created a Lets Encrypt certificate using the Azuracast docker utility. In this example, our old urls were running on port 5000.
+
+1. Add the following to `docker-compose.override.yml`:
+
+```yaml
+version: '2.2'
+
+services:
+  old_streams_proxy:
+    image: nginx:1.17.6
+    volumes_from:
+      - nginx_proxy
+    volumes:
+      - letsencrypt:/etc/nginx/certs
+      - ./old_streams_proxy.conf:/etc/nginx/conf.d/old_streams_proxy.conf
+    ports:
+      - "5000:5000"
+```
+
+2. Add a new nginx conf file named `old_streams_proxy.conf` in the same directory and add `location` blocks as needed. This example shows how we can proxy the old url `http(s)://my-host.com:5000/my-old-path.mp3` to the Azuracast url `http(s)://my-host.com/radio/8000/radio.mp3`:
+```yaml
+server {
+  listen       5000 ssl;
+  server_name  my-host.com;
+
+  ssl_certificate      /etc/nginx/certs/my-host.com.crt;
+  ssl_certificate_key  /etc/nginx/certs/my-host.com.key;
+
+  ssl on;
+
+  # Allow http traffic on the same port.
+  # See https://serverfault.com/questions/47876/handling-http-and-https-requests-using-a-single-port-with-nginx#comment378361_256901
+  error_page 497 =200 $request_uri;
+
+  ssl_session_cache    shared:SSL:5m;
+  ssl_session_timeout  1h;
+
+  ssl_ciphers  HIGH:!aNULL:!MD5;
+  ssl_prefer_server_ciphers  on;
+
+  location /my-old-path.mp3 {
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-NginX-Proxy true;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_pass http://stations:8000/radio.mp3;
+    proxy_cache_bypass $http_upgrade;
+    proxy_redirect off;
+  }
+
+  # Add as many locations as needed.
+
+}
+```
