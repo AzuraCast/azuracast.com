@@ -105,8 +105,8 @@ services:
     volumes_from:
       - nginx_proxy
     volumes:
-      - letsencrypt:/etc/nginx/certs
-      - ./old_streams_proxy.conf:/etc/nginx/conf.d/old_streams_proxy.conf
+      - letsencrypt:/etc/nginx/certs:ro
+      - ./old_streams_proxy.conf:/etc/nginx/conf.d/old_streams_proxy.conf:ro
     ports:
       - "5000:5000"
 ```
