@@ -8,7 +8,7 @@ As of the latest development version of AzuraCast, support for multiple sites is
 
 ## How it Works
 
-AzuraCast's Docker installation now includes a built-in reverse proxy powered by [jwilder's nginx-proxy]((https://github.com/jwilder/nginx-proxy). This reverse proxy is what listens on the public web ports (80 for HTTP and 443 for HTTPS) and also manages LetsEncrypt for the installation. By default, it is configured to send all traffic to the AzuraCast container.
+AzuraCast's Docker installation now includes a built-in reverse proxy powered by [jwilder's nginx-proxy](https://github.com/jwilder/nginx-proxy). This reverse proxy is what listens on the public web ports (80 for HTTP and 443 for HTTPS) and also manages LetsEncrypt for the installation. By default, it is configured to send all traffic to the AzuraCast container.
 
 The proxy service will automatically detect new Docker containers that are started and can serve them via different domain names than your AzuraCast installation. This allows you to add other containers to serve, for example, your station's homepage from the same server.
 
