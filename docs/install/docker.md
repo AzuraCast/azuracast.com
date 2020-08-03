@@ -6,27 +6,42 @@ title: Docker
 
 AzuraCast is powered by Docker and uses pre-built images that contain every component of the software. Don't worry if you aren't very familiar with Docker; our easy installer tools will handle installing Docker and Docker Compose for you, and updates are very simple.
 
-::: warning
-Some hosting providers use OpenVZ or LXC, and sometimes these technologies are incompatible with Docker. If the Docker installation does not work on your host, you should consider using a different server for AzuraCast, or you can use the unsupported [Ansible installation method](/install/ansible.html).
-:::
-
 ### System Requirements
 
 - A 64-bit x86 (x86_64) CPU
 - 2GB or greater of RAM
 - 20GB or greater of hard drive space
+- A computer/server capable of running Docker
 
 For Linux hosts, the `sudo`, `curl` and `git` packages should be installed before installing AzuraCast. Most Linux distributions include these packages already.
 
 ::: tip
-**You don't need to install Docker or Docker Compose yourself; the AzuraCast installer handles both for you.**
+**On Linux, you don't need to install Docker or Docker Compose yourself; the AzuraCast installer handles both for you.**
 
 It's recommended to use AzuraCast's installer, as it will automatically install the latest version of Docker and Docker Compose, which may be newer than the version that ships with your host operating system. You **should not** use the Ubuntu Snap installer to install Docker or Docker Compose, as this causes unexpected issues and is not supported.
+
+If you're developing on Windows or Mac, you should install the Docker Desktop client before continuing.
 ::: 
+
+### Choosing an Operating System
+
+If you are able to choose the operating system you are installing AzuraCast on, we strongly recommend one of the following distributions and versions:
+
+ - **Ubuntu 20.04 LTS** (Recommended)
+ - Ubuntu 18.04 LTS
+ - Ubuntu 16.04 LTS (Compatible, but updating is recommended)
+ - Debian 10 "Buster"
+ - Debian 9 "Stretch"
+
+#### Known Incompatibilities
+
+ - **OpenVZ or LXC-based Web Hosts**: Some hosting providers use OpenVZ or LXC, and sometimes these technologies are incompatible with Docker. If the Docker installation does not work on your host, you should consider using a different server for AzuraCast, or you can use the unsupported [Ansible installation method](/install/ansible.html).
+
+ - **CentOS**: Recent versions of CentOS are moving away from supporting Docker and instead supporting Podman, a different container-based solution. AzuraCast does not currently support being deployed on Podman. If you are selecting a Linux OS for your server, the LTS distributions of Ubuntu and Debian are strongly recommended.
 
 ### Installing
 
-Connect to the server or computer you want to install AzuraCast on via an SSH terminal. You should be an administrator user with either root access or the ability to use the `sudo` command.
+Connect to the server or computer you want to install AzuraCast on via an SSH terminal. You should be an administrator user with either root access or the ability to use the `sudo` command. If you are not the `root` user, you may need to run `sudo su -` before executing the commands below.
 
 Pick a base directory on your host computer that AzuraCast can use. If you're on Linux, you can follow the steps below to use the recommended directory:
 
