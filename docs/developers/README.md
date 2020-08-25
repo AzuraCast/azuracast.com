@@ -26,11 +26,13 @@ For Windows, an installer tool like [Scoop](https://scoop.sh/) is highly recomme
 
 Using Git, clone the AzuraCast core repository and the various Docker containers into a single folder. When developing locally, the Docker containers are built from scratch, so you will need those repositories to be alongside the main "AzuraCast" project in the same folder.
 
+::: tip
 **Note for Windows developers:** Before cloning the repositories, you should ensure your Git is locally configured to not automatically convert line endings from Linux style (LF) to Windows style (CRLF), which will break AzuraCast. You can set this globally by running:
 
 ```sh
 git config --global core.autocrlf input
 ```
+:::
 
 In the same folder, run your platform's equivalent of:
 
@@ -43,17 +45,25 @@ git clone https://github.com/AzuraCast/docker-azuracast-redis.git
 git clone https://github.com/AzuraCast/docker-azuracast-radio.git
 ```
 
-::: tip NOTE
-All commands from this point forward should be run in the `AzuraCast` repository's folder. From the parent folder, `cd AzuraCast` to enter the core repository's directory.
-:::
+### Move into AzuraCast Repository Directory
+
+All commands from this point forward should be run in the `AzuraCast` repository's folder. From the parent folder, run:
+
+```bash
+cd AzuraCast
+```
+
+to enter the core repository's directory.
 
 ### Copy Default Files
 
-Inside the `AzuraCast` repository, copy the example files into their proper locations:
+Copy the example files into their proper locations:
 
 ```bash
+cp sample.env .env
 cp azuracast.dev.env azuracast.env
-cp docker-compose.dev.yml docker-compose.yml
+cp docker-compose.sample.yml docker-compose.yml
+cp docker-compose.dev.yml docker-compose.override.yml
 ```
 
 ### Modify the Environment File
@@ -80,43 +90,23 @@ docker-compose build
 
 ### Run the in-container installation
 
-Get into the main CLI container by running, from the host computer:
+#### Without Data Fixtures
+
+To run the setup process without preconfiguring the installation in any way, run:
 
 ```bash
-docker-compose run --user="azuracast" --rm web bash
+bash docker.sh install
 ```
 
-Inside the terminal session that spawns, you should already be at `/var/azuracast/www` and logged in as the `azuracast` user.
+#### With Data Fixtures
 
-To install the necessary dependencies using Composer, run:
+To preload sample data (provided in the `azuracast.env` file above) and start with a preconfigured installation, run:
 
 ```bash
-composer install
+bash docker.sh install --load-fixtures
 ```
-
-If you want to use the data fixtures (see the .env setup above for the necessary customizations) to set up an initial environment for you, run:
-
-```bash
-azuracast_cli azuracast:setup --load-fixtures
-```
-
-...otherwise, run:
-
-```bash
-azuracast_cli azuracast:setup
-```
-
-You can now `exit` the CLI shell.
 
 ### Spin up the Docker containers
-
-Now that your installation is set up and ready, you can spin up your full installation for the first time.
-
-From the host computer, run:
-
-```bash
-docker-compose up -d
-```
 
 By default, AzuraCast will be available at http://localhost/. A self-signed TLS certificate is also provided out of the box, so you can take advantage of the HTTPS functionality after manually exempting the site via your browser.
 
@@ -146,10 +136,10 @@ This can be done by running the respective "Generate Locales" commands:
 
 ```bash
 # Backend
-./docker.sh cli locales:generate
+bash docker.sh cli locales:generate
 
 # Frontend
-./docker.sh static npm run generate-locales
+bash docker.sh static npm run generate-locales
 ```
 
 #### Import New Translated Strings
@@ -160,8 +150,8 @@ This can be done by running the respective "Import Locales" commands:
 
 ```bash
 # Backend
-./docker.sh cli locales:import
+bash docker.sh cli locales:import
 
 # Frontend
-./docker.sh static npm run import-locales
+bash docker.sh static npm run import-locales
 ```
