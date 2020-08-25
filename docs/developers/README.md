@@ -106,10 +106,6 @@ To preload sample data (provided in the `azuracast.env` file above) and start wi
 bash docker.sh install --load-fixtures
 ```
 
-### Spin up the Docker containers
-
-By default, AzuraCast will be available at http://localhost/. A self-signed TLS certificate is also provided out of the box, so you can take advantage of the HTTPS functionality after manually exempting the site via your browser.
-
 ### Building Static Assets
 
 AzuraCast uses a special Docker container containing the full static asset build stack. This makes it very easy to rebuild the compiled assets after having made changes to the JS or SCSS files.
@@ -117,10 +113,14 @@ AzuraCast uses a special Docker container containing the full static asset build
 To access the static container, run:
 
 ```bash
-./docker.sh static [optional_command]
+bash docker.sh static npm run build
 ```
 
 By default, this will clean up the existing asset manifests and build new CSS and JS files. To access the terminal inside this container, run `./docker.sh static bash`.
+
+### Spin up the Docker containers
+
+By default, AzuraCast will be available at http://localhost/. A self-signed TLS certificate is also provided out of the box, so you can take advantage of the HTTPS functionality after manually exempting the site via your browser.
 
 ### Translations (Locales)
 
