@@ -4,17 +4,17 @@ title: Raspberry Pi
  
 # ARM64/Raspberry Pi 3+ Installation
 
-AzuraCast is compatible with any device or server capable of running the ARM64 platform, including the Raspberry Pi 3 and 4.
+AzuraCast is compatible with any device or server capable of running the ARM64 platform, including the Raspberry Pi 3, 3B, 4 and newer models.
 
 Because several ARM-based computers operate with limited system resources, currently the ideal installation method for AzuraCast is the Ansible (formerly known as "Bare-metal" or "Traditional") installation. While this installation method isn't supported for most web servers, in the case of ARM devices the Ansible installation method is currently the only fully working solution.
 
 We have [an ongoing GitHub issue](https://github.com/AzuraCast/AzuraCast/issues/332) for bringing full Docker support to ARM64 devices.
 
-## Installing Ubuntu 18.04
+## Installing Ubuntu
 
-If using a web host that offers ARM-based hosts (such as Scaleway), select an ARM64 device and choose the Ubuntu 18.04 (Bionic Beaver) operating system. This will allow for the fastest installation method.
+If using a web host that offers ARM-based hosts (such as Scaleway), select an ARM64 device and choose the Ubuntu 20.04 (Focal Fossa) or 18.04 (Bionic Beaver) operating system. This will allow for the fastest installation method.
 
-If you are running a Raspberry Pi, visit the [Ubuntu Wiki page for the Raspberry Pi](https://wiki.ubuntu.com/ARM/RaspberryPi). On this page, you will see links to download Ubuntu "classic"; make sure to choose the ARM64 image. The `.xz` image file can be written to a MicroSD card with an application like [Etcher](https://www.balena.io/etcher/).
+If you are running a Raspberry Pi, download the [Ubuntu 20.04 ARM64 image for Raspberry Pi](http://cdimage.ubuntu.com/ubuntu/releases/20.04/release/ubuntu-20.04.1-preinstalled-server-arm64+raspi.img.xz), then write the image to a MicroSD card (this is made very easy with a tool like [Etcher](https://www.balena.io/etcher/)).
 
 ## Running the Ansible Installation
 
