@@ -25,7 +25,11 @@ If you're developing on Windows or Mac, you should install the Docker Desktop cl
 
 ### Choosing an Operating System
 
-If you are able to choose the operating system you are installing AzuraCast on, we strongly recommend one of the following distributions and versions:
+::: tip
+**Regardless of which OS you choose, to avoid any compatibility or permissions issues you should install AzuraCast on a fresh minimal installation without Docker or Docker Compose installed.**
+::: 
+
+We strongly recommend one of the following distributions and versions for your AzuraCast installation:
 
  - **Ubuntu 20.04 LTS** (Recommended)
  - Ubuntu 18.04 LTS
