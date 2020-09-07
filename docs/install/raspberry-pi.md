@@ -16,6 +16,10 @@ If using a web host that offers ARM-based hosts (such as Scaleway), select an AR
 
 If you are running a Raspberry Pi, download the [Ubuntu 20.04 ARM64 image for Raspberry Pi](http://cdimage.ubuntu.com/ubuntu/releases/20.04/release/ubuntu-20.04.1-preinstalled-server-arm64+raspi.img.xz), then write the image to a MicroSD card (this is made very easy with a tool like [Etcher](https://www.balena.io/etcher/)).
 
+## Set up Swap Space
+
+If your ARM64 device has less than 4GB of RAM available, it is recommended to [create a swap space](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-20-04/) before running the AzuraCast installation to avoid issues with running out of memory.
+
 ## Running the Ansible Installation
 
 Once the operating system is booted up and you have connected to the device either via SSH or by directly accessing the terminal, you can run the standard [Ansible installation instructions](./ansible.html) without any changes.
