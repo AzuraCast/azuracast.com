@@ -75,7 +75,7 @@ To customize how the fixtures load in your environment, open the newly copied `a
 ```
 INIT_BASE_URL=docker.local
 INIT_INSTANCE_NAME=local development
-INIT_ADMIN_USERNAME=
+INIT_ADMIN_EMAIL=
 INIT_ADMIN_PASSWORD=
 INIT_MUSIC_PATH=/var/azuracast/www/util/fixtures/init_music
 ```
