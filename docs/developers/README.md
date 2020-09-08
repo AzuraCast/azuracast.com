@@ -136,7 +136,7 @@ This can be done by running the respective "Generate Locales" commands:
 
 ```bash
 # Backend
-bash docker.sh cli locales:generate
+bash docker.sh cli locale:generate
 
 # Frontend
 bash docker.sh static npm run generate-locales
@@ -150,7 +150,7 @@ This can be done by running the respective "Import Locales" commands:
 
 ```bash
 # Backend
-bash docker.sh cli locales:import
+bash docker.sh cli locale:import
 
 # Frontend
 bash docker.sh static npm run import-locales
