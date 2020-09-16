@@ -35,3 +35,23 @@ Answer the prompts as shown to complete the setup process.
 ### Renew a LetsEncrypt Certificate
 
 The web service will automatically renew your LetsEncrypt certificates. If you provide an e-mail in the initial setup process, that e-mail will be used to send you reminders of upcoming expiration in the event that automatic renewal fails.
+
+## Using a Custom Certificate
+
+If you have a custom SSL certificate on your host, you should create a `docker-compose.override.yml` file in your `/var/azuracast` directory on the host server with the contents below, modified to reflect your domain name and the path to your SSL certificate and key:
+
+```yml
+version: '2.2'
+
+services:
+  nginx_proxy:
+    volumes:
+      - /path/on/host/to/ssl.crt:/etc/nginx/certs/yourdomain.com.crt:ro
+      - /path/on/host/to/ssl.key:/etc/nginx/certs/yourdomain.com.key:ro
+```
+
+The naming convention for the mapping (the second part of each of the `volumes` section above) is the following:
+
+ - Domain name: `example.azuracast.com`
+ - Certificate path: `/etc/nginx/certs/example.azuracast.com.crt`
+ - Key path: `/etc/nginx/certs/example.azuracast.com.key`
