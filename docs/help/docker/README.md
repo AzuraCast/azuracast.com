@@ -138,7 +138,14 @@ services:
 
 You can modify the port range in this file to meet your needs, such as expanding it to port 8999 instead of 8500.
 
-You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
+When creating a new station, AzuraCast will attempt to automatically assign it an available port from the available port range. If you change this port range, you should let AzuraCast know by adding or updating the following values in your `azuracast.env` file:
+
+```
+AUTO_ASSIGN_PORT_MIN=8500
+AUTO_ASSIGN_PORT_MAX=8999
+```
+
+You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to these files.
 
 ## Mounting a directory into a station
 
