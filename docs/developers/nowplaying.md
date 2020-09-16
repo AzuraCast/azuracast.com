@@ -161,7 +161,7 @@ To use this API method on a web site, first make sure the [Nchan Subscriber Java
 An example implementation using the Nchan Subscriber library might look like:
 
 ```javascript
-var sub = new NchanSubscriber('http://your-azuracast-site.example.com/api/live/nowplaying/station_id');
+var sub = new NchanSubscriber('http://your-azuracast-site.example.com/api/live/nowplaying/station_shortcode');
 var nowPlaying;
 
 sub.on("message", function(message, message_metadata) {
