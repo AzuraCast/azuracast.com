@@ -50,8 +50,6 @@ module.exports = {
       ],
       '/install/': [
         '',
-        'digitalocean',
-        'linode',
         'docker',
         'raspberry-pi',
         'ansible'

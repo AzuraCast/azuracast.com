@@ -6,16 +6,17 @@ title: Install AzuraCast
 
 AzuraCast is server-based software that is installed on a VPS, dedicated server or other computer and serves both your station broadcasts and its own web interface through the server's network connection.
 
-## Ready-To-Go Installs
+## One-Click Installers
 
-The easiest way to get started with AzuraCast is to create a new VPS with one of our supported partners:
+The easiest way to get started with AzuraCast is to create a new VPS with one of our supported partners via the options below.
 
-- [DigitalOcean](digitalocean)
-- [Linode](linode)
+ - **DigitalOcean:** Create a new droplet based on our one-click installer from [the AzuraCast listing on the DigitalOcean Marketplace](https://marketplace.digitalocean.com/apps/azuracast).
+
+ - **Linode:** Deploy a new Linode instance with the [AzuraCast one-click installer in the Linode Marketplace](https://www.linode.com/marketplace/apps/linode/azuracast/).
 
 ## Self-Installation
 
-You can also install AzuraCast yourself on most server hardware and most computers running Linux.
+You can also install AzuraCast yourself on most server hardware and many computers running Linux.
 
 Installing AzuraCast yourself requires a basic understanding of the Linux shell/terminal environment, as well as root (or "sudo") access to the computer you're installing AzuraCast on.
 
