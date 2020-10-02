@@ -91,6 +91,6 @@ services:
 
   stations:
     volumes:
-      - /path/on/host/to/ssl.crt:/etc/nginx/certs/yourdomain.com.key:ro
+      - /path/on/host/to/ssl.crt:/etc/nginx/certs/yourdomain.com.crt:ro
       - /path/on/host/to/ssl.key:/etc/nginx/certs/yourdomain.com.key:ro
 ```
