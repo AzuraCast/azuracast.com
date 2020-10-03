@@ -78,14 +78,19 @@ services:
 
 ### Custom SSL Certificates
 
-If you want to supply your own SSL certificates instead of using the built-in LetsEncrypt service, you can mount your certificate files to the appropriate location using a `docker-compose.override.yml` file like this one:
+If you want to supply your own SSL certificates instead of using the built-in LetsEncrypt service, you can mount your certificate files to the appropriate locations using a `docker-compose.override.yml` file like this one:
 
 ```yaml
 version: '2.2'
 
 services:
-  web:
+  nginx_proxy:
     volumes:
-     - /path/to/your/ssl.crt:/etc/letsencrypt/ssl.crt:ro
-     - /path/to/your/ssl.key:/etc/letsencrypt/ssl.key:ro
+      - /path/on/host/to/ssl.crt:/etc/nginx/certs/yourdomain.com.crt:ro
+      - /path/on/host/to/ssl.key:/etc/nginx/certs/yourdomain.com.key:ro
+
+  stations:
+    volumes:
+      - /path/on/host/to/ssl.crt:/etc/nginx/certs/yourdomain.com.crt:ro
+      - /path/on/host/to/ssl.key:/etc/nginx/certs/yourdomain.com.key:ro
 ```
