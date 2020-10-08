@@ -26,9 +26,9 @@ This message doesn't indicate anything is wrong with your installation; it is si
 
 ### "Problem with dial: dial tcp 172.18.X.X:XXXX: connect: connection refused. Sleeping 1s"
 
-This message is usually not an error. It's the result of a safety check we add into our Docker images, so they won't start up fully until other services (in this case, MariaDB, InfluxDB and Redis) are fully started and ready to accept connections. The "web" container periodically pings those services until they're fully started up, and if the service is still starting up, it will produce this "connection refused" error message, then retry again a second later.
+This message is usually not an error. It's the result of a safety check we add into our Docker images, so they won't start up fully until other services (in this case, MariaDB and Redis) are fully started and ready to accept connections. The "web" container periodically pings those services until they're fully started up, and if the service is still starting up, it will produce this "connection refused" error message, then retry again a second later.
 
-If your "web" container _never_ starts up, this could mean there is an error with one of your other containers (`mariadb`, `influxdb`, or `redis`). You can see what may be causing the problem by running `docker-compose logs -f servicename`, where `servicename` is one of the services listed in the previous sentence.
+If your "web" container _never_ starts up, this could mean there is an error with one of your other containers (`mariadb`, or `redis`). You can see what may be causing the problem by running `docker-compose logs -f servicename`, where `servicename` is one of the services listed in the previous sentence.
 
 ## Customizing Docker
 
