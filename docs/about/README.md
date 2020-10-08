@@ -60,7 +60,6 @@ Whether you're using the Bare-metal installer or Docker containers, AzuraCast wi
 * **[NGINX](https://www.nginx.com)** for serving web pages and the radio proxy
 * **[MariaDB](https://mariadb.org/)** as the primary database
 * **[PHP 7.2](https://secure.php.net/)** powering the web application
-* **[InfluxDB](https://www.influxdata.com/)** for time-series based statistics
 * **[Redis](https://redis.io/)** for sessions, database and general caching 
 
 ## Live Demo
