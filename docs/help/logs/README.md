@@ -31,7 +31,6 @@ Since the Ansible installation interacts directly with your host server, its log
 - Supervisord: `/var/azuracast/www_tmp/supervisord.log`
 - Redis: `/var/log/redis/redis-server.log`
 - MariaDB: `/var/log/mysql`
-- InfluxDB: `/var/log/influxdb`
 
 For each station, logs for radio software will be inside `/var/azuracast/stations/{station_short_name}/config`, with the following filenames:
 

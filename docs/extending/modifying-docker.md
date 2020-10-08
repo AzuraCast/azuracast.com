@@ -21,7 +21,6 @@ In summary, AzuraCast has five major containers that handle the application's fu
  - `stations`, which contains the broadcasting backend (Liquidsoap) and frontend (Icecast/SHOUTcast) for every station,
  - `mariadb` which contains the application database running on the MariaDB database engine,
  - `redis` which is a high-performance cache used for sessions and other cacheable data, and
- - `influxdb` which provides the time-series data that we use for our statistics and reporting tools.
 
  ### Docker Compose
 
