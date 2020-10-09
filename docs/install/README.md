@@ -10,9 +10,9 @@ AzuraCast is server-based software that is installed on a VPS, dedicated server 
 
 The easiest way to get started with AzuraCast is to create a new VPS with one of our supported partners via the options below.
 
- - **DigitalOcean:** Create a new droplet based on our one-click installer from [the AzuraCast listing on the DigitalOcean Marketplace](https://marketplace.digitalocean.com/apps/azuracast).
+ - **DigitalOcean:** Create a new droplet based on our one-click installer from [the AzuraCast listing on the DigitalOcean Marketplace](https://marketplace.digitalocean.com/apps/azuracast?refcode=1023fa8af513).
 
- - **Linode:** Deploy a new Linode instance with the [AzuraCast one-click installer in the Linode Marketplace](https://www.linode.com/marketplace/apps/linode/azuracast/).
+ - **Linode:** Deploy a new Linode instance with the [AzuraCast one-click installer in the Linode Marketplace](https://www.linode.com/marketplace/apps/linode/azuracast/?r=68daf2976efcb77d2e3d4ced67a02b031edc3ba1).
 
 ## Self-Installation
 
