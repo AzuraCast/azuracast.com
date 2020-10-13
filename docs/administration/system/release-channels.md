@@ -22,7 +22,7 @@ Note: Regardless of which direction you are switching, it is strongly recommende
 
 If you want to switch release channels on an existing installation, note the rules below before proceeding:
 
-### Switching From "Stable" to "Rolling Release"
+### Switching from "Stable" to "Rolling Release"
 
 You can switch from the "Stable" channel to the "Rolling Release" channel at any time, because the Rolling Release channel will always be the same as, or newer than, the stable channel.
 

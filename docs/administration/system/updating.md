@@ -28,7 +28,7 @@ yes "" | ./docker.sh update
 
 ### Switching Update Release Channels
 
-AzuraCast ships two different release channels ("Stable" and "Rolling Release"), which you can switch between per installation. For more information, see our [./release-channels](Release Channels page).
+AzuraCast ships two different release channels ("Stable" and "Rolling Release"), which you can switch between per installation. For more information, see our [Release Channels page](./release-channels).
 
 ## Ansible Installations
 
