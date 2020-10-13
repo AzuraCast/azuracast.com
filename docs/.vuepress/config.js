@@ -67,6 +67,7 @@ module.exports = {
             'system/',
             'system/initial-setup',
             'system/updating',
+            'system/release-channels',
             'system/backup'
           ]
         },
