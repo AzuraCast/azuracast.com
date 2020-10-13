@@ -4,6 +4,8 @@ title: Release Channels
 
 # Release Channels
 
+[[toc]]
+
 For Docker installations, AzuraCast offers two different release channels:
 
  - A "**Stable**" channel that only updates every few weeks or months and consists of changes that have been running on many installations without any issue for quite some time. These releases are tagged with version numbers (i.e. 0.10.3, 0.10.4).
@@ -18,17 +20,7 @@ By default, our one-click installers for web hosts are set to prefer stable rele
 Note: Regardless of which direction you are switching, it is strongly recommended when switching channels to take a backup of your station's data beforehand to more easily recover from any issues that may arise.
 :::
 
-You can switch release channels by logging in to your host computer (the server running AzuraCast) via SSH and executing:
-
-```bash
-cd /var/azuracast
-./docker.sh update-self
-./docker.sh setup-release
-```
-
-You can then run the update script (`./docker.sh update`) and your installation will switch its active release channel.
-
-Note the rules below when switching channels on an existing installation.
+If you want to switch release channels on an existing installation, note the rules below before proceeding:
 
 ### Switching From "Stable" to "Rolling Release"
 
@@ -44,3 +36,17 @@ You should **only** switch from "Rolling Release" to "Stable" when your rolling-
 The reason this can be a problem is because of database migrations: new features implemented in the "Rolling Release" channel can include corresponding database changes, and an update to a "Stable" release that's older than your current one would require that you roll back database migrations; however, to the "Stable" version those migrations don't exist (since it is frozen in time from before they were created), causing your database to fall into an incorrect state.
 
 As an important note, though, if you have mistakenly switched to the "Stable" channel and it has caused your database to go out-of-sync, it is highly likely that just switching back to the "Rolling Release" channel will resolve your issues and return your installation to normal. You can then wait until the next tagged "Stable" release to switch channels again.
+
+### Setting AzuraCast to Use a Different Channel
+
+You can switch release channels by logging in to your host computer (the server running AzuraCast) via SSH and executing:
+
+```bash
+cd /var/azuracast
+./docker.sh update-self
+./docker.sh setup-release
+```
+
+You will be prompted whether to prefer stable release builds. If you answer "N", you will be placed on the "Rolling Release" channel.
+
+You can then run the update script (`./docker.sh update`) and your installation will switch its active release channel.
