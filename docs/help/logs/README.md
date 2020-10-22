@@ -24,7 +24,7 @@ This command will show you a running log of all containers. You can also get det
 
 Since the Ansible installation interacts directly with your host server, its logs are in various locations across the system.
 
-- AzuraCast: `/var/azuracast/www_tmp/azuracast.log`
+- AzuraCast: `/var/azuracast/www_tmp/app.log`
 - Nginx Access: `/var/azuracast/www_tmp/access.log`
 - Nginx Errors: `/var/azuracast/www_tmp/error.log`
 - PHP: `/var/azuracast/www_tmp/php_errors.log`
