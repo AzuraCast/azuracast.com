@@ -21,3 +21,11 @@ By default, the SFTP service listens externally on port 2022. If there is someth
 ```
 AZURACAST_SFTP_PORT=2022
 ```
+
+## SFTP clients
+
+Here's a small list of FTP clients you can use that are known to work with AzuraCast's SFTP system. 
+- [Filezilla](https://filezilla-project.org/) - _Windows, Mac OS X and Linux 32 bit & 64 bit_ 
+- [WinSCP](https://winscp.net/eng/download.php) - _Windows only_
+- [Cyberduck](https://cyberduck.io/) -  _Windows and Mac_
+A more exhaustive list can be found [here](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software). 
