@@ -76,31 +76,12 @@ date, and they may cause errors. You can always flush all site-wide caches using
 ## Access Files via SFTP
 
 ::: tip
-AzuraCast now includes a built-in FTP server on Docker installations. Update your installation to take advantage of this feature!
+AzuraCast now includes a built-in SFTP server by default. (Version 0.9.8.1 or higher)   
 :::
 
-By default, SFTP access isn't set up for Docker based installations. If you have a large volume of media files, you may
-prefer to upload them via SFTP instead of using the web updater. You should *not* use the host operating system's SFTP,
-however, as Docker stores station media inside a Docker-specific volume.
+AzuraCast includes a SFTP server built-in on new installations, if your machine does not have it [update your system.](/administration/system/updating.html) The SFTP server uses port `2022` but this can be changed in the `.env` file. 
 
-The script below will set up a temporary SFTP server that points to your station media directory inside Docker. The server
-will stay running inside the terminal window, so you can easily hit `Ctrl+C` to terminate it when you are finished.
-
-```bash
-docker run --rm \
-    -v azuracast_station_data:/home/azuracast/stations \
-    -p 2222:22 atmoz/sftp:alpine \
-    azuracast:4zur4c457:1000::stations
-```
-
-As long as you leave this script running, it will create a connection that you can access with these credentials:
-
-* **Host:** Your server's host name
-* **Port:** `2222` (Set in the third line)
-* **Username:** `azuracast` (The first part of the last line)
-* **Password:** `4zur4c457` (The second part of the last line)
-
-If you intend to leave this script running for long term periods, you must change the password to something more secure.
+For more information on how to use SFTP, review the [SFTP documentation.](/station-management/media/sftp.html)
 
 ## Use Non-standard Ports
 
