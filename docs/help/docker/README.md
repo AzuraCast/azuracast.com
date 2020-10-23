@@ -76,12 +76,12 @@ date, and they may cause errors. You can always flush all site-wide caches using
 ## Access Files via SFTP
 
 ::: tip
-AzuraCast now includes a built-in FTP server on Docker installations. Update your installation to take advantage of this feature!
+AzuraCast now includes a built-in SFTP server by default. (Version 0.9.8.1 or higher)   
 :::
 
-Information on sftp here
+AzuraCast includes a SFTP server built-in on new installations, if your machine does not have it [update your system.](/administration/system/updating.html) The SFTP server uses port `2022` but this can be changed in the `.env` file. 
 
-Extra documentation links go here
+For more information on how to use SFTP, review the [SFTP documentation.](/station-management/media/sftp.html)
 
 ## Use Non-standard Ports
 
