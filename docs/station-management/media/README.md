@@ -22,6 +22,10 @@ You can upload media directly via your web browser, by either selecting files or
 
 For Docker installations, AzuraCast offers a built-in SFTP server which allows you to easily manage your media in bulk. Visit the [SFTP Server](./sftp) guide for more information.
 
+### S3 Compatible
+
+Stations can utilize S3 compatible services (Backblaze, Digital Ocean Spaces, Linode Storage and S3) to manage it's media remotely, view our [S3 configuration](/extending/s3-configuration) guide for more details. 
+
 ## Auto-Assigning Folders to Playlists
 
 From the media manager, you can select a folder, select "Set Playlists" and assign the folder to a playlist.
