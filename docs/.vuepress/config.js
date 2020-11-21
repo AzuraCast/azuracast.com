@@ -132,6 +132,7 @@ module.exports = {
         'letsencrypt',
         'modifying-docker',
         'multisite'
+        `s3-configuration`
       ],
       '/contributing/': [
         ''
