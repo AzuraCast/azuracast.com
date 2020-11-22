@@ -44,6 +44,7 @@ To install AzuraCast, you should have a basic understanding of the Linux shell t
 - **Authenticated RESTful API:** Individual users in the system can create API keys which have the same permissions they have in the system. The AzuraCast API is a powerful and [well-documented](https://www.azuracast.com/api/index.html) tool for interacting with installations. 
 - **Web Log Viewing:** Quickly diagnose problems affecting any part of the AzuraCast system through the system-wide web log viewer.
 - **Automatic Radio Proxies:** Many users can't connect directly to radio station ports (i.e. 8000) by default, so AzuraCast includes an automatic nginx proxy that lets listeners connect via the http (80) and https (443) ports. These proxies are also compatible with services like CloudFlare.
+- **S3-compliant storage** Some users that have small disk sizes can utilize our robust S3 compliant storage system, this supports Amazon S3, Backblaze, Digital Ocean Spaces, Linode Ocean and many more.  
 
 ### What's Included
 
@@ -87,7 +88,7 @@ AzuraCast is licensed under the [Apache license, version 2.0](https://github.com
 
 ## Questions? Comments? Feedback?
 
-AzuraCast is a volunteer project, and we depend on your support and feedback to keep growing. Issues for this codebase are tracked using [GitHub Issues](https://github.com/AzuraCast/AzuraCast/issues/new). Anyone can create a new issue for the project, and if you have any problems with your installation or ideas for new features to add, you are encouraged to do so.
+AzuraCast is a volunteer project, and we depend on your support and feedback to keep growing. Issues for this codebase are tracked using [GitHub Issues](https://github.com/AzuraCast/AzuraCast/issues/new/choose). Anyone can create a new issue for the project, and if you have any problems with your installation or ideas for new features to add, you are encouraged to do so.
 
 ## Friends of AzuraCast
 
