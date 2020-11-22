@@ -131,7 +131,7 @@ module.exports = {
         'cloudflare',
         'letsencrypt',
         'modifying-docker',
-        'multisite'
+        'multisite',
         's3-configuration'
       ],
       '/contributing/': [
