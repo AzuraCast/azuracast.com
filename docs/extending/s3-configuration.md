@@ -22,7 +22,7 @@ To configure a station to use an S3 compatible service, you'll need to go to `yo
 
 It'll look like this: 
 
-![](https://i.imgur.com/epfGu83.png)
+![](/img/Storage_Locations.png)
 
 ### Amazon Simple Storage Service (S3) 
 [Amazon Simple Storage Service](https://aws.amazon.com/s3/), otherwise known as (S3) is an object storage service. [S3's pricing](https://aws.amazon.com/s3/pricing/) is more complex than the others, instead of offering a 'base' fee, it charges for what you use.  You can use our small guide listed below or use Amazon's official documentation
