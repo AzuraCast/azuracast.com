@@ -10,7 +10,9 @@ Before you read, an important note:
 
 Media processing performence varies depending on the provider your using (Backblaze, Digital Ocean, Linode, S3, etc) so don't panic if it's taking some time. 
 
-It could take up to a hour for the files to fully process 100 files for example. If it takes more than a few hours, contact us through our support methods. 
+For example with a really slow S3 provider processing 100 files could take up to an hour.
+
+If the processing seems slow to you, please measure the download speeds of your S3 bucket to determine if this is an issue with the S3 providers resources before contacting us through our support methods.
 :::
 
 ## Introduction
