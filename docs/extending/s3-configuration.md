@@ -1,10 +1,10 @@
 ---
 title: S3 configuration
 ---
+# Setting up S3 configurations
 
 [[toc]] 
 
-# Setting up S3 configurations
 ::: warning 
 Before you read, an important note: 
 
@@ -25,7 +25,7 @@ It'll look like this:
 ![](https://i.imgur.com/epfGu83.png)
 
 ### Amazon Simple Storage Service (S3) 
-Amazon Simple Storage Service, otherwise known as (S3) is an object storage service. [S3's pricing](https://aws.amazon.com/s3/pricing/) is more complex than the others, instead of offering a 'base' fee, it charges for what you use.  You can use our small guide listed below or use Amazon's official documentation
+[Amazon Simple Storage Service](https://aws.amazon.com/s3/), otherwise known as (S3) is an object storage service. [S3's pricing](https://aws.amazon.com/s3/pricing/) is more complex than the others, instead of offering a 'base' fee, it charges for what you use.  You can use our small guide listed below or use Amazon's official documentation
 You can use our small guide to create a bucket and collect key's or use [Amazon's documentation](https://docs.aws.amazon.com/s3/index.html)
 - With Amazon's S3 system, you'll need to sign into the [S3 console](https://console.aws.amazon.com/s3/) and click `Create Bucket`
 - You'll be able to pick the bucket's name (Must be unique across all S3, be 3 and 63 characters long. 
