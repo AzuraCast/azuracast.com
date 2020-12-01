@@ -66,6 +66,35 @@ On-screen prompts will show you how the installation is progressing.
 
 Once installation has completed, be sure to follow the post-installation steps. You can also [set up LetsEncrypt](/developers/docker-sh.html#available-commands) or make other changes to your installation using the [Docker Utility Script](/developers/docker-sh.html#download-the-utility-script) that you've just downloaded.
 
+### Unattended Installation
+
+To automate the installation process for AzuraCast, you can run the following commands or place them into a `cloud-init` script. You can select between [release channels](/administration/system/release-channels.html) when installing:
+
+#### Rolling Release Channel
+
+To automatically install AzuraCast on the rolling release channel, run this script:
+
+```bash
+mkdir -p /var/azuracast
+cd /var/azuracast
+curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/master/docker.sh > docker.sh
+chmod a+x docker.sh
+yes '' | ./docker.sh install
+```
+
+#### Stable Channel
+
+To automatically install AzuraCast on the stable channel, run this script:
+
+```bash
+mkdir -p /var/azuracast
+cd /var/azuracast
+curl -fsSL https://raw.githubusercontent.com/AzuraCast/AzuraCast/master/docker.sh > docker.sh
+chmod a+x docker.sh
+yes 'Y' | ./docker.sh setup-release
+yes '' | ./docker.sh install
+```
+
 ### Post-Installation Tasks
 
 Our administration guide has several pages dedicated to tasks you should complete once your installation is finished:
