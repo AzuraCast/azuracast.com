@@ -228,3 +228,23 @@ Return to the AzuraCast web interface, visit the "Mount Points" page for your st
 ```
 
 For more information, see the [IceCast documentation.](https://www.icecast.org/docs/)
+
+## Using a Custom Browser Icon (Favicon)
+
+To override the favicon and other browser icons used by AzuraCast, you should follow these steps:
+
+1. Upload your icon to [favicon-generator.org](http://www.favicon-generator.org/). Be sure to leave "Generate icons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps" checked.
+
+2. Once your icon set is downloaded, it will be in a `.zip` file format; extract that file and copy it to the host server where AzuraCast is hosted.
+
+3. Inside the AzuraCast directory on your host (by default, `/var/azuracast`), create a file named `docker-compose.override.yml` with the following contents:
+
+```yaml
+version: '2.2'
+services:
+    web:
+        volumes:
+            - /path/to/your/favicon/folder:/var/azuracast/www/static/icons/production
+```
+
+4. Restart AzuraCast via `docker-compose down && docker-compose up -d`.
