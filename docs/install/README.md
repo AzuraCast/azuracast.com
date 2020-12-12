@@ -28,8 +28,9 @@ For a majority of users, our Docker installation method is the preferred way of 
 
 ### Other Installation Methods (Unsupported) 
 
-::: warning
-** This method is not supported, we strongly recommend Docker installations **
+::: danger
+**This method is not supported, we strongly recommend Docker installations**
+
 This is an advanced installation option for seasoned Linux server administrators. The software we install can often conflict with other software installed on your server and cause problems which are difficult to diagnose and support. We do not provide support if you install AzuraCast on a server through the Ansible method.  
 
 ::: 
