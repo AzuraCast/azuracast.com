@@ -48,13 +48,13 @@ You can specify any port in any range for your station to use, provided the port
 
 By default, AzuraCast installs and enables the ufw (uncomplicated firewall) and sets it to lock down traffic to only SSH 
 and the ports used by AzuraCast. If you're using a nonstandard port, you will likely also want to enable incoming traffic
-on that port using the command `ufw allow PORTNUM`, where `PORTNUM` is the new port number.
+on that port using the command `ufw allow PORTNUM`, where `PORTNUM` is the new port number.	
 
 ## Why is Ansible unsupported? 
 
 Ansible is not supported due to it being aimed for seasoned server administrators of Linux whom have a deep understanding of it. But since many 3rd party hosting providers often ship software included that may conflict with AzuraCast it can cause issues and lead people to believe it's AzuraCast's fault. 
 
-We're a small team that's funded through peoples generous donations, we are unable to handle large and or complex issues Ansible methods may bring, so we've made a decision to no longer support it. We **may** offer support on an *as available* basis, but this is not guarenteed. For proper support, please use our recommended [Docker installations](/install/docker).
+We're a small team that's funded through peoples generous donations, we are unable to handle large and or complex issues Ansible methods may bring, so we've made a decision to no longer support it. We **may** offer support on an *as available* basis, but this is not guaranteed. For proper support, please use our recommended [Docker installations](/install/docker.html).
 
 If you happen to use Ansible and your experienced with it, we do welcome pull requests to help resolve Ansible issues. 
  
