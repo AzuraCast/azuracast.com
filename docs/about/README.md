@@ -19,7 +19,7 @@ To install AzuraCast, you should have a basic understanding of the Linux shell t
 
 ## Screenshots
 
-![](/img/ScreenshotTour.gif)
+![](/img/tour_update.gif)
 
 [More Screenshots](./screenshots.html)
 
