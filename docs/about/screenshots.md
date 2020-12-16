@@ -10,7 +10,7 @@ Note: AzuraCast is an actively-maintained product that is still in beta, and as 
 
 ### Login Screen
 
-![](/img/screenshots/login_screen_update.png)
+![](/img/screenshots/login_screen.png)
 
 ### Main Dashboard
 
@@ -22,7 +22,7 @@ Note: AzuraCast is an actively-maintained product that is still in beta, and as 
 
 ### Administration Panel
 
-![](/img/screenshots/admin_update.png)
+![](/img/screenshots/admin.png)
 
 ### System Debugger
 ![](/img/screenshots/system_debugger.png)
