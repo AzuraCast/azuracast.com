@@ -195,14 +195,16 @@ Now follow the specific instructions for your streaming server: **IceCast** or *
 
 ### IceCast
 
-**1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page, ...
+**1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page,
 
-![Connection Details](https://i.imgur.com/TRwtPsb.png)
+![Connection Details](/img/icecast.png)
+
 *Connection Information for IceCast*
 
 ... fill this form in the PlayIt Live software.
 
 ![Stream Details](https://i.imgur.com/nGStozZ.png)
+
 *Using the details above to fill the form*
 
 **Don't forget to change these details with yours, this is just an example!**

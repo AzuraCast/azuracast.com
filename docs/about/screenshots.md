@@ -24,6 +24,9 @@ Note: AzuraCast is an actively-maintained product that is still in beta, and as 
 
 ![](/img/screenshots/admin.png)
 
+### System Debugger
+![](/img/screenshots/system_debugger.png)
+
 ### Public Player Page
 
 ![](/img/screenshots/public_player.png)
