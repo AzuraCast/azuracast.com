@@ -4,10 +4,10 @@ title: Ansible
  
 # Ubuntu Installation with Ansible 
  
-::: warning 
+::: danger 
 **This method is no longer officially supported.** 
  
-**Why?** This is an advanced installation option for seasoned Linux server administrators. The software we install can often conflict with other software installed on your server and cause problems which are difficult to diagnose and support. We do not provide support if you install AzuraCast on a server with other software installed and that software conflicts with ours. 
+**Why?** This is an advanced installation option for seasoned Linux server administrators. The software we install can often conflict with other software installed on your server and cause problems which are difficult to diagnose and support. We do not provide support if you install AzuraCast on a server through the Ansible method.  
 
 Even if you aren't familiar with Docker, our Docker installation is still by far the easier way of installing and maintaining AzuraCast. We include helpful scripts that will install Docker and Docker Compose for you, so it's all just one command. Updates are much faster and things are much less likely to break.
  

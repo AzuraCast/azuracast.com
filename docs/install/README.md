@@ -26,9 +26,19 @@ For a majority of users, our Docker installation method is the preferred way of 
 
  - [Self-Installation with Docker](docker)
 
-### Other Installation Methods
+### Other Installation Methods (Unsupported) 
 
-Most servers and hosting providers support Docker without any issues. If your provider does not, or if you are using unique hardware, see the other guides below:
+::: danger
+**Ansible installations are not officially supported; we strongly recommend Docker installations.**
+
+Ansible installations are an advanced option for seasoned Linux server administrators. The software we install can
+conflict with other software installed on your server and cause problems which are difficult to diagnose and support.
+
+We do not provide support if you install AzuraCast on a server through the Ansible method.  
+::: 
+
+Most servers and hosting providers support Docker without any issues. If your provider does not, or if you
+are using unique hardware, see the other guides below:
 
  - [Self-Installation for Raspberry Pi 3B/4](raspberry-pi)
  - [Self-Installation using Ansible](ansible)
