@@ -94,10 +94,3 @@ Once you have a domain name pointed to your AzuraCast installation, you can run 
 Your LetsEncrypt certificate is valid for 3 months. The web service will automatically attempt to renew certificates every night.
 :::
 
-### Renew a LetsEncrypt Certificate
-
-```bash
-./docker.sh letsencrypt-renew
-```
-
-This command will manually renew a previously established LetsEncrypt certificate.
