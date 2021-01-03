@@ -30,6 +30,18 @@ Fortunately, we've already built a solution to this problem! In AzuraCast's syst
 
 ## Important Notes
 
+### Incompatibility with Rocket Loader
+
+Due to the strict `Content Security Policy` in AzuraCast you will have to disable CloudFlare's `Rocket Loader` or your AzuraCast interface will break.
+
+If you have enabled CloudFlare for your AzuraCast installation and your Dashboard shows up like this you should check if your browser's JavaScript console shows the following error and disable `Rocket Loader`.
+
+![](/img/cloudflare_rocket_loader_issue.png)
+
+```
+Refused to load the script 'https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js' because it violates the following Content Security Policy directive: "script-src 'self' 'unsafe-eval' 'nonce-oRJ+doQCy3ixkj24VkvoznVv'". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback.
+```
+
 ### Bandwidth Savings
 
 The nature of streaming radio means it's all but impossible for a service like CloudFlare to cache the radio signal itself using its servers; instead, it passes all of this traffic through to your server directly. This means that CloudFlare will not help you avoid hitting hosting provider bandwidth quotas for your radio service itself.
