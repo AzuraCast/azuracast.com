@@ -36,7 +36,7 @@ Our community votes on what features we should prioritize via a special web site
 
 If you want to chat with other station operators, ask more detailed questions or directly contact the developer team, we have two communities you can join:
 
- - [AzuraCast on Disord](/discord)
+ - [AzuraCast on Discord](/discord)
 
 This is the fastest and easiest way to get in touch with us.
 
