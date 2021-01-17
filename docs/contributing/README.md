@@ -32,9 +32,9 @@ We do our best to incorporate translation changes as frequently as possible, but
 
 Our community votes on what features we should prioritize via a special web site called FeatureUpvote. Visit the [AzuraCast FeatureUpvote Site](https://features.azuracast.com/) to submit new feature ideas or vote on existing ones.
 
-## Join AzuraCast Communities
+## Join AzuraCast Discord
 
-If you want to chat with other station operators, ask more detailed questions or directly contact the developer team, we have two communities you can join:
+If you want to chat with other station operators, ask more detailed questions or directly contact the developer team, our Discord link:
 
  - [AzuraCast on Discord](/discord)
 
