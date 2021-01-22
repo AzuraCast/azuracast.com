@@ -100,10 +100,12 @@ If your using a third party Redis host you'll need to modify these fields and un
 
 
 ## Advanced Configuration
-
+```bash
 # Override the IP/hostname to use when negotiating inbound FTP Passive Mode (PASV) connections.
 # The system will attempt to automatically detect this, so you often don't need to change it.
 # FTP_PASV_IP=localhost
+```
+Information is required here. 
 
 ```bash
 # PHP's maximum POST body size and max upload filesize.
