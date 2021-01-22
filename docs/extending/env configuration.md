@@ -34,7 +34,8 @@ AUTO_ASSIGN_PORT_MAX=8499
 By default, this matches the first forwarded port on the "stations" container, you can modify this variable if your station port range is different. Make sure to forward the necessary ports via `docker-compose.yml` and nginx if you wish to use the built in proxy. The PORT_MAX field is the highest port AzuraCast will allow, so for example `8499` is the highest port a station can have. 
 
 ## MySQL variables
-```bash.
+
+```bash
 # The host to connect to. Leave this as the default value unless you're connecting
 #   to an external database server.
 # Default: mariadb
@@ -75,6 +76,7 @@ MYSQL_SLOW_QUERY_LOG=0
 # if you are seeing the `Too many connections` error in the logs.
 # Default: 100
 MYSQL_MAX_CONNECTIONS=100```
+
 If you wish to use a external database server, you'll need to configure this area and restart AzuraCast.
 
 
@@ -93,11 +95,11 @@ If you wish to use a external database server, you'll need to configure this are
 # Default: 1
 # REDIS_DB=1
 ```
+
 If your using a third party Redis host you'll need to modify these fields and uncomment them, after this you'll need to restart AzuraCast. 
 
 
 ## Advanced Configuration
-
 
 # Override the IP/hostname to use when negotiating inbound FTP Passive Mode (PASV) connections.
 # The system will attempt to automatically detect this, so you often don't need to change it.
