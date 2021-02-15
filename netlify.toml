@@ -2,7 +2,7 @@
 # Powered by Netlify
 
 [build]
-  publish = ""
+  publish = "/"
   command = "npm run build"
 
 [[plugins]]
