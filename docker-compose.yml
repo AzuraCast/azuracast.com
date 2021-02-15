@@ -1,7 +1,7 @@
 version: '2.2'
 
 services:
-  vuepress:
+  frontend:
     build:
       context: .
     ports:

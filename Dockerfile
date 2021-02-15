@@ -19,4 +19,4 @@ VOLUME /data/node_modules
 
 # Define default command.
 ENTRYPOINT ["/build_entrypoint.sh"]
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]

@@ -9,12 +9,6 @@
 package = "netlify-plugin-checklinks"
   [plugins.inputs]
   pretty = true
-  skipPatterns = ["/discord"]
-
-[[redirects]]
-  from = "/install.html"
-  to = "/install/index.html"
-  status = 301
 
 [[redirects]]
   from = "/api"
@@ -22,41 +16,73 @@ package = "netlify-plugin-checklinks"
   status = 302
 
 [[redirects]]
+  from = "/discord"
+  to = "https://discord.gg/azuracast"
+  status = 302
+
+[[redirects]]
   from = "/demo"
-  to = "/demo-reloading.html"
+  to = "https://docs.azuracast.com/en/live-demo"
   status = 302
 
 [[redirects]]
   from = "/code_of_conduct.html"
-  to = "/code-of-conduct.html"
-  status = 301
+  to = "https://docs.azuracast.com/en/contribute/code-of-conduct"
+  status = 302
 
 [[redirects]]
   from = "/extending/modifying_docker.html"
-  to = "/extending/modifying-docker.html"
-  status = 301
+  to = "https://docs.azuracast.com/en/administration/docker"
+  status = 302
 
 [[redirects]]
   from = "/developers/docker_sh.html"
-  to = "/developers/docker-sh.html"
-  status = 301
+  to = "https://docs.azuracast.com/en/administration/docker"
+  status = 302
 
-[[redirects]]
-  from = "/developers/liquidsoap_annotations.html"
-  to = "/developers/liquidsoap-annotations.html"
-  status = 301
+# Streaming Software
 
 [[redirects]]
   from = "/station-management/djs/streaming_software.html"
-  to = "/station-management/djs/streaming-software.html"
-  status = 301
+  to = "https://docs.azuracast.com/en/user-guide/streaming-software"
+  status = 302
+
+[[redirects]]
+  from = "/link/streaming_software"
+  to = "https://docs.azuracast.com/en/user-guide/streaming-software"
+  status = 302
+
+# Advanced Playlists
 
 [[redirects]]
   from = "/station-management/playlists/advanced_playlists.html"
-  to = "/station-management/playlists/advanced-playlists.html"
-  status = 301
+  to = "https://docs.azuracast.com/en/user-guide/playlists/advanced-playlists"
+  status = 302
 
 [[redirects]]
-  from = "/discord"
-  to = "https://discord.gg/CcdCZx2"
+  from = "/station-management/playlists/"
+  to = "https://docs.azuracast.com/en/user-guide/playlists/advanced-playlists"
+  status = 302
+
+[[redirects]]
+  from = "/links/advanced_playlists"
+  to = "https://docs.azuracast.com/en/user-guide/playlists/advanced-playlists"
+  status = 302
+
+# Update Instructions
+
+[[redirects]]
+  from = "/administration/system/updating.html"
+  to = "https://docs.azuracast.com/en/getting-started/updates"
+  status = 302
+
+[[redirects]]
+  from = "/links/update"
+  to = "https://docs.azuracast.com/en/getting-started/updates"
+  status = 302
+
+# Catch-all redirect to the main page.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 302
