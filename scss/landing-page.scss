@@ -1,8 +1,13 @@
 // Core variables and mixins
 @import "variables.scss";
 @import "mixins.scss";
+
+// Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
 // Global CSS
 @import "global.scss";
+
 // Components
 @import "masthead.scss";
 @import "showcase.scss";
