@@ -2,19 +2,13 @@
 # Powered by Netlify
 
 [build]
-  publish = "public"
+  publish = ""
   command = "npm run build"
 
 [[plugins]]
 package = "netlify-plugin-checklinks"
   [plugins.inputs]
   pretty = true
-  skipPatterns = ["/discord"]
-
-[[redirects]]
-  from = "/install.html"
-  to = "/install/index.html"
-  status = 301
 
 [[redirects]]
   from = "/api"
@@ -23,40 +17,35 @@ package = "netlify-plugin-checklinks"
 
 [[redirects]]
   from = "/demo"
-  to = "/demo-reloading.html"
+  to = "https://docs.azuracast.com/en/live-demo"
   status = 302
 
 [[redirects]]
   from = "/code_of_conduct.html"
-  to = "/code-of-conduct.html"
-  status = 301
+  to = "https://docs.azuracast.com/en/contribute/code-of-conduct"
+  status = 302
 
 [[redirects]]
   from = "/extending/modifying_docker.html"
-  to = "/extending/modifying-docker.html"
-  status = 301
+  to = "https://docs.azuracast.com/en/administration/docker"
+  status = 302
 
 [[redirects]]
   from = "/developers/docker_sh.html"
-  to = "/developers/docker-sh.html"
-  status = 301
-
-[[redirects]]
-  from = "/developers/liquidsoap_annotations.html"
-  to = "/developers/liquidsoap-annotations.html"
-  status = 301
+  to = "https://docs.azuracast.com/en/administration/docker"
+  status = 302
 
 [[redirects]]
   from = "/station-management/djs/streaming_software.html"
-  to = "/station-management/djs/streaming-software.html"
-  status = 301
+  to = "https://docs.azuracast.com/en/user-guide/streaming-software"
+  status = 302
 
 [[redirects]]
   from = "/station-management/playlists/advanced_playlists.html"
-  to = "/station-management/playlists/advanced-playlists.html"
-  status = 301
+  to = "https://docs.azuracast.com/en/user-guide/playlists/advanced-playlists"
+  status = 302
 
 [[redirects]]
   from = "/discord"
-  to = "https://discord.gg/CcdCZx2"
+  to = "https://discord.gg/azuracast"
   status = 302

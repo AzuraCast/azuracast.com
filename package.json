@@ -1,29 +1,13 @@
 {
-    "title": "Landing Page",
-    "name": "startbootstrap-landing-page",
-    "version": "5.0.9",
+    "title": "AzuraCast",
+    "name": "azuracast-dot-com",
     "scripts": {
+        "build": "node_modules/.bin/gulp",
         "start": "node_modules/.bin/gulp watch"
     },
-    "description": "An HTML landing page template built with Bootstrap",
-    "keywords": [
-        "css",
-        "sass",
-        "html",
-        "responsive",
-        "theme",
-        "template"
-    ],
-    "homepage": "https://startbootstrap.com/theme/landing-page",
-    "bugs": {
-        "url": "https://github.com/StartBootstrap/startbootstrap-landing-page/issues",
-        "email": "feedback@startbootstrap.com"
-    },
+    "description": "A free and open-source, self-hosted web radio management suite.",
+    "homepage": "https://www.azuracast.com/",
     "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (https://davidmiller.io/)"
-    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/StartBootstrap/startbootstrap-landing-page.git"
