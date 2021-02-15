@@ -80,3 +80,9 @@ package = "netlify-plugin-checklinks"
   from = "/links/update"
   to = "https://docs.azuracast.com/en/getting-started/updates"
   status = 302
+
+# Catch-all redirect to the main page.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 302
