@@ -11,3 +11,8 @@ h6 {
   @include body-font;
   font-weight: 700;
 }
+
+.lead {
+  font-weight: 400;
+  color: rgba($black, .7);
+}

@@ -9751,6 +9751,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+.lead {
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.7);
+}
+
 header.masthead {
   position: relative;
   background-color: #343a40;
