@@ -40,36 +40,15 @@ package = "netlify-plugin-checklinks"
   to = "https://docs.azuracast.com/en/administration/docker"
   status = 302
 
-# Streaming Software
-
 [[redirects]]
   from = "/station-management/djs/streaming_software.html"
   to = "https://docs.azuracast.com/en/user-guide/streaming-software"
   status = 302
 
 [[redirects]]
-  from = "/link/streaming_software"
-  to = "https://docs.azuracast.com/en/user-guide/streaming-software"
+  from = "/station-management/playlists/*"
+  to = "https://docs.azuracast.com/en/user-guide/playlists"
   status = 302
-
-# Advanced Playlists
-
-[[redirects]]
-  from = "/station-management/playlists/advanced_playlists.html"
-  to = "https://docs.azuracast.com/en/user-guide/playlists/advanced-playlists"
-  status = 302
-
-[[redirects]]
-  from = "/station-management/playlists/"
-  to = "https://docs.azuracast.com/en/user-guide/playlists/advanced-playlists"
-  status = 302
-
-[[redirects]]
-  from = "/links/advanced_playlists"
-  to = "https://docs.azuracast.com/en/user-guide/playlists/advanced-playlists"
-  status = 302
-
-# Update Instructions
 
 [[redirects]]
   from = "/administration/system/updating.html"
@@ -77,8 +56,13 @@ package = "netlify-plugin-checklinks"
   status = 302
 
 [[redirects]]
-  from = "/links/update"
-  to = "https://docs.azuracast.com/en/getting-started/updates"
+  from = "/help*"
+  to = "https://docs.azuracast.com/en/user-guide/troubleshooting"
+  status = 302
+
+[[redirects]]
+  from = "/donate*"
+  to = "https://docs.azuracast.com/en/contribute/donate"
   status = 302
 
 # Catch-all redirect to the main page.
