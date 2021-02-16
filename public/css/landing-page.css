@@ -9760,7 +9760,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.05rem;
 }
 
-.navbar-brand {
+nav.navbar {
+  background-image: url(../img/header_bg.png), linear-gradient(90deg, #2196f3 0, #0a6fc2 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav.navbar .navbar-brand {
   font-size: 1.5rem;
   line-height: 1;
 }

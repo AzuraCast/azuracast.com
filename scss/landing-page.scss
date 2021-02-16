@@ -44,9 +44,16 @@ h6 {
 }
 
 // Header
-.navbar-brand {
-    font-size: 1.5rem;
-    line-height: 1;
+nav.navbar {
+    background-image: url(../img/header_bg.png),linear-gradient(90deg,#2196f3 0,#0a6fc2 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .navbar-brand {
+        font-size: 1.5rem;
+        line-height: 1;
+    }
 }
 
 // Masthead
