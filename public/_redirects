@@ -1,5 +1,6 @@
 /api                    /api/index.html
 /discord                https://discord.gg/azuracast
+/demo-reloading.html    https://docs.azuracast.com/en/live-demo
 /demo                   https://docs.azuracast.com/en/live-demo
 /code_of_conduct.html   https://docs.azuracast.com/en/contribute/code-of-conduct
 /extending/modifying_docker.html https://docs.azuracast.com/en/administration/docker
