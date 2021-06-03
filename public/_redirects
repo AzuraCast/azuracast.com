@@ -3,10 +3,13 @@
 /demo-reloading.html    https://docs.azuracast.com/en/live-demo
 /demo                   https://docs.azuracast.com/en/live-demo
 /code_of_conduct.html   https://docs.azuracast.com/en/contribute/code-of-conduct
+/extending/letsencrypt.html https://docs.azuracast.com/en/administration/ssl-and-lets-encrypt
 /extending/modifying_docker.html https://docs.azuracast.com/en/administration/docker
+/developers/docker-sh.html https://docs.azuracast.com/en/administration/docker
 /developers/docker_sh.html https://docs.azuracast.com/en/administration/docker
 /station-management/djs/streaming_software.html https://docs.azuracast.com/en/user-guide/streaming-software
 /station-management/playlists/* https://docs.azuracast.com/en/user-guide/playlists
+/administration/system/release-channels.html https://docs.azuracast.com/en/getting-started/updates/release-channels
 /administration/system/updating.html https://docs.azuracast.com/en/getting-started/updates
 /help/                  https://docs.azuracast.com/en/user-guide/troubleshooting
 /help*                  https://docs.azuracast.com/en/user-guide/troubleshooting
