@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - AzuraCast v (https://www.azuracast.com/)
- * Copyright 2013-2021 
+ * Copyright 2013-2021
  * Licensed under MIT (https://github.com/StartBootstrap/azuracast-dot-com/blob/master/LICENSE)
  */
 
@@ -9761,7 +9761,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav.navbar {
-  background-image: linear-gradient(90deg, #2196f3 0, #0a6fc2 100%);
+  background-image: url(../img/header_bg.png), linear-gradient(90deg, #2196f3 0, #0a6fc2 100%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9777,11 +9777,13 @@ header.masthead {
   background-color: #343a40;
   background: url("../img/bg-masthead.jpg") no-repeat center center;
   background-size: cover;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 header.masthead .overlay {
   position: absolute;
-  background-color: #000;
+  background-color: #212529;
   height: 100%;
   width: 100%;
   top: 0;
@@ -9789,116 +9791,25 @@ header.masthead .overlay {
   opacity: 0.3;
 }
 
-header.masthead .features-icons {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  position: relative;
-}
-
-header.masthead .features-icons .overlay {
-  opacity: 0.5;
-}
-
-header.masthead .features-icons .features-icons-item {
-  max-width: 20rem;
-}
-
-header.masthead .features-icons .features-icons-item .features-icons-icon {
-  height: 5rem;
-}
-
-header.masthead .features-icons .features-icons-item .features-icons-icon i {
-  font-size: 3rem;
-}
-
-header.masthead .features-icons .features-icons-item:hover .features-icons-icon i {
-  font-size: 4rem;
-}
-
 header.masthead h1 {
   font-size: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
+  header.masthead {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
   header.masthead h1 {
     font-size: 3rem;
   }
 }
 
-.ad-section {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.ad-section #carbonads {
-  margin-left: auto;
-  margin-right: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  display: flex;
-  max-width: 330px;
-  background-color: #fafafa;
-  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-}
-
-.ad-section #carbonads * {
-  margin: initial;
-  padding: initial;
-}
-
-.ad-section #carbonads a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.ad-section #carbonads a a:hover {
-  color: inherit;
-}
-
-.ad-section #carbonads span {
-  position: relative;
-  display: block;
-  overflow: hidden;
-}
-
-.ad-section #carbonads .carbon-wrap {
-  display: flex;
-}
-
-.ad-section #carbonads .carbon-img {
-  display: block;
-  margin: 0;
-  line-height: 1;
-}
-
-.ad-section #carbonads .carbon-img img {
-  display: block;
-}
-
-.ad-section #carbonads .carbon-text {
-  font-size: 13px;
-  padding: 10px;
-  margin-bottom: 16px;
-  line-height: 1.5;
-  text-align: left;
-}
-
-.ad-section #carbonads .carbon-poweredby {
-  display: block;
-  padding: 6px 8px;
-  background: #f1f1f2;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 600;
-  font-size: 8px;
-  line-height: 1;
-  border-top-left-radius: 3px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.professional-services {
+  background-image: linear-gradient(90deg, #2196f3 0, #0a6fc2 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .showcase .showcase-text {
@@ -9914,6 +9825,27 @@ header.masthead h1 {
   .showcase .showcase-text {
     padding: 7rem;
   }
+}
+
+.features-icons {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
 }
 
 .call-to-action {
