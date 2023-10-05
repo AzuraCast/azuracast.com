@@ -12,7 +12,6 @@
   "dependencies": {
     "astro": "^3.2.3",
     "bootstrap": "^5.3.2",
-    "roboto-font": "^0.1.0",
     "sass": "^1.68.0"
   }
 }

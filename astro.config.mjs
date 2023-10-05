@@ -4,5 +4,10 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     server: {
         host: true
+    },
+    vite: {
+        ssr: {
+            noExternal: ['bootstrap', 'roboto-font'],
+        }
     }
 });

@@ -5,22 +5,16 @@
             <img src="/img/logo.svg" width="32" height="32" alt="" />
             <span class="azuracast">azura<strong>cast</strong></span>
         </a>
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarText"
-            aria-controls="navbarText"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-        >
+        <span class="navbar-text me-auto">
+            Simple, Self-Hosted Web Radio
+        </span>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <span class="navbar-text mr-auto">
-                Simple, Self-Hosted Web Radio
-            </span>
-            <ul class="navbar-nav">
+
+        <div class="collapse navbar-collapse" id="navbarToggle">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="https://docs.azuracast.com/"
                         >Documentation</a
@@ -52,5 +46,15 @@
 </nav>
 
 <style lang="scss">
-    
+nav.navbar {
+    background-image: linear-gradient(90deg,#2196f3 0,#0a6fc2 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .navbar-brand {
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+}
 </style>

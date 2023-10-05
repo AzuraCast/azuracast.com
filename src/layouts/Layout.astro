@@ -45,9 +45,16 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		
+		<script src="../js/layout.js"></script>
 	</body>
 </html>
 
 <style lang="scss" is:global>
 @import '../scss/style';
+
+// The AzuraCast branding
+.azuracast {
+    letter-spacing: -0.05rem;
+}
 </style>
