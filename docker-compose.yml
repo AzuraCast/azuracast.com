@@ -3,10 +3,7 @@ services:
     build:
       context: .
     ports:
-      - '8080:8080'
+      - '4321:4321'
+    user: 1000:1000
     volumes:
       - ./:/data
-      - static_node_modules:/data/node_modules
-
-volumes:
-  static_node_modules: {}

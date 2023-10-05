@@ -1,0 +1,31 @@
+$icon-size: 1.25rem;
+$icon-size-xl: (
+  $icon-size * 1.5
+);
+$icon-size-lg: (
+  $icon-size * 1.25
+);
+$icon-size-sm: (
+  $icon-size * 0.6
+);
+
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -.125em;
+  fill: currentcolor;
+  font-size: $icon-size;
+
+  &.sm, .btn-sm & {
+    font-size: $icon-size-sm;
+  }
+
+  &.lg, .btn-lg & {
+    font-size: $icon-size-lg;
+  }
+
+  &.xl, .btn-xl & {
+    font-size: $icon-size-xl;
+  }
+}
