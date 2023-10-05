@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="AzuraCast">
+  <Navbar />
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="mb-2">
+                    <h1>
+                        <span class="azuracast">azura<strong>cast</strong></span
+                        > is a
+                    </h1>
+                    <h2>free and open-source, self-hosted</h2>
+                    <h1>web radio station in a box</h1>
+                </div>
+
+                <div class="buttons pt-5">
+                    <a class="btn btn-lg btn-primary" href="#install">
+                        <i class="fa fa-rocket"></i>
+                         Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-layers m-auto text-primary"></i>
+            </div>
+            <h3>Everything's Included</h3>
+            <p class="lead mb-0">AzuraCast installs everything you need to get a web radio station up and running in minutes.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-screen-desktop m-auto text-primary"></i>
+            </div>
+            <h3>Powerful and Intuitive</h3>
+            <p class="lead mb-0">Manage every aspect of your radio station via a simple yet powerful web interface.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-globe m-auto text-primary"></i>
+            </div>
+            <h3>Runs Anywhere</h3>
+            <p class="lead mb-0">Install AzuraCast onto any server (or desktop) that supports Docker.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Showcases -->
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.png');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Web-Based Station Management</h2>
+          <p class="lead mb-0">
+            Upload media, manage playlists, create local mount points and remote relays, view analytics and reports and much more, all
+            from the convenience of your web browser.
+          </p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.png');"></div>
+        <div class="col-lg-6 my-auto showcase-text">
+          <h2>Multi-Station Administration</h2>
+          <p class="lead mb-0">
+            Host multiple stations on a single installation, create new user accounts and unique roles with granular permissions.
+            Back up your installation and keep track of every station from one central location.
+          </p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.png');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Built-in Public Pages</h2>
+          <p class="lead mb-0">
+            Out of the box, each station includes a public-facing player page that can also be embedded into your own web site.
+            Our powerful APIs let you build your own players and interfaces that take advantage of our rich metadata support.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="call-to-action text-white text-center" id="install">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h2 class="mb-4">Ready to get started? Install AzuraCast today!</h2>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <div class="buttons">
+            <a class="btn btn-lg btn-dark" target="_blank" href="https://linode.gvw92c.net/c/2691356/1078437/10906">
+              <i class="fab fa-linode"></i>
+              Linode
+            </a>
+            <a class="btn btn-lg btn-dark" target="_blank" href="https://marketplace.digitalocean.com/apps/azuracast?refcode=1023fa8af513">
+              <i class="fab fa-digital-ocean"></i>
+              DigitalOcean
+            </a>
+            <a class="btn btn-lg btn-dark" target="_blank" href="https://www.vultr.com/marketplace/apps/azuracast?ref=8888059">
+              Vultr
+            </a>
+            <a class="btn btn-lg btn-primary" href="https://docs.azuracast.com/en/getting-started/installation/docker">
+              <i class="fab fa-docker"></i>
+              Self-Hosted
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style lang="scss">
+// Masthead
+header.masthead {
+    position: relative;
+    background-color: #343a40;
+    background: url("/img/bg-masthead.jpg") no-repeat center center;
+    background-size: cover;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    .overlay {
+        position: absolute;
+        background-color: #212529;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        h1 {
+            font-size: 3rem;
+        }
+    }
+}
+
+// Professional Services
+.professional-services {
+    background-image: linear-gradient(90deg,#2196f3 0,#0a6fc2 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// Showcase
+.showcase {
+    .showcase-text {
+        padding: 3rem;
+    }
+    .showcase-img {
+        min-height: 30rem;
+        background-size: cover;
+    }
+    @media (min-width: 768px) {
+        .showcase-text {
+            padding: 7rem;
+        }
+    }
+}
+
+// Feature Icons
+.features-icons {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    .features-icons-item {
+        max-width: 20rem;
+        .features-icons-icon {
+            height: 7rem;
+            i {
+                font-size: 4.5rem;
+            }
+        }
+        &:hover {
+            .features-icons-icon {
+                i {
+                    font-size: 5rem;
+                }
+            }
+        }
+    }
+}
+
+// CTA
+.call-to-action {
+    position: relative;
+    background-color: #343a40;
+    background: url("/img/bg-masthead.jpg") no-repeat center center;
+    background-size: cover;
+
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+
+    .overlay {
+        position: absolute;
+        background-color: #212529;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+    }
+}
+</style>
