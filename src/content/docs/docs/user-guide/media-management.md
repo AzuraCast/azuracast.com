@@ -26,7 +26,7 @@ For Docker installations, AzuraCast offers a built-in SFTP server which allows y
 
 ### S3 Compatible
 
-Stations can utilize S3 compatible services (Backblaze, Digital Ocean Spaces, Linode Storage and S3) to manage it's media remotely, view our [S3 configuration](/docs/user-guide/storage-locations/s3-configuration) guide for more details.
+Stations can utilize S3 compatible services (Backblaze, Digital Ocean Spaces, Linode Storage and S3) to manage it's media remotely, view our [S3 configuration](/docs/administration/storage-locations/#s3-compatible-storage-location) guide for more details.
 
 ## Auto-Assigning Folders to Playlists
 

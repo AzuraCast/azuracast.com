@@ -355,4 +355,4 @@ All config files placed in the `/etc/nginx/azuracast.conf.d/` are automatically 
 
 ### Multi-Site Installation
 
-AzuraCast can exist on a server with other web sites hosted at different URLs. Check out our [Multi-Site Docker Installation guide](/docs/administration/docker/multi-site-installation) for more information.
+AzuraCast can exist on a server with other web sites hosted at different URLs. Check out our [Multi-Site Docker Installation guide](/docs/administration/multi-site-installation) for more information.
