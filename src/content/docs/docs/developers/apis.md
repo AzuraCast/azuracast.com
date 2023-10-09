@@ -46,7 +46,7 @@ The most important and frequently accessed pieces of information that AzuraCast 
 
 Because of how valuable this information is, we serve it in a number of ways depending on whether performance or flexibility is your main concern.
 
-Check out our [Now Playing Data APIs](/docs/developers/apis/now-playing-data) page for more detailed information on these APIs.
+Check out our [Now Playing Data APIs](/docs/developers/now-playing-data) page for more detailed information on these APIs.
 
 ## SDKs & API clients
 
