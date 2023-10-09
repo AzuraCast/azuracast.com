@@ -14,5 +14,6 @@
 /administration/system/updating.html /docs/getting-started/updates
 /help/                  /docs/help/troubleshooting
 /help*                  /docs/help/troubleshooting
+/docs/user-guide/troubleshooting /docs/help/troubleshooting
 /donate.html            /docs/contribute/donate
 /donate*                /docs/contribute/donate

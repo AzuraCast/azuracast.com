@@ -176,21 +176,6 @@ $dispatcher->addListener(App\Event\BuildView::class, function(App\Event\BuildVie
 });
 ```
 
-# `\App\Event\SendWebhooks`
-
-> Currently not available
-{.is-danger}
-
-- [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/SendWebhooks.php)
-
-This event is triggered any time web hooks are triggered for a station. It includes the current "now playing" data along with a list of the triggers that are associated with the webhook (i.e. if the song changed, DJ connected/disconnected, etc).
-
-You can use this to add your own web hooks.
-
-```php
-
-```
-
 # `\App\Event\GetNotifications`
 
 - [Class reference](https://github.com/AzuraCast/AzuraCast/blob/master/src/Event/GetNotifications.php)
