@@ -38,11 +38,13 @@ Contact the GetMeRadio team first to gain access to their API. Once you have the
 
 These directories use Icecast's built-in YellowPages (YP) discovery mechanism to submit routine updates. They require using Icecast to broadcast rather than Shoutcast or HLS.
 
-> Adding YellowPages directories requires that the "Enable Advanced Settings" system setting is enabled in AzuraCast. An installation administrator can enable this setting at any time from the web interface.
-{.is-info}
+:::tip
+Adding YellowPages directories requires that the "Enable Advanced Settings" system setting is enabled in AzuraCast. An installation administrator can enable this setting at any time from the web interface.
+:::
 
-> By default, all mount points on a station will be advertised to any Yellow Pages directory. To limit which mount points are visible,you can edit a mount point and uncheck the `Publish to "Yellow Pages" Directories` setting.
-{.is-info}
+:::tip
+By default, all mount points on a station will be advertised to any Yellow Pages directory. To limit which mount points are visible,you can edit a mount point and uncheck the `Publish to "Yellow Pages" Directories` setting.
+:::
 
 ### Xiph Icecast Directory
 
@@ -78,8 +80,9 @@ You can add the following entry:
 
 These directories receive metadata updates via custom headers provided directly in your Icecast stream. They require using Icecast to broadcast rather than Shoutcast or HLS.
 
-> Adding custom Icecast headers requires that the "Enable Advanced Settings" system setting is enabled in AzuraCast. An installation administrator can enable this setting at any time from the web interface.
-{.is-info}
+:::tip
+Adding custom Icecast headers requires that the "Enable Advanced Settings" system setting is enabled in AzuraCast. An installation administrator can enable this setting at any time from the web interface.
+:::
 
 ### radio-browser.info
 

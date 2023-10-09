@@ -21,8 +21,9 @@ docker-compose up -d
 
 ## The `.env` File
 
-> Because this file's name starts with a period, it is often hidden when using commands like `ls` to view a directory. You can list a directory (including this file) by using the `ls -a` flag (i.e. `ls -lah`).
-{.is-info}
+:::tip[Note the filename...]
+Because this file's name starts with a period, it is often hidden when using commands like `ls` to view a directory. You can list a directory (including this file) by using the `ls -a` flag (i.e. `ls -lah`).
+:::
 
 The `.env` file is used by Docker itself to determine how certain parts of the infrastructure is set up.
 

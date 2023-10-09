@@ -12,8 +12,9 @@ Installing AzuraCast on newer editions of Windows 10 (and Windows 11) is quite s
 
 ## Installing with WSL2
 
-> Version 2 of the Windows Subsystem for Linux (WSL) will work on any edition of Windows, including Home editions.
-{.is-info}
+:::tip
+Version 2 of the Windows Subsystem for Linux (WSL) will work on any edition of Windows, including Home editions.
+:::
 
 ### Install Docker Desktop for Windows
 
