@@ -46,8 +46,6 @@ If you don't want to manually edit this file, you can also change the HTTP, HTTP
 
 The default `azuracast.env` contains the following variables:
 
-<br>
-
 ### AzuraCast Customization
 
 Variable | Default Value | Description
@@ -56,8 +54,6 @@ Variable | Default Value | Description
 `LOG_LEVEL` | notice | This allows you to log debug-level errors temporarily (for problem-solving) or reduce the volume of logs that are produced by your installation, without needing to modify whether your installation is a production or development instance. <br><br> Valid options: `debug`, `info`, `notice`, `warning`, `error`, `critical`, `alert`, `emergency`
 `COMPOSER_PLUGIN_MODE` | false | Enable the composer "merge" functionality to combine the main application's composer.json file with any plugins' composer files. This can have performance implications, so you should only use it if you use one or more plugins with their own Composer dependencies. <br><br> Valid options: true, false
 `AUTO_ASSIGN_PORT_MIN` | 8000 | The minimum port number to use when automatically assigning ports to a station. By default, this matches the first forwarded port on the "stations" container. You can modify this variable if your station port range is different. Be sure to also forward the necessary ports via `docker-compose.yml` (and nginx, if you want to use the built-in port-80/443 proxy)!
-
-<br>
 
 ### Database Configuration
 
@@ -72,8 +68,6 @@ Variable | Default Value | Description
 `MYSQL_SLOW_QUERY_LOG` | 0 | Log slower queries for the purpose of diagnosing issues. Only turn this on when you need to, by uncommenting this and switching it to 1. To read the slow query log once enabled, run: `docker-compose exec mariadb slow_queries`
 `MYSQL_MAX_CONNECTIONS` | 100 | Set the amount of allowed connections to the database. This value should be increased if you are seeing the `Too many connections` error in the logs.
 
-<br>
-
 ### Redis Configuration
 
 Uncomment these fields if you are using a third-party Redis host instead of the one provided with AzuraCast.
@@ -85,8 +79,6 @@ Variable | Default Value | Description
 `REDIS_HOST` | redis | Name of the Redis host.
 `REDIS_PORT` | 6379 | Port to connect to on the Redis host.
 `REDIS_DB` | 1 | Database index to use on the Redis host.
-
-<br>
 
 ### Advanced Configuration
 

@@ -8,33 +8,27 @@ editor: markdown
 dateCreated: 2021-02-06T19:39:05.548Z
 ---
 
-# What is Liquidsoap?
-
 [Liquidsoap](https://www.liquidsoap.info/) is a powerful and flexible language for describing audio and video streams. It offers a rich collection of operators that you can combine at will for creating or transforming streams.
 
-# Liquidsoap in AzuraCast
+## Liquidsoap in AzuraCast
 
 AzuraCast uses Liquidsoap as the the AutoDJ to generate and manipulate audio streams. It transforms the input streams to the correct format for each mount point, handles live DJ connections, filtering, compression, and more.
 
-# Liquidsoap Annotation Reference
+## Liquidsoap Annotation Reference
 
 This information is intended for plugin developers who are looking to supply additional annotation metadata to Liquidsoap. It is a compilation of information that wasn't available elsewhere online, and is intended only for advanced users.
 
-## Appending Tracks
+### Appending Tracks
 
 > liquidsoap/src/operators/append.ml
 
 Append an extra track to every track.
 
-<br>
-
-### liq_append
+#### liq_append
 
 Set the metadata 'liq_append' to 'false' to inhibit appending on one track.
 
-<br>
-
-## Crossing Tracks
+### Crossing Tracks
 
 > liquidsoap/src/operators/cross.ml
 
@@ -44,15 +38,11 @@ A buffer is needed to store the end of a track before combining it with the next
 
 This operator works with any type of stream. All three parameters are durations in ticks.
 
-<br>
-
-### liq_start_next
+#### liq_start_next
 
 Metadata field which, if present and containing a float, overrides the 'duration' parameter for current track.
 
-<br>
-
-## Cue Points
+### Cue Points
 
 > liquidsoap/src/operators/cuepoint.ml
 
@@ -62,29 +52,21 @@ We use ticks for precision, but store them as Int64 to allow long durations. Thi
 
 Start track after a cue in point and stop it at cue out point. The cue points are given as metadata, in seconds from the begining of tracks.
 
-<br>
-
-### liq_cue_in
+#### liq_cue_in
 
 Metadata for cue in points.
 
-<br>
-
-### liq_cue_out
+#### liq_cue_out
 
 Metadata for cue out points. Note that cue-out should be given relative to the beginning of the file (0:00 of the file itself, not 0:00 as calculated by the cue-in point).
 
-<br>
-
-## Fader
+### Fader
 
 > liquidsoap/src/operators/fade.ml
 
 Fade durations (in, initial, out, final) are indicated in total seconds.
 
-<br>
-
-### liq_fade_type
+#### liq_fade_type
 
 Metadata field which, if present and correct, overrides the 'type' parameter for current track.
 
@@ -92,91 +74,65 @@ Options: lin|sin|log|exp (linear, sinusoidal, logarithmic or exponential)
 
 Default: lin
 
-<br>
-
-### liq_fade_in
+#### liq_fade_in
 
 Fade the beginning of **tracks**.
 
-<br>
-
-### liq_fade_initial
+#### liq_fade_initial
 
 Fade the beginning of **a stream**.
 
-<br>
-
-### liq_fade_out
+#### liq_fade_out
 
 Fade the end of **tracks**.
 
-<br>
-
-### liq_fade_final
+#### liq_fade_final
 
 Fade **a stream** to silence.
 
-<br>
-
-## Offset
+### Offset
 
 > liquidsoap/src/operators/on_offset.ml
 
 Call a given handler when position in track is equal or more than a given amount of time (the 'offset' parameter)
 
-<br>
-
-### liq_on_offset
+#### liq_on_offset
 
 Metadata field which, if present and containing a float, overrides the 'offset' parameter.
 
-<br>
-
-## Prepending Tracks
+### Prepending Tracks
 
 > liquidsoap/src/operators/prepend.ml
 
 Prepend an extra track before every track.
 
-<br>
-
-### liq_prepend
+#### liq_prepend
 
 Set the metadata 'liq_prepend' to 'false' to inhibit appending on one track.
 
-<br>
-
-## Set Volume
+### Set Volume
 
 > liquidsoap/src/operators/setvol.ml
 
 Multiply the amplitude of the signal.
 
-<br>
-
-### liq_amplify
+#### liq_amplify
 
 Specify the name of a metadata field that, when present and well-formed, overrides the amplification factor for the current track. Well-formed values are floats in decimal notation (e.g. '0.7') which are taken as normal/linear multiplicative factors; values can be passed in decibels with the suffix 'dB' (e.g. '-8.2 dB', but the spaces do not matter).
 
-<br>
-
-## Video Fade
+### Video Fade
 
 > liquidsoap/src/operators/video_fade.ml
 
-<br>
-
-### liq_video_fade_in
+#### liq_video_fade_in
 
 Fade the beginning of tracks. Metadata 'liq_video_fade_in' can be used to set the duration for a specific track (float in seconds).
 
-<br>
-
-### liq_video_fade_out
+#### liq_video_fade_out
 
 Fade the end of tracks. Metadata 'liq_video_fade_out' can be used to set the duration for a specific track (float in seconds).
 
-# LADSPA Plugins
+## LADSPA Plugins
 
 [LADSPA](https://www.ladspa.org/) is a standard that allows software audio processors and effects to be plugged into a wide range of audio synthesis and recording packages.
 
@@ -184,16 +140,16 @@ Our latest rolling-release Docker image and Ansible scripts add support for LADS
 
 Use the following command to view all the available LADSPA plugins that come pre-installed with AzuraCast:
 
-```
-docker-compose run --rm --user=azuracast stations liquidsoap --list-plugins
+```bash
+docker-compose exec --user=azuracast web liquidsoap --list-plugins
 ```
 
 To get detailed information about the usage of a specific LADSPA plugin use the following command and replace the `plugin` part of the `ladspa.plugin` with the name of the plugin you want to look at:
 
-```
-docker-compose run --rm --user=azuracast stations liquidsoap -h ladspa.plugin
+```bash
+docker-compose exec --user=azuracast web liquidsoap -h ladspa.plugin
 ```
 
 We have modified the [MK Pascal script](https://github.com/mkpascal/mk_liquidsoap_processing/blob/master/process.liq) to work with AzuraCast.
 
-You can check out the [full script here](https://gist.github.com/SlvrEagle23/43a06ee6624975273fdc903ba4a39998) that you can include in your Liquidsoap configuration via the `Utilities` -> `Edit Liquidsoap Configuration` page of your station after enabling the [Advanced Features](/docs/administration/advanced-features).
+You can check out the [full script here](https://gist.github.com/BusterNeece/43a06ee6624975273fdc903ba4a39998) that you can include in your Liquidsoap configuration via the `Utilities` -> `Edit Liquidsoap Configuration` page of your station after enabling the [Advanced Features](/docs/administration/advanced-features).

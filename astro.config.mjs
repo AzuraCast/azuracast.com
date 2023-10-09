@@ -48,6 +48,10 @@ export default defineConfig({
           label: 'Contribute',
           autogenerate: { directory: 'docs/contribute' },
         },
+        {
+          label: 'For Developers',
+          autogenerate: { directory: 'docs/developers'}
+        }
       ],
     })
   ]

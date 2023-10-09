@@ -37,7 +37,6 @@ This ensures that any new Linux distributions will use version 2 of WSL by defau
 Now you should install a Linux distribution that will serve as the host of your AzuraCast instance. Per our [requirements](/docs/getting-started/requirements), you can select from several operating systems as your host OS, but the one with the best compatibility and support is the latest LTS build of Ubuntu, which you can install from the link below:
 
 - [Ubuntu on the Microsoft Store](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab)
-{.links-list}
 
 ### Select That Distribution as Default
 
@@ -64,7 +63,6 @@ Your newly installed Linux distribution should be listed on the Start menu. Clic
 Inside the Linux shell window, you can follow our standard Linux Docker installation instructions. You don't need to make any changes to this process for it to work in this environment.
 
 - [Docker Installation](/docs/getting-started/installation/docker)
-{.links-list}
 
 ### Installation Complete
 
