@@ -20,3 +20,16 @@
     --sl-color-gray-7: #f3f7f9;
     --sl-color-black: #ffffff;
 }
+
+.site-title {
+    color: inherit;
+    gap: 5px;
+
+    span {
+        letter-spacing: -0.05rem;
+        font-size: 1.75rem;
+        text-transform: lowercase;
+        line-height: 1;
+        padding-bottom: .4rem;
+    }
+}
