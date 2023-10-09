@@ -21,13 +21,16 @@ import Footer from '../components/Footer.astro';
                 </div>
 
                 <div class="buttons pt-5">
-                    <a class="btn btn-lg btn-primary text-white" href="#install">
+                    <a class="btn btn-lg btn-secondary text-white" href="/docs">
+                      Learn More
+                    </a>
+                    <a class="btn btn-lg btn-primary text-white" href="/docs/getting-started/installation">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon" viewBox="0 0 16 16">
                         <path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.578 3.578 0 0 0-.108-.563 2.22 2.22 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2.35 2.35 0 0 0-.16-.045 3.797 3.797 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.552 2.552 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526l.24-2.408Zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361.599.599.437 1.732-.36 2.531Z"/>
                         <path d="M5.205 10.787a7.632 7.632 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925Z"/>
                       </svg>
                       <span>
-                        Get Started
+                        Install AzuraCast
                       </span>
                     </a>
                 </div>
@@ -79,7 +82,7 @@ import Footer from '../components/Footer.astro';
   <section class="showcase">
     <div class="container-fluid p-0">
       <div class="row g-0">
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.png');"></div>
+        <div id="showcase-img-1" class="col-lg-6 order-lg-2 text-white showcase-img"></div>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
           <h2>Web-Based Station Management</h2>
           <p class="lead mb-0">
@@ -89,7 +92,7 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
       <div class="row g-0">
-        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.png');"></div>
+        <div id="showcase-img-2" class="col-lg-6 text-white showcase-img"></div>
         <div class="col-lg-6 my-auto showcase-text">
           <h2>Multi-Station Administration</h2>
           <p class="lead mb-0">
@@ -99,7 +102,7 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
       <div class="row g-0">
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.png');"></div>
+        <div id="showcase-img-3" class="col-lg-6 order-lg-2 text-white showcase-img"></div>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
           <h2>Built-in Public Pages</h2>
           <p class="lead mb-0">
@@ -140,7 +143,7 @@ import Footer from '../components/Footer.astro';
                 Vultr
               </span>              
             </a>
-            <a class="btn btn-lg btn-primary text-white" href="https://docs.azuracast.com/en/getting-started/installation/docker">
+            <a class="btn btn-lg btn-primary text-white" href="/docs/getting-started/installation/docker">
               <svg class="icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M12.342 4.536l.15-.227.262.159.116.083c.28.216.869.768.996 1.684.223-.04.448-.06.673-.06.534 0 .893.124 1.097.227l.105.057.068.045.191.156-.066.2a2.044 2.044 0 01-.47.73c-.29.299-.8.652-1.609.698l-.178.005h-.148c-.37.977-.867 2.078-1.702 3.066a7.081 7.081 0 01-1.74 1.488 7.941 7.941 0 01-2.549.968c-.644.125-1.298.187-1.953.185-1.45 0-2.73-.288-3.517-.792-.703-.449-1.243-1.182-1.606-2.177a8.25 8.25 0 01-.461-2.83.516.516 0 01.432-.516l.068-.005h10.54l.092-.007.149-.016c.256-.034.646-.11.92-.27-.328-.543-.421-1.178-.268-1.854a3.3 3.3 0 01.3-.81l.108-.187zM2.89 5.784l.04.007a.127.127 0 01.077.082l.006.04v1.315l-.006.041a.127.127 0 01-.078.082l-.039.006H1.478a.124.124 0 01-.117-.088l-.007-.04V5.912l.007-.04a.127.127 0 01.078-.083l.039-.006H2.89zm1.947 0l.039.007a.127.127 0 01.078.082l.006.04v1.315l-.007.041a.127.127 0 01-.078.082l-.039.006H3.424a.125.125 0 01-.117-.088L3.3 7.23V5.913a.13.13 0 01.085-.123l.039-.007h1.413zm1.976 0l.039.007a.127.127 0 01.077.082l.007.04v1.315l-.007.041a.127.127 0 01-.078.082l-.039.006H5.4a.124.124 0 01-.117-.088l-.006-.04V5.912l.006-.04a.127.127 0 01.078-.083l.039-.006h1.413zm1.952 0l.039.007a.127.127 0 01.078.082l.007.04v1.315a.13.13 0 01-.085.123l-.04.006H7.353a.124.124 0 01-.117-.088l-.006-.04V5.912l.006-.04a.127.127 0 01.078-.083l.04-.006h1.412zm1.97 0l.039.007a.127.127 0 01.078.082l.006.04v1.315a.13.13 0 01-.085.123l-.039.006H9.322a.124.124 0 01-.117-.088l-.006-.04V5.912l.006-.04a.127.127 0 01.078-.083l.04-.006h1.411zM4.835 3.892l.04.007a.127.127 0 01.077.081l.007.041v1.315a.13.13 0 01-.085.123l-.039.007H3.424a.125.125 0 01-.117-.09l-.007-.04V4.021a.13.13 0 01.085-.122l.039-.007h1.412zm1.976 0l.04.007a.127.127 0 01.077.081l.007.041v1.315a.13.13 0 01-.085.123l-.039.007H5.4a.125.125 0 01-.117-.09l-.006-.04V4.021l.006-.04a.127.127 0 01.078-.082l.039-.007h1.412zm1.953 0c.054 0 .1.037.117.088l.007.041v1.315a.13.13 0 01-.085.123l-.04.007H7.353a.125.125 0 01-.117-.09l-.006-.04V4.021l.006-.04a.127.127 0 01.078-.082l.04-.007h1.412zm0-1.892c.054 0 .1.037.117.088l.007.04v1.316a.13.13 0 01-.085.123l-.04.006H7.353a.124.124 0 01-.117-.088l-.006-.04V2.128l.006-.04a.127.127 0 01.078-.082L7.353 2h1.412z"/></svg>
               <span>
                 Self-Hosted
@@ -160,7 +163,7 @@ import Footer from '../components/Footer.astro';
 header.masthead {
     position: relative;
     background-color: #343a40;
-    background: url("/img/bg-masthead.jpg") no-repeat center center;
+    background: url("../images/bg-masthead.jpg") no-repeat center center;
     background-size: cover;
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -186,6 +189,16 @@ header.masthead {
     .showcase-img {
         min-height: 30rem;
         background-size: cover;
+
+        &#showcase-img-1 {
+          background-image: url("../images/bg-showcase-1.png");
+        }
+        &#showcase-img-2 {
+          background-image: url("../images/bg-showcase-2.png");
+        }
+        &#showcase-img-3 {
+          background-image: url("../images/bg-showcase-3.png");
+        }
     }
     @media (min-width: 768px) {
         .showcase-text {
@@ -222,7 +235,7 @@ header.masthead {
 .call-to-action {
     position: relative;
     background-color: #343a40;
-    background: url("/img/bg-masthead.jpg") no-repeat center center;
+    background: url("../images/bg-masthead.jpg") no-repeat center center;
     background-size: cover;
 
     padding-top: 7rem;

@@ -1,0 +1,77 @@
+---
+title: Install AzuraCast
+description: How to install AzuraCast on your server
+published: 1
+date: 2023-04-26T16:14:10.061Z
+tags: getting started
+editor: markdown
+dateCreated: 2022-10-04T18:51:19.324Z
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+:::tip[Did you know?]
+AzuraCast is completely free for you to install and use, even for commercial purposes. We're a small team, and we depend on donations to support our work.
+
+If you enjoy it, please consider [donating](/docs/contribute/donate) to support us. We are a small team building a very big application, so your support is very important to us.
+:::
+
+AzuraCast is server-based software that is installed on a VPS, dedicated server or other computer and serves both your station broadcasts and its own web interface through the server's network connection.
+
+You can also install AzuraCast yourself on most server hardware and many computers running Linux.
+
+## One-Click Installers
+
+The easiest way to get started with AzuraCast is to create a new VPS with one of our supported partners via the options below.
+<Tabs>
+	<TabItem label="Linode (Akamai)">
+		Deploy a new Linode instance with the AzuraCast one-click installer in the Linode Marketplace.
+
+		<LinkCard title="Linode AzuraCast One-Click Image" href="https://www.linode.com/marketplace/apps/linode/azuracast/?r=68daf2976efcb77d2e3d4ced67a02b031edc3ba1" target="_blank" />
+	</TabItem>
+	<TabItem label="Vultr">
+		Deploy a new Vultr VPS with the one-click installer on the Vultr marketplace.
+
+		<LinkCard title="AzuraCast on Vultr" href="https://www.vultr.com/marketplace/apps/azuracast?slug=azuracast#support" target="_blank" />
+	</TabItem>
+	<TabItem label="DigitalOcean">
+		Create a new droplet based on our one-click installer from the AzuraCast listing on the DigitalOcean Marketplace.
+		
+		<LinkCard title="DigitalOcean AzuraCast One-Click Image" href="https://marketplace.digitalocean.com/apps/azuracast?refcode=21612b90440f" target="_blank" />
+	</TabItem>
+</Tabs>
+
+## Self-Hosted Installation
+
+:::tip[Before you begin...]
+Installing AzuraCast yourself requires a basic understanding of the Linux shell/terminal environment, as well as root (or "sudo") access to the computer you're installing AzuraCast on.
+:::
+
+### 🐋 Docker (Recommended)
+
+**Docker installation now supports ARM64 devices as well (i.e. newer Raspbery Pi devices, and ARM64-based cloud hosts), so you can follow these same installation steps.**
+
+For a majority of users, our Docker installation method is the preferred way of installing and using AzuraCast. Click the link below for Docker installation instructions.
+
+<LinkCard title="Install AzuraCast with Docker" href="/docs/getting-started/installation/docker" />
+
+### Docker App Installers
+
+AzuraCast is also available via Docker-based app installer tools. These tools let you install AzuraCast alongside other Docker images in a simple visual manner.
+
+<LinkCard title="DockSTARTer" href="https://dockstarter.com/apps/azuracast/" target="_blank" />
+
+### Windows 10/11 (WSL2)
+
+If you're looking to install AzuraCast on your Windows installation, this is now possible thanks to the Windows Subsystem for Linux (WSL2). Follow our Windows-specific guide for tips on how to get AzuraCast up and running easily on a Windows computer.
+
+<LinkCard title="Installing on Windows with WSL" href="/docs/getting-started/installation/windows" />
+
+### Synology NAS
+
+Installing AzuraCast on a Synology NAS involves specific steps, so we've created a unique guide for installation on this platform.
+
+Note: This guide is intended for X86/AMD64-based Synology NAS devices only. Devices running ARM processors are not officially supported.
+
+<LinkCard title="Installing on a Synology NAS" href="/docs/getting-started/installation/synology" />

@@ -1,8 +1,12 @@
+---
+import { Image } from 'astro:assets';
+import logoImage from '../images/logo.svg';
+---
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="/img/logo.svg" width="32" height="32" alt="" />
+            <Image src={logoImage} alt="" width="32" height="32" />
             <span class="azuracast">azura<strong>cast</strong></span>
         </a>
         <span class="navbar-text me-auto">
@@ -16,19 +20,19 @@
         <div class="collapse navbar-collapse" id="navbarToggle">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="https://docs.azuracast.com/">Documentation</a>
+                    <a class="nav-link" href="/docs">Documentation</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://docs.azuracast.com/en/user-guide/troubleshooting">Help</a>
+                    <a class="nav-link" href="/docs/help/troubleshooting">Help</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://docs.azuracast.com/en/contribute/donate">Donate</a>
+                    <a class="nav-link" href="/docs/contribute/donate">Donate</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/AzuraCast/AzuraCast">GitHub</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="https://docs.azuracast.com/en/getting-started/installation">Install</a>
+                    <a class="nav-link active" href="/docs/getting-started/installation">Install</a>
                 </li>
             </ul>
         </div>
