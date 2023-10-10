@@ -3,7 +3,7 @@
 rm -rf ./src
 rm -rf ./dist
 
-mkdir -p ./src/content/docs ./src/images ./src/scss
+mkdir -p ./src/content ./src/images ./src/scss
 cp ../src/content/config.ts ./src/content
 cp -R ../src/content/docs/docs ./src/content/docs
 cp -R ../src/images/* ./src/images
