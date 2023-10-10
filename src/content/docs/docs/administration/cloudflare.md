@@ -16,7 +16,7 @@ AzuraCast has full support for using CloudFlare's protection in front of your ra
 
 Enabling CloudFlare support from the CloudFlare control panel is as simple as ensuring the little "cloud" next to your radio server's domain (or subdomain) is orange, indicating protection is enabled.
 
-![cloudflare_enable.png](../../../../images/cloudflare/cloudflare_enable.png)
+![cloudflare_enable.png](../images/cloudflare/cloudflare_enable.png)
 
 The default settings for CloudFlare will suffice, though you can also switch from "Flexible" to "Full" SSL mode if you like (since AzuraCast itself supports HTTPS). "Strict" SSL mode isn't recommended, as this requires that you maintain an up-to-date SSL certificate on AzuraCast itself (which is possible, but not necessary).
 
@@ -25,7 +25,7 @@ Once you've enabled CloudFlare support for your domain (or radio station's subdo
 ### Enabling the Web Proxy for Radio Broadcasts
 One major limitation imposed by CloudFlare is that they do not forward incoming connections to your server that don't come from the traditional web ports (that is, 80 and 443). By default, AzuraCast serves each radio station on its own distinct port in a range from 8000 to 9000. This means your listeners wouldn't normally be able to connect.
 
-![cloudflare_proxy.png](../../../../images/cloudflare/cloudflare_proxy.png)
+![cloudflare_proxy.png](../images/cloudflare/cloudflare_proxy.png)
 
 Fortunately, we've already built a solution to this problem! In AzuraCast's system administration, on the "System Settings" page, we have a checkbox labeled "Use Web Proxy for Radio". Enable this checkbox and all of the station playback URLs across the system will be updated to automatically use the web port proxy links, which are fully accessible even when CloudFlare protection is enabled.
 

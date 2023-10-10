@@ -70,7 +70,7 @@ This will disable the setting and enable you to reconnect to your installation.
 
 If you have a custom SSL certificate on your host, you should create a `docker-compose.override.yml` file in your `/var/azuracast` directory on the host server with the contents below, modified to reflect your domain name and the path to your SSL certificate and key:
 
-```
+```yaml
 services:
   web:
     volumes:

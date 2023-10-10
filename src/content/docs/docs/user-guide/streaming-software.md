@@ -20,7 +20,7 @@ If you are using a reverse proxy service (like CloudFlare) in front of your inst
 
 Live broadcasting settings can be found in the preferences menu (`Options` -> `Preferences`). It is recommended to use "Icecast 2" mode when broadcasting to AzuraCast. Out of the box, Mixxx does not include the LAME MP3 encoder (for licensing reasons), but it is not needed when connecting to AzuraCast; just set your broadcast format to 'Ogg Vorbis' and LiquidSoap will transcode the broadcast into the correct output format.
 
-![Mixxx preferences menu](../../../../images/streaming-software/mixx_1.png)
+![Mixxx preferences menu](../images/streaming-software/mixx_1.png)
 
 ## BUTT
 
@@ -32,13 +32,13 @@ Cross-platform and available for free at [https://sourceforge.net/projects/butt/
 
 Use the exact information specified on the Streamer/DJ page's right sidebar. "Address" is "Server" and "Icecast mountpoint" is "Mount Name".
 
-![BUTT Sample IceCast configuration](../../../../images/streaming-software/butt_icecast.png)
+![BUTT Sample IceCast configuration](../images/streaming-software/butt_icecast.png)
 
 ### ShoutCast Mode
 
 Use the given port specified in the "ShoutCast v1 Clients" section. Since ShoutCast v1 does not let you specify a username, specify your password as `dj_username:dj_password` (the username and password for the DJ separated by a colon).
 
-![BUTT Sample ShoutCast configuration](../../../../images/streaming-software/butt_shoutcast.png)
+![BUTT Sample ShoutCast configuration](../images/streaming-software/butt_shoutcast.png)
 
 ## SAM Cast
 
@@ -50,33 +50,33 @@ Use the given port specified in the "ShoutCast v1 Clients" section. Since ShoutC
 
 From the main SAM Cast window, click "Encoders" at the bottom left.
 
-![](../../../../images/streaming-software/samcast_1.png)
+![](../images/streaming-software/samcast_1.png)
 
 In the Encoders window that pops up, click the plus sign button on the toolbar to add a new encoder.
 
-![](../../../../images/streaming-software/samcast_2.png)
+![](../images/streaming-software/samcast_2.png)
 
 You will be asked to select an encoder. It is recommended to select `MP3 (LAME_ENC)`, because this allows for the easiest constant bit rate (CBR) streaming, which causes the fewest issues when broadcasting.
 
 Click "OK" at the bottom to continue to encoder details.
 
-![](../../../../images/streaming-software/samcast_3.png)
+![](../images/streaming-software/samcast_3.png)
 
 On the first tab of the encoder details, change your bitrate from the default 64kbps to your desired bitrate. This should likely match the highest bitrate that you broadcast out to your listeners. By default, it should at least be 128kbps.
 
-![](../../../../images/streaming-software/samcast_4.png)
+![](../images/streaming-software/samcast_4.png)
 
 Click the "Server Details" tab. On the "Server Type" selector, choose "IceCast", then choose "IceCast 2" in the secondary selector.
 
 You can now populate the "Server Details" section with the connection information supplied to you via AzuraCast's "Streamers/DJs" page. You will want to use the connection information for "IceCast Clients", the first section on the page.
 
-![](../../../../images/streaming-software/samcast_5.png)
+![](../images/streaming-software/samcast_5.png)
 
 Click OK to return to the main Encoders pane, where you will now see a new encoder with "Idle" status.
 
 Select the encoder, then click the play-button icon in the toolbar to begin broadcasting.
 
-![](../../../../images/streaming-software/samcast_6.png)
+![](../images/streaming-software/samcast_6.png)
 
 ## RadioBOSS
 
@@ -98,11 +98,11 @@ Note that for ease of use we use the `Configuration Wizard`, you can also enter 
 
 3. To add a new encoder, click the `+` button
 
-  ![RadioBOSS Settings: Broadcast menu](../../../../images/streaming-software/radioboss_1.jpg)
+  ![RadioBOSS Settings: Broadcast menu](../images/streaming-software/radioboss_1.jpg)
 
 4. The Encoder-window will open, next click the button called `Configuration Wizard`.
 
-  ![RadioBOSS Encoder window](../../../../images/streaming-software/radioboss_2.jpg)
+  ![RadioBOSS Encoder window](../images/streaming-software/radioboss_2.jpg)
 
 Follow the instructions for the server type you have set up your Azuracast station with:
 
@@ -110,11 +110,11 @@ Follow the instructions for the server type you have set up your Azuracast stati
 
 - Select `Icecast 1 & 2` and click `Next >`
 
-![RadioBOSS Encoder Configuration Wizard IceCast](../../../../images/streaming-software/radioboss_3.jpg)
+![RadioBOSS Encoder Configuration Wizard IceCast](../images/streaming-software/radioboss_3.jpg)
 
 - Take over the corresponding credentials you can find in Azuracast:
 
-![RadioBOSS Encoder Configuration Wizard IceCast Azuracast Example settings](../../../../images/streaming-software/radioboss_4.jpg)
+![RadioBOSS Encoder Configuration Wizard IceCast Azuracast Example settings](../images/streaming-software/radioboss_4.jpg)
 
 - Click `Finish`
 
@@ -128,11 +128,11 @@ Note 2: Be sure to select `v1`, as v2 will append the Stream ID (SID), which won
 
 - Select `SHOUTcast v1` and click `Next >`
 
-![RadioBOSS Encoder Configuration Wizard SHOUTcast](../../../../images/streaming-software/radioboss_5.jpg)
+![RadioBOSS Encoder Configuration Wizard SHOUTcast](../images/streaming-software/radioboss_5.jpg)
 
 - Take over the corresponding credentials you can find in Azuracast (see notes above):
 
-![RadioBOSS Encoder Configuration Wizard SHOUTcast Azuracast Example settings](../../../../images/streaming-software/radioboss_6.jpg)
+![RadioBOSS Encoder Configuration Wizard SHOUTcast Azuracast Example settings](../images/streaming-software/radioboss_6.jpg)
 
 - Click `Finish`
 
@@ -182,18 +182,18 @@ These instructions are valid and required for both streaming modes (IceCast and 
 
  **1.** After installing the Internet Broadcast plugin, select the menu **Plugins** menu, on the top menu bar and select the **Plugin Manager...** option.
 
-![Plugins menu](../../../../images/streaming-software/playitlive_1.png)
+![Plugins menu](../images/streaming-software/playitlive_1.png)
 
 *Select the Plugins menu, then the Plugin Manager option*
 
  **2.** A new window should appear, and within it the Internet Broadcast plugin.
  
-![Plugin Manager](../../../../images/streaming-software/playitlive_2.png)
+![Plugin Manager](../images/streaming-software/playitlive_2.png)
 *The Plugin Manager window*
 
  **3.** Open the plugin settings, by double clicking on it's name. This window should appear.
 
-![Plugin settings](../../../../images/streaming-software/playitlive_3.png)
+![Plugin settings](../images/streaming-software/playitlive_3.png)
 *Plugin Settings*
 
 **There are a few settings that you can customize here:**
@@ -209,13 +209,13 @@ Now follow the specific instructions for your streaming server: **IceCast** or *
 
 **1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page,
 
-![Connection Details](../../../../images/streaming-software/playitlive_4.png)
+![Connection Details](../images/streaming-software/playitlive_4.png)
 
 *Connection Information for IceCast*
 
 ... fill this form in the PlayIt Live software.
 
-![Stream Details](../../../../images/streaming-software/playitlive_5.png)
+![Stream Details](../images/streaming-software/playitlive_5.png)
 
 *Using the details above to fill the form*
 
@@ -233,7 +233,7 @@ Now follow the specific instructions for your streaming server: **IceCast** or *
 
 **3.** To start broadcasting, click on Start Streams here on in the main interface of the software.
 
-![Starting the streams](../../../../images/streaming-software/playitlive_6.png)
+![Starting the streams](../images/streaming-software/playitlive_6.png)
 
 If the server is configured correctly, the **OFF AIR** text will change to **ON AIR**. If not, re-check your configuration.
 
@@ -241,11 +241,11 @@ If the server is configured correctly, the **OFF AIR** text will change to **ON 
 
 **1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page, ...
 
-![SHOUTcast info](../../../../images/streaming-software/playitlive_6a.png)
+![SHOUTcast info](../images/streaming-software/playitlive_6a.png)
 
 ... fill this form in the PlayIt Live software.
 
-![SHOUTcast server info](../../../../images/streaming-software/playitlive_7.png)
+![SHOUTcast server info](../images/streaming-software/playitlive_7.png)
 *Using the details above to fill the form*
 
 **Don't forget to change these details with yours, this is just an example!**
@@ -266,6 +266,6 @@ If the server is configured correctly, the **OFF AIR** text will change to **ON 
 
 **3.** To start broadcasting, click on Start Streams here on in the main interface of the software.
 
-![Starting the streams](../../../../images/streaming-software/playitlive_8.png)
+![Starting the streams](../images/streaming-software/playitlive_8.png)
 
 If the server is configured correctly, the **OFF AIR** text will change to **ON AIR**. If not, re-check your configuration.

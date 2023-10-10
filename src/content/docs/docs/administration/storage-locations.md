@@ -30,7 +30,7 @@ To configure a station to use an S3 compatible service, you'll need to go to `yo
 
 It'll look like this:
 
-![storage_location.png](../../../../images/storage-locations/storage_location.png)
+![storage_location.png](../images/storage-locations/storage_location.png)
 
 ### Amazon Simple Storage Service (S3)
 

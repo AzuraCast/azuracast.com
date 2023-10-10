@@ -1,5 +1,7 @@
 # build output
 dist/
+builtin/src
+builtin/public
 
 # generated types
 .astro/

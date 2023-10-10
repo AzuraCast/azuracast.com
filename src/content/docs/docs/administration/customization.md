@@ -25,7 +25,7 @@ $(document).on('now-playing', function(np_new) {
 You can use `Custom JS for Public Pages` to add a video element to the page and style via the `Custom CSS for Public Pages` using our example below. 
 
 **Custom CSS for Public Pages**
-```CSS
+```css
 [data-theme] body.page-minimal .background-video {
 	width: 100vw;
 	height: 100vh;
@@ -39,7 +39,7 @@ You can use `Custom JS for Public Pages` to add a video element to the page and 
 }
 ```
 **Custom JS for Public Pages**
-``` JS
+```javascript
 let videoBackgroundElement = document.createElement('video');
 videoBackgroundElement.autoplay = true;
 videoBackgroundElement.loop = true;

@@ -4,18 +4,15 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  server: {
-    host: true
-  },
-  site: 'https://www.azuracast.com',
   vite: {
     ssr: {
       noExternal: ['bootstrap', 'roboto-font']
     }
   },
+  base: '/docs',
   integrations: [
     starlight({
-      title: 'AzuraCast',
+      title: 'AzuraCast Local Docs',
       logo: {
         src: './src/images/logo.svg'
       },
@@ -28,10 +25,8 @@ export default defineConfig({
         github: 'https://github.com/azuracast/azuracast',
       },
       sidebar: [
-        { label: 'Home', link: '/' },
-        { label: 'About AzuraCast', link: '/docs' },
-        { label: 'Live Demo', link: '/docs/live-demo'},
-        { label: 'Install AzuraCast', link: '/docs/getting-started/installation' },
+        { label: 'Live Documentation', link: 'https://www.azuracast.com/docs' },
+        { label: 'About These Docs', link: '/docs' },
         { label: 'Update AzuraCast', link: '/docs/getting-started/updates' },
         {
           label: 'Help',

@@ -115,7 +115,7 @@ The AzuraCast Docker installation is built to serve the needs of the vast majori
 
 In recent versions, we have united our Docker infrastructure into a single container that contains the whole application, its databases and caches, and broadcasting controls.
 
-![appinfrastructure.png](../../../../images/docker/appinfrastructure.png)
+![appinfrastructure.png](../images/docker/appinfrastructure.png)
 
 ### Docker Compose
 
@@ -301,7 +301,8 @@ To override the favicon and other browser icons used by AzuraCast, you should fo
 1. - Upload your icon to favicon-generator.org. Be sure to leave "Generate icons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps" checked.
 1. - Once your icon set is downloaded, it will be in a .zip file format; extract that file and copy it to the host server where AzuraCast is hosted.
 1. - Inside the AzuraCast directory on your host (by default, /var/azuracast), create a file named docker-compose.override.yml with the following contents:
-```services:
+```yaml
+services:
     web:
         volumes:
             - /path/to/your/favicon/folder:/var/azuracast/www/static/icons/production
