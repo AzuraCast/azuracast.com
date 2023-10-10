@@ -25,8 +25,9 @@ export default defineConfig({
         github: 'https://github.com/azuracast/azuracast',
       },
       sidebar: [
-        { label: 'Live Documentation', link: 'https://www.azuracast.com/docs' },
         { label: 'About These Docs', link: '/docs' },
+        { label: 'Live Documentation', link: 'https://www.azuracast.com/docs' },
+        { label: 'API Documentation', link: '/api/index.html' },
         { label: 'Update AzuraCast', link: '/docs/getting-started/updates' },
         {
           label: 'Help',
