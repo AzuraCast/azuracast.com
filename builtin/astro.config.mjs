@@ -25,29 +25,29 @@ export default defineConfig({
         github: 'https://github.com/azuracast/azuracast',
       },
       sidebar: [
-        { label: 'About These Docs', link: '/docs' },
+        { label: 'About These Docs', link: '/' },
         { label: 'Live Documentation', link: 'https://www.azuracast.com/docs' },
-        { label: 'API Documentation', link: '/api/index.html' },
+        { label: 'API Documentation', link: '/api' },
         { label: 'Update AzuraCast', link: '/docs/getting-started/updates' },
         {
           label: 'Help',
-          autogenerate: { directory: 'docs/help' },
+          autogenerate: { directory: 'help' },
         },
         {
           label: 'User Guide',
-          autogenerate: { directory: 'docs/user-guide' }
+          autogenerate: { directory: 'user-guide' }
         },
         {
           label: 'Administrator Guide',
-          autogenerate: { directory: 'docs/administration' }
+          autogenerate: { directory: 'administration' }
         },
         {
           label: 'Contribute',
-          autogenerate: { directory: 'docs/contribute' },
+          autogenerate: { directory: 'contribute' },
         },
         {
           label: 'For Developers',
-          autogenerate: { directory: 'docs/developers'}
+          autogenerate: { directory: 'developers'}
         }
       ],
     })

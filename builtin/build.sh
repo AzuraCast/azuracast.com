@@ -5,10 +5,10 @@ rm -rf ./dist
 
 mkdir -p ./src/content/docs ./src/images ./src/scss
 cp ../src/content/config.ts ./src/content
-cp -R ../src/content/docs/docs ./src/content/docs/docs
+cp -R ../src/content/docs/docs ./src/content/docs
 cp -R ../src/images/* ./src/images
 cp -R ../src/scss/* ./src/scss
-rm -f ./src/content/docs/docs/*.*
+rm -f ./src/content/docs/*.*
 cp ./index.md ./src/content/docs
 
 mkdir -p ./public
