@@ -42,10 +42,6 @@ export default defineConfig({
           autogenerate: { directory: 'administration' }
         },
         {
-          label: 'Contribute',
-          autogenerate: { directory: 'contribute' },
-        },
-        {
           label: 'For Developers',
           autogenerate: { directory: 'developers'}
         }

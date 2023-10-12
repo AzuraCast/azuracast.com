@@ -20,11 +20,9 @@ Once installed and running, AzuraCast exposes an API that allows you to monitor 
 
 ## Per-Install API Documentation
 
-Each AzuraCast installation includes documentation for the API at the exact version it's currently using. If you're interacting with an AzuraCast instance and you're not sure what API endpoints it exposes, you can visit `azuracast.site.name/api/` to view the installation-specific documentation.
+Each AzuraCast installation includes documentation for the API at the exact version it's currently using. In our public documentation, we include the API as of the latest Rolling Release version.
 
-## Latest Version
-
-Documentation for the latest version of the API can be found [on the main AzuraCast site](http://azuracast.com/api/index.html).
+- [/api](View API Documentation)
 
 ## API Authentication
 

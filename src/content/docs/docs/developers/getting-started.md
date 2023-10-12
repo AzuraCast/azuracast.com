@@ -87,6 +87,8 @@ If you would prefer to follow the traditional post-installation setup process in
 
 ## Common Tasks
 
+Many common tasks are made simpler by the addition of a `Makefile` to our core repository. It's strongly recommended to install `make` on your host OS or inside WSL.
+
 ### Rebuilding the Docker Images
 
 By default, developer installations bind mount the current code from your local computer into the Docker container, so changes to the code will be visible immediately in the running web application.
@@ -95,6 +97,8 @@ If you need to make changes to the containers themselves, though, or your contai
 
 ```bash
 docker-compose build
+# OR
+make build
 ```
 
 You should then restart your installation by running:
@@ -102,11 +106,19 @@ You should then restart your installation by running:
 ```bash
 docker-compose down
 docker-compose up -d
+# OR
+make restart
+```
+
+If you want to fully rebuild, restart, and re-run the setup process after a Docker image change, you can run all of those as one command:
+
+```bash
+make update
 ```
 
 ### Building Static Assets
 
-AzuraCast automatically builds static assets as they're changed in the dev environment.
+AzuraCast automatically builds static assets as they're changed in the dev environment. Modifications inside the `/frontend` folder are automatically watched and rebuilt when developing, then compiled down into static files as part of our Docker image build process.
 
 ### Accessing `bash` Inside the Container
 
@@ -116,6 +128,8 @@ There is a helper command you can run using the Docker Utility Script to easily 
 
 ```bash
 bash docker.sh bash
+# OR
+make bash
 ```
 
 ### Customize Local SSL
@@ -137,6 +151,8 @@ To make your new certificate take effect, you will need to restart the Docker co
 ```bash
 docker-compose down
 docker-compose up -d
+# OR
+make restart
 ```
 
 ## Translations (Locales)
@@ -151,6 +167,8 @@ When new strings have been added to the application, they should be added to the
 
 ```bash
 bash docker.sh cli locale:generate
+# OR
+make generate-locales
 ```
 
 ### Import New Translated Strings
@@ -159,4 +177,6 @@ When strings have been translated, they should be converted back into optimized 
 
 ```bash
 bash docker.sh cli locale:import
+# OR
+make import-locales
 ```
