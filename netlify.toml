@@ -9,3 +9,6 @@
 package = "netlify-plugin-checklinks"
   [plugins.inputs]
   pretty = true
+  skipPatterns = [
+    "/404"
+  ]
