@@ -28,7 +28,7 @@ export default defineConfig({
         github: 'https://github.com/azuracast/azuracast',
       },
       editLink: {
-        baseUrl: 'https://github.com/azuracast/azuracast.com/tree/main/src/content/docs/docs',
+        baseUrl: 'https://github.com/azuracast/azuracast.com/tree/main',
       },
       sidebar: [
         { label: 'Home', link: '/' },
