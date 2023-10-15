@@ -7,6 +7,7 @@ export default defineConfig({
   server: {
     host: true
   },
+  site: 'https://www.azuracast.com',
   vite: {
     ssr: {
       noExternal: ['bootstrap', 'roboto-font']
