@@ -47,7 +47,7 @@ RUN npm ci --include=dev \
     && npm run build \
     && cp -RT ./dist /dist \
     && rm -rf ./node_modules ./dist \
-    && rm -rf /home/node/.config /home/node/.npm
+    && npm cache clean --force
 
 FROM production-builds AS builtin
 
@@ -74,4 +74,4 @@ RUN rm -rf ./src ./dist ./public \
     && cd builtin \
     && cp -RT ./dist /dist \
     && rm -rf ./src ./dist ./public ./node_modules \
-    && rm -rf /home/node/.config /home/node/.npm
+    && npm cache clean --force
