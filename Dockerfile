@@ -31,27 +31,29 @@ CMD ["npm", "run", "dev"]
 
 FROM base AS production-builds
 
-RUN mkdir -p /dist
-
 WORKDIR /data
 COPY . .
+
+USER node
 
 RUN npm ci --include=dev
 
 FROM production-builds AS build
 
+USER node
+
 RUN npm ci --include=dev \
     && npm run build \
     && rm -rf /data/node_modules \
-    && cp -RT /data/dist /dist
+    && mv /data/dist /dist
 
 FROM production-builds AS builtin
 
+USER node
+
 WORKDIR /data/builtin
 
-RUN rm -rf ./src \
-    && rm -rf ./dist \
-    && rm -rf ./public \
+RUN rm -rf ./src ./dist ./public \
     && mkdir -p ./src/content ./src/images ./src/scss \
     && cp ../src/content/config.ts ./src/content \
     && cp -R ../src/content/docs/docs ./src/content/docs \
@@ -66,5 +68,7 @@ RUN rm -rf ./src \
     && cd .. \
     && npm ci --include=dev \
     && npm run builtin-build \
-    && rm -rf /data/node_modules \
-    && cp -RT /data/builtin/dist /dist
+    && rm -rf ./node_modules \
+    && cd builtin \
+    && rm -rf ./src ./dist ./public \
+    && mv ./dist /dist
