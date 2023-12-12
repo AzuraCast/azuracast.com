@@ -1,10 +1,12 @@
-FROM library/node:lts-alpine
+FROM library/node:20-alpine AS base
 
 RUN apk update \
     && apk add bash curl
 
 RUN mkdir -p /data \
     && chown -R node:node /data
+
+FROM base AS development
 
 RUN USER=node && \
     GROUP=node && \
@@ -26,3 +28,18 @@ USER node
 # Define default command.
 ENTRYPOINT ["/build_entrypoint.sh"]
 CMD ["npm", "run", "dev"]
+
+FROM base AS production-builds
+
+WORKDIR /data
+COPY . .
+RUN npm ci
+
+FROM production-builds AS build
+
+RUN npm build
+
+FROM production-builds AS builtin
+
+RUN cp builtin \
+    && bash build.sh

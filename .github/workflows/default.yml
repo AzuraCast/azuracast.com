@@ -1,0 +1,63 @@
+name: Build Docker Images
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+  schedule:
+    - cron: '0 2 * * 0' # Weekly on Sundays at 02:00
+
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Docker Image
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Set up Depot
+        uses: depot/setup-action@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Docker Metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: |
+            ghcr.io/azuracast/azuracast.com
+          tags: |
+            type=raw,value=latest,enable=${{ endsWith(github.ref, github.event.repository.default_branch) }}
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+
+      - name: Publish Docker Image (Main Docs Build)
+        uses: depot/build-push-action@v1
+        with:
+          context: .
+          target: build
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: ghcr.io/azuracast/azuracast.com:build
+
+      - name: Publish Docker Image (Builtin Build)
+        uses: depot/build-push-action@v1
+        with:
+          context: .
+          target: builtin
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: ghcr.io/azuracast/azuracast.com:builtin
