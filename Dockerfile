@@ -31,15 +31,40 @@ CMD ["npm", "run", "dev"]
 
 FROM base AS production-builds
 
+RUN mkdir -p /dist
+
 WORKDIR /data
 COPY . .
+
 RUN npm ci --include=dev
 
 FROM production-builds AS build
 
-RUN npm run build
+RUN npm ci --include=dev \
+    && npm run build \
+    && rm -rf /data/node_modules \
+    && cp -RT /data/dist /dist
 
 FROM production-builds AS builtin
 
-RUN cd builtin \
-    && bash build.sh
+WORKDIR /data/builtin
+
+RUN rm -rf ./src \
+    && rm -rf ./dist \
+    && rm -rf ./public \
+    && mkdir -p ./src/content ./src/images ./src/scss \
+    && cp ../src/content/config.ts ./src/content \
+    && cp -R ../src/content/docs/docs ./src/content/docs \
+    && cp -R ../src/images/* ./src/images \
+    && cp -R ../src/scss/* ./src/scss \
+    && rm -f ./src/content/docs/*.* \
+    && cp ./index.md ./src/content/docs \
+    && mkdir -p ./public \ 
+    && cp -R ../public/api ./public/api \
+    && cp -R ../public/img ./public/img \
+    && sed -i -r 's|url: "(.*?)"|url: "/api/openapi.yml"|' ./public/api/swagger-initializer.js \
+    && cd .. \
+    && npm ci --include=dev \
+    && npm run builtin-build \
+    && rm -rf /data/node_modules \
+    && cp -RT /data/builtin/dist /dist
