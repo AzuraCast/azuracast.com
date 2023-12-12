@@ -35,7 +35,7 @@ RUN mkdir -p /dist \
     && chown -R node:node /dist
 
 WORKDIR /data
-COPY . .
+COPY --chown=node:node . .
 
 USER node
 
