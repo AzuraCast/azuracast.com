@@ -31,6 +31,9 @@ CMD ["npm", "run", "dev"]
 
 FROM base AS production-builds
 
+RUN mkdir -p /dist \
+    && chown -R node:node /dist
+
 WORKDIR /data
 COPY . .
 
@@ -44,8 +47,9 @@ USER node
 
 RUN npm ci --include=dev \
     && npm run build \
-    && rm -rf /data/node_modules \
-    && mv /data/dist /dist
+    && rm -rf ./node_modules \
+    && cp -RT ./dist /dist \
+    && rm -rf ./dist
 
 FROM production-builds AS builtin
 
@@ -70,5 +74,5 @@ RUN rm -rf ./src ./dist ./public \
     && npm run builtin-build \
     && rm -rf ./node_modules \
     && cd builtin \
-    && rm -rf ./src ./dist ./public \
-    && mv ./dist /dist
+    && cp -RT ./dist /dist \
+    && rm -rf ./src ./dist ./public
