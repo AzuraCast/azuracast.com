@@ -33,11 +33,11 @@ FROM base AS production-builds
 
 WORKDIR /data
 COPY . .
-RUN npm ci
+RUN npm ci --include=dev
 
 FROM production-builds AS build
 
-RUN npm build
+RUN npm run build
 
 FROM production-builds AS builtin
 
