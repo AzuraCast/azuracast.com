@@ -41,5 +41,5 @@ RUN npm run build
 
 FROM production-builds AS builtin
 
-RUN cp builtin \
+RUN cd builtin \
     && bash build.sh
