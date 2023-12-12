@@ -1,12 +1,12 @@
 FROM library/node:20-alpine AS base
 
-RUN apk update \
-    && apk add bash curl
-
 RUN mkdir -p /data \
     && chown -R node:node /data
 
 FROM base AS development
+
+RUN apk update \
+    && apk add --no-cache bash curl
 
 RUN USER=node && \
     GROUP=node && \
@@ -45,9 +45,9 @@ USER node
 
 RUN npm ci --include=dev \
     && npm run build \
-    && rm -rf ./node_modules \
     && cp -RT ./dist /dist \
-    && rm -rf ./dist
+    && rm -rf ./node_modules ./dist \
+    && rm -rf /home/node/.config /home/node/.npm
 
 FROM production-builds AS builtin
 
@@ -73,4 +73,5 @@ RUN rm -rf ./src ./dist ./public \
     && rm -rf ./node_modules \
     && cd builtin \
     && cp -RT ./dist /dist \
-    && rm -rf ./src ./dist ./public
+    && rm -rf ./src ./dist ./public ./node_modules \
+    && rm -rf /home/node/.config /home/node/.npm
