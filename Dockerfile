@@ -39,8 +39,6 @@ COPY --chown=node:node . .
 
 USER node
 
-RUN npm ci --include=dev
-
 FROM production-builds AS build
 
 USER node
