@@ -161,16 +161,26 @@ let socket = new WebSocket("wss://your-azuracast-url/api/live/nowplaying/websock
 socket.onopen = function(e) {
   socket.send(JSON.stringify({
     "subs": {
-      "station:azuratest_radio": {}
+      "station:azuratest_radio": {},
+      "global:time": {},
     } 
   });
 };
 
+let nowplaying = {};
+let currentTime = 0;
+
 socket.onmessage = function(event) {
-  const data = JSON.parse(event.data);
-  const np = data?.pub?.data?.np || null;
-  if (np) {
-    // Process Now Playing data in `np` var.
+  const jsonData = JSON.parse(e.data);
+  const jsonDataNp = jsonData?.pub?.data ?? {};
+
+  if ('np' in jsonDataNp) {
+    // This is a now-playing event from a station. Update your now-playing data accordingly.
+    nowplaying = jsonDataNp.np;
+  } else if ('time' in jsonDataNp) {
+    // This is a "time" ping to let you know what the current time is on the server, so you can properly
+    // display elapsed/remaining time for your tracks. It's in the form of a UNIX timestamp.
+    currentTime = jsonDataNp.time;
   }
 };
 ```
@@ -188,57 +198,32 @@ Where the `cf_connect` URL parameter is the same connection token as the first m
 An example JavaScript implementation is below:
 
 ```javascript
-const sseUri = "https://your-azuracast-url/api/live/nowplaying/sse?cf_connect="+JSON.stringify({
-  "subs": {
-    "station:azuratest_radio": {}
-  }
+const sseBaseUri = "https://your-azuracast-url/api/live/nowplaying/sse";
+const sseUriParams = new URLSearchParams({
+  "cf_connect": JSON.stringify({
+    "subs": {
+      "station:azuratest_radio": {},
+      "global:time": {}
+    }
+  })
 });
+const sseUri = sseBaseUri+"?"+sseUriParams.toString();
+const sse = new EventSource(sseUri);
 
-let sse = new EventSource(sseUri);
+let nowplaying = {};
+let currentTime = 0;
 
 sse.onmessage = (e) => {
-  const data = JSON.parse(e.data);
-  const np = data?.pub?.data?.np || null;
-  if (np) {
-    // Handle Now Playing data update as `np` variable.
+  const jsonData = JSON.parse(e.data);
+  const jsonDataNp = jsonData?.pub?.data ?? {};
+
+  if ('np' in jsonDataNp) {
+    // This is a now-playing event from a station. Update your now-playing data accordingly.
+    nowplaying = jsonDataNp.np;
+  } else if ('time' in jsonDataNp) {
+    // This is a "time" ping to let you know what the current time is on the server, so you can properly
+    // display elapsed/remaining time for your tracks. It's in the form of a UNIX timestamp.
+    currentTime = jsonDataNp.time;
   }
 };
-```
-
-### HTTP Stream
-
-The URL for HTTP Stream connections is:
-
-```
-https://your-azuracast-url/api/live/nowplaying/http_stream?cf_connect=TOKEN
-```
-
-Where the `cf_connect` URL parameter is the same connection token as the first message in the Websocket example.
-
-### Advantages
-
-- This is the fastest way to receive updates when a song or other metadata changes. As soon as changes are detected by AzuraCast, they are immediately broadcast to all connected users within a fraction of a second.
-- Because the Nchan plugin optimizes message delivery, this method results in the lowest load on your server per connected user.
-
-### Disadvantages
-
-- Any URLs in the API responses will always use the "Base URL" of your AzuraCast installation.
-- The "elapsed" and "remaining" durations will only be accurate as of when the file was written, not when it was downloaded by your client. You should instead compare the user's current UNIX timestamp against the `played_at` timestamp.
-- Implementations require a small, open-source JavaScript file built to handle consuming Nchan messages.
-
-### Example Implementation
-
-To use this API method on a web site, first make sure the [Nchan Subscriber JavaScript library](https://github.com/slact/nchan.js/blob/master/NchanSubscriber.js) is loaded. This library can also be loaded via the NPM package manager using the command `npm i nchan`.
-
-An example implementation using the Nchan Subscriber library might look like:
-
-```javascript
-var sub = new NchanSubscriber('http://your-azuracast-site.example.com/api/live/nowplaying/station_shortcode');
-var nowPlaying;
-
-sub.on("message", function(message, message_metadata) {
-    // Do something with the Now Playing data.
-    nowPlaying = JSON.parse(message);
-});
-sub.start();
 ```
