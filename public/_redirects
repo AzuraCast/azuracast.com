@@ -1,3 +1,4 @@
+/docs/en/*              /docs/:splat
 /en/*                   /docs/:splat
 /api                    /api/index.html
 /discord                https://discord.gg/azuracast
