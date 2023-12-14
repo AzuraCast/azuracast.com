@@ -146,7 +146,7 @@ wss://your-azuracast-url/api/live/nowplaying/websocket
 Upon connection, you should send a connection string in the form of a JSON request:
 
 ```json
-{ "subs": { "station:your_station_name": {} }}
+{ "subs": { "station:your_station_name": {}, "global:time": {} }}
 ```
 
 Replacing `your_station_name` with your station's URL stub or short name.
@@ -170,17 +170,26 @@ socket.onopen = function(e) {
 let nowplaying = {};
 let currentTime = 0;
 
-socket.onmessage = function(event) {
-  const jsonData = JSON.parse(e.data);
-  const jsonDataNp = jsonData?.pub?.data ?? {};
-
-  if ('np' in jsonDataNp) {
-    // This is a now-playing event from a station. Update your now-playing data accordingly.
-    nowplaying = jsonDataNp.np;
-  } else if ('time' in jsonDataNp) {
+function handleData(payload) {
+  const jsonData = payload?.pub?.data ?? {};
+  if (payload.channel === 'global:time') {
     // This is a "time" ping to let you know what the current time is on the server, so you can properly
     // display elapsed/remaining time for your tracks. It's in the form of a UNIX timestamp.
-    currentTime = jsonDataNp.time;
+    currentTime = jsonData.time;
+  } else {
+    // This is a now-playing event from a station. Update your now-playing data accordingly.
+    nowplaying = jsonData.np;
+  }
+}
+
+socket.onmessage = function(e) {
+  const jsonData = JSON.parse(e.data);
+  if ('connect' in jsonData) {
+    // Initial data is sent in the "connect" response as an array of rows similar to individual messages.
+    const initialData = jsonData.connect.data ?? [];
+    initialData.forEach((initialRow) => handleData(initialRow));
+  } else if ('channel' in jsonData) {
+    handleData(jsonData);
   }
 };
 ```
@@ -213,17 +222,26 @@ const sse = new EventSource(sseUri);
 let nowplaying = {};
 let currentTime = 0;
 
-sse.onmessage = (e) => {
-  const jsonData = JSON.parse(e.data);
-  const jsonDataNp = jsonData?.pub?.data ?? {};
-
-  if ('np' in jsonDataNp) {
-    // This is a now-playing event from a station. Update your now-playing data accordingly.
-    nowplaying = jsonDataNp.np;
-  } else if ('time' in jsonDataNp) {
+function handleData(payload) {
+  const jsonData = payload?.pub?.data ?? {};
+  if (payload.channel === 'global:time') {
     // This is a "time" ping to let you know what the current time is on the server, so you can properly
     // display elapsed/remaining time for your tracks. It's in the form of a UNIX timestamp.
-    currentTime = jsonDataNp.time;
+    currentTime = jsonData.time;
+  } else {
+    // This is a now-playing event from a station. Update your now-playing data accordingly.
+    nowplaying = jsonData.np;
+  }
+}
+
+sse.onmessage = (e) => {
+  const jsonData = JSON.parse(e.data);
+  if ('connect' in jsonData) {
+    // Initial data is sent in the "connect" response as an array of rows similar to individual messages.
+    const initialData = jsonData.connect.data ?? [];
+    initialData.forEach((initialRow) => handleData(initialRow));
+  } else if ('channel' in jsonData) {
+    handleData(jsonData);
   }
 };
 ```
