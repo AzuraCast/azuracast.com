@@ -24,50 +24,14 @@ You can clone the plugin directory anywhere you want on the host machine, then c
 ```yaml
 services:
   web:
+    environment:
+      AZURACAST_PLUGIN_MODE: true
     volumes:
       - ./path_to_plugin:/var/azuracast/www/plugins/example-plugin:ro
 ```
 
 Make sure to update and restart the Docker containers afterwards (using `./docker.sh update`).
 
-## Naming Convention
+## Additional Information
 
-### Autoloaded Files
-
-The following files are automatically loaded along with the relevant section of code:
-
- - `/services.php`: Register or extend services with the application's Dependency Injection (DI) container.
- - `/events.php`: Register listeners for the Event Dispatcher.
-
-### Classes
-
-AzuraCast autoloads PHP files inside `/plugins/(plugin_name)/src` as long as they are in the appropriate namespace.
-
-The function used to convert from the plugin folder name into the PHP class name is:
-
-```php
-<?php
-return str_replace([' ', '_', '-'], '', ucwords($word, ' _-'));
-```
-
-For example, `/plugins/example-plugin/src` will autoload classes in the `\Plugin\ExamplePlugin` namespace.
-
-## Event Dispatcher
-
-Most of the extensibility of plugins comes from events that use the Event Dispatcher in AzuraCast. Both classes from inside AzuraCast and plugins are registered as "listeners" to common events that are dispatched by the system, so you can override or modify the core application's responses simply by adding your own listeners in the right order.
-
-Here is an example of a basic `events.php` file for handling an event:
-
-```php
-<?php
-return function (\Azura\SlimCallableEventDispatcher\SlimCallableEventDispatcher $dispatcher)
-{
-    $dispatcher->addListener(\App\Event\BuildRoutes::class, function(\App\Event\BuildRoutes $event) {
-        $app = $event->getApp();
-
-        // Modify the app's routes here
-    }, -5);
-};
-```
-
-As you can see, each event listener that you register has to provide the event that it listens to as a callable to the `addListener` method's first parameter, and each event listener receives an instance of that event class complete with relevant metadata already attached. Listeners also have a priority (the last argument in the function call); this number can be positive or negative, with the default handler tending to be around zero. Higher numbers are dispatched before lower numbers.
+Details about how to build plugins, what events are available, etc. are included in the documentation of the [Example Plugin](https://github.com/AzuraCast/example-plugin).
