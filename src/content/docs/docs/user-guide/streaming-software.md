@@ -164,7 +164,7 @@ The following articles in there are helpful:
 - `Options` -> `Broadcast`
 - `Options` -> `Broadcast` -> `Metadata`
 
-# PlayIt Live
+## PlayIt Live
 
 **Windows; Proprietary, Free**
 
@@ -176,7 +176,7 @@ The installation steps for the plugin are relatively simple, so they're not cove
 
 ***Note:** This software is only capable of streaming via MP3, due to plugin limitations.*
 
-## Instructions
+### Instructions
 
 These instructions are valid and required for both streaming modes (IceCast and SHOUTcast), so be sure to follow this part before proceeding any further.
 
@@ -205,7 +205,7 @@ These instructions are valid and required for both streaming modes (IceCast and 
 
 Now follow the specific instructions for your streaming server: **IceCast** or **SHOUTcast**.
 
-## IceCast
+### IceCast
 
 **1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page,
 
@@ -237,7 +237,7 @@ Now follow the specific instructions for your streaming server: **IceCast** or *
 
 If the server is configured correctly, the **OFF AIR** text will change to **ON AIR**. If not, re-check your configuration.
 
-## SHOUTcast
+### SHOUTcast
 
 **1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page, ...
 
