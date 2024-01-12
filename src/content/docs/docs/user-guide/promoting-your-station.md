@@ -63,6 +63,10 @@ You can add the following entry to broadcast to the Xiph directory:
 
 ### Internet-radio.com
 
+:::tip
+Listing on this directory requires that your station description and other profile fields be 255 characters or fewer.
+:::
+
 The station directory at [internet-radio.com](https://www.internet-radio.com/) supports and recommends using Icecast's YellowPages directory to manage your station listing on their web site. Their forum includes [specific instructions for Icecast](https://www.internet-radio.com/community/threads/icecast-server-yp-directory-settings.22223/).
 
 To integrate the custom directory code into AzuraCast, edit your station's profile, then under the "Broadcasting" tab, you will find "Custom Configuration" at the bottom of the page.
@@ -72,7 +76,7 @@ You can add the following entry:
 ```xml
 <directory>
   <yp-url-timeout>15</yp-url-timeout>
-  <yp-url>http://dir.xiph.org/cgi-bin/yp-cgi</yp-url>
+  <yp-url>http://icecast-yp.internet-radio.com</yp-url>
 </directory>
 ```
 
