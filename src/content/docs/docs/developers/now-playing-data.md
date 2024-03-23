@@ -146,7 +146,7 @@ wss://your-azuracast-url/api/live/nowplaying/websocket
 Upon connection, you should send a connection string in the form of a JSON request:
 
 ```json
-{ "subs": { "station:your_station_name": {}, "global:time": {} }}
+{ "subs": { "station:your_station_name": {} }}
 ```
 
 Replacing `your_station_name` with your station's URL stub or short name.
@@ -161,8 +161,7 @@ let socket = new WebSocket("wss://your-azuracast-url/api/live/nowplaying/websock
 socket.onopen = function(e) {
   socket.send(JSON.stringify({
     "subs": {
-      "station:azuratest_radio": {},
-      "global:time": {},
+      "station:azuratest_radio": {}
     } 
   });
 };
@@ -170,16 +169,11 @@ socket.onopen = function(e) {
 let nowplaying = {};
 let currentTime = 0;
 
+// Handle a now-playing event from a station. Update your now-playing data accordingly.
 function handleData(payload) {
   const jsonData = payload?.pub?.data ?? {};
-  if (payload.channel === 'global:time') {
-    // This is a "time" ping to let you know what the current time is on the server, so you can properly
-    // display elapsed/remaining time for your tracks. It's in the form of a UNIX timestamp.
-    currentTime = jsonData.time;
-  } else {
-    // This is a now-playing event from a station. Update your now-playing data accordingly.
-    nowplaying = jsonData.np;
-  }
+  currentTime = jsonData.current_time;
+  nowplaying = jsonData.np;
 }
 
 socket.onmessage = function(e) {
@@ -211,8 +205,7 @@ const sseBaseUri = "https://your-azuracast-url/api/live/nowplaying/sse";
 const sseUriParams = new URLSearchParams({
   "cf_connect": JSON.stringify({
     "subs": {
-      "station:azuratest_radio": {},
-      "global:time": {}
+      "station:azuratest_radio": {}
     }
   })
 });
@@ -222,16 +215,11 @@ const sse = new EventSource(sseUri);
 let nowplaying = {};
 let currentTime = 0;
 
+// This is a now-playing event from a station. Update your now-playing data accordingly.
 function handleData(payload) {
   const jsonData = payload?.pub?.data ?? {};
-  if (payload.channel === 'global:time') {
-    // This is a "time" ping to let you know what the current time is on the server, so you can properly
-    // display elapsed/remaining time for your tracks. It's in the form of a UNIX timestamp.
-    currentTime = jsonData.time;
-  } else {
-    // This is a now-playing event from a station. Update your now-playing data accordingly.
-    nowplaying = jsonData.np;
-  }
+  currentTime = jsonData.current_time;
+  nowplaying = jsonData.np;
 }
 
 sse.onmessage = (e) => {
