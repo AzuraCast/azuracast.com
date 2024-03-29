@@ -9,7 +9,7 @@ dateCreated: 2021-02-07T09:42:11.032Z
 
 AzuraRelay is "relay in a box" containing a lightweight web application and Icecast servers that can connect to and relay an AzuraRelay parent instance.
 
-If you want to offer your streams to users around the world or accept al arge volume of incoming traffic, AzuraRelay is the perfect companion to AzuraCast.
+If you want to offer your streams to users around the world or accept a large volume of incoming traffic, AzuraRelay is the perfect companion to AzuraCast.
 
 ## Parent Installation Requirements
 
