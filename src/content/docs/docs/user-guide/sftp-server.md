@@ -51,7 +51,7 @@ There are also numerous tools that let you create a virtual filesystem based on 
 
 - [Mountain Duck](https://mountainduck.io/) - Windows and MacOS
 - [ExpanDrive](https://www.expandrive.com/) - Windows, MacOS and Linux
-- [SSHFS for Linux](https://github.com/libfuse/sshfs)
+- [SSHFS for Linux/MacOS](https://github.com/libfuse/sshfs)
 - [SSHFS for Windows](https://github.com/winfsp/sshfs-win)
 
 For more information on configuring SSHFS, see [this thread](https://github.com/AzuraCast/AzuraCast/discussions/6510).
