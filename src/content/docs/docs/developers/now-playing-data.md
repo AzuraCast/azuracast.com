@@ -161,7 +161,7 @@ let socket = new WebSocket("wss://your-azuracast-url/api/live/nowplaying/websock
 socket.onopen = function(e) {
   socket.send(JSON.stringify({
     "subs": {
-      "station:azuratest_radio": {}
+      "station:azuratest_radio": {"recover": true}
     } 
   });
 };
@@ -170,20 +170,43 @@ let nowplaying = {};
 let currentTime = 0;
 
 // Handle a now-playing event from a station. Update your now-playing data accordingly.
-function handleData(payload) {
-  const jsonData = payload?.pub?.data ?? {};
-  currentTime = jsonData.current_time;
+function handleSseData(ssePayload, useTime = true) {
+  const jsonData = ssePayload.data;
+
+  if (useTime && 'current_time' in jsonData) {
+    currentTime = jsonData.current_time;
+  }
+
   nowplaying = jsonData.np;
 }
 
 socket.onmessage = function(e) {
   const jsonData = JSON.parse(e.data);
+
   if ('connect' in jsonData) {
-    // Initial data is sent in the "connect" response as an array of rows similar to individual messages.
-    const initialData = jsonData.connect.data ?? [];
-    initialData.forEach((initialRow) => handleData(initialRow));
-  } else if ('channel' in jsonData) {
-    handleData(jsonData);
+    const connectData = jsonData.connect;
+
+    if ('data' in connectData) {
+      // Legacy SSE data
+      connectData.data.forEach(
+        (initialRow) => handleSseData(initialRow)
+      );
+    } else {
+      // New Centrifugo time format
+      if ('time' in connectData) {
+        currentTime = Math.floor(connectData.time / 1000);
+      }
+
+      // New Centrifugo cached NowPlaying initial push.
+      for (const subName in connectData.subs) {
+        const sub = connectData.subs[subName];
+        if ('publications' in sub && sub.publications.length > 0) {
+          sub.publications.forEach((initialRow) => handleSseData(initialRow, false));
+        }
+      }
+    }
+  } else if ('pub' in jsonData) {
+    handleSseData(jsonData.pub);
   }
 };
 ```
@@ -205,7 +228,7 @@ const sseBaseUri = "https://your-azuracast-url/api/live/nowplaying/sse";
 const sseUriParams = new URLSearchParams({
   "cf_connect": JSON.stringify({
     "subs": {
-      "station:azuratest_radio": {}
+      "station:azuratest_radio": {"recover": true}
     }
   })
 });
@@ -216,20 +239,43 @@ let nowplaying = {};
 let currentTime = 0;
 
 // This is a now-playing event from a station. Update your now-playing data accordingly.
-function handleData(payload) {
-  const jsonData = payload?.pub?.data ?? {};
-  currentTime = jsonData.current_time;
+function handleSseData(ssePayload, useTime = true) {
+  const jsonData = ssePayload.data;
+
+  if (useTime && 'current_time' in jsonData) {
+    currentTime = jsonData.current_time;
+  }
+
   nowplaying = jsonData.np;
 }
 
 sse.onmessage = (e) => {
   const jsonData = JSON.parse(e.data);
+
   if ('connect' in jsonData) {
-    // Initial data is sent in the "connect" response as an array of rows similar to individual messages.
-    const initialData = jsonData.connect.data ?? [];
-    initialData.forEach((initialRow) => handleData(initialRow));
-  } else if ('channel' in jsonData) {
-    handleData(jsonData);
+    const connectData = jsonData.connect;
+
+    if ('data' in connectData) {
+      // Legacy SSE data
+      connectData.data.forEach(
+        (initialRow) => handleSseData(initialRow)
+      );
+    } else {
+      // New Centrifugo time format
+      if ('time' in connectData) {
+        currentTime = Math.floor(connectData.time / 1000);
+      }
+
+      // New Centrifugo cached NowPlaying initial push.
+      for (const subName in connectData.subs) {
+        const sub = connectData.subs[subName];
+        if ('publications' in sub && sub.publications.length > 0) {
+          sub.publications.forEach((initialRow) => handleSseData(initialRow, false));
+        }
+      }
+    }
+  } else if ('pub' in jsonData) {
+    handleSseData(jsonData.pub);
   }
 };
 ```
