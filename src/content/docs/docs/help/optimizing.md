@@ -31,6 +31,16 @@ The total amount of extra resources per station consumed by post-processing is r
  - Basic Compression/Normalization (Low-Med CPU)
  - No Post-Processing (Least CPU)
 
+### AutoCue
+
+AutoCue is a new feature built by the community and offered as part of AzuraCast. It analyzes your music and automatically calculates cue points, fade points, and volume levels for a consistent listening experience.
+
+To compute these values, it has to analyze every track that plays on your station. This can take time and extra CPU resources, especially when a station first starts up (because it has to analyze every starting track in every playlist, just in case it might have to transition to that track immediately).
+
+If you have shorter, simpler tracks or have a few large playlists, this will only result in a slight CPU bump, after which the station will stabilize. If you have longer tracks or a large number of individual playlists, the initial CPU load can be so high that it disrupts your station operations entirely.
+
+If you are in the latter group, it is recommended to either disable AutoCue from the station profile or to precompute the AutoCue values for your files before starting your station. See the [AutoCue project documentation](https://github.com/Moonbase59/autocue/) for the current recommendations on how to achieve this.
+
 ### Disable Unnecessary Mount Points
 
 If you have configured multiple mount points for your station, consider reducing the total number of mount points to a smaller subset if possible. Every mount point that the AutoDJ has to broadcast to uses a small, but steady, amount of CPU at all times.
