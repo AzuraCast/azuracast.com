@@ -288,7 +288,7 @@ Return to the AzuraCast web interface, visit the "Mount Points" page for your st
 <intro>/intro.mp3</intro>
 ```
 
-For more information, see the [IceCast documentation.](https://www.icecast.org/docs/)
+For more information, see the [Icecast documentation.](https://www.icecast.org/docs/)
 
 ### Custom Favicon
 
