@@ -18,3 +18,9 @@ Each Station in AzuraCast represents one single broadcast (with one currently pl
 
 Note that not all formats are compatible with all platforms. For instance, iOS users won't be able to listen to the Ogg format as it is not supported by Safari on iOS at the moment.
  [Checking formats compatibility](https://caniuse.com/) can help you decide which one will be better for your station.
+
+## Advanced
+
+### Mount Point URL
+
+You can set a custom URL for streams that AzuraCast will use when referring to it in both the web UI and in [API responses](/docs/developers/now-playing-data/#standard-now-playing-api) (specifically, `station.listen_url` and `mounts.*.url`). Leaving the field empty uses the default value, generated in the format: `{HTTP/HTTPS}://{BASE_URL}.TLD/listen/{STATION_URL_STUB}/{MOUNT_POINT_URL}`.
