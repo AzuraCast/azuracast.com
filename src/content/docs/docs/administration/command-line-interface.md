@@ -219,8 +219,8 @@ These tasks can also be invoked directly from the web interface via the Administ
 
 The AzuraCast CLI interface also exposes a number of other advanced commands. These commands are intended for developers to use when building the application, and often should not be run by station owners on production installations.
 
-For a full list of AzuraCast CLI commands, view them [here](https://github.com/AzuraCast/AzuraCast/blob/main/config/cli.php).
+For a full list of AzuraCast CLI commands, view them [here](https://github.com/AzuraCast/AzuraCast/blob/main/backend/config/cli.php).
 
 For more information about the additional command line tools available, see their respective documentation pages below:
-- [Doctrine Command Line Reference](https://www.doctrine-project.org/projects/doctrine-orm/docs/2.6/reference/tools.html#command-overview)
-- [Doctrine Migrations](https://www.doctrine-project.org/projects/doctrine-migrations/docs/latest/reference/introduction.html#introduction)
+- [Doctrine Command Line Reference](https://www.doctrine-project.org/projects/doctrine-orm/en/3.2/reference/tools.html)
+- [Doctrine Migrations](https://www.doctrine-project.org/projects/doctrine-migrations/en/3.8/reference/introduction.html)
