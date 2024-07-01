@@ -15,7 +15,7 @@ There you can add your own JavaScripts to the public pages with the editor for `
 
 You can attach to events of the public player like this:
 
-```
+```javascript
 $(document).on('now-playing', function(np_new) {
     // custom code with np_new
 });
