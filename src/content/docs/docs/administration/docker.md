@@ -298,16 +298,18 @@ In newer versions of AzuraCast, you can manage this via the web UI.
 
 To override the favicon and other browser icons used by AzuraCast, you should follow these steps:
 
-1. - Upload your icon to favicon-generator.org. Be sure to leave "Generate icons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps" checked.
-1. - Once your icon set is downloaded, it will be in a .zip file format; extract that file and copy it to the host server where AzuraCast is hosted.
-1. - Inside the AzuraCast directory on your host (by default, /var/azuracast), create a file named docker-compose.override.yml with the following contents:
+1. Upload your icon to favicon-generator.org. Be sure to leave "Generate icons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps" checked.
+2. Once your icon set is downloaded, it will be in a .zip file format; extract that file and copy it to the host server where AzuraCast is hosted.
+3. Inside the AzuraCast directory on your host (by default, /var/azuracast), create a file named docker-compose.override.yml with the following contents:
+
 ```yaml
 services:
     web:
         volumes:
             - /path/to/your/favicon/folder:/var/azuracast/www/static/icons/production
 ```
-Restart AzuraCast via `docker-compose down && docker-compose up -d`.
+
+4. Restart AzuraCast via `docker-compose down && docker-compose up -d`.
 
 ### Increase PHP Allowed Memory
 
