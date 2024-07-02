@@ -46,7 +46,7 @@ As an important note, though, if you have mistakenly switched to the "Stable" ch
 
 You can switch release channels by logging in to your host computer (the server running AzuraCast) via SSH and executing:
 
-```
+```bash
 cd /var/azuracast
 ./docker.sh update-self
 ./docker.sh setup-release

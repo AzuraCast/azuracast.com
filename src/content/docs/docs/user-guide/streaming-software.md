@@ -16,7 +16,7 @@ If you are using a reverse proxy service (like CloudFlare) in front of your inst
 
 **Linux, MacOS, Windows; Free and Open-Source**
 
-[Mixxx](https://www.mixxx.org) is free and open-source DJ software that also supports live broadcasting via IceCast and ShoutCast servers.
+[Mixxx](https://www.mixxx.org) is free and open-source DJ software that also supports live broadcasting via Icecast and ShoutCast servers.
 
 Live broadcasting settings can be found in the preferences menu (`Options` -> `Preferences`). It is recommended to use "Icecast 2" mode when broadcasting to AzuraCast. Out of the box, Mixxx does not include the LAME MP3 encoder (for licensing reasons), but it is not needed when connecting to AzuraCast; just set your broadcast format to 'Ogg Vorbis' and LiquidSoap will transcode the broadcast into the correct output format.
 
@@ -26,13 +26,13 @@ Live broadcasting settings can be found in the preferences menu (`Options` -> `P
 
 **Linux, MacOS, Windows; Free and Open-Source**
 
-Cross-platform and available for free at [https://sourceforge.net/projects/butt/](https://sourceforge.net/projects/butt/). Streaming via both IceCast mode and ShoutCast mode are available.
+Cross-platform and available for free at [https://sourceforge.net/projects/butt/](https://sourceforge.net/projects/butt/). Streaming via both Icecast mode and ShoutCast mode are available.
 
-### IceCast Mode
+### Icecast Mode
 
 Use the exact information specified on the Streamer/DJ page's right sidebar. "Address" is "Server" and "Icecast mountpoint" is "Mount Name".
 
-![BUTT Sample IceCast configuration](../images/streaming-software/butt_icecast.png)
+![BUTT Sample Icecast configuration](../images/streaming-software/butt_icecast.png)
 
 ### ShoutCast Mode
 
@@ -44,7 +44,7 @@ Use the given port specified in the "ShoutCast v1 Clients" section. Since ShoutC
 
 **Windows; Proprietary, Commercial**
 
-[SAM Cast](https://spacial.com/sam-cast/) is commercial software sold by Spacial. It is compatible with AzuraCast by using the MP3 encoder and the "IceCast 2" server connection settings.
+[SAM Cast](https://spacial.com/sam-cast/) is commercial software sold by Spacial. It is compatible with AzuraCast by using the MP3 encoder and the "Icecast 2" server connection settings.
 
 ### Broadcasting Steps
 
@@ -66,9 +66,9 @@ On the first tab of the encoder details, change your bitrate from the default 64
 
 ![](../images/streaming-software/samcast_4.png)
 
-Click the "Server Details" tab. On the "Server Type" selector, choose "IceCast", then choose "IceCast 2" in the secondary selector.
+Click the "Server Details" tab. On the "Server Type" selector, choose "Icecast", then choose "Icecast 2" in the secondary selector.
 
-You can now populate the "Server Details" section with the connection information supplied to you via AzuraCast's "Streamers/DJs" page. You will want to use the connection information for "IceCast Clients", the first section on the page.
+You can now populate the "Server Details" section with the connection information supplied to you via AzuraCast's "Streamers/DJs" page. You will want to use the connection information for "Icecast Clients", the first section on the page.
 
 ![](../images/streaming-software/samcast_5.png)
 
@@ -84,7 +84,7 @@ Select the encoder, then click the play-button icon in the toolbar to begin broa
 
 [RadioBOSS](https://www.djsoft.net/) is a commercial software sold by IP Kuzmitski D.V. at DJSoft.net.
 
-Streaming via both IceCast mode and ShoutCast mode are available.
+Streaming via both Icecast mode and ShoutCast mode are available.
 
 The Live broadcasting feature is possible in their Standard and Advanced edition (not in the Express edition).
 
@@ -110,11 +110,11 @@ Follow the instructions for the server type you have set up your Azuracast stati
 
 - Select `Icecast 1 & 2` and click `Next >`
 
-![RadioBOSS Encoder Configuration Wizard IceCast](../images/streaming-software/radioboss_3.jpg)
+![RadioBOSS Encoder Configuration Wizard Icecast](../images/streaming-software/radioboss_3.jpg)
 
 - Take over the corresponding credentials you can find in Azuracast:
 
-![RadioBOSS Encoder Configuration Wizard IceCast Azuracast Example settings](../images/streaming-software/radioboss_4.jpg)
+![RadioBOSS Encoder Configuration Wizard Icecast Azuracast Example settings](../images/streaming-software/radioboss_4.jpg)
 
 - Click `Finish`
 
@@ -153,7 +153,7 @@ Note 2: Be sure to select `v1`, as v2 will append the Stream ID (SID), which won
 8. In the Settings window, check the checkboxes for all encoders that you want to use.
 Remember to turn on the option `Broadcasting enabled` on top.
 
-On succesful connection, the log report in the bottom-left corner of RadioBOSS will show the following message: "Connected to server! (Output N)". This means that listeners can now connect to the streaming server (either IceCast or ShoutCast).
+On succesful connection, the log report in the bottom-left corner of RadioBOSS will show the following message: "Connected to server! (Output N)". This means that listeners can now connect to the streaming server (either Icecast or ShoutCast).
 
 If the logs show "[E40] Cannot start broadcast" in red, go over the above steps.
 
@@ -170,7 +170,7 @@ The following articles in there are helpful:
 
 [PlayIt Live](https://www.playitsoftware.com/Products/Live) is a free live-assist and automated radio playout system from PlayIt Software.
 
-It allows streaming via **IceCast**, **SHOUTcast v1** and **SHOUTcast v2** via a plugin, that you can download for free [here](https://www.playitsoftware.com/Plugins/View/InternetBroadcast), after creating an account on their website. This plugin also allows you to record the stream, in MP3.
+It allows streaming via **Icecast**, **SHOUTcast v1** and **SHOUTcast v2** via a plugin, that you can download for free [here](https://www.playitsoftware.com/Plugins/View/InternetBroadcast), after creating an account on their website. This plugin also allows you to record the stream, in MP3.
 
 The installation steps for the plugin are relatively simple, so they're not covered in this guide.
 
@@ -178,7 +178,7 @@ The installation steps for the plugin are relatively simple, so they're not cove
 
 ### Instructions
 
-These instructions are valid and required for both streaming modes (IceCast and SHOUTcast), so be sure to follow this part before proceeding any further.
+These instructions are valid and required for both streaming modes (Icecast and SHOUTcast), so be sure to follow this part before proceeding any further.
 
  **1.** After installing the Internet Broadcast plugin, select the menu **Plugins** menu, on the top menu bar and select the **Plugin Manager...** option.
 
@@ -203,15 +203,15 @@ These instructions are valid and required for both streaming modes (IceCast and 
 
 **4.** Under **Streams**, click **Add** to add a new streaming server.
 
-Now follow the specific instructions for your streaming server: **IceCast** or **SHOUTcast**.
+Now follow the specific instructions for your streaming server: **Icecast** or **SHOUTcast**.
 
-### IceCast
+### Icecast
 
 **1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page,
 
 ![Connection Details](../images/streaming-software/playitlive_4.png)
 
-*Connection Information for IceCast*
+*Connection Information for Icecast*
 
 ... fill this form in the PlayIt Live software.
 
