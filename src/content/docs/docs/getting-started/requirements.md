@@ -66,9 +66,9 @@ We strongly recommend one of the following distributions and versions for your A
 
 On the Administration page you can find a basic `Server Status` section that shows you the `CPU Load`, `Memory` and `Disk Space` usage of your server.
 
-### IceCast
+### Icecast
 
-For IceCast you can find some benchmarks for the following topics at https://icecast.org/loadtest/
+For Icecast you can find some benchmarks for the following topics at https://icecast.org/loadtest/
 
 - [Testing the maximum numbers of connected listeners](https://icecast.org/loadtest/1/)
 - [Testing the maximum numbers of connected sources](https://icecast.org/loadtest/2/)

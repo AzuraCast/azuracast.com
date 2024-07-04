@@ -105,3 +105,7 @@ To add custom headers to a station, open the `Broadcasting` sidebar menu, then c
   <header name="icy-geo-lat-long" value="12.345,-23.456" />
 </http-headers>
 ```
+
+:::caution[Power users only!]
+HTTP-headers must be added to each individual mount point. Adding them to the station-wide Custom Configuration (under `Profile` -> `Edit Profile` -> `Broadcasting`) will not work.
+:::

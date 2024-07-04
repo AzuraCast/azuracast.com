@@ -16,13 +16,13 @@ Users with the appropriate permissions can also view many logs directly through 
 
 If you are administrating your own AzuraCast installation you can check most logs through the `Administration` -> `System Logs`.
 
-In addition to the `IceCast`, `SHOUTcast` and `Liquidsoap` logs you can find the `AzuraCast Application Log` here which contains useful information about what the AzuraCast application itself is doing.
+In addition to the `Icecast`, `SHOUTcast` and `Liquidsoap` logs you can find the `AzuraCast Application Log` here which contains useful information about what the AzuraCast application itself is doing.
 
 ## Log Viewer
 
-The `Logs` link in your station sidebar menu gives you access to the Logs from your station's `IceCast`, `SHOUTcast` and `Liquidsoap` processes.
+The `Logs` link in your station sidebar menu gives you access to the Logs from your station's `Icecast`, `SHOUTcast` and `Liquidsoap` processes.
 
-In addition to the logs, you can also view the IceCast, SHOUTcast and Liquidsoap configuration scripts that AzuraCast automatically generates for you.
+In addition to the logs, you can also view the Icecast, SHOUTcast and Liquidsoap configuration scripts that AzuraCast automatically generates for you.
 
 ## Log Types
 
@@ -38,15 +38,15 @@ In this log you can find information on how the streams are generated, what info
 
 If you encounter any problems with your stream generation this look should contain useful information in diagnosing the issue.
 
-### IceCast Access Log
+### Icecast Access Log
 
-This log file contains the raw access log data of the IceCast server.
+This log file contains the raw access log data of the Icecast server.
 
 For most issues this log does not contain any useful information but can be used for analytical purposes.
 
-### IceCast Error Log
+### Icecast Error Log
 
-This log file contains the error output of the IceCast server.
+This log file contains the error output of the Icecast server.
 
 If you encounter any problems with accessing the streams or your mount points this is were should start looking into.
 

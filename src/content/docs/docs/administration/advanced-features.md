@@ -28,3 +28,11 @@ Advanced features hidden by default include:
 These features can be re-enabled via the `Administration` -> `System Settings` page in the `Settings` tab.
 
 By checking the `Enable Advanced Features` checkbox and saving your settings you can enable the advanced features of AzuraCast.
+
+### Broadcasting
+
+#### Custom Configuration
+
+A common use case of the station-wide Icecast config is to publish your station's mount points to [YellowPage directories](/docs/user-guide/promoting-your-station/#yellowpages-directories).
+
+Additionally, you can overwrite some values such as `<location>` and the `<admin>` email address.
