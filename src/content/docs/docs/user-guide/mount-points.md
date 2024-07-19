@@ -18,7 +18,7 @@ Each Station in AzuraCast represents one single broadcast (with one currently pl
 
 Note that not all formats are compatible with all platforms. For instance, iOS users won't be able to listen to the Ogg format as it is not supported by Safari on iOS at the moment. [Checking formats compatibility](https://caniuse.com/) can help you decide which one will be better for your station.
 
-Furthermore, it should be noted that OGG Opus and FLAC (OGG FLAC) do NOT send "Current Song", "Artist", or "Title" (and subsequently, "yp_currently_playing") information to Icecast. This includes ALAC files due to how they are handled by Liquidsoap.
+Furthermore, it should be noted that OGG Opus and FLAC (OGG FLAC) do NOT send "Current Song", "Artist", or "Title" (and subsequently, "yp_currently_playing") information to Icecast.
 
 ## Advanced
 
