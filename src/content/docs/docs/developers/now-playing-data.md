@@ -129,6 +129,49 @@ http://your-azuracast-site.example.com/api/nowplaying_static/station_shortcode.j
 
 Implementations of this method look exactly the same as for the Standard Now Playing API (above), except with the URL updated to the static URL for the station.
 
+## Now Playing Text File Method
+
+The following is a method that allows for a simple text file to output the now playing information containing **only** the `Artist - Title`, which can be read by simple HTML code.
+
+### HLS Enabled
+These instructions are specifically for HLS enabled stations:
+1. Go to Station Profile -> Broadcasting -> Edit Liquid Soap Configuration
+2. Paste teh following code before the `# Local Broadcasts` line:
+```
+ def write_txt(m) =
+ignore(file.write(data="#{m[\"artist\"]} - #{m[\"title\"]}", append=false, "/var/azuracast/stations/_your_radio_station_/hls/nowplaying.txt"))
+end
+radio.on_metadata(write_txt)
+```
+Be sure to replace the `_your_radio_station_` with the shortcode of the stations this file will be served for.
+3. Restart Broadcasting
+Now, navigate to https://your-radio.com/hls/_your_radio_station/nowplaying.txt and there will be simple text file containing just the `Artist - Title` of the currently playing song!
+
+### Non-HLS Stations
+These instructions are for non-HLS enabled stations:
+1. Go to Station Profile -> Broadcasting -> Edit Liquid Soap Configuration
+2. Paste the following code before the `# Local Broadcasts` line:
+```
+def write_txt(m) =
+ignore(file.write(data="#{m[\"artist\"]} - #{m[\"title\"]}", append=false, "/var/azuracast/www/web/static/nowplaying.txt"))
+end
+radio.on_metadata(write_txt)
+```
+3. Restart Broadcasting
+Now, navigate to https://your-radio.com/static/nowplaying.txt and there will be a text file containing just the `Artist - Title` of the currently playing song!
+
+*Note: If there are multiple stations this configuration needs applied to, be sure that the `/var/azuracast/www/web/static/nowplaying.txt` file name is adjusted accordingly, such as `/var/azuracast/www/web/static/nowplaying_station1.txt`, etc. The file will be available at the modified file name address*
+
+### Advantages
+
+- A simple, cut down version of the now-playing info provided by the API
+- Useful if you don't need all of the streamer info, recently played history, etc. from the API
+- Able to be used from simple websites pulling this info
+
+### Disadvantages
+
+- If not on HLS, multiple stations require knowing the custom file name to utilize, care must be taken not to use the same file name across multiple stations
+
 ## High-Performance Updates
 
 We deliver a high-performance (low-latency and low server CPU burden) Now Playing feed thanks to a realtime messaging library called [Centrifugo](https://centrifugal.dev/). Using this connection method, each listener gets immediate track updates while only maintaining a single lightweight HTTP connection.
