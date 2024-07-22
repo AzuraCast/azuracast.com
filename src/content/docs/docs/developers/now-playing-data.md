@@ -279,3 +279,36 @@ sse.onmessage = (e) => {
   }
 };
 ```
+
+## Simple .txt file
+
+Sometimes you may want a simple plain text file containing `Artist - Title` information only. It may be relevant for legacy web players or other software.
+
+
+1. Go to `Station Profile` - `Broadcasting` - `Edit Liquidsoap Configuration`
+2. Paste the following code before `# Local Broadcasts` line and save configuration:
+
+An example of Liquidsoap code:
+
+```ruby
+def write_txt(m) =
+
+  if m["artist"] != "" then
+    ignore(file.write(data="#{m[\"artist\"]} - #{m[\"title\"]}", append=false, "/var/azuracast/www/web/static/nowplaying.txt"))
+  else
+    ignore(file.write(data="#{m[\"title\"]}", append=false, "/var/azuracast/www/web/static/nowplaying.txt"))
+  end
+
+end
+radio.on_metadata(write_txt)
+
+```
+Now you'll have `Artist - Title` nowplaying info available at _https://yourdomain.com/static/nowplaying.txt_
+
+For every station you can edit configuration and specify a name of .txt file:
+
+`"/var/azuracast/www/web/static/nowplaying_station1.txt"`
+
+`"/var/azuracast/www/web/static/nowplaying_station2.txt"`
+
+and so on.
