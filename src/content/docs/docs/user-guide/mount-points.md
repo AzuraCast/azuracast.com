@@ -16,8 +16,9 @@ Mount Points are how listeners connect and listen to your broadcasts.
 
 Each Station in AzuraCast represents one single broadcast (with one currently playing title, artist, etc.), but with multiple Mount Points you can output that broadcast in multiple formats (i.e. MP3, Ogg Vorbis) or bitrates (i.e. 128kbps or 64kbps).
 
-Note that not all formats are compatible with all platforms. For instance, iOS users won't be able to listen to the Ogg format as it is not supported by Safari on iOS at the moment.
- [Checking formats compatibility](https://caniuse.com/) can help you decide which one will be better for your station.
+Note that not all formats are compatible with all platforms. For instance, iOS users won't be able to listen to the Ogg format as it is not supported by Safari on iOS at the moment. [Checking formats compatibility](https://caniuse.com/) can help you decide which one will be better for your station.
+
+Furthermore, it should be noted that OGG Opus and FLAC (OGG FLAC) do NOT send "Current Song", "Artist", or "Title" (and subsequently, "yp_currently_playing") information to Icecast.
 
 ## Advanced
 

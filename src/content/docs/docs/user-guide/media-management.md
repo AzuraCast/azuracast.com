@@ -37,3 +37,7 @@ Once assigned to a playlist, any files added to the folder will automatically be
 ## Required Permissions
 
 To manage media, users must be in a role that has the "Manage Station Media" permission for the given station.
+
+## On-Demand Media
+
+Music from playlists with on-demand streaming enabled in playlist settings (under "Include in On-Demand Player") will be available to stream via the On-Demand Media public page. For this option to become available, "Enable On-Demand Streaming" under `Profile` -> `Edit Profile` -> `On-Demand Streaming` must be enabled.
