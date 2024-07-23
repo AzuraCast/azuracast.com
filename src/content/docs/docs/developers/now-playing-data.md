@@ -138,8 +138,14 @@ These instructions are specifically for HLS enabled stations:
 1. Go to Station Profile -> Broadcasting -> Edit Liquid Soap Configuration
 2. Paste teh following code before the `# Local Broadcasts` line:
 ```
- def write_txt(m) =
-ignore(file.write(data="#{m[\"artist\"]} - #{m[\"title\"]}", append=false, "/var/azuracast/stations/_your_radio_station_/hls/nowplaying.txt"))
+def write_txt(m) =
+
+  if m["artist"] != "" then
+    ignore(file.write(data="#{m[\"artist\"]} - #{m[\"title\"]}", append=false, "/var/azuracast/www/web/static/nowplaying.txt"))
+  else
+    ignore(file.write(data="#{m[\"title\"]}", append=false, "/var/azuracast/www/web/static/nowplaying.txt"))
+  end
+
 end
 radio.on_metadata(write_txt)
 ```
@@ -153,7 +159,13 @@ These instructions are for non-HLS enabled stations:
 2. Paste the following code before the `# Local Broadcasts` line:
 ```
 def write_txt(m) =
-ignore(file.write(data="#{m[\"artist\"]} - #{m[\"title\"]}", append=false, "/var/azuracast/www/web/static/nowplaying.txt"))
+
+  if m["artist"] != "" then
+    ignore(file.write(data="#{m[\"artist\"]} - #{m[\"title\"]}", append=false, "/var/azuracast/www/web/static/nowplaying.txt"))
+  else
+    ignore(file.write(data="#{m[\"title\"]}", append=false, "/var/azuracast/www/web/static/nowplaying.txt"))
+  end
+
 end
 radio.on_metadata(write_txt)
 ```
