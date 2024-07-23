@@ -129,6 +129,18 @@ http://your-azuracast-site.example.com/api/nowplaying_static/station_shortcode.j
 
 Implementations of this method look exactly the same as for the Standard Now Playing API (above), except with the URL updated to the static URL for the station.
 
+## Simple Text File
+
+AzuraCast also generates a simple text file containing `Artist - Title` for each station. This can be useful if you need to fetch the current playing track for display or in automation tools.
+
+The URL of the text file follows the format:
+
+```
+http://your-azuracast-site.example.com/api/nowplaying_static/station_shortcode.txt
+```
+
+...replacing `station_shortcode` with the station's abbreviated name (i.e. `azuratest_radio` for "AzuraTest Radio").
+
 ## High-Performance Updates
 
 We deliver a high-performance (low-latency and low server CPU burden) Now Playing feed thanks to a realtime messaging library called [Centrifugo](https://centrifugal.dev/). Using this connection method, each listener gets immediate track updates while only maintaining a single lightweight HTTP connection.
