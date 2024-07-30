@@ -11,10 +11,9 @@
     "builtin-build": "astro build --root=./builtin"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.18.1",
-    "astro": "^4.4.0",
+    "@astrojs/starlight": "^0.25",
+    "astro": "^4.12",
     "bootstrap": "^5.3",
-    "rehype-mermaid": "^2.1.0",
-    "sass": "^1.69"
+    "sass": "^1.77"
   }
 }

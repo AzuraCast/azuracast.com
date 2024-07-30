@@ -28,34 +28,6 @@ Every station has two essential components that are always running and which gen
 
 - The **Broadcasting Software** (or the "Broadcasting Frontend") is the lightweight piece of software (either Icecast or SHOUTcast) whose primary job is to take the signal created by the AutoDJ and broadcast it out to potentially hundreds or thousands of listeners. This software is specifically optimized to support very many concurrent incoming connections with very little impact on system performance.
 
-```mermaid
-graph LR
-    A0[Playlist 1]
-    A1[Playlist 2]
-    A2[LiveDJ]
-    A3[.....]
-
-    B[AutoDJ
-    'Broadcasting Backend']
-
-    C[Icecast
-    'Broadcasting Frontend']
-
-    A0-->B
-    A1-->B
-    A2-->B
-    A3-->B
-
-    B-->|Stream|C
-
-    C-->L0[Listener 1]
-    C-->L1[Listener 2]
-    C-->L2[Listener 3]
-    C-->L3[.....]
-
-    
-```
-
 Part of AzuraCast's function is to ensure both of these processes are properly configured, automatically started and kept running behind the scenes. When running an AzuraCast installation, you don't have to directly start either of these services for any station, and (with the exception of some specific changes, which require a brief restart) don't need to modify them directly for configuration changes in AzuraCast to take effect.
 
 ### SHOUTcast
