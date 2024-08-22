@@ -22,7 +22,7 @@ Once installed and running, AzuraCast exposes an API that allows you to monitor 
 
 Each AzuraCast installation includes documentation for the API at the exact version it's currently using. In our public documentation, we include the API as of the latest Rolling Release version.
 
-- [/api](View API Documentation)
+- [View API Documentation](/api)
 
 ## API Authentication
 
