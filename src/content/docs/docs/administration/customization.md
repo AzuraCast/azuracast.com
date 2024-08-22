@@ -22,9 +22,11 @@ $(document).on('now-playing', function(np_new) {
 ```
 
 ### Example: Video Playback for Public Page
-You can use `Custom JS for Public Pages` to add a video element to the page and style via the `Custom CSS for Public Pages` using our example below. 
+
+You can use `Custom JS for Public Pages` to add a video element to the page and style via the `Custom CSS for Public Pages` using our example below.
 
 **Custom CSS for Public Pages**
+
 ```css
 [data-theme] body.page-minimal .background-video {
 	width: 100vw;
@@ -38,7 +40,9 @@ You can use `Custom JS for Public Pages` to add a video element to the page and 
 	z-index: -1;
 }
 ```
+
 **Custom JS for Public Pages**
+
 ```javascript
 let videoBackgroundElement = document.createElement('video');
 videoBackgroundElement.autoplay = true;

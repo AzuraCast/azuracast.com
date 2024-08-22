@@ -20,7 +20,7 @@ If your issue isn't in our known issues or common solutions, check out our [GitH
 
 If there's already an open GitHub issue for the specific issue you're having, you can follow that issue for updates. If not, you can create a new issue from the same page.
 
-When creating a new issue, you'll be presented with a template of questions to answer to help our team provide quick and accurate support. 
+When creating a new issue, you'll be presented with a template of questions to answer to help our team provide quick and accurate support.
 
 **Please make sure to answer these questions and provide as much detail as possible!**
 

@@ -23,4 +23,3 @@ We have guides for how to configure many kinds of popular streaming software. Se
 ## Recording Broadcasts
 
 You can opt to record live broadcasts by editing the station's profile. Broadcasts will automatically be recorded in the format and bitrate that you specify, and can be downloaded from the "Broadcasts" popup menu next to each streamer.
-

@@ -16,7 +16,7 @@ AzuraCast has a highly granular Access Control List (ACL) system that allows you
 
 In summary, you can think of the access control list as working this way:
 
-- One or more **Users** can be in a **Role**. 
+- One or more **Users** can be in a **Role**.
 - Each **Role** has one or more **Permissions**, which gives everyone in that Role that level of access. Permissions can either be specific to a single station, or global for the entire installation.
 
 The Roles & Permissions page has protections in place to prevent users from accidentally denying themselves permissions to the Permissions page itself.

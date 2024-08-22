@@ -38,7 +38,7 @@ SYNC_LONG_EXECUTION_TIME=2200
 
 After changing these entries restart your AzuraCast installation via:
 
-```
+```bash
 docker-compose down
 docker-compose up -d
 ```

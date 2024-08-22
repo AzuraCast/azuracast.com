@@ -138,19 +138,19 @@ Note 2: Be sure to select `v1`, as v2 will append the Stream ID (SID), which won
 
 6. Finish by changing the rest of the settings by preference:
 
-  - Connection
-    - Sample Rate
-    - Encoder
-    - Bitrate
-    - Channels
+- Connection
+  - Sample Rate
+  - Encoder
+  - Bitrate
+  - Channels
 
   - Station info
 
     If needed, here you can override the info that can be found in the main `Settings` (From step 1), under `Broadcasting` -> `Metadata`
 
-7. Then finally click `OK` to save the Encoder.
+1. Then finally click `OK` to save the Encoder.
 
-8. In the Settings window, check the checkboxes for all encoders that you want to use.
+2. In the Settings window, check the checkboxes for all encoders that you want to use.
 Remember to turn on the option `Broadcasting enabled` on top.
 
 On succesful connection, the log report in the bottom-left corner of RadioBOSS will show the following message: "Connected to server! (Output N)". This means that listeners can now connect to the streaming server (either Icecast or ShoutCast).
@@ -160,6 +160,7 @@ If the logs show "[E40] Cannot start broadcast" in red, go over the above steps.
 More information can be found in the RadioBOSS Help System. Press `Ctrl+F1` inside the RadioBOSS application, or in the top menu bar go to `Help` -> `Contents`.
 
 The following articles in there are helpful:
+
 - `Operation` -> `Broadcasting Internet radio`
 - `Options` -> `Broadcast`
 - `Options` -> `Broadcast` -> `Metadata`
@@ -180,26 +181,26 @@ The installation steps for the plugin are relatively simple, so they're not cove
 
 These instructions are valid and required for both streaming modes (Icecast and SHOUTcast), so be sure to follow this part before proceeding any further.
 
- **1.** After installing the Internet Broadcast plugin, select the menu **Plugins** menu, on the top menu bar and select the **Plugin Manager...** option.
+ 1. After installing the Internet Broadcast plugin, select the menu **Plugins** menu, on the top menu bar and select the **Plugin Manager...** option.
 
 ![Plugins menu](../images/streaming-software/playitlive_1.png)
 
 *Select the Plugins menu, then the Plugin Manager option*
 
- **2.** A new window should appear, and within it the Internet Broadcast plugin.
- 
+2. A new window should appear, and within it the Internet Broadcast plugin.
+
 ![Plugin Manager](../images/streaming-software/playitlive_2.png)
 *The Plugin Manager window*
 
- **3.** Open the plugin settings, by double clicking on it's name. This window should appear.
+3. Open the plugin settings, by double clicking on it's name. This window should appear.
 
 ![Plugin settings](../images/streaming-software/playitlive_3.png)
 *Plugin Settings*
 
 **There are a few settings that you can customize here:**
 
- - In **Audio source to broadcast** you can define which input is going to be transmited to the server;
- - **Auto start streams** let's you start streaming after opening the software.
+- In **Audio source to broadcast** you can define which input is going to be transmited to the server;
+- **Auto start streams** let's you start streaming after opening the software.
 
 **4.** Under **Streams**, click **Add** to add a new streaming server.
 
@@ -221,13 +222,10 @@ Now follow the specific instructions for your streaming server: **Icecast** or *
 
 **Don't forget to change these details with yours, this is just an example!**
 
-**Notes:** 
+**Notes:**
 
- - The **Save audio to file** field can be left unchecked. Check it if
-   you want to record the stream into a MP3 file.
-   
-  - Under **Audio**, select the audio bitrate and the format (stereo or
-   mono) that matches your station.
+- The **Save audio to file** field can be left unchecked. Check it if you want to record the stream into a MP3 file.
+- Under **Audio**, select the audio bitrate and the format (stereo or mono) that matches your station.
 
 **2.** After filling the form fields, click **OK** to save the server details.
 
@@ -250,18 +248,13 @@ If the server is configured correctly, the **OFF AIR** text will change to **ON 
 
 **Don't forget to change these details with yours, this is just an example!**
 
-**Notes:** 
+**Notes:**
 
- - In **Server Type**, select SHOUTcast v1.
+- In **Server Type**, select SHOUTcast v1.
+- The **Password** field must be in this format: `dj_username:dj_password`
+- The **Save audio to file** field can be left unchecked. Check it if you want to record the stream into a MP3 file.
+- Under **Audio**, select the audio bitrate and the format (stereo or mono) that matches your station.
 
- - The **Password** field must be in this format: `dj_username:dj_password`
- 
- - The **Save audio to file** field can be left unchecked. Check it if
-   you want to record the stream into a MP3 file.
-  
-  - Under **Audio**, select the audio bitrate and the format (stereo or
-   mono) that matches your station.
-   
 **2.** After filling the form fields, click **OK** to save the server details.
 
 **3.** To start broadcasting, click on Start Streams here on in the main interface of the software.

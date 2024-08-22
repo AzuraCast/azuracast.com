@@ -37,6 +37,7 @@ Note, this is a file named `.env`, with no filename, and not the `azuracast.env`
 ## Connecting to SFTP
 
 ### SFTP clients
+
 Here's a small list of FTP clients you can use that are known to work with AzuraCast's SFTP system.
 
 - [Filezilla](https://filezilla-project.org/) - Windows, MacOS and Linux 32 bit & 64 bit

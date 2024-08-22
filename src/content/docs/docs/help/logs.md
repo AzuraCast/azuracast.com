@@ -16,7 +16,7 @@ Users with the appropriate permissions can also view many logs directly through 
 
 If you are administrating your own AzuraCast installation you can check most logs through the `Administration` -> `System Logs`.
 
-In addition to the `Icecast`, `SHOUTcast` and `Liquidsoap` logs you can find the `AzuraCast Application Log` here which contains useful information about what the AzuraCast application itself is doing.
+In addition to the `Icecast`, `SHOUTcast` and `Liquidsoap` logs you can find the `AzuraCast Application Log` here which contains useful information about what the AzuraCast application itself is doing. Email message logs are also sent here.
 
 ## Log Viewer
 
@@ -27,7 +27,7 @@ In addition to the logs, you can also view the Icecast, SHOUTcast and Liquidsoap
 ## Log Types
 
 ### AzuraCast Application Log
- 
+
 This log file contains the log output of the AzuraCast application itself. If you encounter any errors with the application itself you will most likely find more information about those errors in this log file.
 
 ### Liquidsoap Log
@@ -73,6 +73,6 @@ Since the Ansible installation interacts directly with your host server, its log
 
 For each station, logs for radio software will be inside `/var/azuracast/stations/{station_short_name}/config`, with the following filenames:
 
- - Liquidsoap: `liquidsoap.log`
- - Icecast: `icecast.log`
- - SHOUTcast: `sc_serv.log`
+- Liquidsoap: `liquidsoap.log`
+- Icecast: `icecast.log`
+- SHOUTcast: `sc_serv.log`

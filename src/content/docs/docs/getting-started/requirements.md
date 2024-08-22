@@ -17,17 +17,19 @@ AzuraCast does not ensure, and is not liable for, music licenses and royalties p
 ## 🖥️ System Requirements
 
 ### Minimum Requirements
+
 - A 64-bit x86 (x86_64/amd64) or ARM64 CPU
 - at least 2GB of RAM
 - 20GB or greater of hard drive space
 - A computer/server capable of running Docker
 
-For Linux hosts, the `sudo`, `curl` and `git` packages should be installed before installing AzuraCast. Most Linux distributions include these packages already. This is the barest of minimum to run AzuraCast, there's no guarantees it will run perfectly. 
+For Linux hosts, the `sudo`, `curl` and `git` packages should be installed before installing AzuraCast. Most Linux distributions include these packages already. This is the barest of minimum to run AzuraCast, there's no guarantees it will run perfectly.
 
 ### Recommended Requirements
+
 - 4 CPU cores
-- 4GB of ram. 
-- 40 GB or greater of hard drive space 
+- 4GB of ram
+- 40 GB or greater of hard drive space
 - A computer/server capable of running Docker
 
 Recommeneded Requirements should allow  you to run a few stations with ease, this is aimed for hobby usage (5 to 10 stations). [If you wish to increase the memory even further, consult this guide on Swap Space](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04)
@@ -42,7 +44,7 @@ We strongly recommend one of the following distributions and versions for your A
 
 - Ubuntu 22.04 LTS (Docker only)
 - Ubuntu 20.04 LTS (Ansible / Docker)
-- Ubuntu 18.04 LTS (Docker only) 
+- Ubuntu 18.04 LTS (Docker only)
 - Debian 10 "Buster" (Ansible / Docker)
 - Debian 9 "Stretch" (Ansible / Docker)
 - MacOS - Using Docker Desktop

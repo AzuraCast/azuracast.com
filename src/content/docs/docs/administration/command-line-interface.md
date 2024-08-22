@@ -41,7 +41,7 @@ This section will cover all account related CLI commands and the response the CL
 
 ### List all accounts
 
-```
+```bash
 (cli_command) azuracast:account:list 
 
 AzuraCast User Accounts
@@ -54,9 +54,9 @@ AzuraCast User Accounts
  ---------------- ------ --------------------- -------------------
 ```
 
-### Create a unique login recovery URL for the specified account.
+### Create a unique login recovery URL for the specified account
 
-``` 
+``` bash
 (cli_command) azuracast:account:login-token [example]
 
 Generate Account Login Recovery URL
@@ -69,9 +69,9 @@ Generate Account Login Recovery URL
  Log in using this temporary URL and set a new password using the web interface.
 ```
 
-### Reset the password of the specified account.
+### Reset the password of the specified account
 
-``` 
+``` bash
 (cli_command) azuracast:account:reset-password [example]
 
 Reset Account Password
@@ -84,9 +84,9 @@ Reset Account Password
  Log in using this temporary password and set a new password using the web interface.
  ```
 
-### Set the account specified as a global administrator.
+### Set the account specified as a global administrator
 
-``` 
+```bash
 (cli_command) azuracast:account:set-administrator [example]
 
 Set Administrator
@@ -97,66 +97,76 @@ Set Administrator
 
 ## API Related CLI Commands
 
-This section will cover our API related command(s), this'll be related to your AzuraCast's API. 
+This section will cover our API related command(s), this'll be related to your AzuraCast's API.
 
-### Regenerate AzuraCast's API documentation.
+### Regenerate AzuraCast's API documentation
 
-```
+```bash
 (cli_command) azuracast:api:docs
 
 API documentation updated!
 ```
+
 This command should be used when you're on a development, production or testing machine and you're making modifications to the API, this will update your API accordingly (domain/api)
 
 ## Internal CLI Commands
 
-This section will cover our internal processes, such as Liquidsoap, SSL and SFTP authentication. 
+This section will cover our internal processes, such as Liquidsoap, SSL and SFTP authentication.
 
 ### Get the external IP address for this instance
 
-```
+```bash
 (cli_command) azuracast:internal:ip
 
 [example]
 ```
-Running this command will return the IP of this machine. 
+
+Running this command will return the IP of this machine.
 
 ###  Handle Liquidsoap API calls
 
-```
+```bash
 (cli_command) azuracast:internal:liquidsoap [example] [example]
 ```
 This command can run various Liquidsoap API calls, this is primarily used for debugging or development purposes.
 
 ### Reload broadcast frontends when an SSL certificate changes
-```
+
+```bash
 (cli_command) azuracast:internal:on-ssl-renewal
 ```
 
 ### Attempt SFTP Authentication
-```
+
+```bash
 (cli_command) azuracast:internal:sftp-auth
 ```
 
-### Send upcoming song feedback from the AutoDJ back to AzuraCast.
-```
+### Send upcoming song feedback from the AutoDJ back to AzuraCast
+
+```bash
 (cli_command) azuracast:internal:sftp-event
 ```
 
 ## AzuraCast Settings CLI Commands
+
 This section will cover our internal internal settings ranging from base URL to smtp. This can be used should you be locked out of the settings or unable to access AzuraCast directly from the browser.  
 
 ### List all settings for AzuraCast
-```
+
+```bash
 (cli_command) azuracast:settings:list
 ```
-This command will return all the settings you can modify via the Command Line Interface, which will be shown in the next field. 
+
+This command will return all the settings you can modify via the Command Line Interface, which will be shown in the next field.
 
 ### Modify settings for AzuraCast
-```
+
+```bash
 (cli_command) azuracast:settings:set [example] [example]
 ```
-The `setting-key` parameter can be collected from the `settings:list` CLI command, this command will allow you to modify almost all portions of AzuraCast's settings, this is useful should you be having issues with misconfigured settings. 
+
+The `setting-key` parameter can be collected from the `settings:list` CLI command, this command will allow you to modify almost all portions of AzuraCast's settings, this is useful should you be having issues with misconfigured settings.
 
 ### Manually Run AzuraCast Setup
 
