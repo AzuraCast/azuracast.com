@@ -11,7 +11,7 @@ AzuraCast contains a plugin system that can be used to extend AzuraCast without 
 
 ## Example Plugin
 
-We have built an example plugin that you should use as the base for your own plugin. You can find the git repository at: 
+We have built an example plugin that you should use as the base for your own plugin. You can find the git repository at:
 
 https://github.com/AzuraCast/example-plugin
 

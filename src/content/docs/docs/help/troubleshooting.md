@@ -35,23 +35,26 @@ php /var/azuracast/www/bin/console cache:clear
 
 ## Common Docker Errors
 
-### "Invalid interpolation format" related errors. 
-This issue is related to an out of date docker-compose version, since we use a more up to date docker-compose version it'll return these types of errors. 
+### "Invalid interpolation format" related errors
+
+This issue is related to an out of date docker-compose version, since we use a more up to date docker-compose version it'll return these types of errors.
 
 - `ERROR: Invalid interpolation format for "installer" option in service "services": "ghcr.io/azuracast/web:${AZURACAST_VERSION:-latest}"`
 - `ERROR: Invalid interpolation format for "nginx_proxy" option in service "services": "ghcr.io/azuracast/nginx_proxy:${AZURACAST_VERSION:-latest}"`
 
+The solution is simple, run these commands. You may need to run it with `sudo` permissions:
 
-Solution is simple, run this command. You may need to run it with `sudo` permissions. 
-
-- `./docker.sh install-docker-compose`
-- Run the command `./docker.sh install`
+```bash
+./docker.sh install-docker-compose
+./docker.sh install
+```
 
 ### "bind: address already in use"
 
 If you get this error when starting the Docker AzuraCast instance, it means that something else (some other process or server software) is already running on the same port(s) that AzuraCast is trying to reserve for itself.
 
 There are generally two ways to resolve this:
+
 - Find the process that's currently listening on the port (commands like `netstat -tulpn` can help you with this) and either disable the program that's currently listening, edit its configuration to change the port it listens on, or uninstall it from the server completely.
 - Switch the port AzuraCast uses for its own traffic to an unused one. [See instructions](/docs/administration/docker)
 
@@ -65,7 +68,7 @@ This message doesn't indicate anything is wrong with your installation; it is si
 
 ## Other General Errors
 
-### InnoDB: Upgrade after a crash is not supported.
+### InnoDB: Upgrade after a crash is not supported
 
 The DB crashed while using MariaDB 10.4 and was then not restarted with the same MariaDB version so that it can recover from the redo log files but was updated to 10.5 which now is not able to handle the old redo log format (in 10.5 they changed that format).
 
@@ -97,12 +100,11 @@ This situation is one of the primary reasons why we strongly encourage users to 
 
 We don't provide specific instructions for this process as it can cause irreparable damage to your installation, but basically, the process would be:
 
- - Identify which migration is failing.
- - Find the corresponding migration (in the `src/Entity/Migrations` folder).
- - Find which step is failing in the `up` function, and find the corresponding SQL commands to undo those specific migrations in the `down` command in the same file.
- - Manually run those commands via 
-   `./docker.sh cli dbal:run-sql "SQL COMMAND HERE"`
- - Re-run the update process.
+- Identify which migration is failing.
+- Find the corresponding migration (in the `src/Entity/Migrations` folder).
+- Find which step is failing in the `up` function, and find the corresponding SQL commands to undo those specific migrations in the `down` command in the same file.
+- Manually run those commands via `./docker.sh cli dbal:run-sql "SQL COMMAND HERE"`
+- Re-run the update process.
 
 ## Submitting an Issue
 

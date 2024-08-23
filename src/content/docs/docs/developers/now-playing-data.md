@@ -13,6 +13,7 @@ sidebar:
 The most important and frequently accessed pieces of information that AzuraCast stores are all served as part of a single group of data, which we refer to as the "Now Playing" data.
 
 This data includes:
+
  - Basic information about the station, its mount points and remote relays;
  - Current listener counts, including total and unique listeners;
  - The currently playing song, including a timestamp of when it was started, and whether it came from a playlist, request, or live source;

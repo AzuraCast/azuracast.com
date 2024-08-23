@@ -26,7 +26,7 @@ When running the installer, you will be prompted to automatically set up your Wi
 
 Once WSL2 is installed and configured, and Docker Desktop is up and running, open a terminal window and type the following command:
 
-```
+```bash
 wsl --set-default-version 2
 ```
 
@@ -44,13 +44,13 @@ For convenience, you can set the newly installed distribution as your "default" 
 
 You can list the names of all installed WSL2 distributions by running:
 
-```
+```bash
 wsl --list
 ```
 
 To set one as your default, enter its name in the command below. If you followed the recommendations here and used Ubuntu, you can run this command:
 
-```
+```bash
 wsl --set-default Ubuntu
 ```
 

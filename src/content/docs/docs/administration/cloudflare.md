@@ -23,6 +23,7 @@ The default settings for Cloudflare will suffice, though you can also switch fro
 Once you've enabled Cloudflare support for your domain (or radio station's subdomain) from the Cloudflare control panel, you only need to enable one feature inside AzuraCast to enable listeners to connect:
 
 ### Enabling the Web Proxy for Radio Broadcasts
+
 One major limitation imposed by Cloudflare is that they do not forward incoming connections to your server that don't come from the traditional web ports (that is, 80 and 443). By default, AzuraCast serves each radio station on its own distinct port in a range from 8000 to 9000. This means your listeners wouldn't normally be able to connect.
 
 ![cloudflare_proxy.png](../images/cloudflare/cloudflare_proxy.png)
@@ -44,6 +45,7 @@ To create a new Page Rule:
 5) Click "Save and Deploy Page Rule" at the bottom of the page.
 
 Repeat these steps for all of the following patterns:
+
  - `/radio/*`
  - `/listen/*`
  - `/hls/*`

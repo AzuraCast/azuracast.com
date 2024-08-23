@@ -40,7 +40,7 @@ To enable LetsEncrypt, follow these steps:
 The HTTPS certificate will automatically be generated in the next few minutes, but you can do it manually by clicking the "Create/Renew Certificate" button under the LetsEncrypt fields.
 
 :::tip
-If users are still having issues with audio not playing, please ensure you have the "Use Web Proxy" option enabled in your System Settings. 
+If users are still having issues with audio not playing, please ensure you have the "Use Web Proxy" option enabled in your System Settings.
 :::
 
 ### Renewing a Let's Encrypt Certificate

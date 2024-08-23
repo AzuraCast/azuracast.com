@@ -25,14 +25,14 @@ If you've recently followed the [Docker installation instructions](/docs/getting
 
 If you have an older installation, you can use the Docker Utility Script by running these commands inside your AzuraCast directory on your host computer:
 
-```
+```bash
 curl -L https://raw.githubusercontent.com/AzuraCast/AzuraCast/main/docker.sh > docker.sh
 chmod a+x docker.sh
 ```
 
 ### Run Command Line Tools
 
-```
+```bash
 ./docker.sh cli [command_name]
 ```
 
@@ -42,7 +42,7 @@ Runs any command exposed by the command line interface tools.
 
 ### Install AzuraCast
 
-```
+```bash
 ./docker.sh install
 ```
 
@@ -50,7 +50,7 @@ Pulls the latest version of all Docker images and sets up the AzuraCast database
 
 ### Update AzuraCast
 
-```
+```bash
 ./docker.sh update-self
 ./docker.sh update
 ```
@@ -61,7 +61,7 @@ Automatically pulls down any updated Docker images and applies any database and 
 
 ### Uninstall AzuraCast
 
-```
+```bash
 ./docker.sh uninstall
 ```
 
@@ -73,7 +73,7 @@ This command will fully remove any station media, statistics and metrics, and th
 
 ### Back Up Files and Settings
 
-```
+```bash
 ./docker.sh backup [/path/to/backup.tar.gz]
 ```
 
@@ -81,7 +81,7 @@ Creates a .tar.gz backup copy of the media, statistics and metrics of every stat
 
 ### Restore Files and Settings
 
-```
+```bash
 ./docker.sh restore /path/to/backup.tar.gz
 ```
 
@@ -143,7 +143,7 @@ There are some considerations when creating your own `docker-compose.override.ym
 
 Once you've modified your Docker Compose configuration, you should apply these changes by running:
 
-```sh
+```bash
 docker-compose down
 docker-compose up -d
 ```
@@ -171,7 +171,7 @@ To override more complex functionality in your Docker installation, see the "Cus
 # Expanding the Station Port Range
 
 :::tip
-Installations running version 0.16.0 or higher can now use our installation script to customizez ports via the terminal which will automatically write the changes into the `docker-compose.yml` file for you. 
+Installations running version 0.16.0 or higher can now use our installation script to customizez ports via the terminal which will automatically write the changes into the `docker-compose.yml` file for you.
 :::
 
 For performance reasons, by default Docker installations only open radio ports from port 8000 to 8500. This allows for 50 unique stations to operate.
@@ -339,7 +339,7 @@ You should increase the value until the error dissappears.
 
 The `M` after the value stands for `Megabytes`.
 
-Refer to the following page for more information about the allowed values for this setting: https://www.php.net/manual/docs/faq.using.php#faq.using.shorthandbytes
+Refer to [PHP's documentation](https://www.php.net/manual/docs/faq.using.php#faq.using.shorthandbytes) for more information about the allowed values for this setting.
 
 After you have changed this setting you need to restart AzuraCast via `docker-compose down && docker-compose up -d`.
 

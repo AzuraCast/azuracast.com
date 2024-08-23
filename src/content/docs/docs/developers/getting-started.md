@@ -46,7 +46,7 @@ Using Git, clone the AzuraCast core repository into a subfolder of your working 
 
 > **Note for Windows developers:** Before cloning the repositories, you should ensure your Git is locally configured to not automatically convert line endings from Linux style (LF) to Windows style (CRLF), which will break AzuraCast. You can set this globally by running:
 > 
-> ```sh
+> ```bash
 > git config --global core.autocrlf input
 > ```
 

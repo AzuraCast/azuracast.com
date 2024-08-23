@@ -17,8 +17,9 @@ If you're running AzuraCast on limited system resources, you may find that you n
 If Replaygain is enabled in your AutoDJ, then Liquidsoap will examine each file to see if it already has Replaygain metadata associated with it; if not, it will try to automatically calculate it on-the-fly, which can be a very CPU-intensive process that can significantly slow your installation.
 
 In order to resolve this, you can take one of two approaches:
-1) Disable Replaygain from the "AutoDJ" tab of your station's profile; or
-2) Ensure all of your uploaded media is pre-tagged with Replaygain metadata using a tool like [loudgain](https://github.com/Moonbase59/loudgain).
+
+1. Disable Replaygain from the "AutoDJ" tab of your station's profile; or
+2. Ensure all of your uploaded media is pre-tagged with Replaygain metadata using a tool like [loudgain](https://github.com/Moonbase59/loudgain)
 
 ### Disable Audio Post-Processing
 
@@ -26,10 +27,10 @@ If your installation is limited in available CPU, you should disable any "Audio 
 
 The total amount of extra resources per station consumed by post-processing is roughly as so:
 
- - Stereo Tool (Most CPU)
- - `master_me` (Med-High CPU)
- - Basic Compression/Normalization (Low-Med CPU)
- - No Post-Processing (Least CPU)
+- Stereo Tool (Most CPU)
+- `master_me` (Med-High CPU)
+- Basic Compression/Normalization (Low-Med CPU)
+- No Post-Processing (Least CPU)
 
 ### AutoCue
 
