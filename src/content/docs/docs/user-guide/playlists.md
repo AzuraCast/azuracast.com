@@ -16,6 +16,25 @@ Playlists are collections of media that are played by the AutoDJ according to ce
 
 Any playlists types can also be scheduled to play in one or more specific time blocks, or to play between a certain date range.
 
+## Playlist Priorities
+
+In newer versions of AzuraCast (released after September 1, 2024), you can specify the priority of individual playlists. If two playlists are both eligible to be played at the same time, the higher priority playlist will always be selected. This allows you to "stack" playlists in the same schedule slot, letting the priority system determine the actual playback order. You can also specify the priority of incoming listener requests (if they're enabled) to prevent them from always taking priority over general playlists.
+
+### Default Priorities
+
+If you don't manually specify the priority of playlists, or if you're on an earlier version of AzuraCast, playlists follow this priority system by default:
+
+| Item Type | Priority
+| - | -
+| Song Requests | Always top priority
+| Once Per X Hour Playlists, Scheduled | 7
+| Once Per X Hour Playlists, Unscheduled | 6
+| Once Per X Songs Playlists, Scheduled | 5
+| Once Per X Songs Playlists, Unscheduled | 4
+| Once Per X Minutes Playlists, Scheduled | 3
+| Once Per X Minutes Playlists, Unscheduled | 2
+| General Rotation Playlists | 0
+
 ## Advanced Playlists
 
 ### What are Advanced Playlists?
