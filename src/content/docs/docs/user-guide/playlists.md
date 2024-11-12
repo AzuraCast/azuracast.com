@@ -53,7 +53,7 @@ One AzuraCast user wanted to ensure that two playlists always played immediately
 
 Let's say you create two playlists named "Commercials" and "Bumpers". AzuraCast will automatically insert variables for these playlists inside the station's `liquidsoap.liq` file, with the names being prefixed by "playlist_", with all characters converted to lower case and spaces replaced with underscores. For example, the corresponding variable names in this case are "playlist_commercials" and "playlist_bumpers", respectively.
 
-If you edit a station's profile and you're using Liquidsoap as your AutoDJ software, you will see a section near the bottom of the profile named "Advanced: Custom Configuration". This section allows you to input raw code into the `liquidsoap.liq` file that will be used when the AutoDJ runs your station.
+When you're using Liquidsoap as your AutoDJ software, on a station's primary management page under "Broadcasting" in the sidebar you will see a section named "Edit Liquidsoap Configuration". This page allows you to input raw code into the `liquidsoap.liq` file that will be used when the AutoDJ runs your station.
 
 In this case, the following rule was added to the custom configuration to produce the side-by-side playlist result:
 
