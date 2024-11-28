@@ -153,3 +153,23 @@ docker-compose exec --user=azuracast web liquidsoap -h ladspa.plugin
 We have modified the [MK Pascal script](https://github.com/mkpascal/mk_liquidsoap_processing/blob/master/process.liq) to work with AzuraCast.
 
 You can check out the [full script here](https://gist.github.com/BusterNeece/43a06ee6624975273fdc903ba4a39998) that you can include in your Liquidsoap configuration via the `Utilities` -> `Edit Liquidsoap Configuration` page of your station after enabling the [Advanced Features](/docs/administration/advanced-features).
+
+## Scrobbling to Last.fm
+
+Liquidsoap has a native [Last.fm](https://www.last.fm/) extension builtin. To use it, you just need to add some custom code to your Liquidsoap config in the third text box (underneath `add_skip_command(radio)`).
+
+```ruby
+def lastfm.submit(~user,~password,~source="broadcast",~length=false) = 
+    fun (m) ->
+        if (m["jingle_mode"] != "true") then
+        audioscrobbler.submit(user=user,password=password,
+                        source=source,length=length,
+                        host="post.audioscrobbler.com",port=80,
+                        m)
+        end
+    end
+
+radio.on_metadata(lastfm.submit(user="USER",password="PASS"))
+```
+
+This code submits a scrobble each time the currently playing track changes. You must change `USER` and `PASS` to reflect the Last.fm login credentials of the account you wish to scrobble to.
