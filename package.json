@@ -11,8 +11,8 @@
     "builtin-build": "astro build --root=./builtin"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.25",
-    "astro": "^4.12",
+    "@astrojs/starlight": "^0.29.2",
+    "astro": "^4.16.16",
     "bootstrap": "^5.3",
     "sass": "^1.77"
   }
