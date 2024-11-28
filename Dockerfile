@@ -56,17 +56,17 @@ USER node
 WORKDIR /data/builtin
 
 RUN rm -rf ./src ./dist ./public \
-    && mkdir -p ./src/content ./src/images ./src/scss \
+    && mkdir -p ./src/content/docs ./src/pages ./src/images ./src/scss \
     && cp ../src/content/config.ts ./src/content \
     && cp -R ../src/content/docs/docs ./src/content/docs \
+    && cp -R ../src/pages/api ./src/pages/api \
     && cp -R ../src/images/* ./src/images \
     && cp -R ../src/scss/* ./src/scss \
     && rm -f ./src/content/docs/*.* \
     && cp ./index.md ./src/content/docs \
-    && mkdir -p ./public \ 
-    && cp -R ../public/api ./public/api \
+    && mkdir -p ./public \
     && cp -R ../public/img ./public/img \
-    && sed -i -r 's|url: "(.*?)"|url: "/api/openapi.yml"|' ./public/api/swagger-initializer.js \
+    && sed -i -r 's|url: "(.*?)"|url: "/api/openapi.yml"|' ./src/pages/api/index.astro \
     && cd .. \
     && npm ci --include=dev \
     && npm run builtin-build \
