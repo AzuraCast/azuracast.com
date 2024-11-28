@@ -65,6 +65,7 @@ From the previous command, you can run this script by running:
 ```bash
 cd AzuraCast
 bash docker.sh install-dev
+# Alternatively, you can use `make install` if `make` is installed on your system
 ```
 
 ### Modify the Environment File
@@ -76,14 +77,18 @@ Many of the values left blank by default are what are called "fixtures", which w
 If you want to populate those values, you can modify them in the `azuracast.env` file, where they will look like the fields below:
 
 ```
-INIT_BASE_URL=docker.local
-INIT_INSTANCE_NAME=local development
+INIT_BASE_URL=http://azuracast.local
+INIT_INSTANCE_NAME="local development"
 INIT_ADMIN_EMAIL=
 INIT_ADMIN_PASSWORD=
-INIT_MUSIC_PATH=/var/azuracast/www/util/fixtures/init_music
+... etc.
 ```
 
+When initializing a development instance, AzuraCast will create both a standard demo account and system admin user profile, using the values set in `azuracast.env` if provided. `INIT_DEMO_API_KEY` and `INIT_ADMIN_API_KEY` are associated with the demo and admin users respectively, and should be a valid split-token key. The default login credentials for the demo user are `demo@azuracast.com` with password `demo`. Additionally, AzuraCast will create a demo station AzuraTest Radio (`azuratest_radio`) that will use the defined `INIT_MUSIC_PATH` and `INIT_PODCASTS_PATH`.
+
 If you would prefer to follow the traditional post-installation setup process instead, just remove any fields from the `azuracast.env` file that start with `INIT_`.
+
+Following these steps, re-run the prior command (`bash docker.sh install-dev`) to build the Docker image and run the containers. After the script finishes (as indicated by `✔ Container azuracast Started`), you may need to wait a few more minutes for the initialization process to finish running. You can check the progress by running `docker logs -f azuracast`.
 
 ## Common Tasks
 
