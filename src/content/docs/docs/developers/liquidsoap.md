@@ -156,20 +156,21 @@ You can check out the [full script here](https://gist.github.com/BusterNeece/43a
 
 ## Scrobbling to Last.fm
 
-Liquidsoap has a native [Last.fm](https://www.last.fm/) extension builtin. To use it, you just need to add some custom code to your Liquidsoap config in the third text box (underneath `add_skip_command(radio)`).
+Liquidsoap has a native [Last.fm](https://www.last.fm/) extension builtin. To use it, you need to obtain an "API Key" and "API Secret" from Last.fm's [API account page](https://www.last.fm/api/account/create) and add some custom code to your Liquidsoap config in the third text box (before `add_skip_command(radio)`).
 
 ```ruby
-def lastfm.submit(~user,~password,~source="broadcast",~length=false) = 
-    fun (m) ->
-        if (m["jingle_mode"] != "true") then
-        audioscrobbler.submit(user=user,password=password,
-                        source=source,length=length,
-                        host="post.audioscrobbler.com",port=80,
-                        m)
-        end
-    end
+settings.audioscrobbler.api_key := "API_KEY"
+settings.audioscrobbler.api_secret := "API_SECRET"
 
-radio.on_metadata(lastfm.submit(user="USER",password="PASS"))
+radio = audioscrobbler.submit(
+  username="USERNAME",
+  password="PASSWORD",
+  force=true, 
+  metadata_preprocessor=(fun(m) -> if m["jingle_mode"] == "true" then [] else m end),
+ radio
+)
 ```
 
-This code submits a scrobble each time the currently playing track changes. You must change `USER` and `PASS` to reflect the Last.fm login credentials of the account you wish to scrobble to.
+You must change `API_KEY`, `API_SECRET`, `USERNAME`, and `PASSWORD` to reflect the credentials of the account you wish to scrobble to.
+
+While a track is being played on your station it is marked as "Scrobbling now" on the account page of the Last.fm account specified. When the track finishes, it becomes scrobbled. Jingles are not scrobbled. Tracks with no `Artist` or no `Title` are not scrobbled.
