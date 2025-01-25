@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "builtin-dev": "astro dev --root=./builtin",
     "builtin-build": "astro build --root=./builtin"
   },
   "dependencies": {
