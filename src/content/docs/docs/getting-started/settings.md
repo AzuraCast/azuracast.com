@@ -104,3 +104,4 @@ Do not modify these fields if you are using the standard AzuraCast Redis host.
 | `NGINX_CLIENT_MAX_BODY_SIZE` | 50M | This is the total size any single request body can be. AzuraCast chunks its uploads into smaller file sizes, so this only applies when doing custom uploads via the API. Sizes should be listed in a format like "100K", "128M", "1G" for kilobytes, megabytes, and gigabytes respectively.
 | `ENABLE_WEB_UPDATER` | true | Enable web-based Docker image updates.
 | `INSTALL_PACKAGES_ON_STARTUP` | none | Extra Ubuntu packages to install upon startup. Separate package names with a space. Packages will be installed during container startup.
+| `NGINX_BLOCK_BOTS` | true | If enabled, it automatically blocks bad crawlers, spammers and bots, powered by the [Nginx Ultimate Bad Bot Blocker](https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker), with rules updated daily to ensure up-to-date protection.
