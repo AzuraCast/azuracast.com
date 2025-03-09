@@ -39,6 +39,8 @@
         url: "https://raw.githubusercontent.com/AzuraCast/AzuraCast/main/web/static/openapi.yml",
         dom_id: "#swagger-ui",
         deepLinking: true,
+        withCredentials: true,
+        operationsSorter: 'alpha',
         presets: [SwaggerUI.presets.apis, SwaggerUIStandalonePreset],
         plugins: [EnumNamesPlugin],
         layout: "StandaloneLayout",
