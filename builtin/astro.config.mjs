@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 import starlight from "@astrojs/starlight";
 
@@ -6,46 +6,44 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
   vite: {
     ssr: {
-      noExternal: ['bootstrap', 'roboto-font']
-    }
+      noExternal: ["bootstrap", "roboto-font"],
+    },
   },
-  base: '/docs',
+  base: "/docs",
   integrations: [
     starlight({
-      title: 'AzuraCast Local Docs',
+      title: "AzuraCast Local Docs",
       logo: {
-        src: './src/images/logo.svg'
+        src: "./src/images/logo.svg",
       },
-      favicon: '/img/logo.svg',
-      customCss: [
-        './src/scss/starlight.scss'
-      ],
+      favicon: "/img/logo.svg",
+      customCss: ["./src/scss/starlight.scss"],
       social: {
-        discord: 'https://discord.gg/azuracast',
-        github: 'https://github.com/azuracast/azuracast',
+        discord: "https://discord.gg/azuracast",
+        github: "https://github.com/azuracast/azuracast",
       },
       sidebar: [
-        { label: 'About These Docs', link: '/' },
-        { label: 'Live Documentation', link: 'https://www.azuracast.com/docs' },
-        { label: 'API Documentation', link: '/api' },
-        { label: 'Update AzuraCast', link: '/getting-started/updates' },
+        { label: "About These Docs", link: "/" },
+        { label: "Live Documentation", link: "https://www.azuracast.com/docs" },
+        { label: "API Documentation", link: "/api/" },
+        { label: "Update AzuraCast", link: "/getting-started/updates/" },
         {
-          label: 'Help',
-          autogenerate: { directory: 'help' },
+          label: "Help",
+          autogenerate: { directory: "help" },
         },
         {
-          label: 'User Guide',
-          autogenerate: { directory: 'user-guide' }
+          label: "User Guide",
+          autogenerate: { directory: "user-guide" },
         },
         {
-          label: 'Administrator Guide',
-          autogenerate: { directory: 'administration' }
+          label: "Administrator Guide",
+          autogenerate: { directory: "administration" },
         },
         {
-          label: 'For Developers',
-          autogenerate: { directory: 'developers'}
-        }
+          label: "For Developers",
+          autogenerate: { directory: "developers" },
+        },
       ],
-    })
-  ]
+    }),
+  ],
 });
