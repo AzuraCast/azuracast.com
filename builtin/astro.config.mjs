@@ -27,8 +27,8 @@ export default defineConfig({
       sidebar: [
         { label: 'About These Docs', link: '/' },
         { label: 'Live Documentation', link: 'https://www.azuracast.com/docs' },
-        { label: 'API Documentation', link: '/api' },
-        { label: 'Update AzuraCast', link: '/getting-started/updates' },
+        { label: 'API Documentation', link: '/api/' },
+        { label: 'Update AzuraCast', link: '/getting-started/updates/' },
         {
           label: 'Help',
           autogenerate: { directory: 'help' },
