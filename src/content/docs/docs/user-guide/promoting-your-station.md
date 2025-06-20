@@ -36,7 +36,7 @@ Contact the GetMeRadio team first to gain access to their API. Once you have the
 
 ## YellowPages Directories
 
-These directories use Icecast's built-in YellowPages (YP) discovery mechanism to submit routine updates. They require using Icecast to broadcast rather than Shoutcast or HLS.
+These directories use Icecast's built-in YellowPages (YP) discovery mechanism to submit routine updates. They require using Icecast to broadcast rather than SHOUTcast or HLS.
 
 :::tip
 Adding YellowPages directories requires that the "Enable Advanced Settings" system setting is enabled in AzuraCast. An installation administrator can enable this setting at any time from the web interface.
@@ -82,7 +82,7 @@ You can add the following entry:
 
 ## Icecast Header Directories
 
-These directories receive metadata updates via custom headers provided directly in your Icecast stream. They require using Icecast to broadcast rather than Shoutcast or HLS.
+These directories receive metadata updates via custom headers provided directly in your Icecast stream. They require using Icecast to broadcast rather than SHOUTcast or HLS.
 
 :::tip
 Adding custom Icecast headers requires that the "Enable Advanced Settings" system setting is enabled in AzuraCast. An installation administrator can enable this setting at any time from the web interface.

@@ -16,7 +16,7 @@ If you are using a reverse proxy service (like CloudFlare) in front of your inst
 
 **Linux, MacOS, Windows; Free and Open-Source**
 
-[Mixxx](https://www.mixxx.org) is free and open-source DJ software that also supports live broadcasting via Icecast and ShoutCast servers.
+[Mixxx](https://www.mixxx.org) is free and open-source DJ software that also supports live broadcasting via Icecast and SHOUTcast servers.
 
 Live broadcasting settings can be found in the preferences menu (`Options` -> `Preferences`). It is recommended to use "Icecast 2" mode when broadcasting to AzuraCast. Out of the box, Mixxx does not include the LAME MP3 encoder (for licensing reasons), but it is not needed when connecting to AzuraCast; just set your broadcast format to 'Ogg Vorbis' and LiquidSoap will transcode the broadcast into the correct output format.
 
@@ -26,7 +26,7 @@ Live broadcasting settings can be found in the preferences menu (`Options` -> `P
 
 **Linux, MacOS, Windows; Free and Open-Source**
 
-Cross-platform and available for free at [https://sourceforge.net/projects/butt/](https://sourceforge.net/projects/butt/). Streaming via both Icecast mode and ShoutCast mode are available.
+Cross-platform and available for free at [https://sourceforge.net/projects/butt/](https://sourceforge.net/projects/butt/). Streaming via both Icecast mode and SHOUTcast mode are available.
 
 ### Icecast Mode
 
@@ -34,11 +34,11 @@ Use the exact information specified on the Streamer/DJ page's right sidebar. "Ad
 
 ![BUTT Sample Icecast configuration](../images/streaming-software/butt_icecast.png)
 
-### ShoutCast Mode
+### SHOUTcast Mode
 
-Use the given port specified in the "ShoutCast v1 Clients" section. Since ShoutCast v1 does not let you specify a username, specify your password as `dj_username:dj_password` (the username and password for the DJ separated by a colon).
+Use the given port specified in the "SHOUTcast v1 Clients" section. Since SHOUTcast v1 does not let you specify a username, specify your password as `dj_username:dj_password` (the username and password for the DJ separated by a colon).
 
-![BUTT Sample ShoutCast configuration](../images/streaming-software/butt_shoutcast.png)
+![BUTT Sample SHOUTcast configuration](../images/streaming-software/butt_shoutcast.png)
 
 ## SAM Cast
 
@@ -84,7 +84,7 @@ Select the encoder, then click the play-button icon in the toolbar to begin broa
 
 [RadioBOSS](https://www.djsoft.net/) is a commercial software sold by IP Kuzmitski D.V. at DJSoft.net.
 
-Streaming via both Icecast mode and ShoutCast mode are available.
+Streaming via both Icecast mode and SHOUTcast mode are available.
 
 The Live broadcasting feature is possible in their Standard and Advanced edition (not in the Express edition).
 
@@ -120,9 +120,9 @@ Follow the instructions for the server type you have set up your Azuracast stati
 
 ### SHOUTcast
 
-The following settings are recommended for both ShoutCast v1 as v2 (DNAS 2)
+The following settings are recommended for both SHOUTcast v1 as v2 (DNAS 2)
 
-Note 1: Use the given port specified in the "ShoutCast v1 Clients" section.
+Note 1: Use the given port specified in the "SHOUTcast v1 Clients" section.
 
 Note 2: Be sure to select `v1`, as v2 will append the Stream ID (SID), which won't work.
 
@@ -153,7 +153,7 @@ Note 2: Be sure to select `v1`, as v2 will append the Stream ID (SID), which won
 2. In the Settings window, check the checkboxes for all encoders that you want to use.
 Remember to turn on the option `Broadcasting enabled` on top.
 
-On succesful connection, the log report in the bottom-left corner of RadioBOSS will show the following message: "Connected to server! (Output N)". This means that listeners can now connect to the streaming server (either Icecast or ShoutCast).
+On succesful connection, the log report in the bottom-left corner of RadioBOSS will show the following message: "Connected to server! (Output N)". This means that listeners can now connect to the streaming server (either Icecast or SHOUTcast).
 
 If the logs show "[E40] Cannot start broadcast" in red, go over the above steps.
 

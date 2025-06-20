@@ -74,4 +74,4 @@ For Icecast you can find some benchmarks for the following topics at https://ice
 
 - [Testing the maximum numbers of connected listeners](https://icecast.org/loadtest/1/)
 - [Testing the maximum numbers of connected sources](https://icecast.org/loadtest/2/)
-- [Icecast/Shoutcast comparsion](https://icecast.org/loadtest/3/)
+- [Icecast/SHOUTcast comparsion](https://icecast.org/loadtest/3/)
