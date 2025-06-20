@@ -152,7 +152,7 @@ docker-compose exec --user=azuracast web liquidsoap -h ladspa.plugin
 
 We have modified the [MK Pascal script](https://github.com/mkpascal/mk_liquidsoap_processing/blob/master/process.liq) to work with AzuraCast.
 
-You can check out the [full script here](https://gist.github.com/BusterNeece/43a06ee6624975273fdc903ba4a39998) that you can include in your Liquidsoap configuration via the `Utilities` -> `Edit Liquidsoap Configuration` page of your station after enabling the [Advanced Features](/docs/administration/advanced-features).
+You can check out the [full script here](https://gist.github.com/BusterNeece/43a06ee6624975273fdc903ba4a39998) that you can include in your Liquidsoap configuration via the `Utilities` -> `Edit Liquidsoap Configuration` page of your station.
 
 ## Scrobbling to Last.fm
 
