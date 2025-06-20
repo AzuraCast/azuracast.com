@@ -32,6 +32,11 @@ Part of AzuraCast's function is to ensure both of these processes are properly c
 
 ### SHOUTcast
 
+#### Installing SHOUTcast
+
+1. Download the Linux x64 binary from the [Shoutcast Radio Manager](https://radiomanager.shoutcast.com/register/serverSoftwareFreemium). The file name should look like: `sc_serv2_linux_x64-latest.tar.gz`
+2. Upload the Binary to AzuraCast: In your AzuraCast administration panel, navigate to the "Install SHOUTcast" page (under the "Stations" header). Here, you can upload the `.tar.gz` file you downloaded. AzuraCast will automatically extract it to the correct location.
+
 #### Adding a License Key
 
 - Visit the `Station Profile`
