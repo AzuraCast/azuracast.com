@@ -33,7 +33,7 @@ As a very broad guideline, think of the equation for this CPU load as:
 
 This means if you have one station broadcasting to 10 mount points, you can expect that single station to take up *about* 100% of a single CPU core. Conversely, if you have 10 stations broadcasting only one mount point each, the CPU load is still 100% of a single CPU core.
 
-The CPU impact of listeners connecting to your station is generally *much lower* than the impact of transcoding different stations. The broadcasting frontends (both Icecast and SHOUTcast) can handle hundreds or even thousands of listeners before the CPU load of serving those listeners impacts your total CPU in the same way that media transcoding does.
+The CPU impact of listeners connecting to your station is generally *much lower* than the impact of transcoding different stations. The broadcasting frontends (both Icecast and Shoutcast) can handle hundreds or even thousands of listeners before the CPU load of serving those listeners impacts your total CPU in the same way that media transcoding does.
 
 #### A Note on Throttling
 
