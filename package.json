@@ -12,11 +12,12 @@
     "builtin-build": "astro build --root=./builtin"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.29.2",
-    "astro": "^4.16.16",
+    "@astrojs/starlight": "^0.34",
+    "astro": "^5",
     "bootstrap": "^5.3",
     "sass": "^1.77",
     "swagger-ui": "^5.18.2",
-    "swagger-ui-plugin-enum-names": "^4.1.3"
+    "swagger-ui-plugin-enum-names": "^4.1.3",
+    "typescript": "^5.8.3"
   }
 }
