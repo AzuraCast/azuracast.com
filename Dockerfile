@@ -59,7 +59,7 @@ RUN npm ci --include=dev \
 
 FROM scratch AS build
 
-COPY --from=pre-build /data/dist /data/dist
+COPY --from=pre-build /dist /dist
 
 FROM production-builds AS pre-builtin
 
@@ -83,8 +83,11 @@ RUN rm -rf ./src ./dist ./public \
     && npm ci --include=dev \
     && npm run builtin-build \
     && rm -rf ./node_modules \
+    && cd builtin \
+    && cp -RT ./dist /dist \
+    && rm -rf ./src ./dist ./public ./node_modules \
     && npm cache clean --force
 
 FROM scratch AS builtin
 
-COPY --from=pre-builtin /data/builtin/dist /data/dist
+COPY --from=pre-builtin /dist /dist
