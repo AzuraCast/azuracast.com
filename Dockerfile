@@ -1,12 +1,20 @@
-FROM library/node:20-alpine AS base
+FROM library/node:lts-slim AS base
 
 RUN mkdir -p /data \
     && chown -R node:node /data
 
+## Install HTTPS support for APT.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends apt-utils apt-transport-https ca-certificates
+
+## Upgrade all packages.
+RUN apt-get update \
+    && apt-get dist-upgrade -y --no-install-recommends -o Dpkg::Options::="--force-confold"
+
 FROM base AS development
 
-RUN apk update \
-    && apk add --no-cache bash curl
+RUN apt-get update \
+    && apt-get -y install --no-install-recommends bash curl
 
 RUN USER=node && \
     GROUP=node && \
@@ -39,7 +47,7 @@ COPY --chown=node:node . .
 
 USER node
 
-FROM production-builds AS build
+FROM production-builds AS pre-build
 
 USER node
 
@@ -49,7 +57,11 @@ RUN npm ci --include=dev \
     && rm -rf ./node_modules ./dist \
     && npm cache clean --force
 
-FROM production-builds AS builtin
+FROM scratch AS build
+
+COPY --from=pre-build /data/dist /data/dist
+
+FROM production-builds AS pre-builtin
 
 USER node
 
@@ -71,7 +83,8 @@ RUN rm -rf ./src ./dist ./public \
     && npm ci --include=dev \
     && npm run builtin-build \
     && rm -rf ./node_modules \
-    && cd builtin \
-    && cp -RT ./dist /dist \
-    && rm -rf ./src ./dist ./public ./node_modules \
     && npm cache clean --force
+
+FROM scratch AS builtin
+
+COPY --from=pre-builtin /data/builtin/dist /data/dist

@@ -2,7 +2,7 @@ services:
   frontend:
     build:
       context: .
-      target: builtin
+      target: development
     ports:
       - '4321:4321'
     user: 1000:1000
