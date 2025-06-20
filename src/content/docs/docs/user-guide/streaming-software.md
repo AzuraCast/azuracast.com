@@ -98,11 +98,11 @@ Note that for ease of use we use the `Configuration Wizard`, you can also enter 
 
 3. To add a new encoder, click the `+` button
 
-  ![RadioBOSS Settings: Broadcast menu](../images/streaming-software/radioboss_1.jpg)
+![RadioBOSS Settings: Broadcast menu](../images/streaming-software/radioboss_1.jpg)
 
 4. The Encoder-window will open, next click the button called `Configuration Wizard`.
 
-  ![RadioBOSS Encoder window](../images/streaming-software/radioboss_2.jpg)
+![RadioBOSS Encoder window](../images/streaming-software/radioboss_2.jpg)
 
 Follow the instructions for the server type you have set up your Azuracast station with:
 
@@ -139,6 +139,7 @@ Note 2: Be sure to select `v1`, as v2 will append the Stream ID (SID), which won
 6. Finish by changing the rest of the settings by preference:
 
 - Connection
+
   - Sample Rate
   - Encoder
   - Bitrate
@@ -151,7 +152,7 @@ Note 2: Be sure to select `v1`, as v2 will append the Stream ID (SID), which won
 1. Then finally click `OK` to save the Encoder.
 
 2. In the Settings window, check the checkboxes for all encoders that you want to use.
-Remember to turn on the option `Broadcasting enabled` on top.
+   Remember to turn on the option `Broadcasting enabled` on top.
 
 On succesful connection, the log report in the bottom-left corner of RadioBOSS will show the following message: "Connected to server! (Output N)". This means that listeners can now connect to the streaming server (either Icecast or ShoutCast).
 
@@ -181,21 +182,21 @@ The installation steps for the plugin are relatively simple, so they're not cove
 
 These instructions are valid and required for both streaming modes (Icecast and SHOUTcast), so be sure to follow this part before proceeding any further.
 
- 1. After installing the Internet Broadcast plugin, select the menu **Plugins** menu, on the top menu bar and select the **Plugin Manager...** option.
+1. After installing the Internet Broadcast plugin, select the menu **Plugins** menu, on the top menu bar and select the **Plugin Manager...** option.
 
 ![Plugins menu](../images/streaming-software/playitlive_1.png)
 
-*Select the Plugins menu, then the Plugin Manager option*
+_Select the Plugins menu, then the Plugin Manager option_
 
 2. A new window should appear, and within it the Internet Broadcast plugin.
 
 ![Plugin Manager](../images/streaming-software/playitlive_2.png)
-*The Plugin Manager window*
+_The Plugin Manager window_
 
 3. Open the plugin settings, by double clicking on it's name. This window should appear.
 
 ![Plugin settings](../images/streaming-software/playitlive_3.png)
-*Plugin Settings*
+_Plugin Settings_
 
 **There are a few settings that you can customize here:**
 
@@ -212,13 +213,13 @@ Now follow the specific instructions for your streaming server: **Icecast** or *
 
 ![Connection Details](../images/streaming-software/playitlive_4.png)
 
-*Connection Information for Icecast*
+_Connection Information for Icecast_
 
 ... fill this form in the PlayIt Live software.
 
 ![Stream Details](../images/streaming-software/playitlive_5.png)
 
-*Using the details above to fill the form*
+_Using the details above to fill the form_
 
 **Don't forget to change these details with yours, this is just an example!**
 
@@ -244,7 +245,7 @@ If the server is configured correctly, the **OFF AIR** text will change to **ON 
 ... fill this form in the PlayIt Live software.
 
 ![SHOUTcast server info](../images/streaming-software/playitlive_7.png)
-*Using the details above to fill the form*
+_Using the details above to fill the form_
 
 **Don't forget to change these details with yours, this is just an example!**
 
@@ -262,3 +263,43 @@ If the server is configured correctly, the **OFF AIR** text will change to **ON 
 ![Starting the streams](../images/streaming-software/playitlive_8.png)
 
 If the server is configured correctly, the **OFF AIR** text will change to **ON AIR**. If not, re-check your configuration.
+
+## Rocket Broadcaster
+
+**Windows; Proprietary (Free & Pro editions)**
+
+Rocket Broadcaster is a robust streaming encoder for Windows, designed for internet radio stations and professional broadcasting. It captures audio from various sources, including microphones, line-in devices, and other applications, and streams it to your station. Rocket Broadcaster supports both Icecast and Shoutcast servers.
+
+### Instructions
+
+1. **Configure Your Audio Input**
+
+    - Go to **Options** > **Preferences**.
+    - In the **Audio Input** tab, select your microphone or audio interface as the **Input device**. Set the **Sample rate**, typically to `44100 Hz`.
+    - If you plan to broadcast audio from other applications, configure **System Audio Capture** in the same preferences window.
+    - Click **OK**.
+    - Return to the main window and ensure the **VU meters** move when audio is present.
+
+2. **Configure Your Stream**
+
+    - Go to **Broadcast** > **Streams....**
+    - Click **Add** to create a new output stream.
+    - Enter the connection details provided by your streaming server (Icecast or Shoutcast). This includes:
+      - **Server Type:** Select `Icecast 2` or the appropriate `SHOUTcast` version.
+      - **Hostname or IP**
+      - **Port**
+      - **Mountpoint** (for Icecast)
+      - **Username** and **Password** (or `dj_username:dj_password` for some SHOUTcast v1 setups).
+    - Under **Encoder Settings**, choose your desired **Codec** (e.g., MP3, Ogg Vorbis, AAC for Pro) and set the **Bitrate** and **Channels**.
+    - Click **OK**.
+
+3. **Test Your Stream**
+
+    - In the main Rocket Broadcaster window, click **Start Broadcast**.
+    - If successful, you'll see "On Air". If you encounter an error, double-check your stream settings for typos.
+
+4. **Configure Metadata (Optional)**
+    - To display song artist and title to your listeners, go to **Broadcast** > **Metadata Capture**.
+    - Configure the capture method to automatically pull metadata from your radio automation system or media player.
+
+See the official [Rocket Broadcaster documentation](https://www.rocketbroadcaster.com/docs/) for detailed instructions on how to set up and use the software.
