@@ -16,13 +16,13 @@ Users with the appropriate permissions can also view many logs directly through 
 
 If you are administrating your own AzuraCast installation you can check most logs through the `Administration` -> `System Logs`.
 
-In addition to the `Icecast`, `SHOUTcast` and `Liquidsoap` logs you can find the `AzuraCast Application Log` here which contains useful information about what the AzuraCast application itself is doing. Email message logs are also sent here.
+In addition to the `Icecast`, `Shoutcast` and `Liquidsoap` logs you can find the `AzuraCast Application Log` here which contains useful information about what the AzuraCast application itself is doing. Email message logs are also sent here.
 
 ## Log Viewer
 
-The `Logs` link in your station sidebar menu gives you access to the Logs from your station's `Icecast`, `SHOUTcast` and `Liquidsoap` processes.
+The `Logs` link in your station sidebar menu gives you access to the Logs from your station's `Icecast`, `Shoutcast` and `Liquidsoap` processes.
 
-In addition to the logs, you can also view the Icecast, SHOUTcast and Liquidsoap configuration scripts that AzuraCast automatically generates for you.
+In addition to the logs, you can also view the Icecast, Shoutcast and Liquidsoap configuration scripts that AzuraCast automatically generates for you.
 
 ## Log Types
 
@@ -75,4 +75,4 @@ For each station, logs for radio software will be inside `/var/azuracast/station
 
 - Liquidsoap: `liquidsoap.log`
 - Icecast: `icecast.log`
-- SHOUTcast: `sc_serv.log`
+- Shoutcast: `sc_serv.log`

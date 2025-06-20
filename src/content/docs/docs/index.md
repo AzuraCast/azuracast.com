@@ -30,7 +30,7 @@ AzuraCast works for web radio stations of all types and sizes, and is built to r
 - **Web DJ:** Broadcast live directly from your browser, with no extra software needed, with AzuraCast's built-in Web DJ tool.
 - **Public Pages:** AzuraCast includes embeddable public pages that you can integrate into your existing web page or use as the basis for your own customized player.
 - **Listener Requests:** Let your listeners request specific songs from your playlists, both via an API and a simple public-facing listener page.
-- **Remote Relays:** Broadcast your radio signal (including live DJs) to any remote server running Icecast or SHOUTcast.
+- **Remote Relays:** Broadcast your radio signal (including live DJs) to any remote server running Icecast or Shoutcast.
 - **Web Hooks:** Integrate your station with Slack, Discord, TuneIn, Twitter and more by setting up web hooks that connect to third-party services.
 - **Detailed Analytics and Reports:** Keep track of every aspect of your station's listeners over time. View reports of each song's impact on your listener count. You can also generate a report that's compatible with SoundExchange for US web radio royalties.
 
@@ -52,7 +52,7 @@ AzuraCast will automatically retrieve and install these components for you:
 * **[Liquidsoap](https://www.liquidsoap.info/)** as the always-playing "AutoDJ"
 * **[Icecast-KH](https://icecast.org/)** as a radio broadcasting frontend
 
-For x86/x64 installations, [SHOUTcast 2 DNAS](http://wiki.shoutcast.com/wiki/SHOUTcast_DNAS_Server_2) can also be used as a broadcasting frontend. SHOUTcast is non-free software and does not come bundled with AzuraCast, but can be installed via the administration panel after AzuraCast has been installed.
+For x86/x64 installations, [Shoutcast 2 DNAS](http://wiki.shoutcast.com/wiki/SHOUTcast_DNAS_Server_2) can also be used as a broadcasting frontend. Shoutcast is non-free software and does not come bundled with AzuraCast, but can be installed via the administration panel after AzuraCast has been installed.
 
 ### Supporting Software
 

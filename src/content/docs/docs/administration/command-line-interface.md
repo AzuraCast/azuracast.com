@@ -217,7 +217,7 @@ Iterates through all stations' media directories and manually reloads the metada
 (cli_command) azuracast:radio:restart
 ```
 
-Shuts down both the frontends (Icecast, SHOUTcast, etc) and backends (Liquidsoap) of all radio stations, rewrites their configuration files, then relaunches them. This is identical to the "Restart Broadcasting" command inside the web interface.
+Shuts down both the frontends (Icecast, Shoutcast, etc) and backends (Liquidsoap) of all radio stations, rewrites their configuration files, then relaunches them. This is identical to the "Restart Broadcasting" command inside the web interface.
 
 :::caution[This command disconnects listeners!]
 Running this command will disconnect all current active listeners to your radio stations.

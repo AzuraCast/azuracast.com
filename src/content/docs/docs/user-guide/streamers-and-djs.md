@@ -14,7 +14,7 @@ To manage streamers and DJs, users must be in a role that has the "Manage Statio
 
 If your station has "Enable Streamers" turned on, you can create multiple DJ accounts that can connect and broadcast live audio to your listeners.
 
-In order to allow a seamless transition between live DJs and the AutoDJ, each streamer connects directly to the AutoDJ software (Liquidsoap). Liquidsoap accepts connections from broadcast software that are compatible with either Icecast or SHOUTcast servers.
+In order to allow a seamless transition between live DJs and the AutoDJ, each streamer connects directly to the AutoDJ software (Liquidsoap). Liquidsoap accepts connections from broadcast software that are compatible with either Icecast or Shoutcast servers.
 
 AzuraCast will keep track of the broadcast history for each DJ that broadcasts live on your station.
 

@@ -22,7 +22,7 @@ This data includes:
 
 Here's a [real-world example of the Now Playing API's return data](https://demo.azuracast.com/api/nowplaying_static/azuratest_radio.json) from the AzuraCast demo page.
 
-AzuraCast always serves this data in the exact same format, regardless of whether you're broadcasting locally or remotely, or whether you're using Icecast or SHOUTcast.
+AzuraCast always serves this data in the exact same format, regardless of whether you're broadcasting locally or remotely, or whether you're using Icecast or Shoutcast.
 
 Because of how valuable this information is, we serve it in a number of ways depending on whether performance or flexibility is your main concern.
 
