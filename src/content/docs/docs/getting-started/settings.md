@@ -62,7 +62,7 @@ The default `azuracast.env` contains the following variables:
 
 | Variable | Default Value | Description
 | - | - | -
-| `MYSQL_HOST` | mariadb | The host to connect to. Leave this as the default value unless you're connecting to an external database server.
+| `MYSQL_HOST` | localhost | The host to connect to. Leave this as the default value unless you're connecting to an external database server.
 | `MYSQL_PORT` | 3306 | The port to connect to. Leave this as the default value unless you're connecting to an external database server.
 | `MYSQL_USER` | azuracast | The username AzuraCast will use to connect to the database.
 | `MYSQL_PASSWORD` | azur4c457 | The password AzuraCast will use to connect to the database. By default, the database is not exposed to the Internet at all and this is only an internal password used by the service itself.
