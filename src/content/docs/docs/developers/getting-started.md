@@ -88,7 +88,7 @@ When initializing a development instance, AzuraCast will create both a standard 
 
 If you would prefer to follow the traditional post-installation setup process instead, just remove any fields from the `azuracast.env` file that start with `INIT_`.
 
-Following these steps, re-run the prior command (`bash docker.sh install-dev`) to build the Docker image and run the containers. After the script finishes (as indicated by `✔ Container azuracast Started`), you may need to wait a few more minutes for the initialization process to finish running. You can check the progress by running `docker logs -f azuracast`.
+Following these steps, re-run the prior command (`bash docker.sh install-dev` or `make install`) to build the Docker image and run the containers. After the script finishes (as indicated by `✔ Container azuracast Started`), you may need to wait a few more minutes for the initialization process to finish running. You can check the progress by running `docker logs -f azuracast`.
 
 ## Common Tasks
 
