@@ -27,3 +27,17 @@ There are special permissions that will grant access to other sections of the sy
 
 - The **All Permissions** global permission creates a super-user with access to all of the AzuraCast installation, and the **All Permissions** station-specific permission creates a super-user with full access to that specific station only.
 - The **Manage Stations** global permission also allows the user to administer any stations that exist in the AzuraCast installation.
+
+## Feature-Specific Permission Requirements
+
+AzuraCast has robust permission controls that prevent unauthorized access to critical station features:
+
+### Skipping the Current Track
+
+- **Backend**: Requires `StationPermissions::Broadcasting`. Users without this permission cannot skip tracks or interrupt the broadcast flow
+- **Frontend**: The skip button only appears for users with the Broadcasting permission for that station
+
+### Play Song Now / Add to Queue
+
+- **Backend**: Requires `StationPermissions::Media` for file operations like "Play Now" or "Add to Queue". Users without this permission cannot use "Play Now" functionality or perform immediate media operations
+- **Frontend**: The media management interface requires the Media permission at the route level
