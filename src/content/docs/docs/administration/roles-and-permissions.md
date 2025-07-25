@@ -34,3 +34,4 @@ AzuraCast has robust permission controls that prevent unauthorized access to cri
 
 - **Skip Current Track**: Requires the user to have the `manage station broadcasting` permission for a station.
 - **Play Song Now / Add to Queue**: Requires the user to have the `manage station media` permission for a station.
+- **Deleting Media**: While any user with the `manage station media` permission can visit the station's Media Manager interface, only users with the `delete station media` permission can remove existing files.
