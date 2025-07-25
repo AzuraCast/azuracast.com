@@ -32,12 +32,5 @@ There are special permissions that will grant access to other sections of the sy
 
 AzuraCast has robust permission controls that prevent unauthorized access to critical station features:
 
-### Skipping the Current Track
-
-- **Backend**: Requires `StationPermissions::Broadcasting`. Users without this permission cannot skip tracks or interrupt the broadcast flow
-- **Frontend**: The skip button only appears for users with the Broadcasting permission for that station
-
-### Play Song Now / Add to Queue
-
-- **Backend**: Requires `StationPermissions::Media` for file operations like "Play Now" or "Add to Queue". Users without this permission cannot use "Play Now" functionality or perform immediate media operations
-- **Frontend**: The media management interface requires the Media permission at the route level
+- **Skip Current Track**: Requires the user to have the `manage station broadcasting` permission for a station.
+- **Play Song Now / Add to Queue**: Requires the user to have the `manage station media` permission for a station.
