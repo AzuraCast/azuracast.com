@@ -27,3 +27,11 @@ There are special permissions that will grant access to other sections of the sy
 
 - The **All Permissions** global permission creates a super-user with access to all of the AzuraCast installation, and the **All Permissions** station-specific permission creates a super-user with full access to that specific station only.
 - The **Manage Stations** global permission also allows the user to administer any stations that exist in the AzuraCast installation.
+
+## Feature-Specific Permission Requirements
+
+AzuraCast has robust permission controls that prevent unauthorized access to critical station features:
+
+- **Skip Current Track**: Requires the user to have the `manage station broadcasting` permission for a station.
+- **Play Song Now / Add to Queue**: Requires the user to have the `manage station media` permission for a station.
+- **Deleting Media**: While any user with the `manage station media` permission can visit the station's Media Manager interface, only users with the `delete station media` permission can remove existing files.
