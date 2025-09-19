@@ -12,7 +12,7 @@
     "builtin-build": "astro build --root=./builtin"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.35",
+    "@astrojs/starlight": "^0.36",
     "astro": "^5",
     "bootstrap": "^5.3",
     "sass": "^1.77",
