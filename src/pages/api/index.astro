@@ -28,23 +28,30 @@
     <div id="swagger-ui"></div>
 
     <script>
-      import SwaggerUI from "swagger-ui";
-      import "swagger-ui/dist/swagger-ui.css";
+      import "swagger-ui-dist/swagger-ui.css";
       import "swagger-ui-plugin-enum-names/dist/index.css";
 
-      import SwaggerUIStandalonePreset from "swagger-ui/dist/swagger-ui-standalone-preset";
+      import {
+        SwaggerUIBundle,
+        SwaggerUIStandalonePreset,
+      } from "swagger-ui-dist";
+
       import { EnumNamesPlugin } from "swagger-ui-plugin-enum-names";
 
-      SwaggerUI({
-        url: "https://raw.githubusercontent.com/AzuraCast/AzuraCast/main/web/static/openapi.yml",
-        dom_id: "#swagger-ui",
-        deepLinking: true,
-        withCredentials: true,
-        operationsSorter: 'alpha',
-        presets: [SwaggerUI.presets.apis, SwaggerUIStandalonePreset],
-        plugins: [EnumNamesPlugin],
-        layout: "StandaloneLayout",
-      });
+      window.onload = function () {
+        const ui = SwaggerUIBundle({
+          url: "https://raw.githubusercontent.com/AzuraCast/AzuraCast/main/web/static/openapi.yml",
+          dom_id: "#swagger-ui",
+          deepLinking: true,
+          withCredentials: true,
+          operationsSorter: "alpha",
+          presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+          plugins: [EnumNamesPlugin],
+          layout: "StandaloneLayout",
+        });
+
+        window.ui = ui;
+      };
     </script>
   </body>
 </html>
