@@ -176,7 +176,7 @@ socket.onopen = function(e) {
     "subs": {
       "station:azuratest_radio": {"recover": true}
     } 
-  });
+  }));
 };
 
 let nowplaying = {};
