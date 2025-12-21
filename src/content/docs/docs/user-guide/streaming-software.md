@@ -22,11 +22,11 @@ Live broadcasting settings can be found in the preferences menu (`Options` -> `P
 
 ![Mixxx preferences menu](../images/streaming-software/mixx_1.png)
 
-## BUTT
+## Broadcast Using This Tool (BUTT)
 
 **Linux, MacOS, Windows; Free and Open-Source**
 
-Cross-platform and available for free at [https://sourceforge.net/projects/butt/](https://sourceforge.net/projects/butt/). Streaming via both Icecast mode and Shoutcast mode are available.
+Cross-platform and available for free at [https://danielnoethen.de/butt/](https://danielnoethen.de/butt/). Streaming via both Icecast mode and Shoutcast mode are available.
 
 ### Icecast Mode
 
