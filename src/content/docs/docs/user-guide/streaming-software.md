@@ -28,6 +28,8 @@ Live broadcasting settings can be found in the preferences menu (`Options` -> `P
 
 Cross-platform and available for free at [https://danielnoethen.de/butt/](https://danielnoethen.de/butt/). Streaming via both Icecast mode and Shoutcast mode are available.
 
+Regardless of configuration mode, to add a new server, click "Settings" on the main app panel, then in the "Server Settings" section, click the "ADD" button to create a new server.
+
 ### Icecast Mode
 
 Use the exact information specified on the Streamer/DJ page's right sidebar. "Address" is "Server" and "Icecast mountpoint" is "Mount Name".
@@ -36,7 +38,7 @@ Use the exact information specified on the Streamer/DJ page's right sidebar. "Ad
 
 ### Shoutcast Mode
 
-Use the given port specified in the "Shoutcast v1 Clients" section. Since Shoutcast v1 does not let you specify a username, specify your password as `dj_username:dj_password` (the username and password for the DJ separated by a colon).
+Use the given port specified in the "Shoutcast Clients" section. Since Shoutcast does not let you specify a username, specify your password as `dj_username:dj_password` (the username and password for the DJ separated by a colon).
 
 ![BUTT Sample Shoutcast configuration](../images/streaming-software/butt_shoutcast.png)
 
