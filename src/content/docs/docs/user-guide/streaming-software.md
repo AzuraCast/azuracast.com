@@ -26,7 +26,7 @@ Live broadcasting settings can be found in the preferences menu (`Options` -> `P
 
 **Linux, MacOS, Windows; Free and Open-Source**
 
-Cross-platform and available for free at [https://danielnoethen.de/butt/](https://danielnoethen.de/butt/). While BUTT supports both Icecast and Shoutcast connection modes, since AzuraCast internally uses Liquidsoap to facilitate all DJ connections, the connection mode used is largely irrelevant. Thus, **we recommend using Icecast mode** as it is more modern.
+[BUTT](https://danielnoethen.de/butt/) is cross-platform and available for free. While BUTT supports both Icecast and Shoutcast connection modes, since AzuraCast internally uses Liquidsoap to facilitate all DJ connections, the connection mode used is largely irrelevant. Thus, **we recommend using Icecast mode** as it is more modern.
 
 To add a new server, click "Settings" on the main app panel, then in the "Server Settings" section, click the "ADD" button to create a new server.
 
@@ -45,7 +45,7 @@ Using the "Connection Information" from your station's "Streamers/DJ Accounts" p
 
 **MacOS, Windows; Proprietary, Commercial**
 
-BUTTM is the spiritual successor to BUTT, but with a modernized user interface and experience. It's available for a one-time fee at [https://buttm.app/](https://buttm.app/). Either edition is compatible with AzuraCast, but the Standard edition is limited to broadcasting at a bitrate of 128kbps.
+[BUTTM](https://buttm.app/) is the spiritual successor to BUTT, but with a modernized user interface and experience. It's available for a one-time fee. Either edition is compatible with AzuraCast, but the Standard edition is limited to broadcasting at a bitrate of 128kbps.
 
 Just like BUTT, BUTTM supports both Icecast and Shoutcast connection modes. Since AzuraCast internally uses Liquidsoap to facilitate all DJ connections, the connection mode used is largely irrelevant; thus, **we recommend using Icecast mode** as it is more modern.
 
