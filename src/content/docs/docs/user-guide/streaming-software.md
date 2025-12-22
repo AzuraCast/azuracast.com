@@ -26,29 +26,47 @@ Live broadcasting settings can be found in the preferences menu (`Options` -> `P
 
 **Linux, MacOS, Windows; Free and Open-Source**
 
-Cross-platform and available for free at [https://danielnoethen.de/butt/](https://danielnoethen.de/butt/). Streaming via both Icecast mode and Shoutcast mode are available.
+Cross-platform and available for free at [https://danielnoethen.de/butt/](https://danielnoethen.de/butt/). While BUTT supports both Icecast and Shoutcast connection modes, since AzuraCast internally uses Liquidsoap to facilitate all DJ connections, the connection mode used is largely irrelevant. Thus, **we recommend using Icecast mode** as it is more modern.
 
-Regardless of configuration mode, to add a new server, click "Settings" on the main app panel, then in the "Server Settings" section, click the "ADD" button to create a new server.
+To add a new server, click "Settings" on the main app panel, then in the "Server Settings" section, click the "ADD" button to create a new server.
 
-### Icecast Mode
+![BUTT Sample Configuration](../images/streaming-software/butt.png)
 
-Use the exact information specified on the Streamer/DJ page's right sidebar. "Address" is "Server" and "Icecast mountpoint" is "Mount Name".
+Using the "Connection Information" from your station's "Streamers/DJ Accounts" page, enter:
 
-![BUTT Sample Icecast configuration](../images/streaming-software/butt_icecast.png)
+ - In "Type", select "Icecast".
+ - In "Address", enter the value from the "Server" heading on the info page.
+ - In "Port", enter the value from the "Port" heading on the info page.
+ - In "Icecast user", enter your DJ username.
+ - In "Password", enter your DJ password.
+ - In "Icecast mountpoint", enter the value from the "Mount Name" heading on the info page; this is likely "/" (without quotes).
 
-### Shoutcast Mode
+## Broadcast Using This Tool Modernized (BUTTM)
 
-Use the given port specified in the "Shoutcast Clients" section. Since Shoutcast does not let you specify a username, specify your password as `dj_username:dj_password` (the username and password for the DJ separated by a colon).
+**MacOS, Windows; Proprietary, Commercial**
 
-![BUTT Sample Shoutcast configuration](../images/streaming-software/butt_shoutcast.png)
+BUTTM is the spiritual successor to BUTT, but with a modernized user interface and experience. It's available for a one-time fee at [https://buttm.app/](https://buttm.app/). Either edition is compatible with AzuraCast, but the Standard edition is limited to broadcasting at a bitrate of 128kbps.
+
+Just like BUTT, BUTTM supports both Icecast and Shoutcast connection modes. Since AzuraCast internally uses Liquidsoap to facilitate all DJ connections, the connection mode used is largely irrelevant; thus, **we recommend using Icecast mode** as it is more modern.
+
+To add a new server, click "Server Manager" on the main app panel, then click the "+" button in the bottom left corner to add a new server.
+
+![BUTTM Sample Configuration](../images/streaming-software/buttm.png)
+
+Using the "Connection Information" from your station's "Streamers/DJ Accounts" page, enter:
+
+ - In "Type", select "Icecast".
+ - In "Address", enter the value from the "Server" heading on the info page.
+ - In "Port", enter the value from the "Port" heading on the info page.
+ - In "Username", enter your DJ username.
+ - In "Mountpoint", enter the value from the "Mount Name" heading on the info page; this is likely "/" (without quotes).
+ - In "Password", enter your DJ password.
 
 ## SAM Cast
 
 **Windows; Proprietary, Commercial**
 
 [SAM Cast](https://spacial.com/sam-cast/) is commercial software sold by Spacial. It is compatible with AzuraCast by using the MP3 encoder and the "Icecast 2" server connection settings.
-
-### Broadcasting Steps
 
 From the main SAM Cast window, click "Encoders" at the bottom left.
 
@@ -86,13 +104,11 @@ Select the encoder, then click the play-button icon in the toolbar to begin broa
 
 [RadioBOSS](https://www.djsoft.net/) is a commercial software sold by IP Kuzmitski D.V. at DJSoft.net.
 
-Streaming via both Icecast mode and Shoutcast mode are available.
+Streaming via both Icecast mode and Shoutcast mode are available; however, because AzuraCast uses Liquidsoap as an intermediary for DJ connections, **it is recommended to use Icecast for connections, as it is more modern**.
 
 The Live broadcasting feature is possible in their Standard and Advanced edition (not in the Express edition).
 
 Note that for ease of use we use the `Configuration Wizard`, you can also enter all connection details manually.
-
-### Instructions
 
 1. In the top menu bar, select `Settings` -> `Options`
 
@@ -106,54 +122,29 @@ Note that for ease of use we use the `Configuration Wizard`, you can also enter 
 
 ![RadioBOSS Encoder window](../images/streaming-software/radioboss_2.jpg)
 
-Follow the instructions for the server type you have set up your Azuracast station with:
-
-### Icecast
-
-- Select `Icecast 1 & 2` and click `Next >`
+5. Select `Icecast 1 & 2` and click `Next >`
 
 ![RadioBOSS Encoder Configuration Wizard Icecast](../images/streaming-software/radioboss_3.jpg)
 
-- Take over the corresponding credentials you can find in Azuracast:
+6. Take over the corresponding credentials you can find in Azuracast:
 
 ![RadioBOSS Encoder Configuration Wizard Icecast Azuracast Example settings](../images/streaming-software/radioboss_4.jpg)
 
-- Click `Finish`
+7. Click `Finish`
 
-### Shoutcast
-
-The following settings are recommended for both Shoutcast v1 as v2 (DNAS 2)
-
-Note 1: Use the given port specified in the "Shoutcast v1 Clients" section.
-
-Note 2: Be sure to select `v1`, as v2 will append the Stream ID (SID), which won't work.
-
-- Select `Shoutcast v1` and click `Next >`
-
-![RadioBOSS Encoder Configuration Wizard Shoutcast](../images/streaming-software/radioboss_5.jpg)
-
-- Take over the corresponding credentials you can find in Azuracast (see notes above):
-
-![RadioBOSS Encoder Configuration Wizard Shoutcast Azuracast Example settings](../images/streaming-software/radioboss_6.jpg)
-
-- Click `Finish`
-
-6. Finish by changing the rest of the settings by preference:
-
-- Connection
-
+8. Finish by changing the rest of the settings by preference:
+  - Connection
   - Sample Rate
   - Encoder
   - Bitrate
   - Channels
-
   - Station info
 
-    If needed, here you can override the info that can be found in the main `Settings` (From step 1), under `Broadcasting` -> `Metadata`
+  If needed, here you can override the info that can be found in the main `Settings` (From step 1), under `Broadcasting` -> `Metadata`
 
-1. Then finally click `OK` to save the Encoder.
+9. Then finally click `OK` to save the Encoder.
 
-2. In the Settings window, check the checkboxes for all encoders that you want to use.
+10. In the Settings window, check the checkboxes for all encoders that you want to use.
    Remember to turn on the option `Broadcasting enabled` on top.
 
 On succesful connection, the log report in the bottom-left corner of RadioBOSS will show the following message: "Connected to server! (Output N)". This means that listeners can now connect to the streaming server (either Icecast or Shoutcast).
@@ -180,9 +171,7 @@ The installation steps for the plugin are relatively simple, so they're not cove
 
 ***Note:** This software is only capable of streaming via MP3, due to plugin limitations.*
 
-### Instructions
-
-These instructions are valid and required for both streaming modes (Icecast and Shoutcast), so be sure to follow this part before proceeding any further.
+PlayItLive supports both Icecast and Shoutcast connection modes; however, because AzuraCast uses Liquidsoap as an intermediary for all DJ connections, the connection method is not important. Thus, **it is recommended to use the Icecast connection mode, as it is more modern**.
 
 1. After installing the Internet Broadcast plugin, select the menu **Plugins** menu, on the top menu bar and select the **Plugin Manager...** option.
 
@@ -206,10 +195,6 @@ _Plugin Settings_
 - **Auto start streams** let's you start streaming after opening the software.
 
 **4.** Under **Streams**, click **Add** to add a new streaming server.
-
-Now follow the specific instructions for your streaming server: **Icecast** or **Shoutcast**.
-
-### Icecast
 
 **1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page,
 
@@ -238,41 +223,11 @@ _Using the details above to fill the form_
 
 If the server is configured correctly, the **OFF AIR** text will change to **ON AIR**. If not, re-check your configuration.
 
-### Shoutcast
-
-**1.** Using the connection details, available in your AzuraCast instance, under the **Streamers/DJ Accounts** page, ...
-
-![Shoutcast info](../images/streaming-software/playitlive_6a.png)
-
-... fill this form in the PlayIt Live software.
-
-![Shoutcast server info](../images/streaming-software/playitlive_7.png)
-*Using the details above to fill the form*
-
-**Don't forget to change these details with yours, this is just an example!**
-
-**Notes:**
-
-- In **Server Type**, select Shoutcast v1.
-- The **Password** field must be in this format: `dj_username:dj_password`
-- The **Save audio to file** field can be left unchecked. Check it if you want to record the stream into a MP3 file.
-- Under **Audio**, select the audio bitrate and the format (stereo or mono) that matches your station.
-
-**2.** After filling the form fields, click **OK** to save the server details.
-
-**3.** To start broadcasting, click on Start Streams here on in the main interface of the software.
-
-![Starting the streams](../images/streaming-software/playitlive_8.png)
-
-If the server is configured correctly, the **OFF AIR** text will change to **ON AIR**. If not, re-check your configuration.
-
 ## Rocket Broadcaster
 
 **Windows; Proprietary (Free & Pro editions)**
 
 Rocket Broadcaster is a robust streaming encoder for Windows, designed for internet radio stations and professional broadcasting. It captures audio from various sources, including microphones, line-in devices, and other applications, and streams it to your station. Rocket Broadcaster supports both Icecast and Shoutcast servers.
-
-### Instructions
 
 1. **Configure Your Audio Input**
 
