@@ -7,7 +7,7 @@ editor: markdown
 dateCreated: 2021-02-06T20:06:57.052Z
 ---
 
-AzuraCast contains a plugin system that can be used to extend AzuraCast without having to modifying AzuraCasts code. When you need to modify AzuraCasts behavior you should use the plugin system so that you can still easily update your AzuraCast installation without loosing any modifications.
+AzuraCast contains a plugin system that can be used to extend AzuraCast without having to modifying AzuraCasts code. When you need to modify AzuraCasts behavior you should use the plugin system so that you can still easily update your AzuraCast installation without losing any modifications.
 
 ## Example Plugin
 
