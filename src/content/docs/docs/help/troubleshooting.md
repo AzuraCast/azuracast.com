@@ -14,26 +14,50 @@ Our core maintainers, along with our vast community of station operators, can an
 
 Your first steps should be to check these docs for any tips or pointers. Many common issues can be solved by following the instructions in our guide pages.
 
+### Checking System Logs
+
 If you aren't sure of what is causing your issue, [checking the logs](/docs/help/logs) can help. Not only do the system logs often explain your error in more detail, but they're essential for our developers to be able to easily diagnose and resolve your issue.
 
-## Flushing the System Cache
+### Flushing the System Cache
 
 Many parts of the AzuraCast system depend on caches to speed up site performance. Sometimes, these caches can get out of
 date, and they may cause errors. You can always flush all site-wide caches using one command-line script:
-
-For Docker Installations:
 
 ```bash
 ./docker.sh cli cache:clear
 ```
 
-For Ansible Installations:
+## Common Liquidsoap Errors
 
-```bash
-php /var/azuracast/www/bin/console cache:clear
-```
+### "We must catchup x.xx seconds..." related errors
+
+If your station begins to have interrupted audio or crackles, you will often find this "we must catchup" error in Liquidsoap's logs. Fundamentally, this is because Liquidsoap's internal audio buffer falls behind the broadcast itself, which often means that it doesn't have the CPU or other resources needed to keep the broadcast running at full speed.
+
+Some common causes of this can be:
+
+ - **Underprovisioned Server**: It is possible that your server (or VM, VPS, etc) is not powerful enough to sustain the ongoing CPU and RAM load required to operate your station. To continue broadcasting with all of your settings as they are, you may need to consider a more powerful server.
+
+ - **Using CPU-heavy Features (AutoCue, MasterMe, etc.)**: Some features are especially demanding of CPU resources. We try to label these features as "High CPU" in AzuraCast's UI so you are aware of them before enabling them; if you encounter skips or other issues with these features enabled, try disabling them to see if the problem improves, or consider using a more powerful server for your installation.
+
+ - **Too Many Mount Points/Remotes/HLS Streams**: Each individual mount point, remote relay with AutoDJ enabled, or HLS stream type requires Liquidsoap to transcode the broadcast signal into a new format, and thus requires a roughly constant CPU load over time. In newer versions of AzuraCast, we offer an experimental way to consolidate any common encoding formats, optimizing CPU usage if you output the same format to multiple locations.
+
+If you are still encountering issues, we would recommend collecting your station logs and its generated Liquidsoap configuration file and [submitting an issue on the Liquidsoap GitHub](https://github.com/savonet/liquidsoap). We cannot provide extended support for Liquidsoap itself, as we don't maintain the software.
 
 ## Common Docker Errors
+
+### "Client version x.xx is too old/new"
+
+This error occurs when your Docker version and Docker Compose version do not match each other.
+
+Our Docker Utility Script will always install "matching" versions of Docker and Docker Compose, so this issue can often be fixed by running:
+
+```bash
+# You may need to prefix these commands with `sudo` if running as non-root.
+cd /var/azuracast
+./docker.sh update-self
+./docker.sh install-docker
+./docker.sh install-docker-compose
+```
 
 ### "Invalid interpolation format" related errors
 
@@ -42,11 +66,13 @@ This issue is related to an out of date docker-compose version, since we use a m
 - `ERROR: Invalid interpolation format for "installer" option in service "services": "ghcr.io/azuracast/web:${AZURACAST_VERSION:-latest}"`
 - `ERROR: Invalid interpolation format for "nginx_proxy" option in service "services": "ghcr.io/azuracast/nginx_proxy:${AZURACAST_VERSION:-latest}"`
 
-The solution is simple, run these commands. You may need to run it with `sudo` permissions:
+To update your Docker Compose version, run the following commands:
 
 ```bash
+# You may need to prefix these commands with `sudo` if running as non-root.
+cd /var/azuracast
+./docker.sh update-self
 ./docker.sh install-docker-compose
-./docker.sh install
 ```
 
 ### "bind: address already in use"
@@ -80,31 +106,13 @@ Stop your AzuraCast via `docker-compose down`, then try renaming them via `mv ib
 
 ### Failed Database Migrations
 
-In some situations, especially if the automated update process is interrupted for any reason, you can wind up in a state where a databse migration has only halfway completed. During subsequent updates, the migration will try to run from the beginning, which leads to it re-running queries that have already run, which results in an error that looks like:
+In some situations, especially if the automated update process is interrupted for any reason, you can wind up in a state where a databse migration has only halfway completed.
 
-```
-SQLSTATE[42000]: Syntax error or access violation: ...
-```
+AzuraCast now automatically takes a snapshot of your database as it existed immediately before a migration runs, and if any errors are encountered, it will attempt to restore from that snapshot.
 
-#### What Causes This
+Nevertheless, we strongly recommend that you take routine backups of your installation, including before software updates. If a migration fails and AzuraCast's automatic restoration fails for some reason, restoring from a database backup is the simplest solution.
 
-We use MariaDB as our database layer, and while MariaDB is a very powerful and capable database solution, one of its limitations is that it cannot do transactional table alterations. In other words, you can't wrap "ALTER TABLE" statements in a transaction that can then be rolled back in the event of errors. Some other databases (like PostGreSQL) support transactional table alterations, but switching databases would be difficult, if not impossible, for our installed user base.
-
-#### Easy Solution: Restore from a Backup
-
-This situation is one of the primary reasons why we strongly encourage users to keep regular backups of their installations. Restoring from a backup is a very simple way to resolve the issue, as it will bring you back to a known working state, where you can then run the update process again (and it will likely continue without issues).
-
-#### Advanced Solution: Modify the Database
-
-**Caution:** This is only advised for very advanced users who are comfortable modifying the underlying database powering AzuraCast.
-
-We don't provide specific instructions for this process as it can cause irreparable damage to your installation, but basically, the process would be:
-
-- Identify which migration is failing.
-- Find the corresponding migration (in the `src/Entity/Migrations` folder).
-- Find which step is failing in the `up` function, and find the corresponding SQL commands to undo those specific migrations in the `down` command in the same file.
-- Manually run those commands via `./docker.sh cli dbal:run-sql "SQL COMMAND HERE"`
-- Re-run the update process.
+For power users, if you cannot restore a backup during a failed migration, you may be able to manually execute the incomplete migration by manually executing the unfinished SQL commands. We do not officially support this, however, and using our automated recovery or a backup restoration is strongly preferred.
 
 ## Submitting an Issue
 
