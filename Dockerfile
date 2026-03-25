@@ -69,7 +69,7 @@ WORKDIR /data/builtin
 
 RUN rm -rf ./src ./dist ./public \
     && mkdir -p ./src/content/docs ./src/pages ./src/images ./src/scss \
-    && cp ../src/content/config.ts ./src/content \
+    && cp ../src/content.config.ts ./src \
     && cp -R ../src/content/docs/docs ./src/content \
     && cp -R ../src/pages/api ./src/pages/api \
     && cp -R ../src/images/* ./src/images \
