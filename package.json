@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/starlight": "^0.38.2",
     "@types/swagger-ui-dist": "^3.30.6",
-    "astro": "^6.1.4",
+    "astro": "^6.2.2",
     "bootstrap": "^5.3",
     "rehype-external-links": "^3.0.0",
     "sass": "^1.99",
