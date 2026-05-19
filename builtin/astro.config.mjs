@@ -37,19 +37,19 @@ export default defineConfig({
         { label: "Update AzuraCast", link: "/getting-started/updates/" },
         {
           label: "Help",
-          autogenerate: { directory: "help" },
+          items: [{ autogenerate: { directory: "help" } }],
         },
         {
           label: "User Guide",
-          autogenerate: { directory: "user-guide" },
+          items: [{ autogenerate: { directory: "user-guide" } }],
         },
         {
           label: "Administrator Guide",
-          autogenerate: { directory: "administration" },
+          items: [{ autogenerate: { directory: "administration" } }],
         },
         {
           label: "For Developers",
-          autogenerate: { directory: "developers" },
+          items: [{ autogenerate: { directory: "developers" } }],
         },
       ],
     }),
