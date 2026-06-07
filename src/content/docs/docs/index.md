@@ -64,20 +64,20 @@ For x86/x64 installations, [Shoutcast 2 DNAS](http://wiki.shoutcast.com/wiki/SHO
 
 ## AzuraCast API
 
-Once installed and running, AzuraCast exposes a REST API that allows you to monitor and interact with your stations. Documentation about this API and its endpoints are available on the [AzuraCast API Documentation](https://www.azuracast.com/api/index.html).
+Once installed and running, AzuraCast exposes a REST API that allows you to monitor and interact with your stations. Documentation about this API and its endpoints are available on the [AzuraCast API Documentation](https://azuracast.com/api/).
 
 All of AzuraCast's frontend actions are performed through the API, so through API calls, you can manage your station(s) entirely via the API.
 
 ## License
+
 AzuraCast is licensed under the [Affero GNU General Public License (GPL), version 3.0](https://github.com/AzuraCast/AzuraCast/blob/main/LICENSE.md). This project is free and open-source software, and pull requests are always welcome
 
 ## Friends of AzuraCast
+
 We would like to thank the following organizations for their support of AzuraCast's ongoing development:
 
-- [DigitalOcean](https://m.do.co/c/21612b90440f) For generously providing the server resources we use for our demonstration instance, our staging and testing environments, and more
 - [JetBrains](https://www.jetbrains.com/) For making our development faster, easier and more productive with tools like PhpStorm
 - [CrowdIn](https://crowdin.com/) For giving us a simple and powerful tool to help translate our application for users around the world
-- [Netlify](https://www.netlify.com/) For supporting open-source software like ours and for serving as the host of our web site!
 - [BrowserStack](https://www.browserstack.com/) For providing us a tool that allows us to test across multiple browsers in one place
 - [Depot](https://depot.dev/?utm_source=AzuraCast) for powering our Docker image builds.
 
