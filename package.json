@@ -12,7 +12,7 @@
     "builtin-build": "astro build --root=./builtin"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.41.3",
+    "@astrojs/starlight": "^0.41.4",
     "@popperjs/core": "^2.11.8",
     "@types/swagger-ui-dist": "^3.30.6",
     "astro": "^7.0.6",
