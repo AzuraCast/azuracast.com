@@ -40,25 +40,52 @@ The now-playing data for a specific station is available at:
 http://your-azuracast-site.example.com/api/nowplaying/station_shortcode
 ```
 
+For a more performance-optimized (but slightly more delayed) static version of the now-playing data, use this URL format instead:
+
+```
+http://your-azuracast-site.example.com/api/nowplaying_static/station_shortcode.json
+```
+
 ...replacing `station_shortcode` with either the station's abbreviated name (i.e. `azuratest_radio` for "AzuraTest Radio") or the numeric ID of the station (visible in the URL when managing the station in AzuraCast).
 
-### Advantages
+### Elapsed/Remaining Time
 
-- This method is available on all installations and will always be available.
-- If you have the "Prefer Browser URL" setting turned on in your installation, any URLs included in the API response (i.e. URLs for album art or listening to the station) will be updated to reflect the browser URL that was used to make the API request.
-- The "elapsed" and "remaining" values on `current_song` are automatically updated to reflect their current values (in seconds) at the moment you make the API request.
+For performance reasons, AzuraCast caches the Now Playing API endpoint's responses for a few seconds after the first uncached request is made. This allows our web server (nginx) to serve subsequent requests, substantially improving throughput and allowing installations to serve many more listeners.
 
-### Disadvantages
+Because of this, the `elapsed` and `remaining` time on the current playing track may not be accurate as of the exact time you're making the API request. In order to ensure their accuracy, it is recommended to calculate these values client-side in your calling code.
 
-- Every request sent to this endpoint calls the entire Nginx/PHP-FPM stack, resulting in a very brief (under 100ms) but possibly significant performance penalty. If you have several hundred users checking this API every few seconds, the combined load can quickly overwhelm a server.
+You can compare this to the calling client's UNIX timestamp, but it may be a little different than the AzuraCast installation's server clock time. To ensure better accuracy, we recommend infrequently calling the `time` API endpoint to retrieve the server's current UNIX timestamp:
+
+```
+http://your-azuracast-site.example.com/api/time
+```
+
+Our example implementation code below includes this functionality.
 
 ### Example Implementation
 
 Using the [jQuery](https://jquery.com/) JavaScript library, an example implementation might look like:
 
 ```javascript
-var nowPlayingTimeout;
-var nowPlaying;
+let nowPlayingTimeout = null;
+let nowPlaying = {};
+let checkTimeTimeout = null;
+let currentTimestamp = Math.floor(Date.now() / 1000);
+
+function checkTime() {
+    $.ajax({
+        cache: false,
+        dataType: "json",
+        url: "http://your-azuracast-site.example.com/api/time",
+        success: function(data) {
+            currentTimestamp = data.timestamp;
+            checkTimeTimeout = setTimeout(checkTime, 600000);
+        },
+    }).fail(function() {
+        currentTimestamp = Math.floor(Date.now() / 1000);
+        checkTimeTimeout = setTimeout(checkTime, 1200000);
+    });
+}
 
 function loadNowPlaying() {
     $.ajax({
@@ -66,6 +93,23 @@ function loadNowPlaying() {
         dataType: "json",
         url: 'http://your-azuracast-site.example.com/api/nowplaying/station_shortcode',
         success: function(np) {
+            // Update the elapsed/remaining time.
+            const currentTrackPlayedAt = np.now_playing?.played_at ?? 0;
+            const currentTrackDuration = np.now_playing?.duration ?? 0;
+
+            if (currentTrackPlayedAt !== 0) {
+                let elapsed = currentTimestamp - currentTrackPlayedAt;
+
+                if (elapsed < 0) {
+                    elapsed = 0;
+                } else if (elapsed >= currentTrackDuration) {
+                    elapsed = currentTrackDuration;
+                }
+
+                np.now_playing.elapsed = elapsed;
+                np.now_playing.remaining = currentTrackDuration - elapsed;
+            }
+
             // Do something with the Now Playing data.
             nowPlaying = np;
 
@@ -77,20 +121,61 @@ function loadNowPlaying() {
 }
 
 $(function() {
+    checkTime();
     loadNowPlaying();
+
+    setInterval(
+        () => {
+            currentTimestamp += 1;
+        },
+        1000
+  );
 });
 ```
 
 Using the [Axios](https://github.com/axios/axios) HTTP client library, an example implementation might look like:
 
 ```javascript
-var nowPlaying;
-var nowPlayingTimeout;
+let nowPlayingTimeout = null;
+let nowPlaying = {};
+let checkTimeTimeout = null;
+let currentTimestamp = Math.floor(Date.now() / 1000);
+
+function checkTime() {
+    axios.get('http://your-azuracast-site.example.com/api/time').then((response) => {
+        // Do something with the Now Playing data.
+        currentTimestamp = response.data.timestamp;
+    }).catch((error) => {
+        console.error(error);
+    }).then(() => {
+        clearTimeout(checkTimeTimeout);
+        checkTimeTimeout = setTimeout(checkTime, 600000);
+    });
+}
 
 function loadNowPlaying() {
     axios.get('http://your-azuracast-site.example.com/api/nowplaying/station_shortcode').then((response) => {
+        let np = response.data;
+
+        // Update the elapsed/remaining time.
+        const currentTrackPlayedAt = np.now_playing?.played_at ?? 0;
+        const currentTrackDuration = np.now_playing?.duration ?? 0;
+
+        if (currentTrackPlayedAt !== 0) {
+            let elapsed = currentTimestamp - currentTrackPlayedAt;
+
+            if (elapsed < 0) {
+                elapsed = 0;
+            } else if (elapsed >= currentTrackDuration) {
+                elapsed = currentTrackDuration;
+            }
+
+            np.now_playing.elapsed = elapsed;
+            np.now_playing.remaining = currentTrackDuration - elapsed;
+        }
+
         // Do something with the Now Playing data.
-        nowPlaying = response.data;
+        nowPlaying = np;
     }).catch((error) => {
         console.error(error);
     }).then(() => {
@@ -99,36 +184,20 @@ function loadNowPlaying() {
     });
 }
 
-loadNowPlaying();
+document.addEventListener('DOMContentLoaded', () => {
+    checkTime();
+    loadNowPlaying();
+
+    setInterval(
+        () => {
+            currentTimestamp += 1;
+        },
+        1000
+  );
+});
 ```
 
 If your application is written in PHP, you can use the Composer package manager to install our [PHP API Client](https://github.com/AzuraCast/php-api-client), which has full support for the Now Playing API endpoints.
-
-## Static Now Playing JSON File
-
-AzuraCast also writes its "Now Playing" API endpoint data to a static JSON file, which contains the same exact data as the standard API endpoint, but for a single station.
-
-The Static Now Playing JSON file for a given station is available at:
-
-```
-http://your-azuracast-site.example.com/api/nowplaying_static/station_shortcode.json
-```
-
-...replacing `station_shortcode` with the station's abbreviated name (i.e. `azuratest_radio` for "AzuraTest Radio").
-
-### Advantages
-
-- Because the file is static and is only changed every few seconds, Nginx, your browser, and any other reverse proxies (i.e. CloudFlare) can cache the output for a few seconds, resulting in significantly higher performance.
-- Since this file's format is the same as the standard API, no code modifications or third-party libraries are needed to switch to this format.
-
-### Disadvantages
-
-- Any URLs in the API responses will always use the "Base URL" of your AzuraCast installation.
-- The "elapsed" and "remaining" durations will only be accurate as of when the file was written, not when it was downloaded by your client. You should instead compare the user's current UNIX timestamp against the `played_at` timestamp.
-
-### Example Implementation
-
-Implementations of this method look exactly the same as for the Standard Now Playing API (above), except with the URL updated to the static URL for the station.
 
 ## Simple Text File
 
