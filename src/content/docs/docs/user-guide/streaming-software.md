@@ -260,3 +260,30 @@ Rocket Broadcaster is a robust streaming encoder for Windows, designed for inter
     - Configure the capture method to automatically pull metadata from your radio automation system or media player.
 
 See the official [Rocket Broadcaster documentation](https://www.rocketbroadcaster.com/docs/) for detailed instructions on how to set up and use the software.
+
+## Audio Hijack
+
+**MacOS; Proprietary, Commercial**
+
+[Audio Hijack](https://rogueamoeba.com/audiohijack/) is commercial audio recording and routing software from Rogue Amoeba. It can capture audio from any application, input device, or system audio, and broadcast it to AzuraCast using its built-in **Broadcast** block, which supports both Icecast and Shoutcast servers. Because AzuraCast uses Liquidsoap as an intermediary for all DJ connections, the connection method is not important; thus, **it is recommended to use the Icecast connection mode, as it is more modern**.
+
+1. Create a new session and add an audio **Source** block (for example, an Application, Input Device, or System Audio block) for the audio you want to stream.
+
+2. Add a **Broadcast** block and connect it after your source. Open the block and select the **Setup** tab, then configure the connection using the "Connection Information" from your station's "Streamers/DJ Accounts" page:
+
+    - **Server Type:** Select `Icecast 2`.
+    - **Server Address:** Enter the value from the "Server" heading on the info page.
+    - **Port:** Enter the value from the "Port" heading on the info page.
+    - **User:** Enter your DJ username.
+    - **Password:** Enter your DJ password.
+    - **Mountpoint:** Enter the value from the "Mount Name" heading on the info page; this is likely "/" (without quotes).
+
+    ![Audio Hijack Broadcast block Setup tab](../images/streaming-software/audiohijack.png)
+
+3. Under **Encoding Format**, choose your desired output **Format** (for example, MP3), **Bit Rate**, and **Channels** to match your station's stream.
+
+4. (Optional) Select the **Metadata** tab to send the current track's title and artist to your listeners. Audio Hijack can pull this from the source application automatically, or you can enter static text manually.
+
+5. Run the session to begin broadcasting.
+
+See the official [Audio Hijack manual](https://rogueamoeba.com/support/manuals/audiohijack/) for detailed instructions on how to set up and use the software.
