@@ -3,7 +3,7 @@ title: Update AzuraCast
 description: How to update your AzuraCast installation
 published: true
 date: 2022-04-05T03:51:15.752Z
-tags: ansible, docker, getting started, debugging
+tags: docker, getting started, debugging
 editor: markdown
 dateCreated: 2021-02-05T20:11:10.517Z
 ---
@@ -17,19 +17,6 @@ The AzuraCast team is not responsible for any downtime or loss of data of your p
 :::
 
 ## For Docker Installations
-
-### Before Updating: Update Docker & Docker Compose
-
-If it's been quite some time since you last updated, your version of Docker and Docker Compose may be out of date, and updates may trigger errors as a result.
-
-You can update Docker and Docker Compose using the utility script by running:
-
-```bash
-cd /var/azuracast
-./docker.sh update-self
-./docker.sh install-docker
-./docker.sh install-docker-compose
-```
 
 ### Interactive Updates (Recommended)
 
@@ -51,24 +38,24 @@ cd /var/azuracast
 yes "" | ./docker.sh update
 ```
 
+### In Case of Docker Errors: Update Docker & Docker Compose, Too
+
+If it's been quite some time since you last updated, your version of Docker and Docker Compose may be out of date, and updates may trigger errors as a result.
+
+You can update Docker and Docker Compose using the utility script by running:
+
+```bash
+cd /var/azuracast
+./docker.sh update-self
+./docker.sh install-docker
+./docker.sh install-docker-compose
+```
+
+If there were no errors, you can continue with the routine update process outlined above.
+
 ## For Ansible Installations
 
-AzuraCast also includes a handy updater script for Ansible installations that pulls down the latest copy of the codebase from Git, flushes the site caches and makes any necessary database updates. Run these commands as any user with `sudo` permissions:
-
-```bash
-cd /var/azuracast/www
- 
-sudo chmod a+x update.sh
-sudo ./update.sh
-```
-
-### Force a Full Update
-
-Normally, the Ansible installer's update script only updates the portion of the system that have been modified since your last update. If an update was interrupted or otherwise is causing trouble, you can force the update script to process all components, which can often fix any issues:
-
-```bash
-./update.sh --full
-```
+Ansible installations are no longer officially supported as part of the core AzuraCast project. See the [Ansible Installer](https://github.com/AzuraCast/ansible-installer) repository for more information.
 
 ## Switching Update Release Channels
 
