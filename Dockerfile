@@ -78,6 +78,7 @@ RUN rm -rf ./src ./dist ./public \
     && cp ./index.md ./src/content/docs \
     && mkdir -p ./public \
     && cp -R ../public/img ./public/img \
+    && cp -R ../public/downloads ./public/downloads \
     && sed -i -r 's|url: "(.*?)"|url: "/api/openapi.yml"|' ./src/pages/api/index.astro \
     && cd .. \
     && npm ci --include=dev \

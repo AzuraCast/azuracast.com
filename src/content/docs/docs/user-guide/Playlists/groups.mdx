@@ -1,0 +1,259 @@
+---
+title: Playlist Groups
+description: Combine playlists into clocks, blocks and nested rotations with playlist groups.
+sidebar:
+  order: 44
+  badge:
+    text: New
+    variant: tip
+---
+
+import { FileTree, LinkCard, Steps } from '@astrojs/starlight/components';
+
+:::note[Available since AzuraCast 0.24.0]
+Playlist groups were added in AzuraCast 0.24.0 and only work with AzuraCast's own AutoDJ, not in **Manual AutoDJ Mode**.
+:::
+
+A playlist group is a playlist that plays other playlists instead of songs. You can use groups to build:
+
+- a **format clock** (also called a clockwheel): a fixed running order such as "current hit, gold song, station ID"
+- a **block** that plays back to back, such as an ad break or a top-of-the-hour station ID with news
+- a **show** made up of segments that restart every time the show starts
+
+Groups can contain other groups, so you can nest these structures as deep as you need. Before AzuraCast 0.24.0, setups like these needed custom Liquidsoap code.
+
+:::tip[Required Permissions]
+To manage playlists and playlist groups, users must be in a role that has the "Manage Station Media" permission for the given station.
+:::
+
+## How a group is played
+
+A group works on two levels:
+
+1. **When the group plays**
+   - The group takes part in the station's rotation like any other playlist
+   - Its own **Playlist Type**, **Playlist Weight** and **Schedule** decide when it gets a turn
+   - For example, a General Rotation group competes with other General Rotation playlists by weight, and a Once per Hour group plays once per hour
+2. **What the group plays**
+   - When the group gets a turn, its **Song Playback Order** picks one of its members
+   - That member then picks a track using its own **Song Playback Order**
+
+By default, a group plays **one track per turn** and moves on to the next member on its next turn. Take this clock:
+
+<FileTree>
+- Main&nbsp;Clock/ Sequential, General Rotation
+  - Current&nbsp;Hits
+  - Gold
+  - Station&nbsp;IDs
+</FileTree>
+
+When the AutoDJ needs the next song and Main Clock gets the turn, Main Clock plays a track from Current Hits. On its next turn it plays a track from Gold, then a Station ID, and then it starts over with Current Hits.
+
+## Creating a group
+
+<Steps>
+
+1. In the station menu, open **Playlists** and click **Add Playlist**.
+
+2. Enter a **Playlist Name** and set **Source** to **Playlist Group**.
+
+3. Choose the group's **Playlist Type** and **Song Playback Order**, described under [group settings](#group-settings).
+
+4. Save the playlist.
+
+5. Open the **Playlist Grouping** tab.
+
+6. In the **Playlists** list on the left, select your new group to show it on the right under **Playlist Contents**.
+
+7. In the list on the left, click **Add to selected playlist group** next to each playlist you want to add to the end of the group.
+
+8. Adjust the [member settings](#member-settings) on the right and, for sequential groups, the order of the members.
+
+</Steps>
+
+Your changes in the **Playlist Grouping** tab are saved automatically.
+
+## The Playlist Grouping tab
+
+The **Playlist Grouping** tab on the **Playlists** page is where you build and maintain your groups.
+
+![The Playlist Grouping tab. On the left, the Playlists list with the Main Clock group selected. On the right, Playlist Contents shows Main Clock and its members Current Hits and Recurrents, each with Consecutive Plays, Allowed Requests, Play fully before advancing and Exempt from nested reset.](../../images/playlists/playlist-grouping.webp)
+
+- **Playlists** (left) lists every playlist on the station
+  - Select a song-based playlist or a group to show it on the right
+  - Click **Enter playlist group** (folder icon) to browse the members of a group
+    - Click a name in the breadcrumbs at the top to go back
+  - Click **Add to selected playlist group** to add that playlist to the end of the group shown on the right
+    - You can also drag a playlist to the right and drop it at the position it should have in the group
+- **Playlist Contents** (right) shows the selected playlist
+  - Badges show its type, playback order and whether it's scheduled, disabled or in Jingle Mode
+  - For a group, its members are listed in playing order, each with its [member settings](#member-settings) and a **Remove from group** button
+  - In sequential groups, drag the members or use the move buttons to change their order
+
+You can also see group relationships in other places:
+
+- The **Groups** column on the **All Playlists** tab shows how many groups a playlist is a member of. Click the number to see which ones.
+- When you edit a group, the **Members** tab lists its members. When you edit any playlist, the **Memberships** tab lists the groups it belongs to. Click an entry to open that playlist.
+
+## What can be a member
+
+| Playlist source | Can be a member |
+| --- | --- |
+| Song-based | Yes |
+| Playlist group | Yes |
+| Request queue | Yes |
+| Remote URL | No |
+
+### Notes about memberships
+
+- A Request Queue member plays pending listener requests at its slot in the group, see [Song Requests](/docs/user-guide/song-requests/)
+- The same playlist can be added to a group **more than once**
+  - For example, a clock can play Current Hits in slots 1 and 3
+  - The playlist keeps one position in its song order, so each slot plays the next track
+- A playlist can be a member of **several groups**
+  - It keeps one position across all of them
+- Groups can be nested to any depth
+- A group can't contain itself
+  - AzuraCast won't let you create a loop such as group A containing group B containing group A
+
+## Group settings
+
+You set up a group in its edit dialog, like any other playlist.
+
+### Playlist type
+
+The group's **Playlist Type** determines when the group gets picked: **General Rotation**, **Once per x Songs**, **Once per x Minutes** or **Once per Hour**. These work the same way as for song-based playlists. **Advanced** isn't available for groups.
+
+A **Once per x Songs** group counts every track played by its members, including members of nested groups, as a play of the group.
+
+### Member order
+
+The group's **Song Playback Order** decides in which order the members are played:
+
+| Order | How the members are played |
+| --- | --- |
+| **Sequential** | From top to bottom, then from the top again. This is the only order in which you can rearrange the members manually. |
+| **Shuffled** | Every member once per cycle, in random order. The order is reshuffled for every cycle. |
+| **Random** | A randomly picked member on each turn. The same member can theoretically be picked several times in a row. |
+
+### Other group options
+
+- **Avoid Duplicate Artists/Titles**
+  - Turns on duplicate avoidance for every member played through this group
+  - See [avoiding repeats](#avoiding-repeats-in-groups) before you turn it on
+- **Keep Queue on Restart**
+  - Keeps the group's position in its cycle when the station restarts
+  - This is not available for **Random** groups
+- **Play the group's entire rotation as a single block**
+  - In the **Advanced** tab
+  - Plays a full cycle at once
+  - See [below](#playing-a-cycle-as-one-block)
+
+The **Schedule** tab works like it does for any playlist, with extra options for [restarting the group](#restarting-a-group-at-the-start-of-its-schedule).
+
+Listener requests, the on-demand player and Jingle Mode aren't available on groups. Set them on the member playlists instead.
+
+## Member settings
+
+Each member in **Playlist Contents** has settings that only apply to its slot in this group. They don't change the playlist itself, so the same playlist can use different settings in another group or another slot:
+
+| Setting | Available for | What it does |
+| --- | --- | --- |
+| **Consecutive Plays** | All members | How many tracks the member plays in a row before the group moves on to the next member. `0` & `1` both mean one track. |
+| **Play fully before advancing** | Song-based members with **Sequential** or **Shuffled** order | The member keeps its slot until it has played every one of its tracks once. Overrides the **Consecutive Plays** setting. |
+| **Play all available requests before advancing** | Request queue members | The member keeps its slot until no listener requests are pending. |
+| **Allowed Requests** | All members | Whether listener requests can take this member's slot: **Any (Default)**, **Playlist Media Only** or **None**. This only has an effect in scheduled groups and in the groups nested inside them, while they're within their scheduled time. See [Song Requests](/docs/user-guide/song-requests/). |
+| **Exempt from nested reset** | Song-based and group members | Keeps this member's position when the group restarts all its nested playlists. See [restarting a group](#restarting-a-group-at-the-start-of-its-schedule). |
+
+## Playing a cycle as one block
+
+With **Play the group's entire rotation as a single block** turned on, the group doesn't play one track per turn. Instead, it queues a complete cycle back to back as one block:
+
+- **Sequential** and **Shuffled** groups play every member slot once
+  - A member with **Consecutive Plays** set to 3 contributes 3 tracks, and a member with **Play fully before advancing** contributes all of its tracks
+- **Random** groups play one track from each member, in random order
+
+Blocks are made for things that must stay together, such as an ad break or a station ID followed by the news. Combine them with a **Once per x Songs** or **Once per Hour** type to decide how often the block plays. The [Playlist Group Examples](/docs/user-guide/playlists/group-examples/) show both.
+
+## When a member is skipped
+
+Members keep their own rules when they play through a group:
+
+- A **disabled** member never plays.
+- A member's own **Playlist Type** still applies
+  - A member set to **Once per x Minutes**, for example, is only picked once that many minutes have passed
+  - A member's weight doesn't matter inside a group
+- A member with its own **schedule** only plays during its scheduled times
+- A member of type **Advanced** never plays
+- A member that has nothing to play is skipped
+  - This happens when it's empty, or when duplicate avoidance is on for it and all of its tracks were played too recently
+
+When a member is skipped, the group moves on to its next member in the same turn. If none of its members can play, the AutoDJ moves on to the next eligible playlist outside the group, so your station doesn't go silent.
+
+## Playing on their own vs. through a group
+
+:::caution[Adding a playlist to a group takes it out of the general rotation]
+- A member **without its own schedule** only plays through its group or groups
+- A member **with its own schedule** also plays on its own during its scheduled times, except while its group takes over
+  - The group takes over whenever it, and every group above it, is enabled and within its scheduled times
+  - If the group is disabled, the member plays on its own during all of its scheduled times
+- An enabled group without a schedule counts as always playing
+  - Members of an unscheduled group therefore never play on their own
+:::
+
+The **Schedule View** tab marks scheduled times in which a member plays through its group instead of on its own.
+
+## Avoiding repeats in groups
+
+Duplicate avoidance inside groups needs a bit of care:
+
+- Turning on **Avoid Duplicate Artists/Titles** on a group forces it onto all of the group's members, even the ones that have it turned off
+  - Members that are meant to repeat, such as jingles and station IDs, then get skipped as duplicates
+  - It's usually better to leave it off on the group and turn it on for your music playlists only
+- Turn it **off** for jingle and station ID playlists
+  - Also leave it off on any group that contains them
+- A **Shuffled** spot or ID playlist is reshuffled when it runs out of tracks, so it can play the track it just played again
+  - This is most noticeable when the member plays several tracks in a row, for example with **Consecutive Plays**
+  - The **Sequential** order avoids this, but plays the tracks in the same order every cycle
+
+:::caution[Jingles and station IDs can disappear from your clock]
+New playlists have **Avoid Duplicate Artists/Titles** turned on. Jingles and station IDs usually all use your station name as their artist. Once one of them has played, the others count as duplicates for the whole **Duplicate Prevention Time Range for Artists** (two hours by default). The group then skips their slot and moves on to the next member.
+:::
+
+## Queues and restarts
+
+A group remembers its position in its cycle, the same way a sequential playlist remembers its position in its song list. At the end of a cycle, the group starts over. **Shuffled** groups reshuffle their members at this point.
+
+When the station restarts:
+
+- **Sequential** groups continue where they left off
+  - Unless the station setting **Reset Sequential Playlist Queues on Restart** is turned on
+- **Shuffled** groups start a new cycle
+  - Unless **Keep Queue on Restart** is turned on for the group
+
+### Restarting a group at the start of its schedule
+
+Each item on a group's **Schedule** tab has two extra options for this:
+
+- **Reset Queue at Schedule Start** makes the group start from its first member every time this scheduled time begins, instead of continuing where it stopped last time
+- **Also Reset Nested Playlists** additionally restarts every member playlist and nested group from the beginning
+
+To keep a single member going across restarts, for example a series that should continue with the next episode, turn on **Exempt from nested reset** for that member. For a nested group, this setting is called **Exempt group and members from nested reset** and keeps the group and everything in it.
+
+A playlist keeps only one position, even if it's in several groups. So if it's exempt in one group, it's also kept when another group restarts it. The **Playlist Grouping** tab shows a warning icon on members that are already exempt elsewhere.
+
+## Limitations
+
+- Groups only work with AzuraCast's own AutoDJ
+  - In **Manual AutoDJ Mode**, Liquidsoap plays the playlists itself and ignores groups
+- Groups can't be of type **Advanced** and can't contain **Remote URL** playlists
+- Groups don't have the **Interrupt other songs to play at scheduled time** option
+  - A group always starts at the next song change
+
+## Examples
+
+<LinkCard
+	title="Playlist Group Examples"
+	description="Eight ready-made setups, from a basic clockwheel to ad breaks and nightly shows, each with a download you can import."
+	href="/docs/user-guide/playlists/group-examples/"
+/>

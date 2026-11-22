@@ -6,12 +6,14 @@ date: 2021-02-09T03:17:33.498Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T01:46:50.643Z
+sidebar:
+  order: 20
 ---
 
 Media management is at the core of AzuraCast's built-in AutoDJ. By uploading media and assigning it to a playlist, the AutoDJ will automatically compose a live stream broadcast 24 hours a day, 7 days a week.
 
 :::tip
-For your AutoDJ to detect any files in your Media Manager, they must be added to at least one playlist. You can have media files in your station's media directory that aren't associated with any playlist, but they won't be played automatically.
+For your AutoDJ to detect any files in your Media Manager, they must be added to at least one playlist. You can have media files in your station's media directory that aren't associated with any playlist, but they won't be played automatically. See [Adding Media & Playlist Actions](/docs/user-guide/playlists/managing/) for all the ways to add songs to playlists.
 :::
 
 ## Uploading Media
@@ -30,9 +32,9 @@ Stations can utilize S3 compatible services (Backblaze, Digital Ocean Spaces, Li
 
 ## Auto-Assigning Folders to Playlists
 
-From the media manager, you can select a folder, select "Set Playlists" and assign the folder to a playlist.
+From the media manager, you can select a folder, click "Playlists" and assign the folder to a playlist.
 
-Once assigned to a playlist, any files added to the folder will automatically be added to those same playlists. The system won't remove any additional playlists that the media is in, but it will add the missing ones from the folder.
+Once assigned to a playlist, any files added to the folder will automatically be added to those same playlists, and files moved out of the folder are removed from them again. Playlists that a file was added to by hand aren't affected. See [linking folders to a playlist](/docs/user-guide/playlists/managing/#linking-folders-to-a-playlist) for details.
 
 ## Required Permissions
 

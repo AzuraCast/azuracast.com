@@ -6,6 +6,8 @@ date: 2021-02-11T02:50:43.396Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T01:36:06.013Z
+sidebar:
+  order: 10
 ---
 
 :::tip[Required Permissions]

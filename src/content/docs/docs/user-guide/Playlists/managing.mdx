@@ -1,0 +1,115 @@
+---
+title: Adding Media & Playlist Actions
+description: Fill playlists with songs, link folders, import and export playlists, and use every playlist action.
+sidebar:
+  label: Adding Media & Actions
+  order: 42
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+This page covers adding songs to song-based playlists, every action in the playlist list, and backing up or moving your whole playlist setup.
+
+## Adding songs to playlists
+
+### From the media manager
+
+<Steps>
+
+1. Open **Media › Music Files** and select the songs you want.
+
+2. Click **Playlists** to open a list of all song-based playlists on your station.
+
+3. Tick the playlists you want to add the songs to. To create a new playlist for them from here, type its name into **New Playlist**.
+
+4. Click **Save**.
+
+</Steps>
+
+**Clear** in the same menu removes the selected songs from all playlists. The songs themselves stay in your media library.
+
+### Linking folders to a playlist
+
+If you select a **folder** instead of single songs in step 1, the folder itself will be linked to the playlist:
+
+- Every song in the folder is added to the playlist
+- Songs you add to the folder later are added automatically
+- Songs you move out of the folder or delete are removed from the playlist
+
+AzuraCast checks linked folders every five minutes, so new songs can take a few minutes to show up in the playlist. See also [Media Management](/docs/user-guide/media-management/#auto-assigning-folders-to-playlists).
+
+You can also link folders from the playlist's side with **Apply to Folders** in its **More** menu. Select one or more folders and click **Apply to Folders**. With **Create New Playlist for Each Folder**, AzuraCast instead creates a copy of the playlist for each folder, named "*Playlist* - *folder*", and links each copy to its folder.
+
+### Importing a PLS or M3U file
+
+If you already have a playlist file from another program, use **Import from PLS/M3U** in the playlist's **More** menu. AzuraCast looks for each entry of the file in your station's media library and adds the songs it finds. The result lists every entry as **Matched** or **No Match**.
+
+## Playlist actions
+
+Each playlist in the **All Playlists** tab has **Edit** and **Delete** buttons and a **More** menu with the other actions:
+
+| Action | Available for | What it does |
+| --- | --- | --- |
+| **Edit** | All playlists | Open the playlist editor. See [Playlist Settings](/docs/user-guide/playlists/settings/). |
+| **Delete** | All playlists | Remove the playlist. Its songs stay in your media library, and deleting a group keeps its member playlists. |
+| **Reorder** | Sequential playlists and groups | Set the order of the songs or of a group's members. |
+| **Disable** / **Enable** | All playlists | Turn the playlist off or on. |
+| **Empty** | Song-based playlists | Remove all songs from the playlist. |
+| **Reshuffle** | Shuffled playlists and groups | Shuffle the order again and start a new cycle. |
+| **Restart** | Sequential playlists and groups | Start the cycle over from the top. |
+| **Import from PLS/M3U** | Song-based playlists | Add songs from a playlist file. See [above](#importing-a-pls-or-m3u-file). |
+| **Playback Queue** | Shuffled and sequential song-based playlists | Show the songs left in the current cycle, in the order they'll play. It doesn't show when the playlist gets its turn. **Clear Queue** starts a new cycle, like **Reshuffle** or **Restart**. |
+| **Apply to Folders** | Song-based playlists | Link folders to the playlist. See [above](#linking-folders-to-a-playlist). |
+| **Duplicate** | All playlists | Create a copy. See [below](#duplicating-a-playlist). |
+| **Export PLS** / **Export M3U** | All playlists except groups | Download the playlist's songs as a playlist file. |
+| **Export JSON** | All playlists | Download the playlist's complete setup. See [below](#backing-up-and-moving-playlist-setups). |
+
+### Duplicating a playlist
+
+**Duplicate** asks for a **New Playlist Name** and lets you choose what to copy under **Customize Copy**:
+
+- **Copy associated media and folders:** the songs and folder links.
+- **Copy scheduled playback times:** the schedule.
+- **Copy associated playlists:** a group's members.
+
+All other settings are always copied.
+
+## Backing up and moving playlist setups
+
+AzuraCast can save playlist setups as JSON files: the playlists with all their settings, schedules, group members and the songs they contain. You can import such a file into another station, or into another AzuraCast installation, to reuse or move your setup.
+
+- **Export all playlists:**
+  - Click **Export** at the top of the **Playlists** page
+- **Export one playlist:**
+  - Use **Export JSON** in the playlist's **More** menu
+  - For a group the file also contains its members
+- **Import:**
+  - Click **Import** at the top of the **Playlists** page and select a JSON file
+  - Optionally enter a **Name Prefix**, which is added in front of every imported playlist's name
+  - After the import, AzuraCast shows how many playlists, group members and songs it created or linked
+
+**When importing:**
+
+- AzuraCast always creates **new** playlists, it won't update existing ones.
+- Songs are linked to the matching songs in the station's media library by their media ID or by their file path. Between different installations, the file path is used to match them.
+
+:::caution[Missing songs are replaced with silent placeholder files]
+If a song from the file isn't in the station's media library, AzuraCast creates a **silent audio file** for it, with the original path, title, artist and length. This makes the imported playlists playable right away, but they play silence until you replace these files with the real songs.
+:::
+
+- Station settings stored in the file, such as the time zone or duplicate prevention, are for reference only. They aren't applied to the station.
+
+:::tip[Reporting AutoDJ problems]
+If the AutoDJ doesn't play the way you expect, attach an export of your playlists to your [bug report](/docs/help/report-a-bug/). It contains the exact setup we need to reproduce the problem.
+:::
+
+### From the command line
+
+Server administrators can also export and import playlist setups with the [command line interface](/docs/administration/command-line-interface/). The CLI page explains how to run commands on your installation.
+
+| Command | What it does |
+| --- | --- |
+| `azuracast:playlist:export <station> [playlist-id]` | Export all playlists of a station, given by its ID or short name, or only the playlist with the given ID. Prints the JSON, or writes it to a file with `-o <file>`. |
+| `azuracast:playlist:import <station> <file>` | Import a JSON file into a station. `--name-prefix=<text>` adds a prefix to the playlist names. |
+
+File paths refer to the server or container that AzuraCast runs in.

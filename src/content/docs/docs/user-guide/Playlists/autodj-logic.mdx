@@ -1,0 +1,132 @@
+---
+title: How the AutoDJ Picks Songs
+description: The rules the AutoDJ follows for every song it picks, and how to find out why a song played.
+sidebar:
+  order: 46
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+This page explains what happens each time the AutoDJ picks the next song. You don't need it to set up playlists, but it helps when a playlist doesn't play the way you expect.
+
+## When songs are picked
+
+The AutoDJ picks songs before they are played and adds them to the **Upcoming Song Queue**. Liquidsoap takes the next song from this queue whenever it needs one. By default, the queue holds 3 songs. To pick more or fewer songs in advance, change **AutoDJ Queue Length** in the station settings (**Edit Station Settings › AutoDJ**).
+
+When the AutoDJ picks a song, it determines when that song will start, based on the length of the songs ahead of it in the queue. Schedules, **Once per Hour** and all other rules are checked against that start time. For example, songs from a playlist scheduled to start at 14:00 can already appear in the **Upcoming Song Queue** at 13:50, because they will play after 14:00.
+
+Picking songs in advance affects playlist changes and scheduled start times:
+
+- Changes to playlists only affect songs that are picked after the change
+  - Songs already in the **Upcoming Song Queue** still play
+  - To apply a change right away, open **Broadcasting › Upcoming Song Queue** and click **Clear Upcoming Song Queue**
+- If a song is expected to start less than 15 seconds before a playlist's scheduled time begins, the AutoDJ already picks it for the new scheduled time
+  - This prevents a playlist scheduled for 14:00 from starting a whole song late whenever the song before it is expected to end a few seconds before 14:00
+
+## Where the next song comes from
+
+To pick a song, the AutoDJ goes through these steps until one of them returns a song to play:
+
+<Steps>
+
+1. **Song requests.** A pending listener request that's ready to play is picked before any playlist, unless something holds the general request queue back. See [Song Requests](/docs/user-guide/song-requests/#how-requests-are-played).
+
+2. **Playlists, by type.** The AutoDJ looks at the playlists that may play at that time, in this order:
+
+   | Playlist type | Schedule |
+   | --- | --- |
+   | **Once per Hour** | Scheduled |
+   | **Once per Hour** | Unscheduled |
+   | **Once per x Songs** | Scheduled |
+   | **Once per x Songs** | Unscheduled |
+   | **Once per x Minutes** | Scheduled |
+   | **Once per x Minutes** | Unscheduled |
+   | **General Rotation** | Scheduled |
+   | **General Rotation** | Unscheduled |
+
+   The AutoDJ only moves on to the next row if no playlist in the current row has a song to play. **Advanced** playlists are never picked. Playlist groups take part like any other playlist of their type, and members of a group are only picked [through the group](/docs/user-guide/playlists/groups/#playing-on-their-own-vs-through-a-group).
+
+3. **Within a row, by weight.** The playlists of a row are tried in a random order, in which playlists with a higher **Playlist Weight** tend to come first. The AutoDJ plays a song from the first playlist that has one.
+
+</Steps>
+
+If no playlist has a song to play, the station plays its fallback file, which you can change under **Broadcasting › Custom Fallback File**.
+
+## Playlists that interrupt other songs
+
+Playlists with **Interrupt other songs to play at scheduled time** don't go through the steps above. AzuraCast checks them once a minute. When one of them is scheduled to start, its songs are sent to a separate queue in Liquidsoap, which cuts off the song that's playing and plays them right away. See [exact start times](/docs/user-guide/playlists/scheduling/#exact-start-times).
+
+If several of these playlists are scheduled at the same time, the AutoDJ picks between them by type and weight, as in steps 2 and 3. Songs from these playlists don't cut each other off. If a song from one of them is playing when another one is scheduled to start, the new playlist waits until that song ends.
+
+## Duplicate prevention
+
+When a playlist has **Avoid Duplicate Artists/Titles** turned on, the AutoDJ tries not to pick a song from it that repeats a recently played song, title or artist. When a group has it turned on, this applies to every member played through the group, even members that have it turned off themselves.
+
+Two station settings, under **Edit Station Settings › AutoDJ**, control what counts as recently played:
+
+- **Duplicate Prevention Time Range (Minutes):**
+  - How far back the AutoDJ looks for repeated songs and titles
+  - Default: 120 minutes
+- **Duplicate Prevention Time Range for Artists (Minutes):**
+  - How far back it looks for repeated artists
+  - Leave it empty to use the same time range
+  - Stations with many songs by the same artists can set a shorter range here, so those songs keep rotating
+
+Within one row of the [playlist order](#where-the-next-song-comes-from), the AutoDJ first tries every playlist while avoiding repeats. If none of them has a song to play without a repeat, it tries them again and allows one. It then picks the song that played longest ago. Your station never goes silent because of duplicate prevention.
+
+<details>
+<summary>What counts as a repeat</summary>
+
+- The same song
+- A different song with the same title
+  - Titles are compared without regard to upper and lower case
+- A song that shares an artist with a recently played song
+  - Artist names are split at commas, "feat", "feat.", "ft", "ft.", "/", "&" and "vs.", so "Artist A feat. Artist B" counts as a repeat of both Artist A and Artist B
+
+Songs that are already in the **Upcoming Song Queue** count as played.
+
+</details>
+
+:::tip[Choosing the time range]
+A playlist that has fewer songs than fit into the time range can't avoid repeats. At an average song length of 4 minutes, a time range of 120 minutes needs at least 30 songs, and more if several of them share an artist.
+:::
+
+## Playlist queues and restarts
+
+Shuffled and sequential playlists remember which songs they have already played in their current cycle. You can see the remaining songs under **Playback Queue** in the playlist's **More** menu. When every song has played, a new cycle begins. Playlist groups remember their position in the same way.
+
+A playlist starts a new cycle early in these cases:
+
+- **Station restart or configuration update:**
+  - Shuffled playlists start a new cycle, unless **Keep Queue on Restart** is on for them
+  - Sequential playlists continue where they were, unless the station setting **Reset Sequential Playlist Queues on Restart** (**Edit Station Settings › AutoDJ**) is on
+  - Stations created before AzuraCast 0.24.0 have this setting on
+- **Start of a scheduled time**, with **Reset Queue at Schedule Start**
+  - See [Scheduling](/docs/user-guide/playlists/scheduling/#options-for-each-scheduled-time)
+- **By hand**, with **Reshuffle**, **Restart** or **Clear Queue**
+  - See [playlist actions](/docs/user-guide/playlists/managing/#playlist-actions)
+
+## AzuraCast AutoDJ and Manual AutoDJ Mode
+
+By default, AzuraCast's AutoDJ picks every song as described on this page, and Liquidsoap plays them.
+
+- **Manual AutoDJ Mode** (**Edit Station Settings › AutoDJ**) hands the playlists over to Liquidsoap, which then plays them by itself with much simpler rules
+  - Many features on these pages rely on AzuraCast's AutoDJ and don't work in this mode, including [playlist groups](/docs/user-guide/playlists/groups/), [Request Queue playlists](/docs/user-guide/song-requests/#request-queue-playlists) and duplicate prevention
+  - It's mainly for advanced users who want Liquidsoap to handle playback on its own. Most stations should leave it off
+- **Always Write Playlists to Liquidsoap** adds all song-based playlists to the Liquidsoap configuration as well, as a backup in case the AutoDJ fails
+  - Without it, only the playlists Liquidsoap needs are added:
+    - Advanced playlists
+    - Remote URL playlists
+    - Playlists with an option from the **Advanced** tab
+  - Writing all playlists can increase initial CPU load & startup time of a station
+
+## Seeing why a song played
+
+- **Broadcasting › Upcoming Song Queue** lists the songs the AutoDJ has picked
+  - The **Source** column shows the playlist each song comes from, or **Listener Request**
+  - For a song played through a group, hover over the playlist to see the groups it came through
+  - The **Logs** button shows the AutoDJ's log of how that song was picked, including the playlists it considered and skipped
+- **Reports › Song Playback Timeline** shows the same information for songs that have already played
+- The **Now Playing** panel on the station's **Overview** page shows the playlist of the current song
+
+Administrators can also use **Administration › System Debugger**. Under **Station-Specific Debugging**, **Get Next Song** runs a pick and shows the full log.
