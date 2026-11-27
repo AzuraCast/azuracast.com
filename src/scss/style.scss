@@ -4,7 +4,7 @@
 @import "bootstrap/scss/functions";
 
 // Include any default variable overrides here
-@import 'variables';
+@import "variables";
 
 // Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "bootstrap/scss/variables";
@@ -57,5 +57,5 @@
 // Utilities
 @import "bootstrap/scss/utilities/api";
 
-@import 'buttons';
-@import 'icons';
+@import "buttons";
+@import "icons";

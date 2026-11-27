@@ -9,17 +9,21 @@
         text-decoration: none;
 
         &:hover {
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, .12), rgba(0, 0, 0, .12));
+            background-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.12),
+                rgba(0, 0, 0, 0.12)
+            );
         }
     }
 }
 
 .buttons {
-    &>* {
-        margin-right: .75rem;
+    & > * {
+        margin-right: 0.75rem;
     }
 
-    &>*:last-child {
+    & > *:last-child {
         margin-right: 0;
     }
 }
