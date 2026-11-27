@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 import starlight from "@astrojs/starlight";
+import starlightAutoSidebar from 'starlight-auto-sidebar';
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,6 +30,9 @@ export default defineConfig({
           label: "GitHub",
           href: "https://github.com/azuracast/azuracast",
         },
+      ],
+      plugins: [
+        starlightAutoSidebar()
       ],
       sidebar: [
         { label: "About These Docs", link: "/" },
