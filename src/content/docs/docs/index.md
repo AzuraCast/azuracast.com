@@ -1,9 +1,10 @@
 ---
+
 title: About AzuraCast
 description: Learn about AzuraCast
 published: 1
 date: 2023-02-14T01:24:12.352Z
-tags: 
+tags:
 editor: markdown
 dateCreated: 2022-10-04T18:49:39.855Z
 ---
@@ -39,8 +40,8 @@ AzuraCast works for web radio stations of all types and sizes, and is built to r
 - **Role-based User Management:** Assign global and per-station permissions to a role, then add users to those roles to control access.
 - **Custom Branding:** Modify every aspect of both the internal and public-facing AzuraCast pages by supplying your own custom CSS and JavaScript.
 - **Authenticated RESTful API:** Individual users in the system can create API keys which have the same permissions they have in the system. The AzuraCast API is a powerful and [well-documented](https://www.azuracast.com/api/index.html) tool for interacting with installations.
-- **Web Log Viewing:** Quickly diagnose problems affecting any part of the AzuraCast system through the system-wide web  log viewer.
-- **Automatic Radio Proxies:** Many users can't connect directly to radio station ports (i.e. 8000) by default, so  AzuraCast includes an automatic nginx proxy that lets listeners connect via the http (80) and https (443) ports. These proxies are also compatible with services like CloudFlare.
+- **Web Log Viewing:** Quickly diagnose problems affecting any part of the AzuraCast system through the system-wide web log viewer.
+- **Automatic Radio Proxies:** Many users can't connect directly to radio station ports (i.e. 8000) by default, so AzuraCast includes an automatic nginx proxy that lets listeners connect via the http (80) and https (443) ports. These proxies are also compatible with services like CloudFlare.
 - **Storage Location Management:** Station media, live recordings and backups can be stored localy or on an S3 compatible storage provider.
 
 ## What's Included
@@ -49,18 +50,18 @@ AzuraCast will automatically retrieve and install these components for you:
 
 ### Radio Software
 
-* **[Liquidsoap](https://www.liquidsoap.info/)** as the always-playing "AutoDJ"
-* **[Icecast-KH](https://icecast.org/)** as a radio broadcasting frontend
+- **[Liquidsoap](https://www.liquidsoap.info/)** as the always-playing "AutoDJ"
+- **[Icecast-KH](https://icecast.org/)** as a radio broadcasting frontend
 
 For x86/x64 installations, [Shoutcast 2 DNAS](http://wiki.shoutcast.com/wiki/SHOUTcast_DNAS_Server_2) can also be used as a broadcasting frontend. Shoutcast is non-free software and does not come bundled with AzuraCast, but can be installed via the administration panel after AzuraCast has been installed.
 
 ### Supporting Software
 
-* **[NGINX](https://www.nginx.com)** for serving web pages and the radio proxy
-* **[MariaDB](https://mariadb.org/)** as the primary database
-* **[PHP](https://secure.php.net/)** powering the web application
-* **[Redis](https://redis.io/)** for sessions, message queue storage, database and general caching
-* **[Centrifugo](https://centrifugal.dev/)** for high-performance "Now Playing" data feeds
+- **[NGINX](https://www.nginx.com)** for serving web pages and the radio proxy
+- **[MariaDB](https://mariadb.org/)** as the primary database
+- **[PHP](https://secure.php.net/)** powering the web application
+- **[Redis](https://redis.io/)** for sessions, message queue storage, database and general caching
+- **[Centrifugo](https://centrifugal.dev/)** for high-performance "Now Playing" data feeds
 
 ## AzuraCast API
 

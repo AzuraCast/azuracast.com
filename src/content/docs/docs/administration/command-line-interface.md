@@ -1,4 +1,5 @@
 ---
+
 title: Command-Line Interface
 published: true
 date: 2022-05-20T14:32:44.233Z
@@ -11,7 +12,7 @@ AzuraCast features a powerful Command-Line Interface (CLI) tool that allows you 
 
 In order to use the AzuraCast CLI, you must have shell terminal access to the server running AzuraCast (to the host machine, if you're running Docker).
 
-Some of these commands are only intended for developers to debug or to resolve issues, use caution when executing these commands and only do them when told to, or you know what you're doing. 
+Some of these commands are only intended for developers to debug or to resolve issues, use caution when executing these commands and only do them when told to, or you know what you're doing.
 
 ## Invoking the CLI
 
@@ -37,7 +38,7 @@ php /var/azuracast/www/bin/console [command]
 
 ## Account Related CLI Commands
 
-This section will cover all account related CLI commands and the response the CLI will provide.  
+This section will cover all account related CLI commands and the response the CLI will provide.
 
 ### List all accounts
 
@@ -56,7 +57,7 @@ AzuraCast User Accounts
 
 ### Create a unique login recovery URL for the specified account
 
-``` bash
+```bash
 (cli_command) azuracast:account:login-token [example]
 
 Generate Account Login Recovery URL
@@ -71,7 +72,7 @@ Generate Account Login Recovery URL
 
 ### Reset the password of the specified account
 
-``` bash
+```bash
 (cli_command) azuracast:account:reset-password [example]
 
 Reset Account Password
@@ -82,7 +83,7 @@ Reset Account Password
      [example]
 
  Log in using this temporary password and set a new password using the web interface.
- ```
+```
 
 ### Set the account specified as a global administrator
 
@@ -123,7 +124,7 @@ This section will cover our internal processes, such as Liquidsoap, SSL and SFTP
 
 Running this command will return the IP of this machine.
 
-###  Handle Liquidsoap API calls
+### Handle Liquidsoap API calls
 
 ```bash
 (cli_command) azuracast:internal:liquidsoap [example] [example]
@@ -150,7 +151,7 @@ This command can run various Liquidsoap API calls, this is primarily used for de
 
 ## AzuraCast Settings CLI Commands
 
-This section will cover our internal internal settings ranging from base URL to smtp. This can be used should you be locked out of the settings or unable to access AzuraCast directly from the browser.  
+This section will cover our internal internal settings ranging from base URL to smtp. This can be used should you be locked out of the settings or unable to access AzuraCast directly from the browser.
 
 ### List all settings for AzuraCast
 
@@ -232,5 +233,6 @@ The AzuraCast CLI interface also exposes a number of other advanced commands. Th
 For a full list of AzuraCast CLI commands, view them [here](https://github.com/AzuraCast/AzuraCast/blob/main/backend/config/cli.php).
 
 For more information about the additional command line tools available, see their respective documentation pages below:
+
 - [Doctrine Command Line Reference](https://www.doctrine-project.org/projects/doctrine-orm/en/3.2/reference/tools.html)
 - [Doctrine Migrations](https://www.doctrine-project.org/projects/doctrine-migrations/en/3.8/reference/introduction.html)

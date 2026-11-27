@@ -1,9 +1,10 @@
 ---
+
 title: Reporting a Bug
 description: How to report a bug with AzuraCast
 published: true
 date: 2022-05-20T14:32:53.261Z
-tags: 
+tags:
 editor: markdown
 dateCreated: 2021-02-06T02:47:30.018Z
 ---

@@ -1,4 +1,5 @@
 ---
+
 title: Cloudflare
 description: Using Cloudflare as proxy for your AzuraCast installation
 published: true
@@ -38,23 +39,23 @@ Cloudflare does not allow you to serve your web radio content via their cached C
 
 To create a new Page Rule:
 
-1) Visit the Cloudflare control panel, then "Rules", then "Page Rules".
-2) Click "Create Page Rule".
-3) Enter the URL of your AzuraCast installation, followed by one of the patterns below. The finished pattern should look like `azuracast.example.com/radio/*`
-4) Pick the "Cache Level" setting, set it to "Bypass".
-5) Click "Save and Deploy Page Rule" at the bottom of the page.
+1. Visit the Cloudflare control panel, then "Rules", then "Page Rules".
+2. Click "Create Page Rule".
+3. Enter the URL of your AzuraCast installation, followed by one of the patterns below. The finished pattern should look like `azuracast.example.com/radio/*`
+4. Pick the "Cache Level" setting, set it to "Bypass".
+5. Click "Save and Deploy Page Rule" at the bottom of the page.
 
 Repeat these steps for all of the following patterns:
 
- - `/radio/*`
- - `/listen/*`
- - `/hls/*`
+- `/radio/*`
+- `/listen/*`
+- `/hls/*`
 
 ### Always Disable Rocket Loader
 
 AzuraCast is **not** compatible with the Rocket Loader optimization offered by Cloudflare. If Rocket Loader is enabled, you will encounter unexpected errors with AzuraCast.
 
-In order to resolve this  error, you must go to your Cloudflare Dashboard and disable the Rocket Launcher settings.
+In order to resolve this error, you must go to your Cloudflare Dashboard and disable the Rocket Launcher settings.
 
 ### About Incoming DJ Connections
 

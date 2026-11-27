@@ -1,4 +1,5 @@
 ---
+
 title: Troubleshooting
 description: Having trouble with AzuraCast? This page has several resources that can help you solve your problem and be back up and running.
 published: true
@@ -35,11 +36,11 @@ If your station begins to have interrupted audio or crackles, you will often fin
 
 Some common causes of this can be:
 
- - **Underprovisioned Server**: It is possible that your server (or VM, VPS, etc) is not powerful enough to sustain the ongoing CPU and RAM load required to operate your station. To continue broadcasting with all of your settings as they are, you may need to consider a more powerful server.
+- **Underprovisioned Server**: It is possible that your server (or VM, VPS, etc) is not powerful enough to sustain the ongoing CPU and RAM load required to operate your station. To continue broadcasting with all of your settings as they are, you may need to consider a more powerful server.
 
- - **Using CPU-heavy Features (AutoCue, MasterMe, etc.)**: Some features are especially demanding of CPU resources. We try to label these features as "High CPU" in AzuraCast's UI so you are aware of them before enabling them; if you encounter skips or other issues with these features enabled, try disabling them to see if the problem improves, or consider using a more powerful server for your installation.
+- **Using CPU-heavy Features (AutoCue, MasterMe, etc.)**: Some features are especially demanding of CPU resources. We try to label these features as "High CPU" in AzuraCast's UI so you are aware of them before enabling them; if you encounter skips or other issues with these features enabled, try disabling them to see if the problem improves, or consider using a more powerful server for your installation.
 
- - **Too Many Mount Points/Remotes/HLS Streams**: Each individual mount point, remote relay with AutoDJ enabled, or HLS stream type requires Liquidsoap to transcode the broadcast signal into a new format, and thus requires a roughly constant CPU load over time. In newer versions of AzuraCast, we offer an experimental way to consolidate any common encoding formats, optimizing CPU usage if you output the same format to multiple locations.
+- **Too Many Mount Points/Remotes/HLS Streams**: Each individual mount point, remote relay with AutoDJ enabled, or HLS stream type requires Liquidsoap to transcode the broadcast signal into a new format, and thus requires a roughly constant CPU load over time. In newer versions of AzuraCast, we offer an experimental way to consolidate any common encoding formats, optimizing CPU usage if you output the same format to multiple locations.
 
 If you are still encountering issues, we would recommend collecting your station logs and its generated Liquidsoap configuration file and [submitting an issue on the Liquidsoap GitHub](https://github.com/savonet/liquidsoap). We cannot provide extended support for Liquidsoap itself, as we don't maintain the software.
 

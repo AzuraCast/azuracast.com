@@ -1,13 +1,13 @@
 ---
+
 title: Promoting Your Station
 description: Tools for helping listeners discover your station.
 published: true
 date: 2023-08-31T04:17:40.683Z
-tags: 
+tags:
 editor: markdown
 dateCreated: 2023-08-31T03:30:06.364Z
-sidebar:
-  order: 100
+sidebar.order: 100
 ---
 
 There are many directories around the Web where users can find new radio stations to listen to. This page documents how to integrate your AzuraCast station with these directories.

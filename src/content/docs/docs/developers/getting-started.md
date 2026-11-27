@@ -1,4 +1,5 @@
 ---
+
 title: Getting Started
 description: Developing with AzuraCast
 published: 1
@@ -6,9 +7,7 @@ date: 2023-07-09T12:00:34.735Z
 tags: development
 editor: markdown
 dateCreated: 2022-10-04T18:51:03.836Z
-
-sidebar:
-  order: 0
+sidebar.order: 0
 ---
 
 Development on the main AzuraCast application should always be applicable to a broad community of radio station operators and not specific features to one station or group of stations.
@@ -45,7 +44,7 @@ For Windows, an installer tool like [Scoop](https://scoop.sh/) is highly recomme
 Using Git, clone the AzuraCast core repository into a subfolder of your working directory.
 
 > **Note for Windows developers:** Before cloning the repositories, you should ensure your Git is locally configured to not automatically convert line endings from Linux style (LF) to Windows style (CRLF), which will break AzuraCast. You can set this globally by running:
-> 
+>
 > ```bash
 > git config --global core.autocrlf input
 > ```

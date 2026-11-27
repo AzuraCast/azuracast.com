@@ -1,4 +1,5 @@
 ---
+
 title: Installing AzuraCast on a Synology NAS
 published: true
 date: 2021-07-26T04:07:37.407Z
@@ -21,7 +22,7 @@ After enabling SSH, connect to the NAS from a remote machine with a supported SS
 
 ### 3. OPTIONAL: Enable Home Folder for User
 
-As a convenience factor, you can set up home folders for users on the Synology NAS 
+As a convenience factor, you can set up home folders for users on the Synology NAS
 
 To enable user home folder on Synology DSM, open control panel and go to `User`->`Advanced`. Scroll down and enable user home service.
 
@@ -71,7 +72,7 @@ AzuraCast should then be immediately available on the specified ports.
 
 ### 2. OPTIONAL: Specify Media directory for Station
 
-Given the setup of a Synology NAS, it's likely that you won't necessarily want to host your station's media inside the internal volume managed by Docker but rather elsewhere on your system. 
+Given the setup of a Synology NAS, it's likely that you won't necessarily want to host your station's media inside the internal volume managed by Docker but rather elsewhere on your system.
 
 For this example, I have created a station named "AzuraTest Radio" inside AzuraCast and created a separate shared folder, on Volume 2, labeled "azuracast_media".
 
@@ -81,11 +82,11 @@ In the Docker directory, `/volume1/docker/azuracast`, create a new file named `d
 services:
     web:
         volumes:
-          - /volume2/azuracast_media:/var/azuracast/stations/azuratest_radio/media
+            - /volume2/azuracast_media:/var/azuracast/stations/azuratest_radio/media
 
     stations:
         volumes:
-          - /volume2/azuracast_media:/var/azuracast/stations/azuratest_radio/media
+            - /volume2/azuracast_media:/var/azuracast/stations/azuratest_radio/media
 ```
 
 By default, the user inside the Docker container runs as UID/GID 1000, the default UID for the first created user in an Ubuntu installation. It is very likely, however, that your Synology user account is not running with this UID/GID.

@@ -1,4 +1,5 @@
 ---
+
 title: Using Custom CSS
 published: true
 date: 2021-05-10T17:37:35.870Z
@@ -53,8 +54,7 @@ So if you have a station called `My Radio`, this class would be `station-my_radi
 The CSS for the background image on public pages is defined like this:
 
 ```css
-# See above for theme-specific prefixes
-[data-bs-theme] body.page-minimal {
+#See above for theme-specific prefixes [data-bs-theme] body.page-minimal {
     background: #edecec url(../img/hexbg.png);
     background-size: cover;
     background-attachment: fixed;
@@ -114,7 +114,12 @@ This example shows you how to change the text color of the title and artist:
 This example shows you how to change the color of the play button:
 
 ```css
-[data-bs-theme] body.page-minimal .public-page .card .radio-control-play-button a {
+[data-bs-theme]
+    body.page-minimal
+    .public-page
+    .card
+    .radio-control-play-button
+    a {
     color: #000;
 }
 ```

@@ -1,4 +1,5 @@
 ---
+
 title: Plugins
 published: true
 date: 2022-02-16T16:59:11.437Z
@@ -23,11 +24,11 @@ You can clone the plugin directory anywhere you want on the host machine, then c
 
 ```yaml
 services:
-  web:
-    environment:
-      AZURACAST_PLUGIN_MODE: true
-    volumes:
-      - ./path_to_plugin:/var/azuracast/www/plugins/example-plugin:ro
+    web:
+        environment:
+            AZURACAST_PLUGIN_MODE: true
+        volumes:
+            - ./path_to_plugin:/var/azuracast/www/plugins/example-plugin:ro
 ```
 
 Make sure to update and restart the Docker containers afterwards (using `./docker.sh update`).

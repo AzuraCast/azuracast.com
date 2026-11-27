@@ -1,12 +1,12 @@
 ---
+
 title: Installing AzuraCast on Windows
 published: true
 date: 2021-12-14T07:32:54.423Z
-tags: 
+tags:
 editor: markdown
 dateCreated: 2021-12-14T07:32:52.563Z
 ---
-
 
 Installing AzuraCast on newer editions of Windows 10 (and Windows 11) is quite simple, thanks to the recent addition of the Windows Subsystem for Linux (WSL) version 2.
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <title>AzuraCast Logo</title>
     <g transform="matrix(1.00519,0,0,1.00519,-20.5126,-0.05031)">
         <path d="M170.355,9.693L291.655,79.725L291.655,219.79L170.355,289.822L49.056,219.79L49.056,79.725L170.355,9.693Z" style="fill:rgb(11,27,100);"/>
     </g>

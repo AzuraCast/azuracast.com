@@ -1,4 +1,5 @@
 ---
+
 title: Streaming Software
 description: Examples and tutorials of software that can be used to stream to AzuraCast
 published: true
@@ -6,8 +7,7 @@ date: 2021-02-09T03:22:55.259Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-08T00:05:33.501Z
-sidebar:
-  order: 70
+sidebar.order: 70
 ---
 
 :::caution
@@ -36,12 +36,12 @@ To add a new server, click "Settings" on the main app panel, then in the "Server
 
 Using the "Connection Information" from your station's "Streamers/DJ Accounts" page, enter:
 
- - In "Type", select "Icecast".
- - In "Address", enter the value from the "Server" heading on the info page.
- - In "Port", enter the value from the "Port" heading on the info page.
- - In "Icecast user", enter your DJ username.
- - In "Password", enter your DJ password.
- - In "Icecast mountpoint", enter the value from the "Mount Name" heading on the info page; this is likely "/" (without quotes).
+- In "Type", select "Icecast".
+- In "Address", enter the value from the "Server" heading on the info page.
+- In "Port", enter the value from the "Port" heading on the info page.
+- In "Icecast user", enter your DJ username.
+- In "Password", enter your DJ password.
+- In "Icecast mountpoint", enter the value from the "Mount Name" heading on the info page; this is likely "/" (without quotes).
 
 ## Broadcast Using This Tool Modernized (BUTTM)
 
@@ -57,12 +57,12 @@ To add a new server, click "Server Manager" on the main app panel, then click th
 
 Using the "Connection Information" from your station's "Streamers/DJ Accounts" page, enter:
 
- - In "Type", select "Icecast".
- - In "Address", enter the value from the "Server" heading on the info page.
- - In "Port", enter the value from the "Port" heading on the info page.
- - In "Username", enter your DJ username.
- - In "Mountpoint", enter the value from the "Mount Name" heading on the info page; this is likely "/" (without quotes).
- - In "Password", enter your DJ password.
+- In "Type", select "Icecast".
+- In "Address", enter the value from the "Server" heading on the info page.
+- In "Port", enter the value from the "Port" heading on the info page.
+- In "Username", enter your DJ username.
+- In "Mountpoint", enter the value from the "Mount Name" heading on the info page; this is likely "/" (without quotes).
+- In "Password", enter your DJ password.
 
 ## SAM Cast
 
@@ -135,19 +135,20 @@ Note that for ease of use we use the `Configuration Wizard`, you can also enter 
 7. Click `Finish`
 
 8. Finish by changing the rest of the settings by preference:
-  - Connection
-  - Sample Rate
-  - Encoder
-  - Bitrate
-  - Channels
-  - Station info
 
-  If needed, here you can override the info that can be found in the main `Settings` (From step 1), under `Broadcasting` -> `Metadata`
+- Connection
+- Sample Rate
+- Encoder
+- Bitrate
+- Channels
+- Station info
+
+If needed, here you can override the info that can be found in the main `Settings` (From step 1), under `Broadcasting` -> `Metadata`
 
 9. Then finally click `OK` to save the Encoder.
 
 10. In the Settings window, check the checkboxes for all encoders that you want to use.
-   Remember to turn on the option `Broadcasting enabled` on top.
+    Remember to turn on the option `Broadcasting enabled` on top.
 
 On succesful connection, the log report in the bottom-left corner of RadioBOSS will show the following message: "Connected to server! (Output N)". This means that listeners can now connect to the streaming server (either Icecast or Shoutcast).
 
@@ -171,7 +172,7 @@ It allows streaming via **Icecast**, **Shoutcast v1** and **Shoutcast v2** via a
 
 The installation steps for the plugin are relatively simple, so they're not covered in this guide.
 
-***Note:** This software is only capable of streaming via MP3, due to plugin limitations.*
+_**Note:** This software is only capable of streaming via MP3, due to plugin limitations._
 
 PlayItLive supports both Icecast and Shoutcast connection modes; however, because AzuraCast uses Liquidsoap as an intermediary for all DJ connections, the connection method is not important. Thus, **it is recommended to use the Icecast connection mode, as it is more modern**.
 
@@ -232,7 +233,6 @@ If the server is configured correctly, the **OFF AIR** text will change to **ON 
 Rocket Broadcaster is a robust streaming encoder for Windows, designed for internet radio stations and professional broadcasting. It captures audio from various sources, including microphones, line-in devices, and other applications, and streams it to your station. Rocket Broadcaster supports both Icecast and Shoutcast servers.
 
 1. **Configure Your Audio Input**
-
     - Go to **Options** › **Preferences**.
     - In the **Audio Input** tab, select your microphone or audio interface as the **Input device**. Set the **Sample rate**, typically to `44100 Hz`.
     - If you plan to broadcast audio from other applications, configure **System Audio Capture** in the same preferences window.
@@ -240,20 +240,18 @@ Rocket Broadcaster is a robust streaming encoder for Windows, designed for inter
     - Return to the main window and ensure the **VU meters** move when audio is present.
 
 2. **Configure Your Stream**
-
     - Go to **Broadcast** › **Streams....**
     - Click **Add** to create a new output stream.
     - Enter the connection details provided by your streaming server (Icecast or Shoutcast). This includes:
-      - **Server Type:** Select `Icecast 2` or the appropriate `SHOUTcast` version.
-      - **Hostname or IP**
-      - **Port**
-      - **Mountpoint** (for Icecast)
-      - **Username** and **Password** (or `dj_username:dj_password` for some SHOUTcast v1 setups).
+        - **Server Type:** Select `Icecast 2` or the appropriate `SHOUTcast` version.
+        - **Hostname or IP**
+        - **Port**
+        - **Mountpoint** (for Icecast)
+        - **Username** and **Password** (or `dj_username:dj_password` for some SHOUTcast v1 setups).
     - Under **Encoder Settings**, choose your desired **Codec** (e.g., MP3, Ogg Vorbis, AAC for Pro) and set the **Bitrate** and **Channels**.
     - Click **OK**.
 
 3. **Test Your Stream**
-
     - In the main Rocket Broadcaster window, click **Start Broadcast**.
     - If successful, you'll see "On Air". If you encounter an error, double-check your stream settings for typos.
 
@@ -272,7 +270,6 @@ See the official [Rocket Broadcaster documentation](https://www.rocketbroadcaste
 1. Create a new session and add an audio **Source** block (for example, an Application, Input Device, or System Audio block) for the audio you want to stream.
 
 2. Add a **Broadcast** block and connect it after your source. Open the block and select the **Setup** tab, then configure the connection using the "Connection Information" from your station's "Streamers/DJ Accounts" page:
-
     - **Server Type:** Select `Icecast 2`.
     - **Server Address:** Enter the value from the "Server" heading on the info page.
     - **Port:** Enter the value from the "Port" heading on the info page.

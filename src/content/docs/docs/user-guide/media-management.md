@@ -1,4 +1,5 @@
 ---
+
 title: Media Management
 description: Managing and uploading media files in AzuraCast
 published: true
@@ -6,8 +7,7 @@ date: 2021-02-09T03:17:33.498Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T01:46:50.643Z
-sidebar:
-  order: 20
+sidebar.order: 20
 ---
 
 Media management is at the core of AzuraCast's built-in AutoDJ. By uploading media and assigning it to a playlist, the AutoDJ will automatically compose a live stream broadcast 24 hours a day, 7 days a week.

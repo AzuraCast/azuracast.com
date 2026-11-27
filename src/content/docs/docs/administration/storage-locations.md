@@ -1,4 +1,5 @@
 ---
+
 title: Storage Locations
 description: Managing the storage locations of your media files, recordings and backups for your stations
 published: true
@@ -75,13 +76,13 @@ Go to the [Dropbox App Console](https://www.dropbox.com/developers/apps) and cli
 Select the following options:
 
 - `1. Choose an API`
-  - `Scoped access`
+    - `Scoped access`
 - `2. Choose the type of access you need`
-  - If you are using your Dropbox other things apart from AzuraCast use `App folder` to automatically create a separate folder in your Dropbox account for this app
-  - Otherwise select `Full Dropbox`
+    - If you are using your Dropbox other things apart from AzuraCast use `App folder` to automatically create a separate folder in your Dropbox account for this app
+    - Otherwise select `Full Dropbox`
 - `3. Name your app`
-  - Give your app a name, it is recommended to choose a name specific to your radio
-  
+    - Give your app a name, it is recommended to choose a name specific to your radio
+
 Then click on `Create app` to finish this step.
 
 On the now generated page for you app switch to the `Permissions` tab at the top of the page and select the following permissions:

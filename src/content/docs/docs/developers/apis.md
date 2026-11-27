@@ -1,4 +1,5 @@
 ---
+
 title: AzuraCast APIs
 description: All about the APIs of AzuraCast
 published: true
@@ -6,9 +7,7 @@ date: 2021-02-08T03:58:11.711Z
 tags: development, api
 editor: markdown
 dateCreated: 2021-02-06T19:21:58.881Z
-
-sidebar:
-  order: 1
+sidebar.order: 1
 ---
 
 Once installed and running, AzuraCast exposes an API that allows you to monitor and interact with your stations. You can perform the following functions and more from the JSON REST API:
@@ -49,5 +48,6 @@ Check out our [Now Playing Data APIs](/docs/developers/now-playing-data) page fo
 ## SDKs & API clients
 
 ### PHP
-  - Packagist: [`azuracast/php-api-client`](https://packagist.org/packages/azuracast/php-api-client)
-  - GitHub: https://github.com/AzuraCast/php-api-client
+
+- Packagist: [`azuracast/php-api-client`](https://packagist.org/packages/azuracast/php-api-client)
+- GitHub: https://github.com/AzuraCast/php-api-client

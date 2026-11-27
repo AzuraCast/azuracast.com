@@ -1,4 +1,5 @@
 ---
+
 title: SSL & Let's Encrypt
 description: Securing your AzuraCast installation with SSL / HTTPS
 published: 1
@@ -72,10 +73,10 @@ If you have a custom SSL certificate on your host, you should create a `docker-c
 
 ```yaml
 services:
-  web:
-    volumes:
-      - /path/on/host/to/ssl.crt:/var/azuracast/acme/ssl.crt:ro
-      - /path/on/host/to/ssl.key:/var/azuracast/acme/ssl.key:ro
+    web:
+        volumes:
+            - /path/on/host/to/ssl.crt:/var/azuracast/acme/ssl.crt:ro
+            - /path/on/host/to/ssl.key:/var/azuracast/acme/ssl.key:ro
 ```
 
 :::tip

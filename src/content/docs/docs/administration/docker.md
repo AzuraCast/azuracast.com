@@ -1,4 +1,5 @@
 ---
+
 title: Docker
 description: All about Docker installations of AzuraCast
 published: 1
@@ -184,9 +185,9 @@ In this file, paste the following contents:
 
 ```yaml
 services:
-  web:
-    ports:
-      - "8500-8999:8500-8999"
+    web:
+        ports:
+            - "8500-8999:8500-8999"
 ```
 
 You can modify the port range in this file to meet your needs, such as expanding it to port 8999 instead of 8500.
@@ -210,12 +211,12 @@ In this file, paste the following contents:
 
 ```yaml
 services:
-  web:
-    volumes:
-      - /path/on/host/computer:/var/azuracast/stations/<STATION_NAME>/media/
+    web:
+        volumes:
+            - /path/on/host/computer:/var/azuracast/stations/<STATION_NAME>/media/
 ```
 
-Replace  the `<STATION_NAME>` with the name of the station directory found under the "Administration" section of the station's profile settings and modify the `/path/on/host/computer` with the path to the directory that you want to mount.
+Replace the `<STATION_NAME>` with the name of the station directory found under the "Administration" section of the station's profile settings and modify the `/path/on/host/computer` with the path to the directory that you want to mount.
 
 You will need to restart your Docker containers using `docker-compose down`, then `docker-compose up -d` to apply any changes made to this file.
 
@@ -229,9 +230,9 @@ In this file, paste the following contents:
 
 ```yaml
 services:
-  web:
-    volumes:
-      - /path/on/host/computer:/var/azuracast/stations
+    web:
+        volumes:
+            - /path/on/host/computer:/var/azuracast/stations
 ```
 
 Modify the `/path/on/host/computer` with the path to the directory that you want to mount.
@@ -349,9 +350,9 @@ If you need to add some custom configurations to NGINX you can do this by your `
 
 ```yaml
 services:
-  web:
-    volumes:
-      - ./custom.conf:/etc/nginx/azuracast.conf.d/custom.conf
+    web:
+        volumes:
+            - ./custom.conf:/etc/nginx/azuracast.conf.d/custom.conf
 ```
 
 All config files placed in the `/etc/nginx/azuracast.conf.d/` are automatically included in the main AzuraCast NGINX configuration.

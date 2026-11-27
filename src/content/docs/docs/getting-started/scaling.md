@@ -1,9 +1,10 @@
 ---
+
 title: Scaling AzuraCast
 description: Expectations on what resources are required to host an AzuraCast instance, and tips on how to scale up as your station grows.
 published: true
 date: 2021-10-09T02:48:30.612Z
-tags: 
+tags:
 editor: markdown
 dateCreated: 2021-10-08T23:42:49.762Z
 ---
@@ -23,17 +24,18 @@ From our experiences, we can draw some broad conclusions that can help you in sc
 If you're using the Liquidsoap AutoDJ, there will be a relatively stable but constant CPU load for every single broadcast destination you have on every station.
 
 In this case, a "broadcast destination" is either:
- - a local mount point, or
- - a remote relay where the main AzuraCast server transcodes the audio and "pushes" it to the remote server.
- 
+
+- a local mount point, or
+- a remote relay where the main AzuraCast server transcodes the audio and "pushes" it to the remote server.
+
 Remote relays that pull the local broadcast and duplicate it (i.e. AzuraRelay) don't count toward this limit.
 
 As a very broad guideline, think of the equation for this CPU load as:
- **10% of one CPU per broadcast destination**.
+**10% of one CPU per broadcast destination**.
 
-This means if you have one station broadcasting to 10 mount points, you can expect that single station to take up *about* 100% of a single CPU core. Conversely, if you have 10 stations broadcasting only one mount point each, the CPU load is still 100% of a single CPU core.
+This means if you have one station broadcasting to 10 mount points, you can expect that single station to take up _about_ 100% of a single CPU core. Conversely, if you have 10 stations broadcasting only one mount point each, the CPU load is still 100% of a single CPU core.
 
-The CPU impact of listeners connecting to your station is generally *much lower* than the impact of transcoding different stations. The broadcasting frontends (both Icecast and Shoutcast) can handle hundreds or even thousands of listeners before the CPU load of serving those listeners impacts your total CPU in the same way that media transcoding does.
+The CPU impact of listeners connecting to your station is generally _much lower_ than the impact of transcoding different stations. The broadcasting frontends (both Icecast and Shoutcast) can handle hundreds or even thousands of listeners before the CPU load of serving those listeners impacts your total CPU in the same way that media transcoding does.
 
 #### A Note on Throttling
 
@@ -46,8 +48,9 @@ Because media transcoding is a constant CPU load on the server at all hours of t
 If you're running AzuraCast, you will absolutely notice this "throttling" as it will grind your system to a halt and stop most station operations. Sometimes, the only way to recover from this is to completely power down the server and restart it; other times, the throttling is permanent and requires setting up a new server.
 
 There are two long-term solutions to this throttling:
- - Always "overprovision" your server so it never sees a constant CPU load of more than 50% of its total capacity, ensuring it likely won't be throttled, or
- - Invest in the hosting provider's "Dedicated CPU" plans, which, while they are likely to be more expensive, will not encounter this issue at all.
+
+- Always "overprovision" your server so it never sees a constant CPU load of more than 50% of its total capacity, ensuring it likely won't be throttled, or
+- Invest in the hosting provider's "Dedicated CPU" plans, which, while they are likely to be more expensive, will not encounter this issue at all.
 
 ### RAM
 
@@ -55,7 +58,7 @@ AzuraCast depends on a number of third-party software to operate, and one of the
 
 Between MariaDB and the main PHP processes, you should allocate at least 512MB, and preferably over 1GB of RAM to any AzuraCast server.
 
-In our experience with AzuraCast, the amount of RAM being used does not scale linearly with the number of stations you operate. Almost every process in AzuraCast has a maximum RAM limit that it will reach, after which processes start to take more *time* instead of more *memory*.
+In our experience with AzuraCast, the amount of RAM being used does not scale linearly with the number of stations you operate. Almost every process in AzuraCast has a maximum RAM limit that it will reach, after which processes start to take more _time_ instead of more _memory_.
 
 ### Storage
 

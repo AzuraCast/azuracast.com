@@ -1,4 +1,5 @@
 ---
+
 title: Station Management
 description: Managing your AzuraCast station and station profile
 published: true
@@ -6,8 +7,7 @@ date: 2021-02-11T02:50:43.396Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-06T01:36:06.013Z
-sidebar:
-  order: 10
+sidebar.order: 10
 ---
 
 :::tip[Required Permissions]
@@ -52,7 +52,7 @@ Part of AzuraCast's function is to ensure both of these processes are properly c
 
 ### Rocket Streaming Audio Server (RSAS)
 
-AzuraCast supports [Rocket Streaming Audio Server (RSAS)](https://www.rocketbroadcaster.com/streaming-audio-server/), a closed-source alternative to Icecast for broadcasting your station. While AzuraCast cannot distribute RSAS directly due to its proprietary nature, you can easily install it and use it with your stations. 
+AzuraCast supports [Rocket Streaming Audio Server (RSAS)](https://www.rocketbroadcaster.com/streaming-audio-server/), a closed-source alternative to Icecast for broadcasting your station. While AzuraCast cannot distribute RSAS directly due to its proprietary nature, you can easily install it and use it with your stations.
 
 #### Installing RSAS
 

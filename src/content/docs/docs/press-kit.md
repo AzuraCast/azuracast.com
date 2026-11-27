@@ -1,4 +1,5 @@
 ---
+
 title: Press Kit
 description: Press Kit for the media and journalists
 published: true
@@ -10,7 +11,7 @@ dateCreated: 2022-02-04T02:53:30.025Z
 
 AzuraCast welcomes any related code projects, hosting partners, media agencies and freelance journalists to utilize our branding as needed to refer to our software.
 
-This page will provide our images, audio and files that you may wish to include. 
+This page will provide our images, audio and files that you may wish to include.
 
 ## About Us
 
@@ -24,14 +25,15 @@ Today, AzuraCast powers thousands of installations and continues to be actively 
 
 ## Press Kit
 
-The Press Kit contains the following: 
+The Press Kit contains the following:
+
 - Promotional Audio Files along with a License Certificate
 - The AzuraCast Mascot, known as the Azura Ruisselante, created by Tyson Tan
 - Logos with text and without text.
 - Hexagon Logos
 - Discord Emoticons
 
-Download the Press Kit [Here](https://www.azuracast.com/resources/press_kit.zip) 
+Download the Press Kit [Here](https://www.azuracast.com/resources/press_kit.zip)
 
 ### Press Kit Guidelines
 
@@ -40,7 +42,7 @@ As a courtesy, we ask that the following rules be applied:
 - Do not modify and/or alter the AzuraCast Logo, Mascot (Azura Ruisselante), or our Hexagon Logo
 - Do not modify the sound files we provide in any shape or form
 
-AzuraCast is licensed under the Apache 2.0 software license, which expressly protects its name and branding while allowing the source code to be fully free and open. This means that you are free to use our branding to refer to AzuraCast itself (specifically, the version we maintain and distribute), but you are not permitted to call your own fork or code AzuraCast,  or use our branding as your company's own logo when offering services related to AzuraCast, such as managed hosting.
+AzuraCast is licensed under the Apache 2.0 software license, which expressly protects its name and branding while allowing the source code to be fully free and open. This means that you are free to use our branding to refer to AzuraCast itself (specifically, the version we maintain and distribute), but you are not permitted to call your own fork or code AzuraCast, or use our branding as your company's own logo when offering services related to AzuraCast, such as managed hosting.
 
 ## AzuraCast in Media
 
@@ -53,5 +55,5 @@ We have had many opportunities to speak about AzuraCast in public; these talks h
 - **Linode**: One of our hosting partners, Linode, published a video guide showing how to get started with AzuraCast on Linode: https://www.youtube.com/watch?v=lEElFHUdFd4
 
 ## Official Statements, Comments and More. 
-If you're a member of a media agency and or a a freelance journalist who seeks a comment, clarification or some more information, reach out to us at pr@azuracast.com and a member of our team will reach out to you. We expect to get back to you within 5 working days. 
 
+If you're a member of a media agency and or a a freelance journalist who seeks a comment, clarification or some more information, reach out to us at pr@azuracast.com and a member of our team will reach out to you. We expect to get back to you within 5 working days.

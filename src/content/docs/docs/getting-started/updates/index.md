@@ -1,4 +1,5 @@
 ---
+
 title: Update AzuraCast
 description: How to update your AzuraCast installation
 published: true

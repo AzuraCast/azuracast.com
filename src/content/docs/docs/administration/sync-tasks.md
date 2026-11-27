@@ -1,4 +1,5 @@
 ---
+
 title: Synchronized Tasks
 description: All about the AzuraCast automatic processing tasks
 published: true

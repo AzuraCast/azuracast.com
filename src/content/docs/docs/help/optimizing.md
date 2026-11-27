@@ -1,9 +1,10 @@
 ---
+
 title: Optimizing
 description: Tips for how to get the most out of AzuraCast on limited-resource installations.
 published: 1
 date: 2023-04-25T05:31:35.363Z
-tags: 
+tags:
 editor: markdown
 dateCreated: 2023-04-25T05:09:29.560Z
 ---
@@ -66,7 +67,7 @@ If configuring a remote storage location for station media, be sure to select on
 
 ### Disable Userland Proxy
 
-By default, Docker ships with a "Userland Proxy" feature, which allows you to connect to your Docker containers from inside the same Linux OS that's running Docker itself. For most VPS or cloud hosting scenarios, this is unnecessary, and the userland proxy can often take up *huge* amounts of resources because of the large number of ports forwarded by AzuraCast.
+By default, Docker ships with a "Userland Proxy" feature, which allows you to connect to your Docker containers from inside the same Linux OS that's running Docker itself. For most VPS or cloud hosting scenarios, this is unnecessary, and the userland proxy can often take up _huge_ amounts of resources because of the large number of ports forwarded by AzuraCast.
 
 Unfortunately, we can't automatically disable this functionality, but you can configure Docker on your host OS to disable it.
 

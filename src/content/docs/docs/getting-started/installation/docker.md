@@ -1,4 +1,5 @@
 ---
+
 title: Install AzuraCast with Docker
 published: true
 date: 2023-09-04T15:54:14.387Z
@@ -39,7 +40,7 @@ Once installation has completed, be sure to open the URL to your AzuraCast insta
 
 ### Troubleshooting
 
-Some Virtual Private Server (VPS) providers sometimes ship a old version of Docker or Docker-Compose with their systems and the version isn't fully compatible with our installation script. This can be resolved by running these commands then attempting the installation process again: 
+Some Virtual Private Server (VPS) providers sometimes ship a old version of Docker or Docker-Compose with their systems and the version isn't fully compatible with our installation script. This can be resolved by running these commands then attempting the installation process again:
 
 ```bash
 cd /var/azuracast

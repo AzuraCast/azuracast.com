@@ -1,4 +1,5 @@
 ---
+
 title: Requirements
 description: This page tells you what is required to run AzuraCast
 published: true
@@ -25,7 +26,7 @@ AzuraCast does not ensure, and is not liable for, music licenses and royalties p
 - 20GB or greater of hard drive space
 - A computer/server capable of running Docker or Podman
 
-For Linux hosts, the `sudo`, `curl` and `git` packages should be installed before installing AzuraCast. Most Linux distributions include these packages already. 
+For Linux hosts, the `sudo`, `curl` and `git` packages should be installed before installing AzuraCast. Most Linux distributions include these packages already.
 
 Note that these are the bare minimum requirements to run a functional AzuraCast instance; the needs of the software scale up with the number of radio stations (and audio streams) you operate.
 
@@ -36,7 +37,7 @@ Note that these are the bare minimum requirements to run a functional AzuraCast 
 - 40 GB or greater of hard drive space
 - A computer/server capable of running Docker or Podman
 
-Recommeneded Requirements should allow  you to run a few stations with ease, this is aimed for hobby usage (5 to 10 stations). [If you wish to increase the memory even further, consult this guide on Swap Space](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04)
+Recommeneded Requirements should allow you to run a few stations with ease, this is aimed for hobby usage (5 to 10 stations). [If you wish to increase the memory even further, consult this guide on Swap Space](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04)
 
 ## 📀 Operating System
 
@@ -55,9 +56,8 @@ Since we don't control the host operating system of your server, you are respons
 ## ⚠️ Known Incompatibilities
 
 - **OpenVZ or LXC-based Web Hosts:**
+    - Some hosting providers use OpenVZ or LXC, and sometimes these technologies are incompatible with Docker. If the Docker installation does not work on your host, you should consider using a different server for AzuraCast, or you can use the unsupported Ansible installation method.
 
-  - Some hosting providers use OpenVZ or LXC, and sometimes these technologies are incompatible with Docker. If the Docker installation does not work on your host, you should consider using a different server for AzuraCast, or you can use the unsupported Ansible installation method.
-  
 ## 📊 Resource Usage
 
 On the Administration page you can find a basic `Server Status` section that shows you the `CPU Load`, `Memory` and `Disk Space` usage of your server.
