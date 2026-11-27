@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from "@astrojs/starlight";
 import rehypeExternalLinks from "rehype-external-links";
 import { unified } from '@astrojs/markdown-remark';
+import starlightAutoSidebar from 'starlight-auto-sidebar';
 
 // https://astro.build/config
 
@@ -39,6 +40,9 @@ export default defineConfig({
       editLink: {
         baseUrl: "https://github.com/azuracast/azuracast.com/tree/main",
       },
+      plugins: [
+        starlightAutoSidebar()
+      ],
       sidebar: [
         { label: "Home", link: "/" },
         { label: "About AzuraCast", link: "/docs" },

@@ -6,6 +6,8 @@ date: 2021-02-09T03:22:55.259Z
 tags: user guide
 editor: markdown
 dateCreated: 2021-02-08T00:05:33.501Z
+sidebar:
+  order: 70
 ---
 
 :::caution
@@ -231,7 +233,7 @@ Rocket Broadcaster is a robust streaming encoder for Windows, designed for inter
 
 1. **Configure Your Audio Input**
 
-    - Go to **Options** > **Preferences**.
+    - Go to **Options** › **Preferences**.
     - In the **Audio Input** tab, select your microphone or audio interface as the **Input device**. Set the **Sample rate**, typically to `44100 Hz`.
     - If you plan to broadcast audio from other applications, configure **System Audio Capture** in the same preferences window.
     - Click **OK**.
@@ -239,7 +241,7 @@ Rocket Broadcaster is a robust streaming encoder for Windows, designed for inter
 
 2. **Configure Your Stream**
 
-    - Go to **Broadcast** > **Streams....**
+    - Go to **Broadcast** › **Streams....**
     - Click **Add** to create a new output stream.
     - Enter the connection details provided by your streaming server (Icecast or Shoutcast). This includes:
       - **Server Type:** Select `Icecast 2` or the appropriate `SHOUTcast` version.
@@ -256,7 +258,7 @@ Rocket Broadcaster is a robust streaming encoder for Windows, designed for inter
     - If successful, you'll see "On Air". If you encounter an error, double-check your stream settings for typos.
 
 4. **Configure Metadata (Optional)**
-    - To display song artist and title to your listeners, go to **Broadcast** > **Metadata Capture**.
+    - To display song artist and title to your listeners, go to **Broadcast** › **Metadata Capture**.
     - Configure the capture method to automatically pull metadata from your radio automation system or media player.
 
 See the official [Rocket Broadcaster documentation](https://www.rocketbroadcaster.com/docs/) for detailed instructions on how to set up and use the software.

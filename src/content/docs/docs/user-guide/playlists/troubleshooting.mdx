@@ -1,0 +1,175 @@
+---
+title: Playlist Troubleshooting & FAQ
+description: What to check when playlists don't play the way you expect.
+sidebar:
+  label: Troubleshooting & FAQ
+  order: 48
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+Before you go through the questions below, look at **Broadcasting › Upcoming Song Queue**. The **Logs** button next to each song shows why the AutoDJ picked it, and which playlists it considered and skipped. [How the AutoDJ picks songs](/docs/user-guide/playlists/autodj-logic/#seeing-why-a-song-played) explains the other tools.
+
+## Playlists that don't play
+
+<details>
+<summary>My playlist never plays</summary>
+
+- **Is it enabled?**
+  - Disabled playlists show a **Disabled** badge
+  - Use **Enable** in the playlist's **More** menu
+- **Does it have songs?**
+  - Check the **# Entries** column
+  - Songs from a [linked folder](/docs/user-guide/playlists/managing/#linking-folders-to-a-playlist) can take up to five minutes to appear
+- **Is its type Advanced?**
+  - Advanced playlists never play by themselves
+  - See [Advanced Playlists](/docs/user-guide/playlists/advanced/)
+- **Is it within its scheduled times?**
+  - Times use the station's time zone
+  - For overnight schedules, the days refer to the day the scheduled time starts
+  - See [Scheduling](/docs/user-guide/playlists/scheduling/#how-times-are-evaluated)
+- **Is another playlist always taking its place?**
+  - Playlists of some types go first, and scheduled playlists go before unscheduled ones of the same type
+  - See [where the next song comes from](/docs/user-guide/playlists/autodj-logic/#where-the-next-song-comes-from)
+- **Is it a member of a playlist group?**
+  - Without its own schedule, it only plays through its group
+  - Check that the group is enabled and within its scheduled times
+  - See [playing on their own vs. through a group](/docs/user-guide/playlists/groups/#playing-on-their-own-vs-through-a-group)
+- **Is it a Remote URL playlist for a stream?**
+  - Streams are only relayed during the playlist's scheduled times
+  - Give the playlist a schedule
+- **Is the station in Manual AutoDJ Mode?**
+  - Playlist groups and Request Queue playlists don't work in this mode
+  - See [Manual AutoDJ Mode](/docs/user-guide/playlists/autodj-logic/#azuracast-autodj-and-manual-autodj-mode)
+
+</details>
+
+<details>
+<summary>A playlist plays on its own although it's in a group, or never plays on its own</summary>
+
+A playlist in a group only plays on its own if it has its own schedule, and only while its group isn't taking over. The group takes over whenever it, and every group above it, is enabled and within its scheduled times. An enabled group without a schedule always takes over.
+
+The **Schedule View** marks scheduled times in which a member plays through its group. See [playing on their own vs. through a group](/docs/user-guide/playlists/groups/#playing-on-their-own-vs-through-a-group).
+
+</details>
+
+<details>
+<summary>A member of my group is skipped</summary>
+
+- Check if the member is disabled
+- Check if the member's own type or schedule doesn't allow it to play at that moment
+  - For example, a member of type **Once per x Minutes** is skipped until enough minutes have passed
+- Check if duplicate avoidance is turned on for it, and if all of its songs might have played too recently
+  - This happens especially with jingles and station IDs
+  - See the next question
+
+See [when a member is skipped](/docs/user-guide/playlists/groups/#when-a-member-is-skipped).
+
+</details>
+
+<details>
+<summary>Jingles or station IDs disappear from my clock</summary>
+
+Turn off **Avoid Duplicate Artists/Titles** on the jingle or station ID playlist, and on the group that contains it. Jingles and station IDs usually all have your station name as their artist. Once one of them has played, the others count as repeats for the whole [**Duplicate Prevention Time Range for Artists**](/docs/user-guide/playlists/autodj-logic/#duplicate-prevention), and the group skips their slot. New playlists have this setting turned on.
+
+</details>
+
+<details>
+<summary>A playlist called "default" keeps coming back</summary>
+
+If a station has no enabled **General Rotation** playlist, AzuraCast creates an empty one called **default** the next time it updates the station's configuration. An empty playlist never plays, so you can leave it alone, or keep at least one enabled General Rotation playlist or group of your own.
+
+</details>
+
+## Timing
+
+<details>
+<summary>My show starts late</summary>
+
+A scheduled playlist normally starts with the first song that begins after its start time, so the song that's playing finishes first. To start exactly on time and cut off that song, turn on **Interrupt other songs to play at scheduled time** on the playlist's **Advanced** tab. Playlist groups don't have this option. See [exact start times](/docs/user-guide/playlists/scheduling/#exact-start-times).
+
+</details>
+
+<details>
+<summary>My Once per Hour playlist plays late or not at all</summary>
+
+A **Once per Hour** playlist plays at the first song change after its minute, and only within the 15 minutes after it. If a long song is playing during those 15 minutes, the playlist waits until the next hour. It also never plays twice within 30 minutes.
+
+</details>
+
+<details>
+<summary>A playlist with the same start and end time plays several songs</summary>
+
+If the start and end time are the same, the scheduled time lasts 15 minutes. The playlist can play songs during all of that time. To play exactly one song, also turn on **Only play one track at scheduled time** on the **Advanced** tab.
+
+</details>
+
+<details>
+<summary>My changes don't take effect</summary>
+
+The AutoDJ picks songs a few songs ahead. Songs that are already in **Broadcasting › Upcoming Song Queue** still play as they were picked. Click **Clear Upcoming Song Queue** on that page to apply your changes right away.
+
+</details>
+
+## Repeats and order
+
+<details>
+<summary>Songs or artists repeat too often</summary>
+
+- Turn on **Avoid Duplicate Artists/Titles** for your music playlists
+- Check the **Duplicate Prevention Time Range** in **Edit Station Settings › AutoDJ**
+  - A playlist with fewer songs than fit into that time range has to repeat songs
+- If many songs share an artist, set a shorter **Duplicate Prevention Time Range for Artists**, so those songs can still rotate
+- Playlists with **Random** order can repeat songs before the others have played, use **Shuffled** instead
+
+See [duplicate prevention](/docs/user-guide/playlists/autodj-logic/#duplicate-prevention).
+
+</details>
+
+<details>
+<summary>The same spot or jingle plays twice in a row</summary>
+
+When a **Shuffled** playlist has played all its songs, it's shuffled again, and the new order can start with the song that just played. In a block that plays several songs from the same playlist, this can put the same spot twice in a row. Use the **Sequential** order for spots and jingles that should rotate evenly.
+
+</details>
+
+<details>
+<summary>My sequential playlist doesn't play in order</summary>
+
+With **Avoid Duplicate Artists/Titles** turned on, a sequential playlist skips songs whose title or artist played recently. Turn the setting off if the order must stay exact.
+
+</details>
+
+<details>
+<summary>My sequential playlist starts over after a restart, or doesn't start over when my show begins</summary>
+
+- **Starts over after a restart:**
+  - The station setting **Reset Sequential Playlist Queues on Restart** is on. Turn it off, or turn on **Keep Queue on Restart** for the playlist.
+- **Doesn't start over at the start of a show:**
+  - Turn on **Reset Queue at Schedule Start** for the playlist's scheduled time
+
+See [playlist queues and restarts](/docs/user-guide/playlists/autodj-logic/#playlist-queues-and-restarts).
+
+</details>
+
+## Requests and imports
+
+<details>
+<summary>Song requests don't play when I expect</summary>
+
+See the troubleshooting section of the [Song Requests](/docs/user-guide/song-requests/#troubleshooting) page.
+
+</details>
+
+<details>
+<summary>Imported playlists play silence</summary>
+
+When you import a playlist setup, AzuraCast creates silent placeholder files for every song it can't find in the station's media library. Replace them with the real songs, or upload the songs before importing. See [backing up and moving playlist setups](/docs/user-guide/playlists/managing/#backing-up-and-moving-playlist-setups).
+
+</details>
+
+## Still stuck?
+
+If you think the AutoDJ isn't following its rules, report it. Include an export of your playlists (**Export** on the **Playlists** page) and the **Logs** of the songs in question from the **Upcoming Song Queue**.
+
+<LinkCard title="Report a Bug" href="/docs/help/report-a-bug/" />

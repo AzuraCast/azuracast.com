@@ -1,0 +1,326 @@
+---
+title: Playlist Group Examples
+description: Ready-made playlist group setups, from a basic clockwheel to ad breaks and nightly shows, to import and adapt.
+sidebar:
+  label: Group Examples
+  order: 45
+  badge:
+    text: New
+    variant: tip
+---
+
+import { FileTree, LinkButton, Steps } from '@astrojs/starlight/components';
+
+export const exampleDownload = (slug) =>
+	`${import.meta.env.BASE_URL.replace(/\/$/, '')}/downloads/playlist-examples/${slug}.json`;
+
+These examples show common ways to use [playlist groups](/docs/user-guide/playlists/groups/). Each one comes with a file you can import into a station to try it out. AzuraCast's automated AutoDJ tests run every example and check that the songs play in the order shown.
+
+## Trying an example
+
+<Steps>
+
+1. Download the example's JSON file using the button at the end of the example
+
+2. In the station menu, open **Playlists** and click **Import**
+
+3. Select the downloaded file
+
+4. Optionally enter a **Name Prefix**, such as `Example - `, so you can tell the imported playlists apart from your own
+
+5. Click **Import**
+
+</Steps>
+
+:::caution[Use a test station]
+The examples contain placeholder tracks such as "Current Artist 1 - Current Song 1". When you import an example, AzuraCast creates these as **silent audio files** in the station's media, in a `doc-examples` folder. Import the examples into a test station. The imported playlists are enabled right away, and on a live station AutoDJ can start playing the silent tracks as soon as the import finishes.
+:::
+
+Imports only create playlists. Station settings are never changed, so if an example needs one, the example tells you which one to set yourself.
+
+### Settings used in all examples
+
+To keep the tables short, the examples share these settings unless stated otherwise:
+
+| Playlists | Settings |
+| --- | --- |
+| Music playlists | **Song-Based**, **General Rotation**, **Shuffled**, **Avoid Duplicate Artists/Titles** on |
+| Jingles, station IDs and spots | **Song-Based**, **Shuffled**, **Hide Metadata from Listeners ("Jingle Mode")** on, **Avoid Duplicate Artists/Titles** off |
+| Groups | **Playlist Group**, **General Rotation**, **Sequential**, **Avoid Duplicate Artists/Titles** off |
+| Members of a group | No schedule of their own, so they only play [through their group](/docs/user-guide/playlists/groups/#playing-on-their-own-vs-through-a-group) |
+
+Member settings that aren't mentioned are left at their defaults (**Consecutive Plays** `0`, **Allowed Requests** **Any (Default)**).
+
+## Basic clockwheel
+
+**Goal:** A fixed running order for the whole day: a current hit, a recent hit, an older song and a station ID, then the same again.
+
+<FileTree>
+- Main&nbsp;Clock/ group, plays its members top to bottom
+  - Current&nbsp;Hits
+  - Recurrents
+  - Gold
+  - Station&nbsp;IDs
+</FileTree>
+
+| Playlist | Settings |
+| --- | --- |
+| Main Clock | Members in this order: Current Hits, Recurrents, Gold, Station IDs |
+
+**What you'll hear**
+
+1. a song from Current Hits
+2. a song from Recurrents
+3. a song from Gold
+4. a station ID
+5. a song from Current Hits again, and so on
+
+**Variations**
+
+- Add the same playlist several times to give it more slots, as the Main Clock in the [weekend clock](#weekend-clock) example does with Current Hits.
+- Set Main Clock to **Shuffled** to vary the order while still playing every member once per cycle.
+
+<LinkButton href={exampleDownload('basic-clockwheel')} download="basic-clockwheel.json" variant="secondary" icon="download">Download basic-clockwheel.json</LinkButton>
+
+## Two songs, then a jingle
+
+**Goal:** After every two songs, play a jingle.
+
+<FileTree>
+- Music&nbsp;&amp;&nbsp;Jingles/ group
+  - Music Consecutive Plays: 2
+  - Jingles
+</FileTree>
+
+| Playlist | Settings |
+| --- | --- |
+| Music & Jingles | Members: Music with **Consecutive Plays** `2`, then Jingles |
+
+**What you'll hear**
+
+1. a song from Music
+2. a song from Music
+3. a jingle
+4. a song from Music, and so on
+
+**Variations**
+
+- To alternate between two music playlists, give the group the members Rock, Jingles, Pop, Jingles, with **Consecutive Plays** `2` on Rock and Pop. You hear two Rock songs, a jingle, two Pop songs and another jingle.
+- Without a group, a Jingles playlist of type **Once per x Songs** with **Number of Songs Between Plays** set to `2` gives a similar result. The group version keeps the jingle in an exact position, which matters once your clock has more slots.
+
+<LinkButton href={exampleDownload('two-songs-then-jingle')} download="two-songs-then-jingle.json" variant="secondary" icon="download">Download two-songs-then-jingle.json</LinkButton>
+
+## Ad break every 5 songs
+
+**Goal:** Every five songs, play an ad break: an intro, two commercials and an outro, always back to back.
+
+<FileTree>
+- Music General Rotation, not in a group
+- Ad&nbsp;Break/ group, Once per 5 Songs, plays as one block
+  - Break&nbsp;Intro
+  - Commercials Consecutive Plays: 2
+  - Break&nbsp;Outro
+</FileTree>
+
+| Playlist | Settings |
+| --- | --- |
+| Music | Not a member of any group, so it plays in the general rotation |
+| Break Intro, Commercials, Break Outro | **Sequential** order |
+| Ad Break | **Playlist Type** **Once per x Songs**, **Number of Songs Between Plays** `5`. **Advanced** tab: **Play the group's entire rotation as a single block**. Members: Break Intro, Commercials with **Consecutive Plays** `2`, Break Outro |
+
+**What you'll hear**
+
+1. the ad break: Break Intro, Commercial 1, Commercial 2, Break Outro
+2. five songs from Music
+3. the next ad break: Break Intro, Commercial 3, Commercial 1, Break Outro
+4. five songs from Music, and so on
+
+**Variations**
+
+- Change **Number of Songs Between Plays** to space the breaks out, or use **Once per x Minutes** for time-based breaks.
+- Use **Consecutive Plays** on Commercials to change the length of the break.
+- Set Commercials to **Shuffled** to play the spots in a random order. Each spot still plays once before the order is reshuffled, but right after a reshuffle the same spot can occasionally play twice in one break.
+
+<LinkButton href={exampleDownload('ad-break-every-5-songs')} download="ad-break-every-5-songs.json" variant="secondary" icon="download">Download ad-break-every-5-songs.json</LinkButton>
+
+## Top of the hour
+
+**Goal:** Once per hour, right after the full hour, play a station ID followed by the news.
+
+<FileTree>
+- Music General Rotation, not in a group
+- Top&nbsp;of&nbsp;the&nbsp;Hour/ group, Once per Hour at :00, plays as one block
+  - Station&nbsp;IDs
+  - News
+</FileTree>
+
+| Playlist | Settings |
+| --- | --- |
+| Music | Not a member of any group, so it plays in the general rotation |
+| News | **Sequential** order, one file that you replace with the latest bulletin |
+| Top of the Hour | **Playlist Type** **Once per Hour**, **Minute of Hour to Play** `0`. **Advanced** tab: **Play the group's entire rotation as a single block**. Members: Station IDs, News |
+
+**What you'll hear**
+
+1. songs from Music
+2. at the first song change after 12:00: a station ID, then the news
+3. songs from Music for the rest of the hour
+4. at the first song change after 13:00: a station ID, then the news again
+
+:::note
+The block starts at the first song change after the full hour, not at exactly :00. Groups don't have the **Interrupt other songs to play at scheduled time** option. A **Once per Hour** playlist can only start within 15 minutes after its minute. If no song change happens in that time, it waits until the next hour.
+:::
+
+<LinkButton href={exampleDownload('top-of-the-hour')} download="top-of-the-hour.json" variant="secondary" icon="download">Download top-of-the-hour.json</LinkButton>
+
+## Nightly show
+
+**Goal:** A show every night from 22:00 to 02:00 that always starts the same way, while a story series continues where it stopped the night before.
+
+<FileTree>
+- Daytime&nbsp;Music General Rotation, not in a group
+- Night&nbsp;Show/ group, scheduled daily 22:00–02:00
+  - Show&nbsp;Opener
+  - Chill&nbsp;Set Consecutive Plays: 3
+  - Story&nbsp;Time Exempt from nested reset
+</FileTree>
+
+| Playlist | Settings |
+| --- | --- |
+| Daytime Music | Not a member of any group, so it plays whenever the show isn't on |
+| Show Opener, Chill Set, Story Time | **Sequential** order, **Avoid Duplicate Artists/Titles** off |
+| Night Show | **Schedule** tab: daily from 22:00 to 02:00, with **Reset Queue at Schedule Start** and **Also Reset Nested Playlists**. Members: Show Opener, Chill Set with **Consecutive Plays** `3`, Story Time with **Exempt from nested reset** |
+
+**What you'll hear**
+
+1. before 22:00: songs from Daytime Music
+2. from 22:00: Show Opener, Chill Song 1, Chill Song 2, Chill Song 3, Story Episode 1, Show Opener, Chill Song 4, …
+3. the next day: songs from Daytime Music
+4. the next night from 22:00: Show Opener, Chill Song 1, Chill Song 2, Chill Song 3, **the episode after the last one played the night before**, …
+
+The show runs overnight because its end time (02:00) is before its start time (22:00). The scheduled group wins over the unscheduled Daytime Music while the show is on. [Restarting the group](/docs/user-guide/playlists/groups/#restarting-a-group-at-the-start-of-its-schedule) brings the show back to the Show Opener and Chill Song 1 every night. Story Time is exempt, so it continues where it stopped. It plays one episode in every cycle of Night Show, so one night usually includes several episodes.
+
+The show playlists have **Avoid Duplicate Artists/Titles** turned off, so they keep their exact running order. With it turned on, a sequential playlist skips ahead to the next track that wasn't played recently.
+
+**Variations**
+
+- To play only one episode per night, give Story Time the same schedule as Night Show and turn on **Only play one track at scheduled time** on its **Advanced** tab. Story Time then plays in the first cycle of every night, and the group skips its slot for the rest of the night.
+
+<LinkButton href={exampleDownload('nightly-show')} download="nightly-show.json" variant="secondary" icon="download">Download nightly-show.json</LinkButton>
+
+## A request slot in the clock
+
+**Goal:** Listener requests don't interrupt the clock. They play at one fixed spot in it instead.
+
+<FileTree>
+- Main&nbsp;Clock/ group
+  - Music Consecutive Plays: 2
+  - Listener&nbsp;Requests Request Queue, plays all available requests
+  - Station&nbsp;IDs
+</FileTree>
+
+| Playlist | Settings |
+| --- | --- |
+| Music | **Allow Requests from This Playlist** on |
+| Listener Requests | **Source** **Request Queue** |
+| Main Clock | Members: Music with **Consecutive Plays** `2`, Listener Requests with **Play all available requests before advancing**, Station IDs |
+
+:::caution[Turn on song requests yourself]
+Imports don't change station settings. Open **Edit Station Settings**, go to the **Song Requests** tab, and turn on **Allow Song Requests** so listeners can send requests.
+:::
+
+Requests only play at their slot because Listener Requests can always play through Main Clock. While a Request Queue playlist can play, it handles the requests and AzuraCast pauses its general request queue. You don't need **Only play requests via Request Queue playlists** for this example.
+
+**What you'll hear**, with two pending requests:
+
+1. a song from Music
+2. a song from Music
+3. the first request
+4. the second request
+5. a station ID
+6. a song from Music
+7. a song from Music
+8. a station ID, because no requests are pending, so the request slot is skipped
+
+**Variations**
+
+- To limit how many requests play at the slot, turn off **Play all available requests before advancing** for Listener Requests and set its **Consecutive Plays** to the maximum, for example `2`. If more requests are pending, the rest wait for the next cycle of Main Clock.
+
+More ways to control requests are described on the [Song Requests](/docs/user-guide/song-requests/) page.
+
+<LinkButton href={exampleDownload('request-slot')} download="request-slot.json" variant="secondary" icon="download">Download request-slot.json</LinkButton>
+
+## Weekend clock
+
+**Goal:** One clock for weekdays and a different clock on Saturdays and Sundays.
+
+<FileTree>
+- Main&nbsp;Clock/ group, no schedule
+  - Current&nbsp;Hits
+  - Recurrents
+  - Current&nbsp;Hits
+  - Gold
+  - Station&nbsp;IDs
+- Weekend&nbsp;Clock/ group, scheduled Saturday and Sunday
+  - Gold Consecutive Plays: 2
+  - Current&nbsp;Hits
+  - Station&nbsp;IDs
+</FileTree>
+
+| Playlist | Settings |
+| --- | --- |
+| Main Clock | No schedule. Members: Current Hits, Recurrents, Current Hits, Gold, Station IDs |
+| Weekend Clock | **Schedule** tab: Saturday and Sunday from 00:00 to 23:59. Members: Gold with **Consecutive Plays** `2`, Current Hits, Station IDs |
+
+**What you'll hear**
+
+1. on a Friday: Current Hits, Recurrents, Current Hits, Gold, Station ID, …
+2. on a Saturday: Gold, Gold, Current Hits, Station ID, …
+3. on the Monday after: Main Clock continues its cycle
+
+Both clocks are **General Rotation** groups. On weekends the scheduled Weekend Clock wins because a scheduled playlist always wins over an unscheduled one of the same type.
+
+Main Clock has no schedule on purpose. Schedules can only end at 23:59, so two clocks scheduled for the whole day would leave a gap just before midnight. As the default, Main Clock fills that gap: if a song starts in the last minute of a weekend day, it comes from Main Clock.
+
+Current Hits, Gold and Station IDs are shared by both clocks. A playlist keeps one position in its song order for all groups, so the weekend doesn't restart or repeat Current Hits.
+
+**Variations**
+
+- A genre hour or a special show works the same way: give a group a schedule, for example Friday from 20:00 to 21:00, and it takes over from Main Clock during that time.
+
+<LinkButton href={exampleDownload('weekend-clock')} download="weekend-clock.json" variant="secondary" icon="download">Download weekend-clock.json</LinkButton>
+
+## Rotating genres
+
+**Goal:** Two music slots per clock cycle that rotate through Pop, Rock and Dance, plus a Gold song and a station ID.
+
+<FileTree>
+- Main&nbsp;Clock/ group
+  - Genre&nbsp;Mix/ group, Consecutive Plays: 2
+    - Pop
+    - Rock
+    - Dance
+  - Gold
+  - Station&nbsp;IDs
+</FileTree>
+
+| Playlist | Settings |
+| --- | --- |
+| Genre Mix | Members: Pop, Rock, Dance |
+| Main Clock | Members: Genre Mix with **Consecutive Plays** `2`, Gold, Station IDs |
+
+**What you'll hear**
+
+1. Pop, Rock, Gold, Station ID
+2. Dance, Pop, Gold, Station ID
+3. Rock, Dance, Gold, Station ID
+4. Pop, Rock, Gold, Station ID, and so on
+
+Genre Mix is a group inside a group. Every time Main Clock uses its Genre Mix slot, Genre Mix moves on to its next genre. Its position carries over from one Main Clock cycle to the next, so the genres keep rotating.
+
+**Variations**
+
+- Set Genre Mix to **Shuffled** to vary the order of the genres. Every genre still plays once per cycle of Genre Mix.
+- Give one genre **Consecutive Plays** `2` inside Genre Mix to play it more often than the others.
+
+<LinkButton href={exampleDownload('rotating-genres')} download="rotating-genres.json" variant="secondary" icon="download">Download rotating-genres.json</LinkButton>
