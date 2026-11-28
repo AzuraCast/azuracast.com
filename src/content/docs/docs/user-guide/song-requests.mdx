@@ -101,7 +101,7 @@ While a Request Queue playlist can play, it handles all requests and the general
 
 If the group only plays **Once per x Songs**, **Once per x Minutes** or **Once per Hour**, requests wait for the group's next turn, so the group sets the pace.
 
-A Request Queue playlist also respects your duplicate prevention. A request for a song, or an artist, that played too recently stays pending and plays later.
+A Request Queue playlist also respects your duplicate prevention. A request for a song, or an artist, that played too recently stays pending and plays later. If no pending request can play yet, the Request Queue playlist is skipped, the same as when no request is pending. In a playlist group, the group then moves on to its next member.
 
 <LinkCard
 	title="Example: A request slot in the clock"

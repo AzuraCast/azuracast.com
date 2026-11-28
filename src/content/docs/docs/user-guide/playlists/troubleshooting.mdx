@@ -59,18 +59,10 @@ The **Schedule View** marks scheduled times in which a member plays through its 
 - Check if the member is disabled
 - Check if the member's own type or schedule doesn't allow it to play at that moment
   - For example, a member of type **Once per x Minutes** is skipped until enough minutes have passed
-- Check if duplicate avoidance is turned on for it, and if all of its songs might have played too recently
-  - This happens especially with jingles and station IDs
-  - See the next question
+- Check if the member is empty
+  - A Request Queue member is skipped while no listener request can play
 
 See [when a member is skipped](/docs/user-guide/playlists/groups/#when-a-member-is-skipped).
-
-</details>
-
-<details>
-<summary>Jingles or station IDs disappear from my clock</summary>
-
-Turn off **Avoid Duplicate Artists/Titles** on the jingle or station ID playlist, and on the group that contains it. Jingles and station IDs usually all have your station name as their artist. Once one of them has played, the others count as repeats for the whole [**Duplicate Prevention Time Range for Artists**](/docs/user-guide/playlists/autodj-logic/#duplicate-prevention), and the group skips their slot. New playlists have this setting turned on.
 
 </details>
 

@@ -186,7 +186,10 @@ Members keep their own rules when they play through a group:
 - A member with its own **schedule** only plays during its scheduled times
 - A member of type **Advanced** never plays
 - A member that has nothing to play is skipped
-  - This happens when it's empty, or when duplicate avoidance is on for it and all of its tracks were played too recently
+  - For example, an empty playlist, or a Request Queue playlist while no request can play
+- Duplicate avoidance doesn't skip a song-based member
+  - If all of its songs played too recently, it is allowed to play a repeat to keep its slot
+  - See [avoiding repeats in groups](#avoiding-repeats-in-groups)
 
 When a member is skipped, the group moves on to its next member in the same turn. If none of its members can play, the AutoDJ moves on to the next eligible playlist outside the group, so your station doesn't go silent.
 
@@ -207,18 +210,15 @@ The **Schedule View** tab marks scheduled times in which a member plays through 
 
 Duplicate avoidance inside groups needs a bit of care:
 
+- A song-based member that can't avoid a repeat still plays at its slot
+  - It plays a repeat, so the group keeps the order you set up
+  - Request Queue members are skipped instead when every pending request would be a repeat
 - Turning on **Avoid Duplicate Artists/Titles** on a group forces it onto all of the group's members, even the ones that have it turned off
-  - Members that are meant to repeat, such as jingles and station IDs, then get skipped as duplicates
+  - **Sequential** members then skip songs whose title or artist played recently and play them later
   - It's usually better to leave it off on the group and turn it on for your music playlists only
-- Turn it **off** for jingle and station ID playlists
-  - Also leave it off on any group that contains them
 - A **Shuffled** spot or ID playlist is reshuffled when it runs out of tracks, so it can play the track it just played again
   - This is most noticeable when the member plays several tracks in a row, for example with **Consecutive Plays**
   - The **Sequential** order avoids this, but plays the tracks in the same order every cycle
-
-:::caution[Jingles and station IDs can disappear from your clock]
-New playlists have **Avoid Duplicate Artists/Titles** turned on. Jingles and station IDs usually all use your station name as their artist. Once one of them has played, the others count as duplicates for the whole **Duplicate Prevention Time Range for Artists** (two hours by default). The group then skips their slot and moves on to the next member.
-:::
 
 ## Queues and restarts
 
